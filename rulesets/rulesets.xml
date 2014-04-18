@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- global map of all guidelines known to us; see documentation at http://www.bentoweb.org/refs/TCDL2.0.html#chapt-rulesets. This version: $Date: 2009-01-12 14:56:25 $ -->
+<rulesets xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://bentoweb.org/refs/rulesets"
+  xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd 
+    http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd 
+    http://bentoweb.org/refs/rulesets http://bentoweb.org/refs/schemas/rulesets.xsd">
+
+  <ruleset xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/" id="WCAG1_19990505" hrefLang="en">
+    <guideline id="WCAG1_19990505_1" name="1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-provide-equivalents">
+      <successCriterion level="1" id="WCAG1_19990505_1.1" name="1.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-text-equivalent" />
+      <successCriterion level="1" id="WCAG1_19990505_1.2" name="1.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-redundant-server-links" />
+      <successCriterion level="1" id="WCAG1_19990505_1.3" name="1.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-auditory-descriptions" />
+      <successCriterion level="1" id="WCAG1_19990505_1.4" name="1.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-synchronize-equivalents" />
+      <successCriterion level="3" id="WCAG1_19990505_1.5" name="1.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-redundant-client-links" />
+    </guideline>
+    <guideline id="WCAG1_19990505_2" name="2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-color">
+      <successCriterion level="1" id="WCAG1_19990505_2.1" name="2.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-color-convey" />
+      <successCriterion level="2" id="WCAG1_19990505_2.2_img" name="2.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-color-contrast" />
+      <successCriterion level="3" id="WCAG1_19990505_2.2_text" name="2.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-color-contrast" />
+      <!-- checkpoint 2.2 has priority 2 for images and priority 3 for text, hence the two success criteria (two ID's pointing to the same checkpoint) -->
+    </guideline>
+    <guideline id="WCAG1_19990505_3" name="3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-structure-presentation">
+      <successCriterion level="2" id="WCAG1_19990505_3.1" name="3.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-use-markup" />
+      <successCriterion level="2" id="WCAG1_19990505_3.2" name="3.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-identify-grammar" />
+      <successCriterion level="2" id="WCAG1_19990505_3.3" name="3.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-style-sheets" />
+      <successCriterion level="2" id="WCAG1_19990505_3.4" name="3.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-relative-units" />
+      <successCriterion level="2" id="WCAG1_19990505_3.5" name="3.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-logical-headings" />
+      <successCriterion level="2" id="WCAG1_19990505_3.6" name="3.6" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-list-structure" />
+      <successCriterion level="2" id="WCAG1_19990505_3.7" name="3.7" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-quotes" />
+    </guideline>
+    <guideline id="WCAG1_19990505_4" name="4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-abbreviated-and-foreign">
+      <successCriterion level="1" id="WCAG1_19990505_4.1" name="4.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-identify-changes" />
+      <successCriterion level="3" id="WCAG1_19990505_4.2" name="4.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-expand-abbr" />
+      <successCriterion level="3" id="WCAG1_19990505_4.3" name="4.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-identify-lang" />
+    </guideline>
+    <guideline id="WCAG1_19990505_5" name="5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-table-markup">
+      <successCriterion level="1" id="WCAG1_19990505_5.1" name="5.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-table-headers" />
+      <successCriterion level="1" id="WCAG1_19990505_5.2" name="5.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-table-structure" />
+      <successCriterion level="2" id="WCAG1_19990505_5.3" name="5.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-table-for-layout" />
+      <successCriterion level="2" id="WCAG1_19990505_5.4" name="5.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-table-layout" />
+      <successCriterion level="3" id="WCAG1_19990505_5.5" name="5.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-table-summaries" />
+      <successCriterion level="3" id="WCAG1_19990505_5.6" name="5.6" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-abbreviate-labels" />
+    </guideline>
+    <guideline id="WCAG1_19990505_6" name="6" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-new-technologies">
+      <successCriterion level="1" id="WCAG1_19990505_6.1" name="6.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-order-style-sheets" />
+      <successCriterion level="1" id="WCAG1_19990505_6.2" name="6.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-dynamic-source" />
+      <successCriterion level="1" id="WCAG1_19990505_6.3" name="6.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-scripts" />
+      <successCriterion level="2" id="WCAG1_19990505_6.4" name="6.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-keyboard-operable-scripts" />
+      <successCriterion level="2" id="WCAG1_19990505_6.5" name="6.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-fallback-page" />
+    </guideline>
+    <guideline id="WCAG1_19990505_7" name="7" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-movement">
+      <successCriterion level="1" id="WCAG1_19990505_7.1" name="7.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-flicker" />
+      <successCriterion level="2" id="WCAG1_19990505_7.2" name="7.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-blinking" />
+      <successCriterion level="2" id="WCAG1_19990505_7.3" name="7.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-movement" />
+      <successCriterion level="2" id="WCAG1_19990505_7.4" name="7.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-no-periodic-refresh" />
+      <successCriterion level="2" id="WCAG1_19990505_7.5" name="7.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-no-auto-forward" />
+    </guideline>
+    <guideline id="WCAG1_19990505_8" name="8" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-own-interface">
+      <successCriterion level="1" id="WCAG1_19990505_8.1_important" name="8.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-directly-accessible" />
+      <successCriterion level="2" id="WCAG1_19990505_8.1_otherwise" name="8.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-directly-accessible" />
+    </guideline>
+    <guideline id="WCAG1_19990505_9" name="9" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-device-independence">
+      <successCriterion level="1" id="WCAG1_19990505_9.1" name="9.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-client-side-maps" />
+      <successCriterion level="2" id="WCAG1_19990505_9.2" name="9.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-keyboard-operable" />
+      <successCriterion level="2" id="WCAG1_19990505_9.3" name="9.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-device-independent-events" />
+      <successCriterion level="3" id="WCAG1_19990505_9.4" name="9.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-tab-order" />
+      <successCriterion level="3" id="WCAG1_19990505_9.5" name="9.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-keyboard-shortcuts" />
+    </guideline>
+    <guideline id="WCAG1_19990505_10" name="10" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-interim-accessibility">
+      <successCriterion level="2" id="WCAG1_19990505_10.1" name="10.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-pop-ups" />
+      <successCriterion level="2" id="WCAG1_19990505_10.2" name="10.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-unassociated-labels" />
+      <successCriterion level="3" id="WCAG1_19990505_10.3" name="10.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-linear-tables" />
+      <successCriterion level="3" id="WCAG1_19990505_10.4" name="10.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-place-holders" />
+      <successCriterion level="3" id="WCAG1_19990505_10.5" name="10.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-divide-links" />
+    </guideline>
+    <guideline id="WCAG1_19990505_11" name="11" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-use-w3c">
+      <successCriterion level="2" id="WCAG1_19990505_11.1" name="11.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-latest-w3c-specs" />
+      <successCriterion level="2" id="WCAG1_19990505_11.2" name="11.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-avoid-deprecated" />
+      <successCriterion level="3" id="WCAG1_19990505_11.3" name="11.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-content-preferences" />
+      <successCriterion level="1" id="WCAG1_19990505_11.4" name="11.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-alt-pages" />
+    </guideline>
+    <guideline id="WCAG1_19990505_12" name="12" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-complex-elements">
+      <successCriterion level="1" id="WCAG1_19990505_12.1" name="12.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-frame-titles" />
+      <successCriterion level="2" id="WCAG1_19990505_12.2" name="12.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-frame-longdesc" />
+      <successCriterion level="2" id="WCAG1_19990505_12.3" name="12.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-group-information" />
+      <successCriterion level="2" id="WCAG1_19990505_12.4" name="12.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-associate-labels" />
+    </guideline>
+    <guideline id="WCAG1_19990505_13" name="13" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-facilitate-navigation">
+      <successCriterion level="2" id="WCAG1_19990505_13.1" name="13.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-meaningful-links" />
+      <successCriterion level="2" id="WCAG1_19990505_13.2" name="13.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-use-metadata" />
+      <successCriterion level="2" id="WCAG1_19990505_13.3" name="13.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-site-description" />
+      <successCriterion level="2" id="WCAG1_19990505_13.4" name="13.4" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-clear-nav-mechanism" />
+      <successCriterion level="3" id="WCAG1_19990505_13.5" name="13.5" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-nav-bar" />
+      <successCriterion level="3" id="WCAG1_19990505_13.6" name="13.6" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-group-links" />
+      <successCriterion level="3" id="WCAG1_19990505_13.7" name="13.7" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-searches" />
+      <successCriterion level="3" id="WCAG1_19990505_13.8" name="13.8" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-front-loading" />
+      <successCriterion level="3" id="WCAG1_19990505_13.9" name="13.9" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-bundled-version" />
+      <successCriterion level="3" id="WCAG1_19990505_13.10" name="13.10" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-skip-over-ascii" />
+    </guideline>
+    <guideline id="WCAG1_19990505_14" name="14" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#gl-facilitate-comprehension">
+      <successCriterion level="1" id="WCAG1_19990505_14.1" name="14.1" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-simple-and-straightforward" />
+      <successCriterion level="3" id="WCAG1_19990505_14.2" name="14.2" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-icons" />
+      <successCriterion level="3" id="WCAG1_19990505_14.3" name="14.3" xlink:href="http://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/#tech-consistent-style" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/" id="WCAG2_20081211" hrefLang="en">
+    <guideline id="WCAG2_20081211_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all" />
+    </guideline>
+    <guideline id="WCAG2_20081211_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_1.2_media-equiv-av-only-alt" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-av-only-alt" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-captions" />
+      <successCriterion level="1" name="3" id="WCAG2_20081211_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="4" id="WCAG2_20081211_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-real-time-captions" />
+      <successCriterion level="2" name="5" id="WCAG2_20081211_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-audio-desc-only" />
+      <successCriterion level="3" name="6" id="WCAG2_20081211_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-sign" />
+      <successCriterion level="3" name="7" id="WCAG2_20081211_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="8" id="WCAG2_20081211_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-text-doc" />
+      <successCriterion level="3" name="9" id="WCAG2_20081211_1.2_media-equiv-live-audio-only" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#media-equiv-live-audio-only" />
+    </guideline>
+    <guideline id="WCAG2_20081211_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-sequence" />
+      <successCriterion level="1" name="3" id="WCAG2_20081211_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG2_20081211_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_1.4_visual-audio-contrast-without-color" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-without-color" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="2" name="3" id="WCAG2_20081211_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="4" id="WCAG2_20081211_1.4_visual-audio-contrast-scale" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale" />
+      <successCriterion level="2" name="5" id="WCAG2_20081211_1.4_visual-audio-contrast-text-presentation" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-text-presentation" />
+      <successCriterion level="3" name="6" id="WCAG2_20081211_1.4_visual-audio-contrast7" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7" />
+      <successCriterion level="3" name="7" id="WCAG2_20081211_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-noaudio" />
+      <successCriterion level="3" name="8" id="WCAG2_20081211_1.4_visual-audio-contrast-visual-presentation" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-visual-presentation" />
+      <successCriterion level="3" name="9" id="WCAG2_20081211_1.4_visual-audio-contrast-text-images" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-text-images" />
+    </guideline>
+    <guideline id="WCAG2_20081211_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_2.1_keyboard-operation-trapping" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#keyboard-operation-trapping" />
+      <successCriterion level="3" name="3" id="WCAG2_20081211_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20081211_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits-required-behaviors" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits-pause" />
+      <successCriterion level="3" name="3" id="WCAG2_20081211_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="4" id="WCAG2_20081211_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits-postponed" />
+      <successCriterion level="3" name="5" id="WCAG2_20081211_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20081211_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20081211_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG2_20081211_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-skip" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-title" />
+      <successCriterion level="1" name="3" id="WCAG2_20081211_2.4_navigation-mechanisms-focus-order" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-focus-order" />
+      <successCriterion level="1" name="4" id="WCAG2_20081211_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-refs" />
+      <successCriterion level="2" name="5" id="WCAG2_20081211_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="6" id="WCAG2_20081211_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-descriptive" />
+      <successCriterion level="2" name="7" id="WCAG2_20081211_2.4_navigation-mechanisms-focus-visible" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-focus-visible" />
+      <successCriterion level="3" name="8" id="WCAG2_20081211_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-location" />
+      <successCriterion level="3" name="9" id="WCAG2_20081211_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-link" />
+      <successCriterion level="3" name="10" id="WCAG2_20081211_2.4_navigation-mechanisms-headings" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-headings" />
+    </guideline>
+    <guideline id="WCAG2_20081211_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20081211_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20081211_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20081211_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20081211_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20081211_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG2_20081211_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20081211_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20081211_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20081211_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20081211_3.3" name="3.3" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_3.3_minimize-error-identified" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-identified" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_3.3_minimize-error-cues" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-cues" />
+      <successCriterion level="2" name="3" id="WCAG2_20081211_3.3_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-suggestions" />
+      <successCriterion level="2" name="4" id="WCAG2_20081211_3.3_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-reversible" />
+      <successCriterion level="3" name="5" id="WCAG2_20081211_3.3_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-context-help" />
+      <successCriterion level="3" name="6" id="WCAG2_20081211_3.3_minimize-error-reversible-all" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#minimize-error-reversible-all" />
+    </guideline>
+    <guideline id="WCAG2_20081211_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20081211_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat-parses" />
+      <successCriterion level="1" name="2" id="WCAG2_20081211_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat-rsv" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/" id="WCAG2_20081103" hrefLang="en">
+    <guideline id="WCAG2_20081103_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#text-equiv-all" />
+    </guideline>
+    <guideline id="WCAG2_20081103_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_1.2_media-equiv-av-only-alt" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-av-only-alt" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-captions" />
+      <successCriterion level="1" name="3" id="WCAG2_20081103_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="4" id="WCAG2_20081103_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-real-time-captions" />
+      <successCriterion level="2" name="5" id="WCAG2_20081103_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-audio-desc-only" />
+      <successCriterion level="3" name="6" id="WCAG2_20081103_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-sign" />
+      <successCriterion level="3" name="7" id="WCAG2_20081103_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="8" id="WCAG2_20081103_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-text-doc" />
+      <successCriterion level="3" name="9" id="WCAG2_20081103_1.2_media-equiv-live-audio-only" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#media-equiv-live-audio-only" />
+    </guideline>
+    <guideline id="WCAG2_20081103_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#content-structure-separation-sequence" />
+      <successCriterion level="1" name="3" id="WCAG2_20081103_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG2_20081103_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_1.4_visual-audio-contrast-without-color" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-without-color" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="2" name="3" id="WCAG2_20081103_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="4" id="WCAG2_20081103_1.4_visual-audio-contrast-scale" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-scale" />
+      <successCriterion level="2" name="5" id="WCAG2_20081103_1.4_visual-audio-contrast-text-presentation" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-text-presentation" />
+      <successCriterion level="3" name="6" id="WCAG2_20081103_1.4_visual-audio-contrast7" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast7" />
+      <successCriterion level="3" name="7" id="WCAG2_20081103_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-noaudio" />
+      <successCriterion level="3" name="8" id="WCAG2_20081103_1.4_visual-audio-contrast-visual-presentation" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-visual-presentation" />
+      <successCriterion level="3" name="9" id="WCAG2_20081103_1.4_visual-audio-contrast-text-images" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#visual-audio-contrast-text-images" />
+    </guideline>
+    <guideline id="WCAG2_20081103_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_2.1_keyboard-operation-trapping" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#keyboard-operation-trapping" />
+      <successCriterion level="3" name="3" id="WCAG2_20081103_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20081103_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits-required-behaviors" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits-pause" />
+      <successCriterion level="3" name="3" id="WCAG2_20081103_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="4" id="WCAG2_20081103_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits-postponed" />
+      <successCriterion level="3" name="5" id="WCAG2_20081103_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20081103_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20081103_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG2_20081103_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-skip" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-title" />
+      <successCriterion level="1" name="3" id="WCAG2_20081103_2.4_navigation-mechanisms-focus-order" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-focus-order" />
+      <successCriterion level="1" name="4" id="WCAG2_20081103_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-refs" />
+      <successCriterion level="2" name="5" id="WCAG2_20081103_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="6" id="WCAG2_20081103_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-descriptive" />
+      <successCriterion level="2" name="7" id="WCAG2_20081103_2.4_navigation-mechanisms-focus-visible" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-focus-visible" />
+      <successCriterion level="3" name="8" id="WCAG2_20081103_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-location" />
+      <successCriterion level="3" name="9" id="WCAG2_20081103_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-link" />
+      <successCriterion level="3" name="10" id="WCAG2_20081103_2.4_navigation-mechanisms-headings" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#navigation-mechanisms-headings" />
+    </guideline>
+    <guideline id="WCAG2_20081103_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20081103_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20081103_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20081103_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20081103_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20081103_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG2_20081103_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20081103_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20081103_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20081103_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20081103_3.3" name="3.3" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_3.3_minimize-error-identified" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-identified" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_3.3_minimize-error-cues" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-cues" />
+      <successCriterion level="2" name="3" id="WCAG2_20081103_3.3_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-suggestions" />
+      <successCriterion level="2" name="4" id="WCAG2_20081103_3.3_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-reversible" />
+      <successCriterion level="3" name="5" id="WCAG2_20081103_3.3_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-context-help" />
+      <successCriterion level="3" name="6" id="WCAG2_20081103_3.3_minimize-error-reversible-all" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#minimize-error-reversible-all" />
+    </guideline>
+    <guideline id="WCAG2_20081103_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20081103_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#ensure-compat-parses" />
+      <successCriterion level="1" name="2" id="WCAG2_20081103_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2008/PR-WCAG20-20081103/#ensure-compat-rsv" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/" id="WCAG2_20080430" hrefLang="en">
+    <guideline id="WCAG2_20080430_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#text-equiv-all" />
+    </guideline>
+    <guideline id="WCAG2_20080430_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_1.2_media-equiv-av-only-alt" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-av-only-alt" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-captions" />
+      <successCriterion level="1" name="3" id="WCAG2_20080430_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="4" id="WCAG2_20080430_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-real-time-captions" />
+      <successCriterion level="3" name="5" id="WCAG2_20080430_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-audio-desc-only" />
+      <successCriterion level="3" name="6" id="WCAG2_20080430_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-sign" />
+      <successCriterion level="3" name="7" id="WCAG2_20080430_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="8" id="WCAG2_20080430_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-text-doc" />
+      <successCriterion level="3" name="9" id="WCAG2_20080430_1.2_media-equiv-live-audio-only" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#media-equiv-live-audio-only" />
+    </guideline>
+    <guideline id="WCAG2_20080430_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#content-structure-separation-sequence" />
+      <successCriterion level="1" name="3" id="WCAG2_20080430_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG2_20080430_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_1.4_visual-audio-contrast-without-color" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-without-color" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="2" name="3" id="WCAG2_20080430_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="4" id="WCAG2_20080430_1.4_visual-audio-contrast-scale" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-scale" />
+      <successCriterion level="2" name="5" id="WCAG2_20080430_1.4_visual-audio-contrast-text-presentation" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-text-presentation" />
+      <successCriterion level="3" name="6" id="WCAG2_20080430_1.4_visual-audio-contrast7" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast7" />
+      <successCriterion level="3" name="7" id="WCAG2_20080430_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-noaudio" />
+      <successCriterion level="3" name="8" id="WCAG2_20080430_1.4_visual-audio-contrast-visual-presentation" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-visual-presentation" />
+      <successCriterion level="3" name="9" id="WCAG2_20080430_1.4_visual-audio-contrast-text-images" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#visual-audio-contrast-text-images" />
+    </guideline>
+    <guideline id="WCAG2_20080430_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_2.1_keyboard-operation-trapping" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#keyboard-operation-trapping" />
+      <successCriterion level="3" name="3" id="WCAG2_20080430_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20080430_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits-required-behaviors" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits-pause" />
+      <successCriterion level="3" name="3" id="WCAG2_20080430_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="4" id="WCAG2_20080430_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits-postponed" />
+      <successCriterion level="3" name="5" id="WCAG2_20080430_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20080430_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20080430_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG2_20080430_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-skip" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-title" />
+      <successCriterion level="1" name="3" id="WCAG2_20080430_2.4_navigation-mechanisms-focus-order" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-focus-order" />
+      <successCriterion level="1" name="4" id="WCAG2_20080430_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-refs" />
+      <successCriterion level="2" name="5" id="WCAG2_20080430_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="6" id="WCAG2_20080430_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-descriptive" />
+      <successCriterion level="2" name="7" id="WCAG2_20080430_2.4_navigation-mechanisms-focus-visible" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-focus-visible" />
+      <successCriterion level="3" name="8" id="WCAG2_20080430_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-location" />
+      <successCriterion level="3" name="9" id="WCAG2_20080430_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-link" />
+      <successCriterion level="3" name="10" id="WCAG2_20080430_2.4_navigation-mechanisms-headings" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#navigation-mechanisms-headings" />
+    </guideline>
+    <guideline id="WCAG2_20080430_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20080430_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20080430_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20080430_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20080430_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20080430_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG2_20080430_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20080430_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20080430_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20080430_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20080430_3.3" name="3.3" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_3.3_minimize-error-identified" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-identified" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_3.3_minimize-error-cues" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-cues" />
+      <successCriterion level="2" name="3" id="WCAG2_20080430_3.3_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-suggestions" />
+      <successCriterion level="2" name="4" id="WCAG2_20080430_3.3_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-reversible" />
+      <successCriterion level="3" name="5" id="WCAG2_20080430_3.3_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-context-help" />
+      <successCriterion level="3" name="6" id="WCAG2_20080430_3.3_minimize-error-reversible-all" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#minimize-error-reversible-all" />
+    </guideline>
+    <guideline id="WCAG2_20080430_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20080430_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#ensure-compat-parses" />
+      <successCriterion level="1" name="2" id="WCAG2_20080430_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/#ensure-compat-rsv" />
+    </guideline>
+  </ruleset>
+
+
+  <ruleset xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/" id="WCAG2_20071211" hrefLang="en">
+    <guideline id="WCAG2_20071211_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#text-equiv-all" />
+      <successCriterion level="3" name="2" id="WCAG2_20071211_1.1_text-equiv-live-audio-only" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#text-equiv-live-audio-only" />
+    </guideline>
+    <guideline id="WCAG2_20071211_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="3" id="WCAG2_20071211_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-real-time-captions" />
+      <successCriterion level="2" name="4" id="WCAG2_20071211_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-audio-desc-only" />
+      <successCriterion level="3" name="5" id="WCAG2_20071211_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-sign" />
+      <successCriterion level="3" name="6" id="WCAG2_20071211_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="7" id="WCAG2_20071211_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#media-equiv-text-doc" />
+    </guideline>
+    <guideline id="WCAG2_20071211_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#content-structure-separation-sequence" />
+      <successCriterion level="1" name="3" id="WCAG2_20071211_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG2_20071211_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_1.4_visual-audio-contrast-without-color" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-without-color" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="2" name="3" id="WCAG2_20071211_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="4" id="WCAG2_20071211_1.4_visual-audio-contrast-scale" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-scale" />
+      <successCriterion level="2" name="5" id="WCAG2_20071211_1.4_visual-audio-contrast-text-presentation" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-text-presentation" />
+      <successCriterion level="3" name="6" id="WCAG2_20071211_1.4_visual-audio-contrast7" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast7" />
+      <successCriterion level="3" name="7" id="WCAG2_20071211_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-noaudio" />
+      <successCriterion level="3" name="8" id="WCAG2_20071211_1.4_visual-audio-contrast-visual-presentation" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-visual-presentation" />
+      <successCriterion level="3" name="9" id="WCAG2_20071211_1.4_visual-audio-contrast-text-images" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#visual-audio-contrast-text-images" />
+    </guideline>
+    <guideline id="WCAG2_20071211_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_2.1_keyboard-operation-trapping" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#keyboard-operation-trapping" />
+      <successCriterion level="3" name="3" id="WCAG2_20071211_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20071211_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits-required-behaviors" />
+      <successCriterion level="2" name="2" id="WCAG2_20071211_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits-pause" />
+      <successCriterion level="3" name="3" id="WCAG2_20071211_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="4" id="WCAG2_20071211_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits-postponed" />
+      <successCriterion level="3" name="5" id="WCAG2_20071211_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20071211_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20071211_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG2_20071211_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-skip" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-title" />
+      <successCriterion level="1" name="3" id="WCAG2_20071211_2.4_navigation-mechanisms-focus-order" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-focus-order" />
+      <successCriterion level="1" name="4" id="WCAG2_20071211_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-refs" />
+      <successCriterion level="2" name="5" id="WCAG2_20071211_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="6" id="WCAG2_20071211_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-descriptive" />
+      <successCriterion level="2" name="7" id="WCAG2_20071211_2.4_navigation-mechanisms-focus-visible" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-focus-visible" />
+      <successCriterion level="3" name="8" id="WCAG2_20071211_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-location" />
+      <successCriterion level="3" name="9" id="WCAG2_20071211_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-link" />
+      <successCriterion level="3" name="10" id="WCAG2_20071211_2.4_navigation-mechanisms-headings" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#navigation-mechanisms-headings" />
+    </guideline>
+    <guideline id="WCAG2_20071211_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20071211_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20071211_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20071211_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20071211_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20071211_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG2_20071211_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20071211_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20071211_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20071211_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20071211_3.3" name="3.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_3.3_minimize-error-identified" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-identified" />
+      <successCriterion level="1" name="2" id="WCAG2_20071211_3.3_minimize-error-cues" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-cues" />
+      <successCriterion level="2" name="3" id="WCAG2_20071211_3.3_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-suggestions" />
+      <successCriterion level="2" name="4" id="WCAG2_20071211_3.3_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-reversible" />
+      <successCriterion level="3" name="5" id="WCAG2_20071211_3.3_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-context-help" />
+      <successCriterion level="3" name="6" id="WCAG2_20071211_3.3_minimize-error-reversible-all" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#minimize-error-reversible-all" />
+    </guideline>
+    <guideline id="WCAG2_20071211_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20071211_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#ensure-compat-parses" />
+      <successCriterion level="3" name="2" id="WCAG2_20071211_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20071211/#ensure-compat-rsv" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/" id="WCAG2_20070517" hrefLang="en">
+    <guideline id="WCAG2_20070517_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#text-equiv-all" />
+    </guideline>
+    <guideline id="WCAG2_20070517_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="3" id="WCAG2_20070517_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-real-time-captions" />
+      <successCriterion level="2" name="4" id="WCAG2_20070517_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-audio-desc-only" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-sign" />
+      <successCriterion level="3" name="6" id="WCAG2_20070517_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="7" id="WCAG2_20070517_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#media-equiv-text-doc" />
+    </guideline>
+    <guideline id="WCAG2_20070517_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#content-structure-separation-sequence" />
+      <successCriterion level="1" name="3" id="WCAG2_20070517_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG2_20070517_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_1.4_visual-audio-contrast-without-color" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-without-color" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="2" name="3" id="WCAG2_20070517_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="4" id="WCAG2_20070517_1.4_visual-audio-contrast-scale" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-scale" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_1.4_visual-audio-contrast7" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast7" />
+      <successCriterion level="3" name="6" id="WCAG2_20070517_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-noaudio" />
+      <successCriterion level="3" name="7" id="WCAG2_20070517_1.4_visual-audio-contrast-horiz-scale" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#visual-audio-contrast-horiz-scale" />
+    </guideline>
+    <guideline id="WCAG2_20070517_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="3" name="2" id="WCAG2_20070517_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20070517_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-required-behaviors" />
+      <successCriterion level="2" name="2" id="WCAG2_20070517_2.2_time-limits-blink" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-blink" />
+      <successCriterion level="2" name="3" id="WCAG2_20070517_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-pause" />
+      <successCriterion level="3" name="4" id="WCAG2_20070517_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-postponed" />
+      <successCriterion level="3" name="6" id="WCAG2_20070517_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20070517_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20070517_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG2_20070517_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-skip" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-title" />
+      <successCriterion level="1" name="3" id="WCAG2_20070517_2.4_navigation-mechanisms-focus" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-focus" />
+      <successCriterion level="1" name="4" id="WCAG2_20070517_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-refs" />
+      <successCriterion level="2" name="5" id="WCAG2_20070517_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="6" id="WCAG2_20070517_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-descriptive" />
+      <successCriterion level="3" name="7" id="WCAG2_20070517_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-location" />
+      <successCriterion level="3" name="8" id="WCAG2_20070517_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-link" />
+      <successCriterion level="3" name="9" id="WCAG2_20070517_2.4_navigation-mechanisms-headings" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#navigation-mechanisms-headings" />
+    </guideline>
+    <guideline id="WCAG2_20070517_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20070517_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20070517_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20070517_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20070517_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG2_20070517_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20070517_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20070517_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20070517_3.3" name="3.3" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_3.3_minimize-error-identified" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-identified" />
+      <successCriterion level="2" name="2" id="WCAG2_20070517_3.3_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-suggestions" />
+      <successCriterion level="2" name="3" id="WCAG2_20070517_3.3_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-reversible" />
+      <successCriterion level="2" name="4" id="WCAG2_20070517_3.3_minimize-error-cues" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-cues" />
+      <successCriterion level="3" name="5" id="WCAG2_20070517_3.3_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-context-help" />
+      <successCriterion level="3" name="6" id="WCAG2_20070517_3.3_minimize-error-reversible-all" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#minimize-error-reversible-all" />
+    </guideline>
+    <guideline id="WCAG2_20070517_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20070517_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#ensure-compat-parses" />
+      <successCriterion level="1" name="2" id="WCAG2_20070517_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2007/WD-WCAG20-20070517/#ensure-compat-rsv" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/" id="WCAG2_20060427" hrefLang="en">
+    <!-- @@2008-03-19: guideline IDs were of format WCAG20-20060427_1.1 instead of WCAG20_20060427_1.1 -->
+    <guideline id="WCAG20_20060427_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#text-equiv-all" />
+    </guideline>
+    <guideline id="WCAG20_20060427_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20060427_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-audio-desc" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_1.2_media-equiv-audio-desc-only" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-audio-desc-only" />
+      <successCriterion level="2" name="4" id="WCAG2_20060427_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-real-time-captions" />
+      <successCriterion level="3" name="5" id="WCAG2_20060427_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-sign" />
+      <successCriterion level="3" name="6" id="WCAG2_20060427_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-extended-ad" />
+      <successCriterion level="3" name="7" id="WCAG2_20060427_1.2_media-equiv-text-doc" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#media-equiv-text-doc" />
+    </guideline>
+    <guideline id="WCAG20_20060427_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20060427_1.3_content-structure-separation-without-color" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation-without-color" />
+      <successCriterion level="1" name="3" id="WCAG2_20060427_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation-sequence" />
+      <successCriterion level="2" name="4" id="WCAG2_20060427_1.3_content-structure-separation-emphasis" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation-emphasis" />
+      <successCriterion level="2" name="5" id="WCAG2_20060427_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG20_20060427_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#visual-audio-contrast">
+      <successCriterion level="2" name="1" id="WCAG2_20060427_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="2" id="WCAG2_20060427_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#visual-audio-contrast-dis-audio" />
+      <successCriterion level="3" name="3" id="WCAG2_20060427_1.4_visual-audio-contrast10" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#visual-audio-contrast10" />
+      <successCriterion level="3" name="4" id="WCAG2_20060427_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#visual-audio-contrast-noaudio" />
+    </guideline>
+    <guideline id="WCAG20_20060427_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#keyboard-operation-keyboard-operable" />
+      <successCriterion level="3" name="2" id="WCAG2_20060427_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG20_20060427_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-required-behaviors" />
+      <successCriterion level="2" name="2" id="WCAG2_20060427_2.2_time-limits-blink" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-blink" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-pause" />
+      <successCriterion level="3" name="4" id="WCAG2_20060427_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-no-exceptions" />
+      <successCriterion level="3" name="5" id="WCAG2_20060427_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-postponed" />
+      <successCriterion level="3" name="6" id="WCAG2_20060427_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG20_20060427_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#seizure-does-not-violate" />
+      <successCriterion level="3" name="2" id="WCAG2_20060427_2.3_seizure-three-times" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#seizure-three-times" />
+    </guideline>
+    <guideline id="WCAG20_20060427_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-skip" />
+      <successCriterion level="2" name="2" id="WCAG2_20060427_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-title" />
+      <successCriterion level="2" name="4" id="WCAG2_20060427_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-refs" />
+      <successCriterion level="3" name="5" id="WCAG2_20060427_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-descriptive" />
+      <successCriterion level="3" name="6" id="WCAG2_20060427_2.4_navigation-mechanisms-focus" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-focus" />
+      <successCriterion level="3" name="7" id="WCAG2_20060427_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-location" />
+      <successCriterion level="3" name="8" id="WCAG2_20060427_2.4_navigation-mechanisms-link" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#navigation-mechanisms-link" />
+    </guideline>
+    <guideline id="WCAG20_20060427_2.5" name="2.5" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_2.5_minimize-error-identified" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#minimize-error-identified" />
+      <successCriterion level="2" name="2" id="WCAG2_20060427_2.5_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#minimize-error-suggestions" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_2.5_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#minimize-error-reversible" />
+      <successCriterion level="3" name="4" id="WCAG2_20060427_2.5_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#minimize-error-context-help" />
+    </guideline>
+    <guideline id="WCAG20_20060427_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20060427_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20060427_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20060427_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20060427_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20060427_3.1_meaning-pronunciation" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#meaning-pronunciation" />
+    </guideline>
+    <guideline id="WCAG20_20060427_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior-receive-focus" />
+      <successCriterion level="1" name="2" id="WCAG2_20060427_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20060427_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20060427_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG20_20060427_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#ensure-compat">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_4.1_ensure-compat-parses" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#ensure-compat-parses" />
+      <successCriterion level="1" name="2" id="WCAG2_20060427_4.1_ensure-compat-rsv" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#ensure-compat-rsv" />
+    </guideline>
+    <guideline id="WCAG20_20060427_4.2" name="4.2" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#accessible-alternatives">
+      <successCriterion level="1" name="1" id="WCAG2_20060427_4.2_accessible-alternatives-level1" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#accessible-alternatives-level1" />
+      <successCriterion level="1" name="2" id="WCAG2_20060427_4.2_accessible-alternatives-plugins" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#accessible-alternatives-plugins" />
+      <successCriterion level="2" name="3" id="WCAG2_20060427_4.2_accessible-alternatives-level2" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#accessible-alternatives-level2" />
+      <successCriterion level="3" name="4" id="WCAG2_20060427_4.2_accessible-alternatives-all-reqs" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/guidelines.html#accessible-alternatives-all-reqs" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/" id="WCAG2_20051123" hrefLang="en">
+    <!-- @@2008-03-19: guideline IDs were of format WCAG20-20060427_1.1 instead of WCAG20_20060427_1.1 -->
+    <guideline id="WCAG20_20051123_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_1.1_text-equiv-informative" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-informative" />
+      <successCriterion level="1" name="2" id="WCAG2_20051123_1.1_text-equiv-functional" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-functional" />
+      <successCriterion level="1" name="3" id="WCAG2_20051123_1.1_text-equiv-sensory" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-sensory" />
+      <successCriterion level="1" name="4" id="WCAG2_20051123_1.1_text-equiv-ignored" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-ignored" />
+      <successCriterion level="1" name="5" id="WCAG2_20051123_1.1_text-equiv-live-media" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-live-media" />
+      <successCriterion level="3" name="6" id="WCAG2_20051123_1.1_text-equiv-text-doc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#text-equiv-text-doc" />
+   </guideline>
+    <guideline id="WCAG20_20051123_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20051123_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv-audio-desc" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv-real-time-captions" />
+      <successCriterion level="3" name="4" id="WCAG2_20051123_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv-sign" />
+      <successCriterion level="3" name="5" id="WCAG2_20051123_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#media-equiv-extended-ad" />
+    </guideline>
+    <guideline id="WCAG20_20051123_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20051123_1.3_content-structure-presentation-color" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-presentation-color" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_1.3_content-structure-separation-emphasis" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-separation-emphasis" />
+      <successCriterion level="2" name="4" id="WCAG2_20051123_1.3_content-presentation-structure-without-color" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-presentation-structure-without-color" />
+      <successCriterion level="3" name="5" id="WCAG2_20051123_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-separation-sequence" />
+      <successCriterion level="3" name="6" id="WCAG2_20051123_1.3_content-structure-separation-understanding" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#content-structure-separation-understanding" />
+    </guideline>
+    <guideline id="WCAG20_20051123_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#visual-audio-contrast">
+      <successCriterion level="2" name="1" id="WCAG2_20051123_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#visual-audio-contrast-dis-audio" />
+      <successCriterion level="3" name="3" id="WCAG2_20051123_1.4_visual-audio-contrast10" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#visual-audio-contrast10" />
+      <successCriterion level="3" name="4" id="WCAG2_20051123_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#visual-audio-contrast-noaudio" />
+    </guideline>
+    <guideline id="WCAG20_20051123_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#keyboard-operation-keyboard-operable" />
+      <successCriterion level="3" name="2" id="WCAG2_20051123_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG20_20051123_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-required-behaviors" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_2.2_time-limits-blink" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-blink" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-pause" />
+      <successCriterion level="3" name="4" id="WCAG2_20051123_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-no-exceptions" />
+      <successCriterion level="3" name="5" id="WCAG2_20051123_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-postponed" />
+      <successCriterion level="3" name="6" id="WCAG2_20051123_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG20_20051123_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#seizure">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_2.3_seizure-warning" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#seizure-warning" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_2.3_seizure-does-not-violate" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#seizure-does-not-violate" />
+    </guideline>
+    <guideline id="WCAG20_20051123_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_2.4_navigation-mechanisms-structure" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-structure" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-skip" />
+      <successCriterion level="2" name="4" id="WCAG2_20051123_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-title" />
+      <successCriterion level="2" name="5" id="WCAG2_20051123_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-refs" />
+      <successCriterion level="3" name="6" id="WCAG2_20051123_2.4_navigation-mechanisms-descriptive" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-descriptive" />
+      <successCriterion level="3" name="7" id="WCAG2_20051123_2.4_navigation-mechanisms-focus" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-focus" />
+      <successCriterion level="3" name="8" id="WCAG2_20051123_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#navigation-mechanisms-location" />
+    </guideline>
+    <guideline id="WCAG20_20051123_2.5" name="2.5" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#minimize-error">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_2.5_minimize-error-identified" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#minimize-error-identified" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_2.5_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#minimize-error-suggestions" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_2.5_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#minimize-error-reversible" />
+      <successCriterion level="3" name="4" id="WCAG2_20051123_2.5_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#minimize-error-context-help" />
+    </guideline>
+    <guideline id="WCAG20_20051123_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-doc-lang-id" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-other-lang-id" />
+      <successCriterion level="3" name="3" id="WCAG2_20051123_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-idioms" />
+      <successCriterion level="3" name="4" id="WCAG2_20051123_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-located" />
+      <successCriterion level="3" name="5" id="WCAG2_20051123_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-supplements" />
+      <successCriterion level="3" name="6" id="WCAG2_20051123_3.1_meaning-focus" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#meaning-focus" />
+    </guideline>
+    <guideline id="WCAG20_20051123_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior-receive-focus" />
+      <successCriterion level="2" name="2" id="WCAG2_20051123_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="3" id="WCAG2_20051123_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="4" id="WCAG2_20051123_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="5" id="WCAG2_20051123_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG20_20051123_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#use-spec">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_4.1_use-spec-parses" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#use-spec-parses" />
+    </guideline>
+    <guideline id="WCAG20_20051123_4.2" name="4.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access">
+      <successCriterion level="1" name="1" id="WCAG2_20051123_4.2_technology-supports-access-level1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-level1" />
+      <successCriterion level="1" name="2" id="WCAG2_20051123_4.2_technology-supports-access-plugins" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-plugins" />
+      <successCriterion level="1" name="3" id="WCAG2_20051123_4.2_technology-supports-access-rsv" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-rsv" />
+      <successCriterion level="1" name="4" id="WCAG2_20051123_4.2_technology-supports-access-label" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-label" />
+      <successCriterion level="1" name="5" id="WCAG2_20051123_4.2_technology-supports-access-states" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-states" />
+      <successCriterion level="1" name="6" id="WCAG2_20051123_4.2_technology-supports-access-changes" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-changes" />
+      <successCriterion level="3" name="7" id="WCAG2_20051123_4.2_technology-supports-access-all-reqs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/guidelines.html#technology-supports-access-all-reqs" />
+    </guideline>
+  </ruleset>
+
+  <ruleset xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/" id="WCAG2_20050630" hrefLang="en">
+    <guideline id="WCAG2_20050630_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_1.1_text-equiv-informative" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-informative" />
+      <successCriterion level="1" name="2" id="WCAG2_20050630_1.1_text-equiv-functional" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-functional" />
+      <successCriterion level="1" name="3" id="WCAG2_20050630_1.1_text-equiv-sensory" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-sensory" />
+      <successCriterion level="1" name="4" id="WCAG2_20050630_1.1_text-equiv-ignored" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-ignored" />
+      <successCriterion level="1" name="5" id="WCAG2_20050630_1.1_text-equiv-live-media" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-live-media" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_1.1_text-equiv-text-doc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#text-equiv-text-doc" />
+    </guideline>
+    <guideline id="WCAG2_20050630_1.2" name="1.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_1.2_media-equiv-captions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20050630_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-audio-desc" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-real-time-captions" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_1.2_media-equiv-sign" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-sign" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="3" id="WCAG2_20050630_1.2_media-equiv-live-ad" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#media-equiv-live-ad" />
+    </guideline>
+    <guideline id="WCAG2_20050630_1.3" name="1.3" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20050630_1.3_content-structure-presentation-color" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-structure-presentation-color" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_1.3_content-structure-separation-emphasis" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-structure-separation-emphasis" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_1.3_content-presentation-structure-without-color" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-presentation-structure-without-color" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_1.3_content-structure-separation-sequence" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#content-structure-separation-sequence" />
+    </guideline>
+    <guideline id="WCAG2_20050630_1.4" name="1.4" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_1.4_visual-audio-contrast-determined" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-determined" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_1.4_visual-audio-contrast-bg-patterns" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-bg-patterns" />
+      <successCriterion level="2" name="3" id="WCAG2_20050630_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_1.4_visual-audio-contrast-nobg" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-nobg" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#visual-audio-contrast-noaudio" />
+    </guideline>
+    <guideline id="WCAG2_20050630_2.1" name="2.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20050630_2.2" name="2.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-required-behaviors" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_2.2_time-limits-blink" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-blink" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_2.2_time-limits-pause" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-pause" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_2.2_time-limits-postponed" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-postponed" />
+      <successCriterion level="3" name="3" id="WCAG2_20050630_2.2_time-limits-server-timeout" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#time-limits-server-timeout" />
+    </guideline>
+    <guideline id="WCAG2_20050630_2.3" name="2.3" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#flicker">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_2.3_flicker-rate-and-warning" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#flicker-rate-and-warning" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_2.3_flicker-does-not-violate" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#flicker-does-not-violate" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_2.3_flicker-SPT" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#flicker-SPT" />
+    </guideline>
+    <guideline id="WCAG2_20050630_2.4" name="2.4" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_2.4_navigation-mechanisms-structure" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-structure" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-skip" />
+      <successCriterion level="2" name="3" id="WCAG2_20050630_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-title" />
+      <successCriterion level="2" name="4" id="WCAG2_20050630_2.4_navigation-mechanisms-refs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-refs" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_2.4_navigation-mechanisms-focus" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-focus" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_2.4_navigation-mechanisms-location" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#navigation-mechanisms-location" />
+    </guideline>
+    <guideline id="WCAG2_20050630_2.5" name="2.5" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#minimize-error">
+      <successCriterion level="2" name="1" id="WCAG2_20050630_2.5_minimize-error-identified" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#minimize-error-identified" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_2.5_minimize-error-suggestions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#minimize-error-suggestions" />
+      <successCriterion level="2" name="3" id="WCAG2_20050630_2.5_minimize-error-reversible" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#minimize-error-reversible" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_2.5_minimize-error-context-help" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#minimize-error-context-help" />
+    </guideline>
+    <guideline id="WCAG2_20050630_3.1" name="3.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-doc-lang-id" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-other-lang-id" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_3.1_meaning-mech" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-mech" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_3.1_meaning-idioms" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-idioms" />
+      <successCriterion level="3" name="3" id="WCAG2_20050630_3.1_meaning-located" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-located" />
+      <successCriterion level="3" name="4" id="WCAG2_20050630_3.1_meaning-sect-titles" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-sect-titles" />
+      <successCriterion level="3" name="5" id="WCAG2_20050630_3.1_meaning-supplements" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#meaning-supplements" />
+    </guideline>
+    <guideline id="WCAG2_20050630_3.2" name="3.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_3.2_consistent-behavior-change-of-context" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-change-of-context" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="2" id="WCAG2_20050630_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-receive-focus" />
+      <successCriterion level="2" name="3" id="WCAG2_20050630_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="4" id="WCAG2_20050630_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_3.2_consistent-behavior-text-equivalents" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-text-equivalents" />
+      <successCriterion level="3" name="2" id="WCAG2_20050630_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+    <guideline id="WCAG2_20050630_4.1" name="4.1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#use-spec">
+      <!--successCriterion level="1" name="1" id="WCAG2_20050630_" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#" /-->
+    </guideline>
+    <guideline id="WCAG2_20050630_4.2" name="4.2" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#robust">
+      <successCriterion level="1" name="1" id="WCAG2_20050630_4.2_technology-supports-access-level1" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-level1" />
+      <successCriterion level="1" name="2" id="WCAG2_20050630_4.2_technology-supports-access-plugins" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-plugins" />
+      <successCriterion level="1" name="3" id="WCAG2_20050630_4.2_technology-supports-access-rsv" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-rsv" />
+      <successCriterion level="1" name="4" id="WCAG2_20050630_4.2_technology-supports-access-label" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-label" />
+      <successCriterion level="1" name="5" id="WCAG2_20050630_4.2_technology-supports-access-states" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-states" />
+      <successCriterion level="1" name="6" id="WCAG2_20050630_4.2_technology-supports-access-changes" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-changes" />
+      <successCriterion level="2" name="1" id="WCAG2_20050630_4.2_technology-supports-access-use-access-conventions" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-use-access-conventions" />
+      <successCriterion level="3" name="1" id="WCAG2_20050630_4.2_technology-supports-access-all-reqs" xlink:href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technology-supports-access-all-reqs" />
+    </guideline>
+  </ruleset>
+
+
+  <ruleset xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/" id="WCAG2_20050211_internal" hrefLang="en">
+    <guideline id="WCAG2_20050211_internal_1.1" name="1.1" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_1.1_text-equiv-functional" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-functional" />
+      <successCriterion level="1" name="2" id="WCAG2_20050211_internal_1.1_text-equiv-informative" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-informative" />
+      <successCriterion level="1" name="3" id="WCAG2_20050211_internal_1.1_text-equiv-sensory" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-sensory" />
+      <successCriterion level="1" name="4" id="WCAG2_20050211_internal_1.1_text-equiv-ignored" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-ignored" />
+      <successCriterion level="1" name="5" id="WCAG2_20050211_internal_1.1_text-equiv-explicit-assoc" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-explicit-assoc" />
+      <successCriterion level="1" name="6" id="WCAG2_20050211_internal_1.1_text-equiv-live-media" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-live-media" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_1.1_text-equiv-text-doc" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#text-equiv-text-doc" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_1.2" name="1.2" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_1.2_media-equiv-captions" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-captions" />
+      <successCriterion level="1" name="2" id="WCAG2_20050211_internal_1.2_media-equiv-audio-desc" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-audio-desc" />
+      <successCriterion level="1" name="3" id="WCAG2_20050211_internal_1.2_media-equiv-rebroadcast" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-rebroadcast" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_1.2_media-equiv-real-time-captions" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-real-time-captions" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_1.2_media-equiv-sign" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-sign" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_1.2_media-equiv-extended-ad" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-extended-ad" />
+      <successCriterion level="3" name="3" id="WCAG2_20050211_internal_1.2_media-equiv-live-ad" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#media-equiv-live-ad" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_1.3" name="1.3" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#content-structure-separation">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_1.3_content-structure-separation-programmatic" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#content-structure-separation-programmatic" />
+      <successCriterion level="1" name="2" id="WCAG2_20050211_internal_1.3_content-structure-separation-emphasis" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#content-structure-separation-emphasis" />
+      <successCriterion level="1" name="3" id="WCAG2_20050211_internal_1.3_content-structure-presentation-color" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#content-structure-presentation-color" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_1.3_content-presentation-structure-without-color" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#content-presentation-structure-without-color" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_1.4" name="1.4" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-determined" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-determined" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-contrast" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-contrast" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-bg-patterns" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-bg-patterns" />
+      <successCriterion level="2" name="3" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-dis-audio" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-dis-audio" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-nobg" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-nobg" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_1.4_visual-audio-contrast-noaudio" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#visual-audio-contrast-noaudio" />
+    </guideline>
+
+    <guideline id="WCAG2_20050211_internal_2.1" name="2.1" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#keyboard-operation">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_2.1_keyboard-operation-keyboard-operable" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#keyboard-operation-keyboard-operable" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_2.1_keyboard-operation-abstract-events" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#keyboard-operation-abstract-events" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_2.1_keyboard-operation-all-funcs" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#keyboard-operation-all-funcs" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_2.2" name="2.2" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_2.2_time-limits-required-behaviors" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits-required-behaviors" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_2.2_time-limits-blink" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits-blink" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_2.2_time-limits-pause" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits-pause" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_2.2_time-limits-no-exceptions" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits-no-exceptions" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_2.2_time-limits-postponed" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#time-limits-postponed" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_2.3" name="2.3" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#flicker">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_2.3_flicker-rate-and-warning" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#flicker-rate-and-warning" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_2.3_flicker-does-not-violate" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#flicker-does-not-violate" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_2.3_flicker-SPT" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#flicker-SPT" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_2.4" name="2.4" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-structure" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-structure" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-toc" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-toc" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-mult-loc" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-mult-loc" />
+      <successCriterion level="2" name="3" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-skip" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-skip" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-one-seq" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-one-seq" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-focus" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-focus" />
+      <successCriterion level="3" name="3" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-images" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-images" />
+      <successCriterion level="3" name="4" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-title" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-title" />
+      <successCriterion level="3" name="5" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-paragraphs" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-paragraphs" />
+      <successCriterion level="3" name="6" id="WCAG2_20050211_internal_2.4_navigation-mechanisms-title-subsections" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#navigation-mechanisms-title-subsections" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_2.5" name="2.5" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error">
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_2.5_minimize-error-identified" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error-identified" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_2.5_minimize-error-suggestions" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error-suggestions" />
+      <successCriterion level="2" name="3" id="WCAG2_20050211_internal_2.5_minimize-error-reversible" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error-reversible" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_2.5_minimize-error-selection" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error-selection" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_2.5_minimize-error-spelling" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#minimize-error-spelling" />
+    </guideline>
+    
+    <guideline id="WCAG2_20050211_internal_3.1" name="3.1" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_3.1_meaning-doc-lang-id" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-doc-lang-id" />
+      <successCriterion level="1" name="2" id="WCAG2_20050211_internal_3.1_meaning-located" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-located" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_3.1_meaning-prog-located" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-prog-located" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_3.1_meaning-idioms" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-idioms" />
+      <successCriterion level="2" name="3" id="WCAG2_20050211_internal_3.1_meaning-other-lang-id" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-other-lang-id" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_3.1_meaning-multi-meanings" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-multi-meanings" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_3.1_meaning-read-alone" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-read-alone" />
+      <successCriterion level="3" name="3" id="WCAG2_20050211_internal_3.1_meaning-strategies" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#meaning-strategies" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_3.2" name="3.2" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_3.2_consistent-behavior-change-of-context" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-change-of-context" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_3.2_consistent-behavior-consistent-locations" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-consistent-locations" />
+      <successCriterion level="2" name="2" id="WCAG2_20050211_internal_3.2_consistent-behavior-receive-focus" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-receive-focus" />
+      <successCriterion level="2" name="3" id="WCAG2_20050211_internal_3.2_consistent-behavior-unpredictable-change" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-unpredictable-change" />
+      <successCriterion level="2" name="4" id="WCAG2_20050211_internal_3.2_consistent-behavior-consistent-functionality" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-consistent-functionality" />
+      <successCriterion level="2" name="5" id="WCAG2_20050211_internal_3.2_consistent-behavior-unpredictable-warning" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-unpredictable-warning" />
+      <successCriterion level="2" name="6" id="WCAG2_20050211_internal_3.2_consistent-behavior-target-identified" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-target-identified" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_3.2_consistent-behavior-text-equivalents" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-text-equivalents" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_3.2_consistent-behavior-visual-location" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-visual-location" />
+      <successCriterion level="3" name="3" id="WCAG2_20050211_internal_3.2_consistent-behavior-user-choose-order" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-user-choose-order" />
+      <successCriterion level="3" name="4" id="WCAG2_20050211_internal_3.2_consistent-behavior-no-extreme-changes-context" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#consistent-behavior-no-extreme-changes-context" />
+    </guideline>
+
+    <guideline id="WCAG2_20050211_internal_4.1" name="4.1" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#use-spec">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_4.1_use-spec-document-backward-compat-violations" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#use-spec-document-backward-compat-violations" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_4.1_use-spec-avoid-spec-no-exception" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#use-spec-avoid-spec-no-exception" />
+    </guideline>
+    <guideline id="WCAG2_20050211_internal_4.2" name="4.2" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access">
+      <successCriterion level="1" name="1" id="WCAG2_20050211_internal_4.2_technology-supports-access-plugins" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-plugins" />
+      <successCriterion level="1" name="2" id="WCAG2_20050211_internal_4.2_technology-supports-access-custom-ui" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-custom-ui" />
+      <successCriterion level="2" name="1" id="WCAG2_20050211_internal_4.2_technology-supports-access-use-access-conventions" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-use-access-conventions" />
+      <successCriterion level="3" name="1" id="WCAG2_20050211_internal_4.2_technology-supports-access-list-reqd-features" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-list-reqd-features" />
+      <successCriterion level="3" name="2" id="WCAG2_20050211_internal_4.2_technology-supports-access-test-non-reqd" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-test-non-reqd" />
+      <successCriterion level="3" name="3" id="WCAG2_20050211_internal_4.2_technology-supports-access-ensure-avail" xlink:href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-20050211/#technology-supports-access-ensure-avail" />
+    </guideline>
+
+  </ruleset>
+
+
+  <ruleset xlink:href="http://www.w3.org/TR/2004/WD-WCAG20-20041119/" id="WCAG2_20041119_public" hrefLang="en">
+    <guideline id="WCAG2_20041119_public_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2004/WD-WCAG20-20041119/#text-equiv">
+      <successCriterion level="1" name="1" id="WCAG2_20041119_public_1.1_text-equiv-functional" xlink:href="http://www.w3.org/TR/2004/WD-WCAG20-20041119/#text-equiv-functional" />
+    </guideline>
+  </ruleset>
+
+
+  <ruleset id="Section508" xlink:href="http://www.section508.gov/index.cfm?FuseAction=Content&amp;ID=12#Web" hrefLang="en">
+    <guideline id="Section508_a" name="a" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#a" />
+    <guideline id="Section508_b" name="b" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#b" />
+    <guideline id="Section508_c" name="c" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#c" />
+    <guideline id="Section508_d" name="d" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#d" />
+    <guideline id="Section508_e" name="e" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#e" />
+    <guideline id="Section508_f" name="f" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#f" />
+    <guideline id="Section508_g" name="g" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#g" />
+    <guideline id="Section508_h" name="h" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#h" />
+    <guideline id="Section508_i" name="i" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#i" />
+    <guideline id="Section508_j" name="j" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#j" />
+    <guideline id="Section508_k" name="k" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#k" />
+    <guideline id="Section508_l" name="l" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#l" />
+    <guideline id="Section508_m" name="m" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#m" />
+    <guideline id="Section508_n" name="n" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#n" />
+    <guideline id="Section508_o" name="o" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#o" />
+    <guideline id="Section508_p" name="p" xlink:href="http://bentoweb.org/refs/section508_1194.22.html#p" />
+  </ruleset>
+
+
+  <ruleset id="BITV" xlink:href="http://bentoweb.org/refs/bitv_anlage1.html" hrefLang="de">
+    <guideline id="x" name="1.1"/>
+    <!-- no xlink:href, because pointing into PDF is not possible -->
+  </ruleset>
+</rulesets>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with jEdit 4.2 (http://www.jedit.org) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<xs:schema xmlns="http://www.w3.org/WAI/ER/EARL/nmg-strawman#" xmlns:earlwd="http://www.w3.org/WAI/ER/EARL/nmg-strawman#" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/WAI/ER/EARL/nmg-strawman#" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://bentoweb.org/refs/schemas/xlink.xsd"/>
+
+  <xs:element name="xPath">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">References an <code>earl:XPathPointer</code> class which <strong>must</strong> include an XPath string expression using the <code>earl:expression</code> property, 
+          and <strong>may</strong> include a namespace definition using the <code>earl:ns</code> and <code>earl:Namespace</code> property and class respectively.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="expression" type="xs:normalizedString" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="ns" use="optional" /><!-- @@ should this be child element? And what about the earl:Namespace class? -->
+      <!--xs:attribute ref="rdf:datatype" /--><!-- @@ Is this really necessary in a non-RDF schema? Shouldn't this XML Schema define the data type? -->
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="xPointer">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">An XPointer string expression.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="expression" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded">
+          <!-- @@TODO replace 'type="xs:normalizedString"' with real data type? -->
+          <!--xs:complexType>
+            <xs:attribute ref="rdf:datatype" />
+          </xs:complexType-->
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="ns" use="optional" /><!-- @@ should this be child element? And what about the earl:Namespace class? -->
+      <!--xs:attribute ref="rdf:datatype" /--><!-- @@ Is this really necessary in a non-RDF schema? Shouldn't this XML Schema define the data type? -->
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="htmlPointer">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">An HTMLPointer string expression.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <!-- Content of htmlPointer still to be determined by the ERT WG. -->
+    <!--xs:complexType>
+      <xs:sequence>
+        <xs:element ref="expression" type="xs:normalizedString" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute ref="rdf:datatype" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType-->
+  </xs:element>
+
+  <xs:element name="lineCharLen">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">References a <code>earl:LineCharLenPointer</code> class which <strong>must</strong> include
+         <code>earl:line</code> and <code>earl:char</code> integer values, and <strong>may</strong> also include a <code>earl:len</code> integer value.
+         The integer values for <code>earl:line</code> and <code>earl:char</code> must start with the value "1" to denote the first position,
+         while the integer value for <code>earl:len</code> must start with the value "0" to denote the first position.
+       </p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="line" minOccurs="1" maxOccurs="1" type="xs:positiveInteger">
+        </xs:element>
+        <xs:element name="char" minOccurs="1" maxOccurs="1" type="xs:positiveInteger">
+        </xs:element>
+        <xs:element name="len" minOccurs="0" maxOccurs="1" type="xs:nonNegativeInteger">
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="charSnippet">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">A copy of the relevant part of the Test Subject as a character string. 
+          The referenced <code>earl:CharSnippetPointer</code> class <strong>must</strong> include a <code>earl:charContent</code> property 
+          and <strong>may</strong> also include a <code>earl:charOffset</code> integer value. 
+          The integer value for <code>earl:charOffset</code> must start with the value "0" to denote the first position.
+       </p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="charContent" minOccurs="1" maxOccurs="1" type="xs:string">
+        </xs:element>
+        <xs:element name="charOffset" minOccurs="0" maxOccurs="1" type="xs:positiveInteger">
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="byteSnippet">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">
+        <p xmlns="http://www.w3.org/1999/xhtml">A copy of the relevant part of the Test Subject encoded as a Base64 string. 
+          The referenced <code>earl:ByteSnippetPointer</code> class must include a <code>earl:byteContent</code> property 
+          and <strong>may</strong> also include a <code>earl:byteOffset</code> integer value. 
+          The integer value for <code>earl:byteOffset</code> must start with the value "0" to denote the first position.
+       </p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="byteContent" minOccurs="1" maxOccurs="1" type="xs:string">
+        </xs:element>
+        <xs:element name="byteOffset" minOccurs="0" maxOccurs="1" type="xs:positiveInteger">
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with jEdit 4.2 (http://www.jedit.org) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<!-- An XML Schema for some of the elements defined by the Note "HTTP Vocabulary in RDF": http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20060816.
+  This schema may change when the note is updated.
+  @@Warning: the namespace URI will change eventually!
+-->
+<xs:schema xmlns="http://www.w3.org/2006/uri#" xmlns:uri="http://www.w3.org/2006/uri#" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:http="http://www.w3.org/2006/http#" xmlns:rfc822="http://www.w3.org/2006/rfc822#" xmlns:html="http://www.w3.org/1999/xhtml" 
+  targetNamespace="http://www.w3.org/2006/uri#" 
+  elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://bentoweb.org/refs/schemas/xlink.xsd"/>
+
+  <xs:element name="uri" type="xs:anyURI">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">The Uniform Resource Identifier</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

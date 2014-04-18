@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  WARNING! This is a template for TCDL 2.0.
+  For a detailed specification of TCDL 2.0, see http://bentoweb.org/refs/TCDL2.0.html
+  For usage notes for the Test Samples Development Task Force, see http://www.w3.org/WAI/ER/tests/usingTCDL
+-->
+<testCaseDescription id="sc3.1.1_l1_001"
+    xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL2.0/"
+    xmlns:btw="http://bentoweb.org/refs/TCDL2.0/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:earl="http://www.w3.org/WAI/ER/EARL/nmg-strawman#"
+    xmlns:http="http://www.w3.org/2006/http#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xsi:schemaLocation="
+      http://bentoweb.org/refs/TCDL2.0/ http://bentoweb.org/refs/schemas/tcdl2.0.xsd
+      http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd 
+      http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd 
+      http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd
+      http://www.w3.org/2006/http# http://bentoweb.org/refs/schemas/http.xsd
+      http://www.w3.org/WAI/ER/EARL/nmg-strawman# http://bentoweb.org/refs/schemas/earlwd.xsd">
+  <formalMetadata>
+    <title>German text with English language identification</title>
+    <dc:creator xsi:type="btw:dcHtmlInline">Developed by <html:a href="http://www.w3.org/"><html:acronym title="World Wide Web Consortium">W3C</html:acronym></html:a>/<html:a href="http://www.w3.org/WAI/"><html:acronym title="Web Accessibility Initiative">WAI</html:acronym></html:a>'s <html:a href="http://www.w3.org/WAI/ER/">Evaluation and Repair Tools Working Group</html:a> (ERT WG). We invite comments and discussion. Please address your feedback to <html:a href="mailto:public-wai-ert-tests@w3.org">public-wai-ert-tests@w3.org</html:a>, a mailing list with a <html:a href="http://lists.w3.org/Archives/Public/public-wai-ert-tsdtf/">public archive</html:a>.</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights xsi:type="btw:dcHtmlInline"><html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</html:a> &#169; 1994-2009 <html:a href="http://www.w3.org/"><html:acronym title="World Wide Web Consortium">W3C</html:acronym></html:a><html:sup>&#174;</html:sup> (<html:a href="http://www.csail.mit.edu/"><html:acronym title="Massachusetts Institute of Technology">MIT</html:acronym></html:a>, <html:a href="http://www.ercim.org/"><html:acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</html:acronym></html:a>, <html:a href="http://www.keio.ac.jp/">Keio</html:a>), All Rights Reserved. <html:acronym title="World Wide Web Consortium">W3C</html:acronym> <html:a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</html:a>, <html:a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</html:a>, <html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</html:a> and <html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</html:a> rules apply. Your interactions with this site are in accordance with our <html:a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</html:a> and <html:a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</html:a> privacy statements.</dc:rights>
+    <!-- can't add 'xsi:type="xs:date"' to <dc:date>: 
+      cvc-elt.4.3: Type 'xs:date' is not validly derived from the type definition, 'SimpleLiteral', of element 'dc:date'.
+      But without data typing, a string like '2006_08_31' is considered valid.
+    -->
+    <dc:date xsi:type="btw:btwDate">&#36;Date&#36;</dc:date>
+    <status>new</status>
+    <version>&#36;Revision&#36;</version>
+  </formalMetadata>
+  <technologies>
+    <technicalSpec xlink:href="http://www.w3.org/TR/xhtml1/"><!-- xlink:href is optional -->
+      <specName><html:acronym>XHTML</html:acronym>&#8482; 1.0: The Extensible HyperText Markup Language (Second Edition)
+      </specName>
+    </technicalSpec>
+  </technologies>
+  <testCase>
+    <!-- using <dc:description> without xsi:type=... results in <html:span> etc causing validation error. -->
+    <dc:description xsi:type="btw:dcHtmlInline">Web page with an excerpt of Peter Handke's play <html:span lang="de">Publikumsbeschimpfung</html:span> (in German); the <html:code>html</html:code> element has a <html:code>lang</html:code> attribute with the value "en" (for English) instead of "de" (for German).</dc:description>
+    <purpose><p>This test case is intended to fail because the language of the page is not correctly identified.</p></purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>oneExpert</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="sc3.1.1_l1_001.html"/>
+      <!-- @@note xlink:href is actually optional -->
+    </files>
+  </testCase>
+  <rules>
+    <rule xlink:href="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-doc-lang-id">
+      <locations expectedResult="fail">
+       <location techrefs="H57">
+        <earl:xPath>
+         <earl:expression>/h:html[@lang]</earl:expression>
+        </earl:xPath>
+        <earl:lineCharLen>
+         <earl:line>4</earl:line>
+         <earl:char>25</earl:char>
+        </earl:lineCharLen>
+       </location>
+      </locations>
+      <techniques>
+        <technique id="H57" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H57" />
+        <!-- "Using the lang attribute of the html element". -->
+        <!-- Always use dated URLs, not, for example, http://www.w3.org/TR/WCAG20-TECHS/Overview.html#H57. -->
+      </techniques>
+      <techComment>
+        <p>The test case is actually a failure (!) of the technique, because the language tag is not correct.</p>
+      </techComment>
+    </rule>
+  </rules>
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

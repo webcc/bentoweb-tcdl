@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "http://www.rddl.org/rddl-xhtml.dtd">
+<html xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BenToWeb Test Case Description Language (TCDL) 1</title>
+    <link media="screen,projection" href="http://www.bentoweb.org/css/html.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link media="screen,projection" href="http://www.bentoweb.org/css/default.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link href="http://www.bentoweb.org/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <meta name="DC.Title" content="BenToWeb Test Case Description Language (TCDL) 1" />
+    <meta name="DC.Description" content="BenToWeb's Test Case Description (TCDL) 1, an XML vocabulary for metadata about test cases for accessibility guidelines: Resource Description (RDDL)" />
+    <meta name="DC.Type" scheme="DCMIType" content="Text" />
+    <meta name="DC.Creator" content="Christophe Strobbe" />
+    <meta name="DC.Publisher" content="BenToWeb Consortium (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights" content="Copyright BenToWeb Consortium 2006 (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights.accessRights" content="public" />
+    <meta name="DC.Date" content="2006-01-11" />
+    <meta name="DC.Identifier" content="http://bentoweb.org/refs/TCDL1/index.rddl" />
+    <meta name="DC.Language" scheme="ISO 639-1" content="en" />
+    <meta name="robots" content="all" />
+    <meta name="generator" content="création artisanale à la main" xml:lang="fr" />
+  </head>
+  <body>
+    <h1>BenToWeb Test Case Description Language (<acronym>TCDL</acronym>) 1</h1>
+    <p>Resource Directory (<a href="http://www.rddl.org/"><acronym>RDDL</acronym></a> document) for BenToWeb <acronym>TCDL</acronym> 1.</p>
+    <div class="head">
+      <p>This Version: <a href="http://bentoweb.org/refs/TCDL1"> 11 January 2006</a>.</p>
+      <p>Latest Version: <a href="http://bentoweb.org/refs/TCDL1.1">http://bentoweb.org/refs/TCDL1.1</a> (obsoletes <acronym>TCDL</acronym> 1).</p>
+      <p>Previous Version: none.</p>
+      <p>Editors:</p>
+      <ul> 
+        <li><a href="&#x4d;ail&#x54;o&#x3a;christophe&#x2e;strobbe&#x40;esat&#x2e;kuleuven&#x2e;be">Christophe Strobbe</a> 
+          (<a href="http://www.docarch.be/"><acronym title="Research Group on Document Architectures">DocArch</acronym>, <span xml:lang="nl">Katholieke Universiteit Leuven</span></a>)
+        </li>
+      </ul>
+    </div>
+    <div class="chapter" id="purpose">
+      <h2>Purpose and General Description</h2>
+      <p>Test Case Description Language (<acronym>TCDL</acronym>) is an <acronym>XML</acronym>-based language defined by BenToWeb 
+        to store metadata for the test cases in the test suites<span class="insertion"> for 
+        <a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (<acronym>WCAG</acronym>) 2.0</a></span>. 
+        For each individual test cases, it describes:</p>
+      <ul>
+        <li>formal metadata, such as author, date, title and a short description;</li>
+        <li>technologies (the technologies and technology features used in the test);</li>
+        <li>test mode and test scenarios for end user evaluation;</li>
+        <li>the &#8220;rules&#8221; that are tested (<acronym>WCAG</acronym> 2.0 success criteria or other rules);</li>
+        <li>namespace mappings used in some of the previous sections.</li>
+      </ul>
+      <p><acronym>TCDL</acronym> is defined in 
+        <a href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/"><acronym>W3C</acronym> <acronym>XML</acronym> Schema</a>
+        and uses the namespace <code>http://bentoweb.org/refs/TCDL1</code>;
+        the <acronym>XML</acronym> Schema is available at 
+        <a href="http://bentoweb.org/refs/schemas/tcdl1.xsd">http://bentoweb.org/refs/schemas/tcdl1.xsd</a> and contains detailed documentation.
+        The next section provides a less technical description of <acronym>TCDL</acronym>. It also shows which metadata elements <acronym>TCDL</acronym> 
+        has in common with those suggested in the 
+        <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/"><acronym>W3C</acronym> Note on Test Metadata</a> by adding &#8220;<acronym>W3CTM</acronym>&#8221; to the description.
+      </p>
+      <p><strong>Warning</strong>: <em><acronym>TCDL</acronym> 1 is obsoleted by <a href="http://bentoweb.org/refs/TCDL1.1"><acronym>TCDL</acronym> 1.1</a>!</em></p>
+    </div>
+    <div class="rddlresources" id="rddlresources">
+      <h2><acronym>RDDL</acronym> Resources</h2>
+      <rddl:resource xlink:arcrole="schema-validation" xlink:role="http://www.w3.org/2001/XMLSchema" xlink:href="http://bentoweb.org/refs/schemas/tcdl1.xsd" id="tcdl1-xsd-schema" xlink:embed="none" xmlns:rddl="http://www.rddl.org/"><acronym>TCDL</acronym> 1 Schema</rddl:resource>
+    </div>
+  </body>
+</html>

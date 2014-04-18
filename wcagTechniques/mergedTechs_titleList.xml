@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><techniquesList>
+<technique class="general" id="G1"><short-name>Adding a link at the top of each page that goes directly to the main content area</short-name></technique>
+<technique class="general" id="G4"><short-name>Allowing the content to be paused and restarted from where it was stopped</short-name></technique>
+<technique class="general" id="G5"><short-name>Allowing users to complete an activity without any time limit</short-name></technique>
+<technique class="general" id="G8"><short-name>Creating an extended audio description for the synchronized media content</short-name></technique>
+<technique class="general" id="G9"><short-name>Creating captions for live synchronized media</short-name></technique>
+<technique class="general" id="G10"><short-name>Creating components using a technology that supports the accessibility API features of the platforms on which the user agents will be run to expose the names and roles, allow user-settable properties to be directly set, and provide notification of changes</short-name></technique>
+<technique class="general" id="G11"><short-name>Creating content that blinks for less than 3 seconds</short-name></technique>
+<technique class="general" id="G13"><short-name>Describing what will happen before a change to a form control is made</short-name></technique>
+<technique class="general" id="G14"><short-name>Ensuring that information conveyed by color differences is also available in text</short-name></technique>
+<technique class="general" id="G15"><short-name>Ensuring that content does not violate the general flash threshold or red flash threshold</short-name></technique>
+<technique class="general" id="G17"><short-name>Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text</short-name></technique>
+<technique class="general" id="G18"><short-name>Ensuring that a contrast ratio of at least 5:1 exists between text (and images of text) and background behind the text</short-name></technique>
+<technique class="general" id="G19"><short-name>Ensuring that no component of the content flashes more than three times in any 1-second period</short-name></technique>
+<technique class="general" id="G20"><short-name>Ensuring that the only way to get to an inaccessible version is from a link from the accessible version</short-name></technique>
+<technique class="general" id="G21"><short-name>Ensuring that users are not trapped in content</short-name></technique>
+<technique class="general" id="G53"><short-name>Identifying the purpose of a link using link text combined with the text of the enclosing sentence</short-name></technique>
+<technique class="general" id="G54"><short-name>Including a sign language interpreter in the video stream</short-name></technique>
+<technique class="general" id="G55"><short-name>Linking to definitions</short-name></technique>
+<technique class="general" id="G56"><short-name>Mixing audio files so that non-speech sounds are at least 20 decibels lower than the speech audio content</short-name></technique>
+<technique class="general" id="G57"><short-name>Ordering the content in a meaningful sequence</short-name></technique>
+<technique class="general" id="G58"><short-name>Placing a link to the full text alternative for synchronized media including any interaction  immediately next to the non-text content</short-name></technique>
+<technique class="general" id="G59"><short-name>Placing the interactive elements in an order that follows sequences and relationships within the content</short-name></technique>
+<technique class="general" id="G60"><short-name>Playing a sound that turns off automatically within three seconds</short-name></technique>
+<technique class="general" id="G61"><short-name>Presenting repeated components in the same relative order each time they appear</short-name></technique>
+<technique class="general" id="G62"><short-name>Providing a glossary</short-name></technique>
+<technique class="general" id="G63"><short-name>Providing a site map</short-name></technique>
+<technique class="general" id="G64"><short-name>Providing a Table of Contents</short-name></technique>
+<technique class="general" id="G65"><short-name>Providing a breadcrumb trail</short-name></technique>
+<technique class="general" id="G68"><short-name>Providing a descriptive label that describes the purpose of live audio-only and live video-only content</short-name></technique>
+<technique class="general" id="G69"><short-name>Providing a full synchronized media text alternative including any interaction</short-name></technique>
+<technique class="general" id="G70"><short-name>Providing a function to search an on-line dictionary</short-name></technique>
+<technique class="general" id="G71"><short-name>Providing a help link on every Web page</short-name></technique>
+<technique class="general" id="G73"><short-name>Providing a long description in another location with a link to it that is immediately adjacent to the non-text content</short-name></technique>
+<technique class="general" id="G74"><short-name>Providing a long description in text near the non-text content, with a reference to the location of the long description in the short description</short-name></technique>
+<technique class="general" id="G75"><short-name>Providing a mechanism to postpone any updating of content</short-name></technique>
+<technique class="general" id="G76"><short-name>Providing a mechanism to request an update of the content instead of updating automatically</short-name></technique>
+<technique class="general" id="G78"><short-name>Providing a sound track that includes audio description</short-name></technique>
+<technique class="general" id="G79"><short-name>Providing a spoken version of the text</short-name></technique>
+<technique class="general" id="G80"><short-name>Providing a submit button to initiate a change of context</short-name></technique>
+<technique class="general" id="G81"><short-name>Providing a synchronized video of the sign language interpreter that can be displayed in a different viewport or overlaid on the image by the player</short-name></technique>
+<technique class="general" id="G82"><short-name>Providing a text alternative that identifies the purpose of the non-text content</short-name></technique>
+<technique class="general" id="G83"><short-name>Providing text descriptions to identify required fields that were not completed</short-name></technique>
+<technique class="general" id="G84"><short-name>Providing a text description when the user provides information that is not in the list of allowed values</short-name></technique>
+<technique class="general" id="G85"><short-name>Providing a text description when user input falls outside the required format or values </short-name></technique>
+<technique class="general" id="G86"><short-name>Providing a text summary that requires reading ability less advanced than the upper secondary education level</short-name></technique>
+<technique class="general" id="G87"><short-name>Providing closed captions</short-name></technique>
+<technique class="general" id="G88"><short-name>Providing descriptive titles for Web pages</short-name></technique>
+<technique class="general" id="G89"><short-name>Providing expected data format and example</short-name></technique>
+<technique class="general" id="G90"><short-name>Providing keyboard-triggered event handlers</short-name></technique>
+<technique class="general" id="G91"><short-name>Providing link text that describes the purpose of a link</short-name></technique>
+<technique class="general" id="G92"><short-name>Providing long description for non-text content that serves the same purpose and presents the same information</short-name></technique>
+<technique class="general" id="G93"><short-name>Providing open (always visible) captions</short-name></technique>
+<technique class="general" id="G94"><short-name>Providing short text alternative for non-text content that serves the same purpose and presents the same information as the non-text content</short-name></technique>
+<technique class="general" id="G95"><short-name>Providing short text alternatives that provide a brief description of the non-text content</short-name></technique>
+<technique class="general" id="G96"><short-name>Providing textual identification of items that otherwise rely only on sensory information to be understood</short-name></technique>
+<technique class="general" id="G97"><short-name>Providing the abbreviation immediately following the expanded form</short-name></technique>
+<technique class="general" id="G98"><short-name>Providing the ability for the user to review and correct answers before submitting</short-name></technique>
+<technique class="general" id="G99"><short-name>Providing the ability to recover deleted information</short-name></technique>
+<technique class="general" id="G100"><short-name>Providing the accepted name or a descriptive name of the non-text content</short-name></technique>
+<technique class="general" id="G101"><short-name>Providing the definition of a word or phrase used in an unusual or restricted way</short-name></technique>
+<technique class="general" id="G102"><short-name>Providing the expansion or explanation of an abbreviation</short-name></technique>
+<technique class="general" id="G103"><short-name>Providing visual illustrations, pictures, and symbols to help explain ideas, events, and processes</short-name></technique>
+<technique class="general" id="G105"><short-name>Saving data so that it can be used after a user re-authenticates</short-name></technique>
+<technique class="general" id="G107"><short-name>Using "activate" rather than "focus" as a trigger for changes of context</short-name></technique>
+<technique class="general" id="G108"><short-name>Using markup features to expose the name and role, allow user-settable properties to be directly set, and provide notification of changes</short-name></technique>
+<technique class="general" id="G110"><short-name>Using an instant client-side redirect</short-name></technique>
+<technique class="general" id="G111"><short-name>Using color and pattern</short-name></technique>
+<technique class="general" id="G112"><short-name>Using inline definitions</short-name></technique>
+<technique class="general" id="G115"><short-name>Using semantic elements to mark up structure</short-name></technique>
+<technique class="general" id="G117"><short-name>Using text to convey information that is conveyed by variations in presentation of text</short-name></technique>
+<technique class="general" id="G120"><short-name>Providing the pronunciation immediately following the word</short-name></technique>
+<technique class="general" id="G121"><short-name>Linking to pronunciations</short-name></technique>
+<technique class="general" id="G122"><short-name>Including a text cue whenever color cues are used </short-name></technique>
+<technique class="general" id="G123"><short-name>Adding a link at the beginning of a block of repeated content to go to the end of the block</short-name></technique>
+<technique class="general" id="G124"><short-name>Adding links at the top of the page to each area of the content</short-name></technique>
+<technique class="general" id="G125"><short-name>Providing links to navigate to related Web pages</short-name></technique>
+<technique class="general" id="G126"><short-name>Providing a list of links to all other Web pages</short-name></technique>
+<technique class="general" id="G127"><short-name>Identifying a Web page's relationship to a larger collection of Web pages</short-name></technique>
+<technique class="general" id="G128"><short-name>Indicating current location within navigation bars</short-name></technique>
+<technique class="general" id="G130"><short-name>Providing descriptive headings</short-name></technique>
+<technique class="general" id="G131"><short-name>Providing descriptive labels</short-name></technique>
+<technique class="general" id="G133"><short-name>Providing a checkbox on the first page of a multipart form that allows users to ask for longer session time limit or no session time limit</short-name></technique>
+<technique class="general" id="G134"><short-name>Validating Web pages</short-name></technique>
+<technique class="general" id="G135"><short-name>Using the accessibility API features of a technology to expose names and roles, to allow user-settable properties to be directly set, and to provide notification of changes</short-name></technique>
+<technique class="general" id="G136"><short-name>Providing a link at the beginning of the nonconforming content that points to an alternate version that does meet WCAG 2.0 at the level claimed</short-name></technique>
+<technique class="general" id="G138"><short-name>Using semantic markup whenever color cues are used</short-name></technique>
+<technique class="general" id="G139"><short-name>Creating a mechanism that allows users to jump to errors</short-name></technique>
+<technique class="general" id="G140"><short-name>Separating information and structure from presentation so that Web pages can be presented different ways without losing information</short-name></technique>
+<technique class="general" id="G141"><short-name>Organizing a page using headings</short-name></technique>
+<technique class="general" id="G142"><short-name>Using a technology that has commonly-available user agents that support zoom</short-name></technique>
+<technique class="general" id="G143"><short-name>Providing a text alternative that describes the purpose of the CAPTCHA</short-name></technique>
+<technique class="general" id="G144"><short-name>Ensuring that the Web Page contains another CAPTCHA serving the same purpose using a different modality</short-name></technique>
+<technique class="general" id="G145"><short-name>Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text</short-name></technique>
+<technique class="general" id="G146"><short-name>Using liquid layout</short-name></technique>
+<technique class="general" id="G147"><short-name>Providing instruction about change of context due to change of input setting ahead of such encounter</short-name></technique>
+<technique class="general" id="G148"><short-name>Not specifying background color, not specifying text color, and not using technology features that change those defaults</short-name></technique>
+<technique class="general" id="G149"><short-name>Using user interface components that are highlighted by the user agent when they receive focus</short-name></technique>
+<technique class="general" id="G150"><short-name>Providing text alternatives for live audio-only content</short-name></technique>
+<technique class="html" id="H2"><short-name>Combining adjacent image and text links for the same resource</short-name></technique>
+<technique class="html" id="H4"><short-name>Creating a logical tab order through links, form controls, and objects</short-name></technique>
+<technique class="html" id="H24"><short-name>Providing text alternatives for the area elements of image maps </short-name></technique>
+<technique class="html" id="H25"><short-name>Providing a title using the title element</short-name></technique>
+<technique class="html" id="H27"><short-name>Providing text and non-text alternatives for object</short-name></technique>
+<technique class="html" id="H28"><short-name>Providing definitions for abbreviations by using the abbr and acronym elements</short-name></technique>
+<technique class="html" id="H30"><short-name>Providing link text that describes the purpose of a link for anchor elements</short-name></technique>
+<technique class="html" id="H32"><short-name>Providing submit buttons</short-name></technique>
+<technique class="html" id="H33"><short-name>Supplementing link text with the title attribute</short-name></technique>
+<technique class="html" id="H34"><short-name>Using a Unicode right-to-left mark (RLM) or left-to-right mark (LRM) to mix text direction inline</short-name></technique>
+<technique class="html" id="H35"><short-name>Providing text alternatives on applet elements</short-name></technique>
+<technique class="html" id="H36"><short-name>Using alt attributes on images used as submit buttons</short-name></technique>
+<technique class="html" id="H37"><short-name>Using alt attributes on img elements</short-name></technique>
+<technique class="html" id="H39"><short-name>Using caption elements to associate data table captions with data tables</short-name></technique>
+<technique class="html" id="H40"><short-name>Using definition lists</short-name></technique>
+<technique class="html" id="H42"><short-name>Using h1-h6 to identify headings</short-name></technique>
+<technique class="html" id="H43"><short-name>Using id and headers attributes to associate data cells with header cells in data tables</short-name></technique>
+<technique class="html" id="H44"><short-name>Using label elements to associate text labels with form controls</short-name></technique>
+<technique class="html" id="H45"><short-name>Using longdesc</short-name></technique>
+<technique class="html" id="H46"><short-name>Using noembed with embed</short-name></technique>
+<technique class="html" id="H48"><short-name>Using ol, ul and dl for lists</short-name></technique>
+<technique class="html" id="H49"><short-name>Using semantic markup to mark emphasized or special text</short-name></technique>
+<technique class="html" id="H50"><short-name>Using structural elements to group links</short-name></technique>
+<technique class="html" id="H51"><short-name>Using table markup to present tabular information</short-name></technique>
+<technique class="html" id="H53"><short-name>Using the body of the object element</short-name></technique>
+<technique class="html" id="H54"><short-name>Using the dfn element to identify the defining instance of a word</short-name></technique>
+<technique class="html" id="H56"><short-name>Using the dir attribute on an inline element to resolve problems with nested directional runs</short-name></technique>
+<technique class="html" id="H57"><short-name>Using language attributes on the html element</short-name></technique>
+<technique class="html" id="H58"><short-name>Using language attributes to identify changes in the human language</short-name></technique>
+<technique class="html" id="H59"><short-name>Using the link element and navigation tools</short-name></technique>
+<technique class="html" id="H60"><short-name>Using the link element to link to a glossary</short-name></technique>
+<technique class="html" id="H62"><short-name>Using the ruby element</short-name></technique>
+<technique class="html" id="H63"><short-name>Using the scope attribute to associate header cells and data cells in data tables</short-name></technique>
+<technique class="html" id="H64"><short-name>Using the title attribute of the frame and iframe elements</short-name></technique>
+<technique class="html" id="H65"><short-name>Using the title attribute to identify form controls when the label element cannot be used</short-name></technique>
+<technique class="html" id="H67"><short-name>Using null alt text and no title attribute on img elements for images that AT should ignore</short-name></technique>
+<technique class="html" id="H69"><short-name>Providing heading elements at the beginning of each section of content</short-name></technique>
+<technique class="html" id="H70"><short-name>Using frame elements to group blocks of repeated material</short-name></technique>
+<technique class="html" id="H71"><short-name>Providing a description for groups of form controls using fieldset and legend elements</short-name></technique>
+<technique class="html" id="H73"><short-name>Using the summary attribute of the table element to give an overview of data tables</short-name></technique>
+<technique class="html" id="H74"><short-name>Ensuring that all id attribute values are unique for the document AND that opening and closing tags are used according to specification</short-name></technique>
+<technique class="html" id="H75"><short-name>Ensuring that all id attribute values are unique for the document AND that Web pages are well-formed</short-name></technique>
+<technique class="html" id="H76"><short-name>Using meta refresh to create an instant client-side redirect</short-name></technique>
+<technique class="html" id="H77"><short-name>Identifying the purpose of a link using link text combined with its enclosing list item</short-name></technique>
+<technique class="html" id="H78"><short-name>Identifying the purpose of a link using link text combined with its enclosing paragraph</short-name></technique>
+<technique class="html" id="H79"><short-name>Identifying the purpose of a link using link text combined with its enclosing table cell and associated table headings</short-name></technique>
+<technique class="html" id="H80"><short-name>Identifying the purpose of a link using link text combined with the preceding heading element</short-name></technique>
+<technique class="html" id="H81"><short-name>Identifying the purpose of a link in a nested list using link text combined with the parent list item under which the list is nested</short-name></technique>
+<technique class="css" id="C6"><short-name>Positioning content based on structural markup</short-name></technique>
+<technique class="css" id="C7"><short-name>Using CSS to hide a portion of the link text </short-name></technique>
+<technique class="css" id="C8"><short-name>Using CSS letter-spacing to control spacing within a word</short-name></technique>
+<technique class="css" id="C9"><short-name>Using CSS to include decorative images</short-name></technique>
+<technique class="css" id="C12"><short-name>Using percent for font sizes</short-name></technique>
+<technique class="css" id="C13"><short-name>Using named font sizes</short-name></technique>
+<technique class="css" id="C14"><short-name>Using em units for font sizes</short-name></technique>
+<technique class="css" id="C15"><short-name>Using CSS to change the presentation of a user interface component when it receives focus</short-name></technique>
+<technique class="css" id="C16"><short-name>Changing the background color or border of the element with focus</short-name></technique>
+<technique class="css" id="C17"><short-name>Scaling form elements which contain text</short-name></technique>
+<technique class="client-side-script" id="SCR1"><short-name>Allowing the user to extend the default time limit</short-name></technique>
+<technique class="client-side-script" id="SCR14"><short-name>Using scripts to make nonessential alerts optional</short-name></technique>
+<technique class="client-side-script" id="SCR16"><short-name>Providing a script that warns the user a time limit is about to expire</short-name></technique>
+<technique class="client-side-script" id="SCR18"><short-name>Providing client-side validation and alert</short-name></technique>
+<technique class="client-side-script" id="SCR19"><short-name>Using an onchange event on a select element without causing a change of context</short-name></technique>
+<technique class="client-side-script" id="SCR20"><short-name>Using both keyboard and other device-specific functions</short-name></technique>
+<technique class="client-side-script" id="SCR21"><short-name>Using functions of the Document Object Model (DOM) to add content to a page</short-name></technique>
+<technique class="client-side-script" id="SCR22"><short-name>Using scripts to control blinking and stop it in three seconds or less</short-name></technique>
+<technique class="client-side-script" id="SCR24"><short-name>Using script to open a new window on user request</short-name></technique>
+<technique class="client-side-script" id="SCR25"><short-name>Using Dynamic Web Content Accessibility to programmatically identify form fields as required</short-name></technique>
+<technique class="client-side-script" id="SCR26"><short-name>Inserting dynamic content into the Document Object Model immediately following its trigger element</short-name></technique>
+<technique class="client-side-script" id="SCR27"><short-name>Reordering page sections using the Document Object Model</short-name></technique>
+<technique class="server-side-script" id="SVR1"><short-name>Implementing automatic redirects on the server side instead of on the client side</short-name></technique>
+<technique class="server-side-script" id="SVR2"><short-name>Using .htaccess to ensure that the only way to access non-conforming content is from conforming content</short-name></technique>
+<technique class="smil" id="SM1"><short-name>Adding extended audio description in SMIL 1.0</short-name></technique>
+<technique class="smil" id="SM2"><short-name>Adding extended audio description in SMIL 2.0</short-name></technique>
+<technique class="smil" id="SM6"><short-name>Providing audio description in SMIL 1.0</short-name></technique>
+<technique class="smil" id="SM7"><short-name>Providing audio description in SMIL 2.0</short-name></technique>
+<technique class="smil" id="SM11"><short-name>Providing captions through synchronized text streams in SMIL 1.0</short-name></technique>
+<technique class="smil" id="SM12"><short-name>Providing captions through synchronized text streams in SMIL 2.0</short-name></technique>
+<technique class="smil" id="SM13"><short-name>Providing sign language interpretation through synchronized video streams in SMIL 1.0</short-name></technique>
+<technique class="smil" id="SM14"><short-name>Providing sign language interpretation through synchronized video streams in SMIL 2.0</short-name></technique>
+<technique class="text" id="T1"><short-name>Using standard text formatting conventions for paragraphs</short-name></technique>
+<technique class="text" id="T2"><short-name>Using standard text formatting conventions for lists</short-name></technique>
+<technique class="text" id="T3"><short-name>Using standard text formatting conventions for headings</short-name></technique>
+<technique class="aria" id="ARIA1"><short-name>Using Accessible Rich Internet Application describedby property to provide a descriptive, programmatically determined label</short-name></technique>
+<technique class="aria" id="ARIA2"><short-name>Identifying required fields with the "required" property</short-name></technique>
+<technique class="aria" id="ARIA3"><short-name>Identifying valid range information with the "valuemin" and "valuemax" properties</short-name></technique>
+<technique class="aria" id="ARIA4"><short-name>Using Accessible Rich Internet Applications to programmatically identify form fields as required</short-name></technique>
+<technique class="failures" id="F1"><short-name>Failure of Success Criterion 1.3.2 due to changing the meaning of content by positioning information with CSS</short-name></technique>
+<technique class="failures" id="F2"><short-name>Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</short-name></technique>
+<technique class="failures" id="F3"><short-name>Failure of Success Criterion 1.1.1 due to using CSS to include images that convey important information</short-name></technique>
+<technique class="failures" id="F4"><short-name>Failure of Success Criterion 2.2.2 due to using text-decoration:blink without a mechanism to stop it in less than three seconds</short-name></technique>
+<technique class="failures" id="F7"><short-name>Failure of Success Criterion 2.2.2 due to an object or applet, such as Java or Flash, that has blinking content without a mechanism to pause the content that blinks for more than three seconds</short-name></technique>
+<technique class="failures" id="F8"><short-name>Failure of Success Criterion 1.2.1 due to captions omitting some dialogue or important sound effects</short-name></technique>
+<technique class="failures" id="F9"><short-name>Failure of Success Criterion 3.2.5 due to changing the context when the user removes focus from a form element</short-name></technique>
+<technique class="failures" id="F10"><short-name>Failure of Success Criterion 2.1.2 and Conformance Requirement 5 due to combining multiple content formats in a way that traps users inside one format type</short-name></technique>
+<technique class="failures" id="F12"><short-name>Failure of Success Criterion 2.2.5 due to having a session time limit without a mechanism for saving user's input and re-establishing that information upon re-authentication</short-name></technique>
+<technique class="failures" id="F13"><short-name>Failure of Success Criterion 1.4.1 due to having a text alternative that does not include information that is conveyed by color differences in the image</short-name></technique>
+<technique class="failures" id="F14"><short-name>Failure of Success Criterion 1.3.3 due to identifying content only by its shape or location</short-name></technique>
+<technique class="failures" id="F15"><short-name>Failure of Success Criterion 4.1.2 due to implementing custom controls that do not use an accessibility API for the technology, or do so incompletely</short-name></technique>
+<technique class="failures" id="F16"><short-name>Failure of Success Criterion 2.2.2 due to including scrolling content where movement is not essential to the activity without also including a mechanism to pause and restart the content</short-name></technique>
+<technique class="failures" id="F17"><short-name>Failure of Success Criterion 1.3.1 and 4.1.1 due to insufficient information in DOM to determine one-to-one relationships (e.g., between labels with same id) in HTML</short-name></technique>
+<technique class="failures" id="F19"><short-name>Failure of Conformance Requirement 1 due to not providing a method for the user to find the alternative conforming version of a non-conforming Web page</short-name></technique>
+<technique class="failures" id="F20"><short-name>Failure of Success Criterion 1.1.1 and 4.1.2 due to not updating text alternatives when changes to non-text content occur</short-name></technique>
+<technique class="failures" id="F22"><short-name>Failure of Success Criterion 3.2.5 due to opening windows that are not requested by the user</short-name></technique>
+<technique class="failures" id="F23"><short-name>Failure of  1.4.2 due to playing a sound longer than 3 seconds where there is no mechanism to turn it off</short-name></technique>
+<technique class="failures" id="F24"><short-name>Failure of Success Criterion 1.4.3 and 1.4.6 due to specifying foreground colors without specifying background colors or vice versa</short-name></technique>
+<technique class="failures" id="F25"><short-name>Failure of Success Criterion 2.4.2 due to the title of a Web page not identifying the contents</short-name></technique>
+<technique class="failures" id="F26"><short-name>Failure of Success Criterion 1.3.3 due to using a graphical symbol alone to convey information</short-name></technique>
+<technique class="failures" id="F30"><short-name>Failure of Success Criterion 1.1.1 due to using text alternatives that are not alternatives (e.g. filenames or placeholder text)</short-name></technique>
+<technique class="failures" id="F31"><short-name>Failure of Success Criterion 3.2.4 due to using two different labels for the same function on different Web pages within a set of Web pages</short-name></technique>
+<technique class="failures" id="F32"><short-name>Failure of Success Criterion 1.3.2 due to using white space characters to control spacing within a word</short-name></technique>
+<technique class="failures" id="F33"><short-name>Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to create multiple columns in plain text content</short-name></technique>
+<technique class="failures" id="F34"><short-name>Failure of Success Criterion 1.3.1 and 1.3.2 due to using white space characters to format tables in plain text content</short-name></technique>
+<technique class="failures" id="F36"><short-name>Failure of Success Criterion 3.2.2 due to automatically submitting a form and presenting new content without prior warning when the last field in the form is given a value</short-name></technique>
+<technique class="failures" id="F37"><short-name>Failure of Success Criterion 3.2.2 due to launching a new window without prior warning when the status of a radio button, check box or select list is changed</short-name></technique>
+<technique class="failures" id="F38"><short-name>Failure of Success Criterion 1.1.1 due to omitting the alt-attribute for non-text content used for decorative purposes only in HTML</short-name></technique>
+<technique class="failures" id="F39"><short-name>Failure of Success Criterion 1.1.1 due to providing a text alternative that is not null. (e.g. alt="spacer" or alt="image") for images that should be ignored by assistive technology</short-name></technique>
+<technique class="failures" id="F40"><short-name>Failure of Success Criterion 2.2.1 and 2.2.4 due to using meta redirect with a time limit</short-name></technique>
+<technique class="failures" id="F41"><short-name>Failure of Success Criterion 2.2.1, 2.2.4, and 3.2.5 due to using meta refresh with a time-out</short-name></technique>
+<technique class="failures" id="F42"><short-name>Failure of Success Criterion 1.3.1 and 2.1.1 due to using scripting events to emulate links</short-name></technique>
+<technique class="failures" id="F43"><short-name>Failure of Success Criterion 1.3.1 due to using structural markup in a way that does not represent relationships in the content</short-name></technique>
+<technique class="failures" id="F44"><short-name>Failure of Success Criterion 2.4.3 due to using tabindex to create a tab order that does not preserve meaning and operability</short-name></technique>
+<technique class="failures" id="F46"><short-name>Failure of Success Criterion 1.3.1 due to using th elements, caption elements, or non-empty summary attributes in layout tables</short-name></technique>
+<technique class="failures" id="F47"><short-name>Failure of Success Criterion 2.2.2 due to using the blink element</short-name></technique>
+<technique class="failures" id="F48"><short-name>Failure of Success Criterion 1.3.1 due to using the pre element to markup tabular information</short-name></technique>
+<technique class="failures" id="F49"><short-name>Failure of Success Criterion 1.3.2 due to using an HTML layout table that does not make sense when linearized</short-name></technique>
+<technique class="failures" id="F50"><short-name>Failure of Success Criterion 2.2.2 due to a script that causes a blink effect without a mechanism to stop the blinking at 3 seconds or less</short-name></technique>
+<technique class="failures" id="F52"><short-name>Failure of Success Criterion 3.2.1 due to opening a new window as soon as a new page is loaded without prior warning</short-name></technique>
+<technique class="failures" id="F54"><short-name>Failure of Success Criterion 2.1.1 due to using only pointing-device-specific event handlers (including gesture) for a function</short-name></technique>
+<technique class="failures" id="F55"><short-name>Failure of Success Criteria 2.1.1, 2.4.7, and 3.2.1 due to using script to remove focus when focus is received</short-name></technique>
+<technique class="failures" id="F58"><short-name>Failure of Success Criterion 2.2.1 due to using server-side techniques to automatically redirect pages after a time-out</short-name></technique>
+<technique class="failures" id="F59"><short-name>Failure of Success Criterion 4.1.2 due to using script to make div or span a user interface control in HTML</short-name></technique>
+<technique class="failures" id="F60"><short-name>Failure of Success Criterion 3.2.5 due to launching a new window when a user enters text into an input field</short-name></technique>
+<technique class="failures" id="F61"><short-name>Failure of Success Criterion 3.2.5 due to complete change of main content through an automatic update that the user cannot disable from within the content</short-name></technique>
+<technique class="failures" id="F62"><short-name>Failure of Success Criterion 1.3.1 and 4.1.1 due to insufficient information in DOM to determine specific relationships in XML</short-name></technique>
+<technique class="failures" id="F63"><short-name>Failure of Success Criterion 2.4.4 due to providing link context only in content that is not related to the link</short-name></technique>
+<technique class="failures" id="F64"><short-name>Failure of Success Criterion 1.3.1 due to using changes in text presentation to convey information without using the appropriate markup or text</short-name></technique>
+<technique class="failures" id="F65"><short-name>Failure of Success Criterion 1.1.1 due to omitting the alt attribute on img elements, area elements, and input elements of type "image"</short-name></technique>
+<technique class="failures" id="F66"><short-name>Failure of Success Criterion 3.2.3 due to presenting navigation links in a different relative order on different pages</short-name></technique>
+<technique class="failures" id="F67"><short-name>Failure of Success Criterion 1.1.1 due to providing long description for non-text content that does not serve the same purpose or does not present the same information</short-name></technique>
+<technique class="failures" id="F68"><short-name>Failure of Success Criterion 1.3.1 and 4.1.2 due to the association of label and user interface controls not being programmatically determinable</short-name></technique>
+<technique class="failures" id="F69"><short-name>Failure of Success Criterion 1.4.4 when resizing visually rendered text up to 200 percent causes the text, image or controls to be clipped, truncated or obscured</short-name></technique>
+<technique class="failures" id="F70"><short-name>Failure of Success Criterion 4.1.1 due to incorrect use of start and end tags or attribute markup</short-name></technique>
+<technique class="failures" id="F71"><short-name>Failure of Success Criterion 1.1.1 due to using text look-alikes to represent text without providing a text alternative</short-name></technique>
+<technique class="failures" id="F72"><short-name>Failure of Success Criterion 1.1.1 due to using ASCII art without providing a text alternative</short-name></technique>
+<technique class="failures" id="F73"><short-name>Failure of Success Criterion 1.4.1 due to creating links that are not visually evident without color vision</short-name></technique>
+<technique class="failures" id="F74"><short-name>Failure of  SC1.2.1 and 1.2.7 due to not labeling a synchronized media alternative to text as an alternative</short-name></technique>
+<technique class="failures" id="F75"><short-name>Failure of Success Criterion 1.2.1 by providing synchronized media without captions when the synchronized media presents more information than is presented on the page</short-name></technique>
+<technique class="failures" id="F76"><short-name>Failure of 3.2.2 due to providing instruction material about the change of context by change of setting in an user interface element at a location that users may bypass</short-name></technique>
+<technique class="failures" id="F77"><short-name>Failure of Success Criterion 4.1.1 due to duplicate values of type ID</short-name></technique>
+<technique class="failures" id="F78"><short-name>Failure of Success Criterion 2.4.7 due to styling element outlines and borders in a way that overrides or renders non-visible the default visual focus indicator</short-name></technique>
+<technique class="failures" id="F79"><short-name>Failure of Success Criterion 4.1.2 due to the focus state of a user interface component not being programmatically determinable or no notification of change of focus state available</short-name></technique>
+<technique class="failures" id="F80"><short-name>Failure of Success Criterion 1.4.4 when text-based form controls do not resize when visually rendered text is resized up to 200%</short-name></technique>
+<technique class="failures" id="F81"><short-name>Failure of Success Criterion 1.4.1 due to identifying required or error fields using color differences only</short-name></technique>
+<technique class="failures" id="F82"><short-name>Failure of Success Criterion 3.3.2 by visually formatting a set of phone number fields but not including a text label</short-name></technique>
+<technique class="failures" id="F83"><short-name>Failure of Success Criterion 1.4.3 and 1.4.6 due to using background images that do not provide sufficient contrast with foreground text (or images of text)</short-name></technique>
+<technique class="failures" id="F84"><short-name>Failure of Success Criterion 2.4.9 due to using a non-specific link such as "click here" or "more" without a mechanism to change the link text to specific text.</short-name></technique>
+<technique class="failures" id="F85"><short-name>Failure of Success Criterion 2.4.3 due to using dialogs or menus that are not adjacent to their trigger control in the sequential navigation order</short-name></technique>
+</techniquesList>

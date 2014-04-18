@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<!-- edited with jEdit 4.2 (http://www.jedit.org) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<!-- !DOCTYPE xs:schema PUBLIC "-//W3C//DTD XMLSCHEMA 200102//EN" "http://www.w3.org/2001/XMLSchema.dtd"-->
+<xs:schema xmlns="http://bentoweb.org/refs/TCDL1.1" xmlns:btw="http://bentoweb.org/refs/TCDL1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" targetNamespace="http://bentoweb.org/refs/TCDL1.1" elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+  <!-- The XML Schema for XML Schema 1.0 is at http://www.w3.org/2001/XMLSchema.xsd -->
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="http://dublincore.org/schemas/xmls/simpledc20021212.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd"/>
+  <!-- There is no normative schema for XLink; see http://www.w3.org/TR/2001/REC-xlink-20010627/#sample-dtd-appx -->
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://bentoweb.org/refs/schemas/xlink.xsd"/>
+  <xs:element name="testCaseDescription">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">A test case is a file or set of files that demonstrate how markup in a specific technology may pass or fail with regard to a <acronym>WCAG</acronym> checkpoint (<acronym>WCAG</acronym> 1.0) or success criterion (<acronym>WCAG</acronym> 2.0).</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="formalMetadata">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              <p xmlns="http://www.w3.org/1999/xhtml">Formal metadata are "administrative" information (as opposed to semantic metadata).</p>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" type="htmlInline">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">A summary of the test materials and how they are to be used in the test case. The description indicates to the accessibility expert/scenario author what to expect and what will happen when a user interacts with the test materials. The description of the behaviour is especially important for test materials with interactive components such as forms.</p>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="title" type="htmlInline">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">A title for the test case. It does not need to be unique and its lenght can vary depending on the complexity of the test materials.</p>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element ref="dc:creator"/>
+              <xs:element ref="dc:language"/>
+              <xs:element ref="dc:rights"/>
+              <xs:element name="date">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">Date in ISO 8601 format: yyyy-mm-dd. Note: the restriction (start date and end date of BenToWeb) was added for internal use only, but should be removed when <acronym>TCDL</acronym> is submitted to <acronym>W3C</acronym> or elsewhere.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:date">
+                    <xs:minInclusive value="2004-10-01"/>
+                    <xs:maxInclusive value="2008-01-30"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" type="TestCaseStatus">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">One of an enumerated list of values that can be used to track the state of a test case at a given time. See <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#status-def">Status in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.</p>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="version" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier that allows one to distinguish between different revisions of a test case. See <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#version-def">Version in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.</p>
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="source" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The <code>source</code> element must be used if the test case is borrowed from an existing test suite.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="testSuite">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The test suite from which the test case is borrowed.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name" type="htmlInline">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">The name of the test suite. Use the name provided by the developers of the test suite.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="xlink:href"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sourceFile">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The original file that was borrowed.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="dc:creator"/>
+                        </xs:sequence>
+                        <xs:attribute name="changed" type="xs:boolean" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              <p xmlns="http://www.w3.org/1999/xhtml">Indicate whether the borrowed file was modified before inclusion. Even a small change such as conversion from <acronym>HTML</acronym> 4.01 to <acronym>XHTML</acronym> 1.0 counts as a change.</p>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute ref="xlink:href" use="required"/>
+                        <!-- deleted: type="xs:anyURI"  -->
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="dc:rights" minOccurs="0"/>
+                    <!--xs:element name="rights" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en"><p xmlns="http://www.w3.org/1999/xhtml">A description of copyright and <acronym>IPR</acronym> issues.</p></xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element-->
+                    <xs:element name="comment" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">General purpose container for comments on the borrowed materials, such as changes that were performed, errors that were found etcetera.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="xml:lang" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="technology">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              <p xmlns="http://www.w3.org/1999/xhtml">A description of the features of the file format of the test case.</p>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="recommendation" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file format (proprietary,  <acronym>W3C</acronym> recommendation or other) of the test case. There is one <code>recommendation</code> element for each file format used by the test case.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="label" type="htmlInline">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The name of the file format.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="testElements" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">A description of the elements or features used by the test case. This element can be omitted for binary formats (<acronym>PDF</acronym>, Flash, &#8230;).</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="testElement" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">A description of a specific element or feature. There is one <code>testElement</code> for each feature. For <acronym>CSS</acronym>, provide the name of the rule, selector, property, property value, &#8230; For proprietary elements and attributes (Microsoft's <code>bgsound</code>, Netscape's <code>embed</code>, etcetera), provide a link to the company's documentation.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    <p xmlns="http://www.w3.org/1999/xhtml">Choose between <code>specReference</code> and <code>specQuote</code>. Using <code>specReference</code> is preferred.</p>
+                                  </xs:documentation>
+                                </xs:annotation>
+                                <xs:element name="elementName">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">The name of the element or feature.</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:attribute name="localname" type="xs:string" use="required"/>
+                                    <xs:attribute name="namespace" type="xs:anyURI" use="optional"/>
+                                    <xs:attribute ref="xml:lang" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:choice>
+                                  <xs:element name="specReference" minOccurs="0">
+                                    <xs:annotation>
+                                      <xs:documentation xml:lang="en">
+                                        <p xmlns="http://www.w3.org/1999/xhtml">The title of the relevant section in the specification. Use the title provided by the specification wherever possible; otherwise provide a succinct and meaningful title for the relevant section in the specification.</p>
+                                      </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType mixed="true">
+                                      <xs:complexContent mixed="true">
+                                        <xs:extension base="htmlInline">
+                                          <xs:attribute ref="xlink:href"/>
+                                        </xs:extension>
+                                      </xs:complexContent>
+                                    </xs:complexType>
+                                  </xs:element>
+                                  <xs:element name="specQuote" type="htmlInline" minOccurs="0">
+                                    <xs:annotation>
+                                      <xs:documentation xml:lang="en">
+                                        <p xmlns="http://www.w3.org/1999/xhtml">A quote from the relevant section of the specification. <code>specQuote</code> can be used if it is not possible to provide an exact pointer to the relevant section in the specification.</p>
+                                      </xs:documentation>
+                                    </xs:annotation>
+                                  </xs:element>
+                                </xs:choice>
+                              </xs:sequence>
+                              <xs:attribute name="baseline" type="baselineInfo" use="optional" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute ref="xlink:href"/>
+                  <xs:attribute name="baseline" type="baselineInfo" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="testCase">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              <p xmlns="http://www.w3.org/1999/xhtml">Describes what is necessary for the evaluation of the test case.</p>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="purpose">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The intention of the test materials. The purpose contains an explanation of the expected evaluation result in regard to the relevant rules, checkpoints or success criteria. It does not need to repeat the rule or success criterion. (Strictly speaking, this goes beyond the <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#purpose-def">Purpose in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.)</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="expertGuidance" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">Guidance to accessibility experts for evaluating the test case.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="validators" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The validators who evaluate the test case, create scenarios and move the test case forward through the validation process.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="validator1" minOccurs="0" maxOccurs="1" type="xs:string">
+                      <xs:annotation>
+                      	<xs:documentation>
+                      	  <p xmlns="http://www.w3.org/1999/xhtml">The first validator in the validation process, who checks the work of the test case author.</p>
+                      	</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="validator2" minOccurs="0" maxOccurs="1" type="xs:string">
+                      <xs:annotation>
+                      	<xs:documentation>
+                      	  <p xmlns="http://www.w3.org/1999/xhtml">The second validator in the validation process, who checks the work of the test case author and the first validator.</p>
+                      	</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="preconditions" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">Conditions that must be met before this test is executed. See <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#preconditions-def">Preconditions in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="requiredTests">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="testModes">
+                      <xs:annotation>
+                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The test modes for the test case. Combinations of test modes can be defined by repeating the <code>testMode</code> element, each time with a different value.
+                            However, this should be avoided.
+                            Note that this is <strong>not</strong> the test mode for validating the test case for inclusion in the test suite, but the test mode that that is recommended to external users of the BenToWeb test suite when evaluating a test case.
+                          </p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="testMode" type="requiredTestMode" maxOccurs="4"><!-- @@ only 1 testMode in practice! -->
+                            <xs:annotation>
+                              <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="validationMode" minOccurs="0" maxOccurs="1" type="xs:string" fixed="enduser"><!-- @@ Must be optional because of validity of test cases in test suites 1 and 2. -->
+                      <xs:annotation><!-- Valid instances: <validationMode/>, <validationMode></validationMode>, <validationMode>enduser</validationMode> (cf. Walmsley p. 131). -->
+                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The method for validating the test case (internal, not for publication).</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="scenario" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">Scenarios describe what combinations of technologies and experience a test case should be evaluated with. (Scenarios need not be defined for automatic testing.)</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="dc:creator" minOccurs="0"/>
+                          <xs:element name="scenarioNotes" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">Container for any kind of notes on the scenario, for example, its purpose.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                              <xs:attribute ref="xml:lang" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="userGuidance" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">Additional guidance to the end user who evaluates the test case, especially with regard to the configuration of their user agent and/or assistive technology. The <code>xml:lang</code> attribute is required. The languages should match those used for questions.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                              </xs:sequence>
+                              <xs:attribute ref="xml:lang" use="required"/>
+                              <!-- deleted: type="xs:language"   -->
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="questions">
+                            <xs:annotation>
+                              <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">One or more question that can be presented to a human evaluator (an end user) to evaluate a test case. There should be one question or set of questions per language represented in the evaluation panel. The <code>xml:lang</code> attribute is required.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:choice>
+                                <xs:element name="yesNoQuestion">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">A yes-no-question, with a third option (for options such as "Don't know", "Not applicable", etcetera).</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="questionText" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="optionYes">
+                                        <xs:annotation>
+                                          <xs:appinfo>invisible</xs:appinfo>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">(Provided for forward compatibility: if it should ever be necessary to provide a string other than 'Yes', this will need to be localised, hence the <code>xml:lang</code> attribute.)</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:attribute name="value" use="required">
+                                            <xs:annotation>
+                                              <xs:appinfo>nonZeroInteger editable</xs:appinfo>
+                                              <xs:documentation>
+                                                <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server if the user chooses 'Yes'. This value must be a positive integer if 'Yes' is the correct or expected answer, and a negative integer if 'Yes' is not correct or expected. Zero must not be used as a value.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType id="yesNoQuestion_Yes_value">
+                                              <xs:restriction base="xs:integer">
+                                                <!--xs:pattern value="^0"/-->
+                                              </xs:restriction>
+                                              <!--xs:union>
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:integer">
+                                                    <xs:minExclusive value="0" />
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                                <xs:simpleType>
+                                                  <xs:restriction base="xs:integer">
+                                                    <xs:maxExclusive value="0" />
+                                                  </xs:restriction>
+                                                </xs:simpleType>
+                                              </xs:union-->
+                                              <!--xs:union memberTypes="xs:nonNegativeInteger xs:nonPositiveInteger"/-->
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute ref="xml:lang" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="optionNo">
+                                        <xs:annotation>
+                                          <xs:appinfo>invisible</xs:appinfo>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">(Provided for forward compatibility: if it should ever be necessary to provide a string other than 'No', this will need to be localised, hence the <code>xml:lang</code> attribute.)</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:attribute name="value" use="required">
+                                            <xs:annotation>
+                                              <xs:appinfo>nonZeroInteger editable</xs:appinfo>
+                                              <xs:documentation>
+                                                <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server if the user chooses 'No'. This value must be a positive integer if 'No' is the correct or expected answer, and a negative integer if 'No' is not correct or expected. Zero must not be used as a value.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType id="yesNoQuestion_No_value">
+                                              <xs:restriction base="xs:integer">
+                                                <!--xs:pattern value="^0"/-->
+                                              </xs:restriction>
+                                              <!--xs:union memberTypes="xs:nonNegativeInteger xs:nonPositiveInteger"/-->
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute ref="xml:lang" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="optionOther" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">Alternative for &#8220;yes&#8221; or &#8220;no&#8221;, for example &#8220;I don't know&#8221; or &#8220;Other&#8221;. If this element is used, there is one &#8220;other option&#8221; for each language.</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                                          </xs:sequence>
+                                          <xs:attribute ref="xml:lang" use="required"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="likertScale">
+                                  <xs:annotation>
+                                    <xs:documentation source="http://www.usabilityfirst.com/glossary/main.cgi?function=display_term&amp;term_id=968" xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">A Likert scale is a type of survey question where respondents are asked to rate the level at which they agree or disagree with a given statement.</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="questionText" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="likertLevel" minOccurs="5" maxOccurs="5">
+                                        <!-- Constrained to five for BenToWeb, but other projects or test suite may required more flexibility. -->
+                                        <!-- @TODO make choices referenceable type, reused by Likert scale and multiple choice -->
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="label" maxOccurs="unbounded">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The label associated with the choice. (One per language).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                              <!-- changed from name="label" ref="htmlInline"  -->
+                                            </xs:element>
+                                            <xs:element name="value" type="xs:string">
+                                              <xs:annotation>
+                                                <xs:appinfo>uniqueValue</xs:appinfo><!-- @todo how to enforce uniqueness ??? -->
+                                                <xs:documentation xml:lang="en">
+                                                  <!-- @???? also use postive/negative convention here ? Assuming no. -->
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server; each level in a Likert scale or in a multiple choice question must have a unique value.</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="number" use="required">
+                                            <xs:annotation>
+                                              <xs:appinfo>autoNumber</xs:appinfo>
+                                              <xs:documentation xml:lang="en">
+                                                <p xmlns="http://www.w3.org/1999/xhtml">Numbering from 1 to 5.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                            <!--  type="xs:integer" : removed in favour of simpleType -->
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:positiveInteger">
+                                                <xs:maxInclusive value="5"/>
+                                                <!-- XML Spy may complain that '5' is not allowed here !? -->
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="display" use="required">
+                                      <xs:annotation>
+                                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                        <xs:documentation xml:lang="en">
+                                          <p xmlns="http://www.w3.org/1999/xhtml">Defines how a list of choices is displayed: vertically, horizontally or as a drop-down list. The default is vertical (for greater accessibility to screen readers). Dropdowns are not recommended if more than one choice needs to be selected.</p>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="vertical"/>
+                                          <xs:enumeration value="horizontal"/>
+                                          <xs:enumeration value="dropdown"/>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="multipleChoice">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">A multiple choice question (strictly a generalisation of Likert scale). It is possible to limit the number of responses to one (for radio buttons) or to allow multiple reponses (for check boxes).</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="questionText" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="choice" minOccurs="2" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="label" maxOccurs="unbounded">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The label associated with the choice. (One per language).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="value">
+                                              <xs:annotation>
+                                                <xs:appinfo>uniqueValue</xs:appinfo><!-- @todo how to enforce uniqueness ??? -->
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server. This value must be a positive integer for the correct or expected answer, and a negative integer for the incorrect or unexpected answers.  Each integer (positive or negative) must be uniqe and must not be zero.</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                              <xs:simpleType id="multiChoice_value">
+                                                <!--xs:union memberTypes="xs:nonNegativeInteger xs:nonPositiveInteger"/-->
+                                                <xs:restriction base="xs:integer">
+                                                  <!--xs:pattern value="^0"/-->
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="number" type="xs:positiveInteger">
+                                            <xs:annotation>
+                                              <xs:appinfo>autoNumber</xs:appinfo>
+                                              <xs:documentation xml:lang="en">
+                                                <p xmlns="http://www.w3.org/1999/xhtml">Numbering/order of the choices.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                          </xs:attribute>
+                                          <xs:attribute name="display">
+                                            <xs:simpleType>
+                                              <xs:restriction base="xs:string">
+                                                <xs:enumeration value="vertical"/>
+                                                <xs:enumeration value="horizontal"/>
+                                                <xs:enumeration value="dropdown"/>
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="select" use="required">
+                                      <xs:annotation>
+                                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                        <xs:documentation xml:lang="en">
+                                          <p xmlns="http://www.w3.org/1999/xhtml">Defines whether the user can select one or multiple choices (i.e. one radio button versus multiple check boxes).</p>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="one"/>
+                                          <xs:enumeration value="multiple"/>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="display" use="required">
+                                      <xs:annotation>
+                                        <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                        <xs:documentation xml:lang="en">
+                                          <p xmlns="http://www.w3.org/1999/xhtml">Defines how a list of choices is displayed: vertically, horizontally or as a drop-down list. The default is vertical (for greater accessibility to screen readers). Dropdowns are not recommended if more than one choice needs to be selected.</p>
+                                        </xs:documentation>
+                                      </xs:annotation>
+                                      <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                          <xs:enumeration value="vertical"/>
+                                          <xs:enumeration value="horizontal"/>
+                                          <xs:enumeration value="dropdown"/>
+                                        </xs:restriction>
+                                      </xs:simpleType>
+                                    </xs:attribute>
+                                    <!-- @TODO make choices referenceable type, reused by Likert scale and multiple choice -->
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="openQuestion">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">An open question, which the user can answer in a textarea.</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="questionText" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="space">
+                                        <xs:annotation>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">Size of space on the form for the user's answer. Limiting the amount ot space can encourage respondents to prioritise their points. (Different languages have different space requirements; some need more space than English!)</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="rows" type="xs:positiveInteger">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The height of the text area (number of rows or lines).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="columns" type="xs:positiveInteger">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The width of the text area (number of columns, or characters per line).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute ref="xml:lang" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="yesNoOpenQuestion">
+                                  <xs:annotation>
+                                    <xs:documentation xml:lang="en">
+                                      <p xmlns="http://www.w3.org/1999/xhtml">A yes-no-question, with a third option (for options such as "Don't know", "Not applicable", etcetera) and an open question.</p>
+                                    </xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element ref="questionText" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="optionYes">
+                                        <xs:annotation>
+                                          <xs:appinfo>invisible</xs:appinfo>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">(Provided for forward compatibility: if it should ever be necessary to provide a string other than 'Yes', this will need to be localised, hence the <code>xml:lang</code> attribute.)</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:attribute name="value" use="required">
+                                            <xs:annotation>
+                                              <xs:appinfo>nonZeroInteger editable</xs:appinfo>
+                                              <xs:documentation>
+                                                <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server if the user chooses 'Yes'. This value must be a positive integer if 'Yes' is the correct or expected answer, and a negative integer if 'Yes' is not correct or expected. Zero must not be used as a value.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType id="yesNoOpenQuestion_Yes_value">
+                                              <!--xs:union memberTypes="xs:nonNegativeInteger xs:nonPositiveInteger"/-->
+                                              <xs:restriction base="xs:integer">
+                                                <!--xs:pattern value="^0"/-->
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute ref="xml:lang" use="optional"/>
+                                          <!--xs:attribute name="value" type="xs:string" use="required" fixed="yes"/-->
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="optionNo">
+                                        <xs:annotation>
+                                          <xs:appinfo>invisible</xs:appinfo>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">(Provided for forward compatibility: if it should ever be necessary to provide a string other than 'No', this will need to be localised, hence the <code>xml:lang</code> attribute.)</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:attribute name="value" use="required">
+                                            <xs:annotation>
+                                              <xs:appinfo>nonZeroInteger editable</xs:appinfo>
+                                              <xs:documentation>
+                                                <p xmlns="http://www.w3.org/1999/xhtml">The value submitted to the server if the user chooses 'No'. This value must be a positive integer if 'No' is the correct or expected answer, and a negative integer if 'No' is not correct or expected. Zero must not be used as a value.</p>
+                                              </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType id="yesNoOpenQuestion_No_value">
+                                              <!--xs:union memberTypes="xs:nonNegativeInteger xs:nonPositiveInteger"/-->
+                                              <xs:restriction base="xs:integer">
+                                                <!--xs:pattern value="^0"/-->
+                                              </xs:restriction>
+                                            </xs:simpleType>
+                                          </xs:attribute>
+                                          <xs:attribute ref="xml:lang" use="optional"/>
+                                          <!--xs:attribute name="value" type="xs:string" use="required" fixed="no"/-->
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="optionOther" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">Alternative for &#8220;yes&#8221; or &#8220;no&#8221;, for example &#8220;I don't know&#8221; or &#8220;Other&#8221;. There is one &#8220;other option&#8221; for each language.</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                                          </xs:sequence>
+                                          <xs:attribute ref="xml:lang" use="required"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element ref="questionText" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:annotation>
+                                          <xs:appinfo>editableEvaluationTeam onePerLanguage</xs:appinfo>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="space">
+                                        <xs:annotation>
+                                          <xs:documentation xml:lang="en">
+                                            <p xmlns="http://www.w3.org/1999/xhtml">Defines the space on the form, usually a textarea, that allows a user to explain why the third option was chosen instead of &#8220;yes&#8221; or &#8220;no&#8221;. Limiting the amount ot space can encourage respondents to prioritise their points.</p>
+                                          </xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="rows" type="xs:positiveInteger">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The height of the text area (number of rows or lines).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="columns" type="xs:positiveInteger">
+                                              <xs:annotation>
+                                                <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                                <xs:documentation xml:lang="en">
+                                                  <p xmlns="http://www.w3.org/1999/xhtml">The width of the text area (number of columns, or characters per line).</p>
+                                                </xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:choice>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="experience">
+                            <xs:annotation>
+                              <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">A user's level of experience with the specified technologies. There are three categories of technologies: assistive technologies, user agents and devices. User agent also covers browser plugins.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="AssistiveTechnology" type="AssistiveTechnologies" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="UserAgent" type="UserAgents" maxOccurs="unbounded"/>
+                                <xs:element name="Device" type="Devices" minOccurs="0" maxOccurs="1"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="disabilities" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">One or more disabilities (select from a list).</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="disability" type="disabilityType" maxOccurs="unbounded">
+                                  <xs:annotation>
+                                    <xs:appinfo>editableEvaluationTeam</xs:appinfo>
+                                  </xs:annotation>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:ID"/>
+                        <xs:attribute name="name" type="xs:string" use="optional">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              <p xmlns="http://www.w3.org/1999/xhtml">A short name that allows more user-friendly identification of scenarios then ID values.</p>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="files">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file or files that make up  the test case. Usually there is only one file, but some checkpoints or success criteria, e.g. those on consistent navigation, consistent style etc, require a set of files. (In that case, we call the test case 'compound'.)</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="file" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="httpRequest" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="httpHeaders" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="header" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="name" type="xs:string" use="required"/>
+                                          <xs:attribute name="value" type="xs:string" use="required">
+                                            <xs:annotation>
+                                              <xs:documentation xml:lang="en">@TODO: (HTTP head value) can the type be refined?</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="httpBody" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="variable" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="name" type="xs:string" use="required">
+                                            <xs:annotation>
+                                              <xs:documentation xml:lang="en">@TODO: (HTTP body variable name) can the type be refined?</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:attribute>
+                                          <xs:attribute name="value" type="xs:string" use="required">
+                                            <xs:annotation>
+                                              <xs:documentation xml:lang="en">@TODO: (HTTP body variable value) can the type be refined?</xs:documentation>
+                                            </xs:annotation>
+                                          </xs:attribute>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <!--xs:attribute name="enctype" type="encoding" use="optional"/-->
+                              <!--xs:attribute name="mediatype" type="MIMEType" use="optional"/-->
+                              <xs:attribute name="method" type="httpMethod" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute ref="xlink:href"/>
+                        <xs:attribute name="hrefLang" type="xs:language">
+                          <xs:annotation>
+                            <xs:documentation source="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-hreflang" xml:lang="en">
+                              <p xmlns="http://www.w3.org/1999/xhtml">Language of the referenced resource (see <acronym>HTML</acronym>'s <code>hreflang</code> attribute).</p>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <!--xs:attribute ref="hrefLang"/-->
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="sequential" type="xs:boolean" use="optional" default="false">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        <p xmlns="http://www.w3.org/1999/xhtml">Indicates whether the order of the files (if there are several) matters for the evaluation of the test case. 'true' means that the files should be processed in the order in which they occur in the test case description. 'false' means that the files can be processed in random order. The default value is 'false'.</p>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="complexity" type="testcaseComplexity" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rules">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              <p xmlns="http://www.w3.org/1999/xhtml">Captures whether the test case is expected to fail or passes relevant 'rules' (<acronym>WCAG</acronym> 1.0 checkpoints, <acronym>WCAG</acronym> 2.0 success criteria, Section 508 rules, etc.) <strong>IMPORTANT NOTE: We only specify whether the test case passes or fails the (<acronym>WCAG</acronym> 2.0) rule under consideration, so a 'pass' may still mean that the test cases fails with regard to other rules</strong> (see http://lists.w3.org/Archives/Public/w3c-wai-gl/2005AprJun/0117.html ).</p>
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rule" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">
+                    <p xmlns="http://www.w3.org/1999/xhtml">A <acronym>WCAG</acronym> 1.0 checkpoint, <acronym>WCAG</acronym> 2.0 success criterion or Section 508 rule. In BenToWeb, we always refer to <acronym>WCAG</acronym> 2.0 success criteria; other 'rule sets' are strictly optional, so expected evaluation results for these other rules sets are purely auxiliary information.</p>
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="locations">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">The location or locations where relevant (especially faulty) code occurs.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="location" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation xml:lang="en">
+                                <p xmlns="http://www.w3.org/1999/xhtml">The location of the code. Sometimes a combination of features (markup, rules, etc.) constitute an error when taken together (even if these features are not errors when considered separately). In that case, there should be one location element per feature/error. Use at least XPath or a combination of line and column number.</p>
+                              </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:attribute ref="xlink:href" use="optional">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    <p xmlns="http://www.w3.org/1999/xhtml">The file where a (potential) issue is located.</p>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                              <xs:attribute name="line" type="xs:string" use="optional">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    <p xmlns="http://www.w3.org/1999/xhtml">Line number where the relevant code occurs. Use in combination with column.</p>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                              <xs:attribute name="column" type="xs:string" use="optional">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    <p xmlns="http://www.w3.org/1999/xhtml">Column number where the relevant code occurs. Use in combination with line. Note: use the "column number where the current document event ends" (for compatibility with <acronym title="Simple API for CSS">SAC</acronym>).</p>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                              <xs:attribute name="xpath" type="xs:string" use="optional">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="en">
+                                    <p xmlns="http://www.w3.org/1999/xhtml">XPath 1.0 expression, as defined in <a href="http://www.w3.org/TR/1999/REC-xpath-19991116.html">
+                                        <acronym>XML</acronym> Path Language (XPath) 1.0 - <acronym>W3C</acronym> Recommendation 16 November 1999</a>.</p>
+                                  </xs:documentation>
+                                </xs:annotation>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="expectedResult" type="expectedEvaluationResult" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                              <p xmlns="http://www.w3.org/1999/xhtml">Value indicating whether the test case is epected to pass or fail with regard to the 'rule'. 'cannotTell' is used if there is ambiguity of unclarity (e.g. dependence on the implementation or version of a user agent or assistive technology, ambiguity in the accessibilty rules or in the specification of the file format).</p>
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="functionalOutcome">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">A description of why the test case passes or fails in terms that are relevant to a user's experience (as apposed to technical comments on source code).</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="btw:p"/>
+                        </xs:sequence>
+                        <xs:attribute ref="xml:lang" use="optional"/>
+                        <!-- deleted: type="xs:language"   -->
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="techComment" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                          <p xmlns="http://www.w3.org/1999/xhtml">A technical description of why the test case passes or fails.</p>
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="btw:p" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                        <xs:attribute ref="xml:lang" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="primary" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        <p xmlns="http://www.w3.org/1999/xhtml">If more than one rule is listed, this attribute indicates whether a rule is the primary rule or an additional, informational rule. Primary rules have and AND relationship.</p>
+                      </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="yes"/>
+                        <xs:enumeration value="no"/>
+                        <xs:enumeration value="undefined"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="id" type="xs:anyURI" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        <p xmlns="http://www.w3.org/1999/xhtml">This is a pointer to a checkpoint (<acronym>WCAG</acronym> 1.0), success criterion (<acronym>WCAG</acronym> 2.0), rule (Section 508) etc described in ruleset.xml.</p>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="namespaceMappings" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="namespace" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="nsPrefix" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        <p xmlns="http://www.w3.org/1999/xhtml">Namespace prefix for the XPath expression. This attribute is required when an XPath expression is used. Note: the namespace prefix can be an empty string.</p>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="nsURI" type="xs:anyURI" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">
+                        <p xmlns="http://www.w3.org/1999/xhtml">Namespace <acronym>URI</acronym> for the XPath expression. This attribute is required when an XPath expression is used.</p>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p>A unique identifier for the test case description. The identifier must be unique in the test suite in which the test case belongs. The following is an example of a convention that ca be used in a test suite for <acronym>WCAG</acronym> 2.0: technology_wcag2_date_x.y_lz_scz_nnn, where </p>
+              <ul>
+                <li>technology = xhtml1 | xhtml2 | css2 | xforms1 | &#8230;;</li>
+                <li>wcag2 is constant;</li>
+                <li>date = date (of WCAG2 draft) in yyyymmdd format;</li>
+                <li>x.y = number of WCAG 2.0 guideline, e.g. 1.1, 1.2, &#8230;;</li>
+                <li>lz = WCAG 2.0 level: l1 | l2 | l3;</li>
+                <li>scz = number of WCAG 2.0 success criterion, e.g. sc1, sc2, &#8230;;</li>
+                <li>nnn = number of the test case, e.g. 001, 002, &#8230;. </li>
+              </ul>
+              <p>The ID for a <acronym>XHTML</acronym> test case for guideline 1.1 level 1 success criterion 1 may look like this: xhtml1_wcag2_20041119_1.1_l1_sc1_001.</p>
+            </div>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute ref="xml:lang" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="testcaseComplexity">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">A test case is atomic if it applies to only one checkpoint (<acronym>WCAG</acronym> 1.0) or success criterion (<acronym>WCAG</acronym> 2.0), or complex if it applies to multiple checkpoints or success criteria.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="atomic"/>
+      <xs:enumeration value="complex"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="requiredTestMode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>The test mode(s) required for this test case.
+        The choices are:</p>
+          <ul>
+            <li>"enduser" (for manual evaluation by end users -  for examples by means of scenarios);</li><!-- @@ not used in 3rd test suite. -->
+            <li>"oneExpert" (for trivial issues that can reliably be identified by just one accessibility expert);</li>
+            <li>"experts" (for evaluation by three or more experts);</li>
+            <li>"semi-automatic" (for evaluation by an accessibility evaluation tool where the tool can only give you a hint or a warning but that human judgement is necessary to confirm whether there is an accessibility issue or not).</li>
+            <li>"automatic" (for evaluation by an accessibility evaluation tool),</li>
+            <li>"unknown" (the decision on the test mode is still pending).</li>
+          </ul>
+          <p>Note: in BenToWeb, expert evaluation happens by default (in order to decide whether a test case needs to be evaluated by end user, automatically).</p>
+          <p>Note that there is no value for combinations of test modes: combinations can only be defined by repeating the element that specifies the test mode.</p>
+        </div>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="enduser"/><!-- @@ not used in 3rd test suite! -->
+      <xs:enumeration value="experts"/>
+      <xs:enumeration value="oneExpert"/>
+      <xs:enumeration value="automatic"/>
+      <xs:enumeration value="semi-automatic"/>
+      <xs:enumeration value="unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="minimumExperienceLevel">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">A scale from 1 (low/novice) to 5 (high/expert) that indicates a user's (required) experience.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="httpMethod">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">
+          <acronym>HTTP</acronym> method (not all allowed methods are relevant to test suites, namely 'TRACE', 'OPTIONS', 'DELETE', 'CONNECT').</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GET"/>
+      <xs:enumeration value="POST"/>
+      <xs:enumeration value="PUT"/>
+      <xs:enumeration value="HEAD"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MIMEType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">
+          <acronym>MIME</acronym> types @TODO complete [see 'encoding' below and list of <acronym>MIME</acronym> types at <a href="http://www.iana.org/assignments/media-types/">
+            <acronym>IANA</acronym>
+          </a>].</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="text/css"/>
+      <xs:enumeration value="text/csv"/>
+      <!--xs:enumeration value="text/ecmascript"/--><!-- obsolete -->
+      <!--xs:enumeration value="text/javascript"/--><!-- obsolete -->
+      <xs:enumeration value="text/html"/>
+      <xs:enumeration value="text/plain"/>
+      <xs:enumeration value="text/rfc822-headers"/>
+      <xs:enumeration value="text/richtext"/>
+      <xs:enumeration value="text/rtf"/>
+      <xs:enumeration value="text/sgml"/>
+      <xs:enumeration value="text/xml"/>
+      <xs:enumeration value="text/xml-external-parsed-entity"/>
+      <xs:enumeration value="text/troff"/>
+      <xs:enumeration value="text/uri-list"/>
+      <xs:enumeration value="application/pdf"/>
+      <xs:enumeration value="application/postscript"/>
+      <xs:enumeration value="application/rdf+xml"/>
+      <xs:enumeration value="application/rtf"/>
+      <xs:enumeration value="application/sgml"/>
+      <xs:enumeration value="application/soap+xml"/>
+      <xs:enumeration value="application/vnd.ms-works"/>
+      <xs:enumeration value="application/vnd.ms-wpl"/>
+      <xs:enumeration value="application/x-java"/>
+      <xs:enumeration value="application/javascript"/>
+      <xs:enumeration value="application/x-gzip"/>
+      <xs:enumeration value="application/x-msaccess"/>
+      <xs:enumeration value="application/x-msexcel"/>
+      <xs:enumeration value="application/x-zip"/>
+      <xs:enumeration value="application/xhtml+xml"/>
+      <xs:enumeration value="application/xml"/>
+      <xs:enumeration value="application/smil+xml"/>
+      <xs:enumeration value="application/xml-dtd"/>
+      <xs:enumeration value="application/xml-external-parsed-entity"/>
+      <xs:enumeration value="application/zip"/>
+      <xs:enumeration value="audio/dls"/><!-- MIDI cf. RFC 4613 -->
+      <xs:enumeration value="audio/MPA"/>
+      <xs:enumeration value="audio/MP4A-LATM"/>
+      <xs:enumeration value="audio/mpeg"/>
+      <xs:enumeration value="audio/mpeg4-generic"/>
+      <xs:enumeration value="audio/x-aiff"/>
+      <xs:enumeration value="audio/x-midi"/>
+      <xs:enumeration value="audio/x-mod"/>
+      <xs:enumeration value="audio/x-mp3"/>
+      <xs:enumeration value="audio/x-wav"/>
+      <xs:enumeration value="image/bmp"/>
+      <xs:enumeration value="image/cgm"/>
+      <xs:enumeration value="image/gif"/>
+      <xs:enumeration value="image/jpeg"/>
+      <xs:enumeration value="image/jp2"/>
+      <xs:enumeration value="image/png"/>
+      <!-- @@ MIME for raw image format? http://en.wikipedia.org/wiki/RAW_image_format -->
+      <xs:enumeration value="image/tiff"/>
+      <xs:enumeration value="image/vnd.wap.wbmp"/>
+      <xs:enumeration value="model/vrml"/>
+      <xs:enumeration value="multipart/encrypted"/>
+      <xs:enumeration value="multipart/form-data"/>
+      <xs:enumeration value="multipart/signed"/>
+      <xs:enumeration value="video/DV"/>
+      <xs:enumeration value="video/JPEG"/>
+      <xs:enumeration value="video/mp4"/>
+      <xs:enumeration value="video/mpeg"/>
+      <xs:enumeration value="video/mpeg4-generic"/>
+      <xs:enumeration value="video/quicktime"/>
+      <xs:enumeration value="video/raw"/>
+      <xs:enumeration value="video/x-sgi-movie"/>
+      <xs:enumeration value="video/x-msvideo"/>
+      <xs:enumeration value="video/x-ms-wmv"/>
+      <!--Microsoft MIME Types: http://support.microsoft.com/kb/288102 -->
+      <xs:enumeration value="video/x-ms-asf"/>
+      <xs:enumeration value="audio/x-ms-wma"/><!-- not registered at IANA but listed at http://en.wikipedia.org/wiki/MIME_type -->
+      <xs:enumeration value="audio/x-ms-wax"/>
+      <xs:enumeration value="video/x-ms-wmv"/><!-- not registered at IANA but listed at http://en.wikipedia.org/wiki/MIME_type -->
+      <xs:enumeration value="video/x-ms-wvx"/>
+      <xs:enumeration value="video/x-ms-wm"/>
+      <xs:enumeration value="video/x-ms-wmx"/>
+      <xs:enumeration value="application/x-ms-wmz"/>
+      <xs:enumeration value="application/x-ms-wmd"/>
+      <!--See also list at http://en.wikipedia.org/wiki/Internet_media_type-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="encoding">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Encoding types (e.g. for use in forms submission with <acronym>HTML</acronym> form [enctype] and with XForms. @TODO complete. [refer to 'media types': <a href="http://www.ietf.org/rfc/rfc2045.txt">
+            <acronym>RFC</acronym> 2045: 'Multipurpose Internet Mail Extensions (<acronym>MIME</acronym>) Part One: Format of Internet Message Bodies'</a>]</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="application/x-www-form-urlencoded"/><!-- the default for HTML forms; see http://www.w3.org/TR/html4/interact/forms.html#h-17.3 -->
+      <!-- “This content type results in name/value pairs sent to the server as name1=value1&name2=value2... with space characters replaced by "+" and reserved characters (like "#") replaced by "%HH" where HH is the ASCII code of the character in hexadecimal. Line breaks are encoded as "%0D%0A" - a carriage return followed by a line feed.” (http://htmlhelp.com/reference/html40/forms/form.html) -->
+      <xs:enumeration value="multipart/form-data"/><!-- HTML forms shoud use this in combination with the INPUT element, type="file". -->
+      <xs:enumeration value="application/soap+xml"/>
+      <xs:enumeration value="application/xml"/><!-- XForms post -->
+      <!-- For XForms submission options, see http://www.w3.org/TR/2003/REC-xforms-20031014/slice11.html#submit-options -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="expectedEvaluationResult">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Evaluation result expected by the developer of the test case.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pass"/>
+      <xs:enumeration value="fail"/>
+      <xs:enumeration value="cannotTell"/>
+      <xs:enumeration value="notApplicable"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="htmlInline" mixed="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Mixed content (for use in labels, names, comments, &#8230;).</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="html:special.pre"/>
+      <!-- br, span, bdo, map -->
+      <xs:group ref="html:phrase"/>
+      <!-- em, strong, dfn, code, q, samp, kbd, var, cite, abbr, acronym, sub, sup -->
+    </xs:choice>
+    <xs:attribute ref="xml:lang" use="optional"/>
+    <!-- deleted: type="xs:language"   -->
+  </xs:complexType>
+  <xs:element name="p" type="htmlInline">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">
+          <acronym>HTML</acronym>-style paragraph, but greatly restricted.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="questionText">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Question presented to the end user. (One per language.)</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="btw:p" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="xml:lang" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="label">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">A label for a form. (One per language.)</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:complexContent mixed="true">
+        <xs:restriction base="htmlInline">
+          <xs:attribute ref="xml:lang" use="required"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UserAgents">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/2002/REC-UAAG10-20021217/glossary.html#def-user-agent" xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Any software that retrieves and renders Web content for users. This may include Web browsers, media players, plug-ins, and other programs &#8212; including assistive technologies &#8212; that help in retrieving and rendering Web content.
+        <strong>Note: in BenToWeb, assistive technologies are not user agents but are a category of their own.</strong>
+        </p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="minimumLevel" type="minimumExperienceLevel" use="required"/>
+    <xs:attribute name="type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="browser"/>
+          <xs:enumeration value="talking browser"/><!-- added 27.03.2006 -->
+          <xs:enumeration value="plugin"/>
+          <!--NEW@TODO get list from Helen -->
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="product" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value=".+"/>
+          <!-- Browsers -->
+          <xs:enumeration value="Amaya"/>
+          <xs:enumeration value="Camino"/>
+          <xs:enumeration value="Chimera"/>
+          <xs:enumeration value="Clue"/>
+          <xs:enumeration value="Firefox"/>
+          <xs:enumeration value="Flock"/>
+          <xs:enumeration value="Galeon"/>
+          <xs:enumeration value="HotJava"/>
+          <xs:enumeration value="iCab"/>
+          <xs:enumeration value="K-Meleon"/>
+          <xs:enumeration value="Konqueror"/>
+          <xs:enumeration value="Links"/>
+          <xs:enumeration value="Lynx"/>
+          <xs:enumeration value="Microsoft Internet Explorer"/>
+          <xs:enumeration value="Microsoft Internet Explorer with WebFormator"/><!-- @@ or list WebFormator as plug-in -->
+          <xs:enumeration value="Mozilla"/>
+          <xs:enumeration value="Dadzilla"/><!-- adapted version of Mozilla that allows using MathML for Arabic mathematical presentation; see http://www.ucam.ac.ma/fssm/rydarab/system/dadzilla.htm -->
+          <xs:enumeration value="Nautilus"/>
+          <xs:enumeration value="Netscape"/>
+          <xs:enumeration value="Netscape Navigator"/>
+          <xs:enumeration value="Opera"/>
+          <xs:enumeration value="Safari"/>
+          <xs:enumeration value="SeaMonkey"/>
+          <xs:enumeration value="Shiira"/>
+          <xs:enumeration value="X-Smiles"/>
+          <!-- Specialized Browsers -->
+          <xs:enumeration value="BrailleSurf"/>
+          <xs:enumeration value="EdWeb"/>
+          <xs:enumeration value="EmacSpeak"/>
+          <xs:enumeration value="FreedomBox"/>
+          <xs:enumeration value="IBM Home Page Reader"/>
+          <xs:enumeration value="MultiWeb"/>
+          <xs:enumeration value="pwWebSpeak"/>
+          <xs:enumeration value="Sensus Internet Browser"/>
+          <xs:enumeration value="Simply Web 2000"/>
+          <xs:enumeration value="WebbIE"/>
+          <xs:enumeration value="Fire Vox" /><!-- cf. http://firevox.clcworld.net/ -->
+          <!-- Plugins; see list at http://browser.netscape.com/ns8/community/plugin.jsp and http://cws.internet.com/category/2223-1-d.htm (not added) -->
+          <xs:enumeration value="Adobe Acrobat Reader"/>
+          <xs:enumeration value="Adobe SVG Viewer"/>
+          <xs:enumeration value="Apple QuickTime"/>
+          <xs:enumeration value="Corel SVG Viewer"/>
+          <xs:enumeration value="formsPlayer"/>
+          <xs:enumeration value="Macromedia Flash Player"/>
+          <xs:enumeration value="Macromedia Shockwave"/>
+          <xs:enumeration value="RealNetworks RealPlayer"/>
+          <xs:enumeration value="Sun Java Plug-in"/>
+          <xs:enumeration value="Windows Media Player"/>
+          <!-- MathML plugins; see list at http://www.w3.org/Math/Software/mathml_software_cat_plugins.html -->
+          <xs:enumeration value="MathPlayer"/>
+          <xs:enumeration value="Formulator MathML Viewer"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="version" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="AssistiveTechnologies">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Assistive technologies such as screen readers, screen magnifiers, voice recognition software, alternative keyboards and alternative pointing devices.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="minimumLevel" type="minimumExperienceLevel" use="required"/>
+    <xs:attribute name="type" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          <p xmlns="http://www.w3.org/1999/xhtml">A category of assistive technology.</p>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value=".+"/>
+          <xs:enumeration value="screenreader"/>
+          <xs:enumeration value="screenreader with magnification"/>
+          <!--xs:enumeration value="talking browser"/--><!-- removed 27.03.2006 -->
+          <xs:enumeration value="magnification software"/>
+          <xs:enumeration value="speech and hearing support software"/>
+          <xs:enumeration value="Braille display"/>
+          <xs:enumeration value="speech recognition software"/>
+          <xs:enumeration value="CCTV"/>
+          <xs:enumeration value="alternative input devices"/>
+          <!-- XXX could also be renamed "assistive hardware devices" -->
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="product" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          <p xmlns="http://www.w3.org/1999/xhtml">A specific product by a manufacturer of assistive technology.</p>
+        </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value=".+"/>
+          <xs:enumeration value="browser accessibility options"/>
+          <!-- Assistive Technologies: screen readers -->
+          <xs:enumeration value="HAL"/>
+          <xs:enumeration value="JAWS"/>
+          <xs:enumeration value="Mobile Speak Pocket"/>
+          <xs:enumeration value="OutSpoken"/>
+          <xs:enumeration value="Reader (Sensory Software)"/>
+          <xs:enumeration value="Window-Eyes"/>
+          <xs:enumeration value="WinVision"/>
+          <xs:enumeration value="Infovox Desktop" />
+          <xs:enumeration value="LSR (Linux Screen Reader)" />
+          <xs:enumeration value="Orca" />
+          <xs:enumeration value="NVDA (NonVisual Desktop Access)" />
+          <xs:enumeration value="Thunder" />
+          <xs:enumeration value="Microsoft Narrator" />
+          <!-- Assistive Technologies: screen readers + magnification-->
+          <xs:enumeration value="Blindows"/>
+          <xs:enumeration value="MAGic with speech"/>
+          <xs:enumeration value="Supernova"/>
+          <xs:enumeration value="Virgo"/>
+          <xs:enumeration value="VoiceOver"/>
+          <xs:enumeration value="ZoomText"/>
+          <xs:enumeration value="Gnopernicus" />
+          <!-- Assistive Technologies: magnification-->
+          <xs:enumeration value="Biggy"/>
+          <xs:enumeration value="BigShot"/>
+          <xs:enumeration value="Lunar"/>
+          <xs:enumeration value="MAGic"/>
+          <xs:enumeration value="Microsoft Magnifier" />
+          <!-- Assistive Technologies: speech and reading support-->
+          <xs:enumeration value="BrowseAloud"/>
+          <xs:enumeration value="e-Read"/>
+          <xs:enumeration value="Kurzweil 1000"/><!-- http://www.kurzweiledu.com/kurz1000.aspx -->
+          <xs:enumeration value="Kurzweil 3000"/>
+          <xs:enumeration value="ReadPlease"/>
+          <!-- Assistive Technologies: speech recognition -->
+          <xs:enumeration value="JawBone"/>
+          <xs:enumeration value="Dragon Naturally Speaking"/>
+          <xs:enumeration value="ViaVoice"/>
+          <!-- Assistive Technologies: other -->
+          <xs:enumeration value="QPointer"/>
+          <xs:enumeration value="Braille display (unspecified product)"/>
+          <xs:enumeration value="Alva Braille display"/>
+          <xs:enumeration value="Baum Braille display"/>
+          <xs:enumeration value="Handy Tech Braille display"/>
+          <xs:enumeration value="Hedo Braille display"/>
+          <xs:enumeration value="Papenmeier Braille display"/>
+          <xs:enumeration value="Tieman Braille display"/>
+          <xs:enumeration value="Visiobraille Braille display"/>
+          <xs:enumeration value="Focus 40 Braille Display"/>
+          <xs:enumeration value="Focus 80 Braille Display"/>
+          <xs:enumeration value="PAC Mate 20 Portable Braille Display"/>
+          <xs:enumeration value="PAC Mate 40 Portable Braille Display"/>
+          <xs:enumeration value="CCTV (undefined product)"/>
+          <xs:enumeration value="desktop video magnifier"/>
+          <xs:enumeration value="portable video magnifier"/>
+          <xs:enumeration value="video magnifier that plugs into a television"/>
+          <xs:enumeration value="PC sharing video magnifier"/>
+          <xs:enumeration value="switch and scanning device"/>
+          <xs:enumeration value="alternative keyboard"/>
+          <xs:enumeration value="headmouse / tracking device"/>
+          <xs:enumeration value="HMC EasyMouse"/>
+          <xs:enumeration value="Head pointer"/>
+          <xs:enumeration value="Lucy laser keyboard"/>
+          <xs:enumeration value="Maltron one-handed keyboard"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="version" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="Devices">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">The hardware on which user agents and/or assistive technologies run: personal computers, personal digital assistants, mobile phones, &#8230;</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="minimumLevel" type="minimumExperienceLevel" use="required"/>
+    <xs:attribute name="type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PC"/>
+          <xs:enumeration value="PDA"/>
+          <xs:enumeration value="MobilePhone"/>
+          <xs:enumeration value="Television"/>
+          <xs:enumeration value="AAC"/>
+          <xs:enumeration value="other"/>
+          <!--xs:pattern value=".+"/-->
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="product" type="xs:string" use="optional"/>
+    <xs:attribute name="version" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:simpleType name="disabilityType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">A disability or impairment. The choices are limited to those that are relevant to accessibility evaluation; they are not based on the <acronym>WHO</acronym>'s <a href="http://www3.who.int/icf/icftemplate.cfm">International Classification of Functioning, Disability and Health</a>.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="blindness"/>
+      <xs:enumeration value="colour vision deficiency"/>
+      <xs:enumeration value="low vision"/>
+      <xs:enumeration value="deafness"/>
+      <xs:enumeration value="hard of hearing"/>
+      <xs:enumeration value="dyslexia"/>
+      <xs:enumeration value="dyscalculus"/>
+      <xs:enumeration value="intellectual disability"/>
+      <xs:enumeration value="dexterity impairment"/>
+      <xs:enumeration value="motor impairment"/>
+      <xs:enumeration value="no disability"/>
+      <xs:enumeration value="learning disability"/>
+      <xs:enumeration value="functional illiteracy"/>
+      <xs:enumeration value="ADHD"/>
+      <xs:enumeration value="aphasia"/>
+      <xs:enumeration value="deaf-blindness"/>
+      <xs:enumeration value="speech impairment"/>
+      <xs:enumeration value="other"/>
+      <!-- @@WARNING: "other" does not match! -->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TestCaseStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>See <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#status-def">Status in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.</p>
+          <p>A test case goes through the following process (simplified version):</p>
+          <ol>
+            <li>A test case author creates a test case; this is a <strong>draft</strong>.</li>
+            <li>A test case is evaluated by an accessibility expert:
+            <ul>
+                <li>if the expert finds a bug, the status changes to <strong>pending bugfix</strong>; the test case author fixes the bug and changes the status to <strong>draft</strong>;</li>
+                <li>if the expert finds no bugs, the status changes to <strong>accepted by first validators</strong> if the scenarios are also ready.</li>
+              </ul>
+            </li>
+            <li>A second accessibility expert reviews the test case; if no changes are necessary, the status is set to <strong>validated</strong> (no user testing) or <strong>ready for translation</strong> (scenarios for end-user testing need to be translated).
+              For expert(s) mode the next step is to accept or reject the test case. For modes enduser/automatic/semi-automatic it has to be validated before acceptance/rejection.
+            </li>
+            <li>After translation, test case status is set to <strong>accepted for end user evaluation</strong>.</li>
+            <li>After the test case has been validated by end-user evaluation, the status changes to <strong>validated</strong> or to <strong>integrate feedback</strong>.</li>
+            <li><strong>accepted QA</strong> means that the test case is accepted for inclusion in the current version of the test suite.</li>
+            <li><strong>rejected QA</strong> means that the test case is not fit for the current version of the test suite.</li>
+          </ol>
+        </div>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="draft"/>
+      <xs:enumeration value="pending bugfix"/>
+      <xs:enumeration value="accepted by first validators"/>
+      <xs:enumeration value="accepted by both validators"/><!-- @@ remove when all instances are gone from TS2 because duplicate "accepted by both validators" -->
+      <xs:enumeration value="ready for translation"/>
+      <xs:enumeration value="accepted for end user evaluation"/>
+      <xs:enumeration value="validated"/>
+      <xs:enumeration value="integrate feedback" />
+      <xs:enumeration value="accepted QA"/>
+      <xs:enumeration value="rejected QA"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="baselineInfo">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        <p xmlns="http://www.w3.org/1999/xhtml">Specifies whether something is inside or outside the baseline. 
+         The value 'included' means that something is inside the baseline, 'excluded' means outside the baseline.
+          (For information about baselines in <acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 2.0, 
+          see <a href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/conformance.html#baseline">Technology assumptions and the "baseline"</a>
+          in <em class="specTitle">Web Content Accessibility Guidelines 2.0 (<acronym title="World Wide Web Consortium">W3C</acronym> Working Draft 27 April 2006</em>) and 
+          <a href="http://www.w3.org/WAI/WCAG20/baseline/">About Baselines and <acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 2.0</a>.)</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="included"/>
+      <xs:enumeration value="excluded"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<doc>
+<chapter id="c1">
+  <title>chapter title</title>
+  <desc>Chapter description</desc>
+  <para>Chapter content</para>
+</chapter>
+
+<chapter >
+  <title>chapter title</title>
+  <para>xx</para>
+  <para>yy</para>
+  <para>zz</para>
+</chapter>
+
+<chapter id="c3">
+  <title>chapter title</title>
+  <desc>Chapter description</desc>
+  <para>xx</para>
+  <para>yy</para>
+  <para>zz</para>
+</chapter>
+</doc>

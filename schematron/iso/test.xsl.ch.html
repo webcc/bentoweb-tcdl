@@ -1,0 +1,23 @@
+<html>
+<!-- http://www.dpawson.co.uk/schematron/test.xsl.ch.html -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8; charset=utf-8">
+   <title>Chapter&nbsp;11.&nbsp;ISO implementation Stylesheets</title><link rel="stylesheet" href="schematron.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets Vdocbook5ns-snapshot-2007-01-08"><link rel="start" href="index.html" title="ISO Schematron tutorial."><link rel="up" href="index.html" title="ISO Schematron tutorial."><link rel="prev" href="decorations.html" title="Chapter&nbsp;10.&nbsp;Decorating the output"><link rel="next" href="svrl.ch.html" title="Chapter&nbsp;12.&nbsp;Schematron Validation Report Language (SVRL)"><link rel="copyright" href="ln-legal.html" title="Legal Notice"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;11.&nbsp;ISO implementation Stylesheets</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="decorations.html"><img src="images/prev.png" alt="Prev"></a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="svrl.ch.html"><img src="images/next.png" alt="Next"></a></td></tr></table><hr></div><div class="chapter" lang="en-GB"><div xmlns:d="http://docbook.org/ns/docbook" class="titlepage"><div><div><h2 class="title"><a name="test.xsl.ch"></a>Chapter&nbsp;11.&nbsp;ISO implementation Stylesheets</h2></div><div><h3 class="subtitle"><i>Including test instances.</i></h3></div></div></div><p>In this chapter there are links to files which may be used for
+implementation testing and stylesheets which implement
+<code class="filename">iso_skeleton.xsl</code> and
+<code class="filename">iso_svrl.xsl</code>. A beta implementation of
+<code class="filename">abstract.xsl</code> is provided to expand abstract
+patterns, similarly for processing includes,
+<code class="filename">include.xsl</code> is presented. It is possible to
+combine include processing with processing abstract patterns, so this
+code has been merged into a single stylesheet,
+<code class="filename">absInclude.xsl</code>. </p><p>I have proven the latter file matches the output of the
+combination of <code class="filename">include.xsl</code> and
+<code class="filename">abstract.xsl</code>, you may find a use for both
+options. </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>These stylesheets are now XSLT 2.0 only. I found it too much
+  to try and follow the Topologi model and keep 1.0 and 2.0 processors
+  happy. </p></div><p><a href="isoTDD.xml">An input file</a> and <a href="isoTDD.sch">a Schematron file</a> which has been used to
+test the majority of the Schematron options. These tests are incomplete as
+of 2007-02-02T16:26:50Z</p><div class="orderedlist"><ol type="1"><li><p><a href="iso_svrl.xsl">iso_svrl.xsl</a>. Generates SVRL output. </p></li><li><p><a href="iso_schematron_skeleton.xsl">iso_schematron_skeleton.xsl</a>. a
+modified version of the file on schematron.com is nearer to a complete
+stylesheet, handling nearly all of the Schematron grammar.</p></li><li><p><a href="abstract.xsl">abstract.xsl</a>. Processes abstract patterns</p></li><li><p><a href="include.xsl">include.xsl</a>. Processes includes</p></li></ol></div></div><a xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes" xmlns:d="http://docbook.org/ns/docbook" href="ln-legal.html">Legal Notice</a><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="decorations.html"><img src="images/prev.png" alt="Prev"></a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="svrl.ch.html"><img src="images/next.png" alt="Next"></a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;10.&nbsp;Decorating the output&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;12.&nbsp;Schematron Validation Report Language (SVRL)</td></tr></table></div></body></html>

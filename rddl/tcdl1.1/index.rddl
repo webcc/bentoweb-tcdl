@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "http://www.rddl.org/rddl-xhtml.dtd">
+<html xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BenToWeb Test Case Description Language (TCDL) 1.1</title>
+    <link media="screen,projection" href="http://www.bentoweb.org/css/html.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link media="screen,projection" href="http://www.bentoweb.org/css/default.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link href="http://www.bentoweb.org/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <meta name="DC.Title" content="BenToWeb Test Case Description Language (TCDL) 1.1" />
+    <meta name="DC.Description" content="BenToWeb's Test Case Description (TCDL) 1.1, an XML vocabulary for metadata about test cases for accessibility guidelines: Resource Description (RDDL)" />
+    <meta name="DC.Type" scheme="DCMIType" content="Text" />
+    <meta name="DC.Creator" content="Christophe Strobbe" />
+    <meta name="DC.Publisher" content="BenToWeb Consortium (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights" content="Copyright BenToWeb Consortium 2006 (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights.accessRights" content="public" />
+    <meta name="DC.Date" content="2006-01-11" />
+    <meta name="DC.Identifier" content="http://bentoweb.org/refs/TCDL1.1/index.rddl" />
+    <meta name="DC.Language" scheme="ISO 639-1" content="en" />
+    <meta name="robots" content="all" />
+    <meta name="generator" content="création artisanale à la main" xml:lang="fr" />
+  </head>
+  <body>
+    <h1>BenToWeb Test Case Description Language (<acronym>TCDL</acronym>) 1.1</h1>
+    <p>Resource Directory (<a href="http://www.rddl.org/"><acronym>RDDL</acronym></a> document) for BenToWeb <acronym>TCDL</acronym> 1.1.</p>
+    <div class="head">
+      <p>This Version: <a href="http://bentoweb.org/refs/TCDL1.1"> 11 January 2006</a>.</p>
+      <p>Latest Version: <a href="http://bentoweb.org/refs/TCDL1.1">http://bentoweb.org/refs/TCDL1.1</a>.</p>
+      <p>Previous Version: <a href="http://bentoweb.org/refs/TCDL1">11 August 2005 (<acronym>TCDL</acronym> 1.0)</a>.</p>
+      <p>Editors:</p>
+      <ul> 
+        <li><a href="&#x4d;ail&#x54;o&#x3a;christophe&#x2e;strobbe&#x40;esat&#x2e;kuleuven&#x2e;be">Christophe Strobbe</a> 
+          (<a href="http://www.docarch.be/"><acronym title="Research Group on Document Architectures">DocArch</acronym>, <span xml:lang="nl">Katholieke Universiteit Leuven</span></a>)
+        </li>
+      </ul>
+    </div>
+    <div class="chapter" id="purpose">
+      <h2>Purpose and General Description</h2>
+      <p>Test Case Description Language (<acronym>TCDL</acronym>) is an <acronym>XML</acronym>-based language defined by BenToWeb 
+        to store metadata for the test cases in the test suites<span class="insertion"> for 
+        <a href="http://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (<acronym>WCAG</acronym>) 2.0</a></span>. 
+        For each individual test case, it describes:</p>
+      <ul>
+        <li>formal metadata, such as author, date, title and a short description;</li>
+        <li>technologies (the technologies and technology features used in the test);</li>
+        <li>test mode and test scenarios for end user evaluation;</li>
+        <li>the &#8220;rules&#8221; that are tested (<acronym>WCAG</acronym> 2.0 success criteria or other rules);</li>
+        <li>namespace mappings used in some of the previous sections.</li>
+      </ul>
+      <p><acronym>TCDL</acronym> is defined in 
+        <a href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/"><acronym>W3C</acronym> <acronym>XML</acronym> Schema</a>
+        and uses the namespace <code>http://bentoweb.org/refs/TCDL1.1</code>;
+        the <acronym>XML</acronym> Schema is available at 
+        <a href="http://bentoweb.org/refs/schemas/tcdl1.1.xsd">http://bentoweb.org/refs/schemas/tcdl1.1.xsd</a> and contains detailed documentation.
+        The next section provides a less technical description of <acronym>TCDL</acronym>. It also shows which metadata elements <acronym>TCDL</acronym> 
+        has in common with those suggested in the 
+        <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/"><acronym>W3C</acronym> Note on Test Metadata</a> by adding &#8220;<acronym>W3CTM</acronym>&#8221; to the description.
+      </p>
+    </div>
+    <div class="chapter" id="structure">
+      <h2>Structure of <acronym>TCDL</acronym></h2>
+      <p>Each test case has a unique identifier (stored as a mandatory <abbr>ID</abbr> attribute of the test case description; 
+        <acronym>W3CTM</acronym>) that uses the format <samp>technology_wcag2_date_x.y_lz_scz_nnn</samp>, 
+        where the sections separated by underscores have the following meaning:</p>
+      <dl>
+        <dt>technology</dt>
+          <dd>the technology for which the test suite is developed: xhtml1, xhtml2, xforms1, etcetera,</dd>
+        <dt>wcag2</dt>
+          <dd>a constant referring to <acronym>WCAG</acronym> 2.0,</dd>
+        <dt>date</dt>
+          <dd>the date on which the <acronym>WCAG</acronym> 2.0 draft was published, in <code>yyyymmdd</code> format,</dd>
+        <dt>x.y</dt>
+          <dd>the number of <acronym>WCAG</acronym> 2.0 guideline, for example <samp>1.1</samp>, <samp>1.2</samp>, &#8230;,</dd>
+        <dt>lz</dt>
+          <dd>the <acronym>WCAG</acronym> 2.0 level: l1 | <samp>l2</samp> | <samp>l3</samp>,</dd>
+        <dt>scz</dt>
+          <dd>the number of the <acronym>WCAG</acronym> 2.0 success criterion, for example <samp>sc1</samp>, <samp>sc2</samp>, &#8230;,</dd>
+        <dt>nnn</dt>
+          <dd>the number of the test case (for this success criterion, not the number in the complete test suite), for example <samp>001</samp>, <samp>002</samp>, &#8230;</dd>
+      </dl>
+      <div class="section" id="structure-formalmetadata">
+        <h3>Formal Metadata</h3>
+        <p>The formal or administrative metadata that can be stored are:</p>
+        <ul>
+          <li>description (mandatory; <acronym>W3CTM</acronym>);</li>
+          <li>title (mandatory; <acronym>W3CTM</acronym>);</li>
+          <li>author (mandatory; <acronym>W3CTM</acronym>);</li>
+          <li>language (mandatory);</li>
+          <li>rights (mandatory; <acronym>W3CTM</acronym>) &#8212; usually BenToWeb copyright;</li>
+          <li>creation date (mandatory);</li>
+          <li>status (mandatory; <acronym>W3CTM</acronym>);
+          </li>
+          <li>version (optional);</li>
+          <li>source (optional): if the test file is borrowed from an existing test suite, the test suite and the <acronym>URL</acronym> 
+            of the original test file can be documented; in addition, it is possible to indicate 
+            <ul>
+              <li>if the borrowed file was modified and </li>
+              <li>to document these modifications and other comments, and </li>
+              <li>rights (for example copyrights; <acronym>W3CTM</acronym>) related to the borrowed file.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="section" id="structure-technologies">
+        <h3>Technologies</h3>
+        <p>BenToWeb uses the term &#8220;<dfn>technology</dfn>&#8221; in the same sense as <acronym>WCAG</acronym> 2.0: 
+          <q cite="http://www.w3.org/TR/2005/WD-WCAG20-20050630/#technologydef">a data format, programming or markup language, protocol or API</q>.
+          <acronym>TCDL</acronym> provides the ability to store the following information about technologies used in a test:
+        </p>
+        <ul>
+          <li>the formal specification or recommendation that defines the technology (by name and <acronym>URL</acronym>; mandatory);</li>
+          <li>the technology features (for example, which <acronym>XHTML</acronym> elements and/or attributes) that are relevant to the test (optional);</li>
+          <li>a reference (<acronym>URL</acronym>) to a section in the formal specification or a quote from the formal specification 
+            that describes the technology features that are relevant to the test (optional).
+          </li>
+        </ul>
+      </div>
+      <div class="section" id="structure-testcase">
+        <h3>Test Case</h3>
+        <div class="subsection" id="structure-testcase-purpose">
+          <h4>Purpose</h4>
+          <p>This mandatory section provides a brief explanation of the reason why the test was developed (<acronym>W3CTM</acronym>).</p>
+        </div>
+        <div class="subsection" id="structure-testcase-preconditions">
+          <h4>Preconditions</h4>
+          <p>The <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/"><acronym>W3C</acronym> Note on Test Metadata</a> 
+            defines <dfn>preconditions</dfn> as <q cite="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#preconditions-def">conditions that must be met before the test can be successfully executed</q>. 
+            This section was added to <acronym>TCDL</acronym> for other users of the language. 
+            It is not used in BenToWeb because test cases map to success criteria instead of tests. 
+            However, the <a href="http://www.w3.org/WAI/GL/WCAG20/tests/">current <acronym>HTML</acronym> Test Suite for <acronym>WCAG</acronym> 2.0</a> uses &#8220;prerequisite tests&#8221;, and these could be described here.</p>
+        </div>
+        <div class="subsection" id="structure-testcase-requiredtests">
+          <h4>Required Tests</h4>
+          <p>This section describes:</p>
+          <ul>
+            <li>the test mode or modes (mandatory): the ways in which the test case should be evaluated to advance the test case from 
+              &#8220;draft&#8221; status to &#8220;accepted&#8221;; 
+              test modes are at least one of the following: 
+              <ul>
+                <li>end user, </li>
+                <li>one accessibility expert, </li>
+                <li>a group of accessibility experts or </li>
+                <li>automatic evaluation;</li>
+              </ul>
+            </li>
+            <li>one or more test scenarios for end user evalution (strictly optional, but required if the test mode is &#8220;end user&#8221;): 
+              a scenario consists of 
+              <ul>
+                <li>user guidance (for example, advice on features of a user agent that should be supported by and enabled in a browser),</li>
+                <li>questions that the user is expected to answer 
+                  (yes/no question, open question, Likert scale, multiple choice, or a combination of yes/no and open question),
+                </li>
+                <li>the experience that the user should have with certain user agents or assistive technologies to evaluate the test, and, </li>
+                <li>optionally, disabilities to which the test is relevant.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>Each scenario has a mandatory identifier that is unique within the test case description. 
+            This identifier is necessary to map end user feedback to the scenarios.
+          </p>
+        </div>
+        <div class="subsection" id="structure-testcase-testfiles">
+          <h4>Test Files</h4>
+          <p>This section contains information about each of the test files that are relevant to the rule or success criterion:</p>
+          <ul>
+            <li>the <acronym>URL</acronym> of the test file (optional);</li>
+            <li>the language of the test file (optional);</li>
+            <li>data to create an <acronym>HTTP</acronym> request (optional): media type, encoding, <acronym>HTTP</acronym> headers and <acronym>HTTP</acronym> body.</li>
+          </ul>
+          <p>Supporting files such as included images, external style sheets and dummy pages to which forms are submitted 
+            (if only the form is relevant to the test) etcetera, are not documented.
+          </p>
+        </div>
+      </div>
+      <div class="section" id="structure-rules">
+        <h3>Rules</h3>
+        <p>This section contains the &#8220;rules&#8221; that are tested by a test case. 
+          In BenToWeb, rules are generally <acronym>WCAG</acronym> 2.0 success criteria, but it is also possible to reference other sets of &#8220;rules&#8221;:
+        </p>
+        <ul>
+          <li><acronym>WCAG</acronym> 1.0 checkpoints,</li>
+          <li>Section 508 provisions,</li>
+          <li><acronym>BITV</acronym> provisions.</li>
+        </ul>
+        <p>The rules do not provide a direct reference to the relevant online source because it may not always be possible 
+          to reference &#8220;rules&#8221; directly (for example, because they are not available in <acronym>HTML</acronym>). 
+          The rules reference a rule <abbr>ID</abbr> in a &#8220;Rulesets <acronym>XML</acronym>&#8221; file <!--span class="deletion">(see Chapter 4 below)</span--><span class="insertion">(see <a href="http://bentoweb.org/refs/rulesets">Rulesets <acronym>XML</acronym> <acronym>RDDL</acronym> document</a>)</span>, 
+          which in turn references the relevant rule in an online source.
+        </p>
+        <p>For each rule listed in this section, the following information can be provided:</p>
+        <ul>
+          <li>whether the rule is the &#8220;primary&#8221; rule of the test case or only listed for informative purposes 
+            (for example, some test cases uses invalid markup in tests that are not about validity, so it is useful to document that checkpoints about validity should not be applied to the test case) 
+            (optional);
+          </li>
+          <li>the identifier of the rule in &#8220;Rulesets XML&#8221; (mandatory);
+          </li>
+          <li>the locations in the test file that are relevant to the rule, with <acronym>URL</acronym>, line number, column number 
+            and/or <a href="http://www.w3.org/TR/1999/REC-xpath-19991116">XPath</a> expression (optional);
+          </li>
+          <li>whether the test case passes or fails the success criterion or rule;</li>
+          <li>the functional outcome of the test: a description of why the test case passes or fails, 
+            in terms that relate to a user's experience (as opposed to technical comments about source code) 
+            (mandatory);
+          </li>
+          <li>technical comment on the test: a technical description of why the test case passes or fails, 
+            and other technical information (for example, issues in certain browsers or assistive technologies).
+          </li>
+        </ul>
+      </div>
+      <div class="section" id="structure-namespacemappings">
+        <h3>Namespace Mappings</h3>
+        <p>This optional section is important for test cases based on test files that use<acronym> XML</acronym>-based technologies. 
+          The technology features (see the section on Technologies above) used in a test case exist in an 
+          <a href="http://www.w3.org/TR/1999/REC-xml-names-19990114/"><acronym>XML</acronym> namespace</a> and 
+          should be referenceable with XPath. 
+          The normal mechanism for mapping namespaces to <acronym>URI</acronym>s by declaring them with 
+          <code>xmlns:prefix="namespaceURI"</code> cannot be used for this, 
+          because it is necessary to be able to define empty prefixes and to extract the namespace mappings with a common <acronym>XML</acronym> <acronym>API</acronym>.
+        </p>
+      </div>
+    </div>
+    <div class="chapter" id="mappingw3cmetadata">
+      <h2><acronym>TCDL</acronym> and <acronym>W3C</acronym> Test Metadata</h2>
+      <p>The <a href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/"><acronym>W3C</acronym> Working Group Note &#8220;Test Metadata&#8221;</a> (14 September 2005) 
+        suggests fourteen metadata elements for test suites. The table below shows how these metadata elements map to <acronym>TCDL</acronym> elements. 
+        (<acronym>TCDL</acronym> elements are identified by means of XPath expressions without a namespace prefix and with the root element &#8212; <code>testCaseDescription</code> &#8212;  omitted, 
+        except for the attributes of that element.)
+      </p>
+      <table id="mappingw3cmetadata-table">
+        <caption>Mapping of <acronym>W3C</acronym> Test Metadata to <acronym>TCDL</acronym></caption>
+        <!-- RDDL does not allow thead and tbody inside tables ??? -->
+        <tr>
+          <th id="colW3CTSM" scope="col"><acronym>W3C</acronym> Metadata</th>
+          <th id="colTCDL" scope="col"><acronym>TCDL</acronym></th>
+          <th id="colComment" scope="col">Comment</th>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Identifier</td>
+          <td headers="colTCDL"><code>testCaseDescription/@id</code></td>
+          <td headers="colComment"></td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Title</td>
+          <td headers="colTCDL"><code>formalMetadata/title</code></td>
+          <td headers="colComment">In <acronym>TCDL</acronym>, titles are not necessarily unique; they don't duplicate the identifier.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Purpose</td>
+          <td headers="colTCDL"><code>testCase/purpose</code></td>
+          <td headers="colComment"></td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Description</td>
+          <td headers="colTCDL"><code>formalMetadata/description </code></td>
+          <td headers="colComment">In <acronym>TCDL</acronym>, the description should help the reviewer understand how the test materials are constructed and the behaviour when a user interacts with it.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Status</td>
+          <td headers="colTCDL"><code>formalMetadata/status</code></td>
+          <td headers="colComment"></td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">SpecRef</td>
+          <td headers="colTCDL"><code>rules/rule</code><br />and<br /><code>technology/recommendation</code></td>
+          <td headers="colComment">In <acronym>TCDL</acronym>, two types of specifications need to be referenced: the accessibility guidelines (&#8220;rules&#8221;) 
+            and the specifications of the technologies in the test.
+          </td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Preconditions</td>
+          <td headers="colTCDL"><code>testCase/preconditions</code></td>
+          <td headers="colComment">Not used in BenToWeb, because test cases map directly to <acronym>WCAG</acronym> success criteria instead of tests.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Inputs</td>
+          <td headers="colTCDL"><code>testCase/files/file/httpRequest</code></td>
+          <td headers="colComment">Only for the special case where it is necessary to (re)create a specific <acronym>HTTP</acronym> request.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">ExpectedResults</td>
+          <td headers="colTCDL"><code>rules/rule/locations/@exptectedResult</code><br />and<br /><code>rules/rule/functionalOutcome</code></td>
+          <td headers="colComment"></td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Version</td>
+          <td headers="colTCDL"><code>formalMetadata/version</code></td>
+          <td headers="colComment">Not used in BenToWeb; a version control system (<acronym>CVS</acronym>) is used instead.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Contributor</td>
+          <td headers="colTCDL">-</td>
+          <td headers="colComment">BenToWeb does not have external contributors, but can borrow test files and document them at 
+            <code>formalMetadata/source</code>.
+          </td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Rights</td>
+          <td headers="colTCDL"><code>formalMetadata/dc:rights</code><br />and<br /><code>formalMetadata/source/dc:rights</code></td>
+          <td headers="colComment"><acronym>TCDL</acronym> can document rights related to a test case and rights related to borrowed materials.</td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">Grouping</td>
+          <td headers="colTCDL">-</td>
+          <td headers="colComment">(Because of the strict filename convention in BenToWeb, some types of grouping can be done by means of filename pattern matching.)
+          </td>
+        </tr>
+        <tr>
+          <td headers="colW3CTSM">SeeAlso</td>
+          <td headers="colTCDL"><code>technology/recommendation</code><br />(and<br /><code>rules/rule/techComment</code>)</td>
+          <td headers="colComment"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="chapter" id="tcdlcomparison">
+      <h2>Differences with <acronym>IBM</acronym>'s <acronym>TCDL</acronym> Submission to <acronym>W3C</acronym> <acronym>QA</acronym></h2>
+      <p>BenToWeb's <acronym>TCDL</acronym> was developed completely independently from the <a href="http://www.w3.org/QA/WG/2003/10/tcdl-20031012.html"><acronym>TCDL</acronym> proposal submitted by <acronym>IBM</acronym></a> to the <acronym>W3C</acronym> Quality Assurance Working Group (<acronym>QA</acronym> <acronym>WG</acronym>) in 2003. 
+        The goal of <acronym>IBM</acronym>'s <acronym>TCDL</acronym> is to catalogue most of the test materials that a <acronym>W3C</acronym> Working Group would provide. 
+        It is intended to be used in a test lab &#8220;<q>to set up and run the test materials against one or more test subjects</q>&#8221; and 
+        &#8220;<q>supports automated setup of the system(s) used for testing, automated running of test cases, automated comparison of results, and automated cleanup of the system(s)</q>&#8221;. 
+        Like BenToWeb's <acronym>TCDL</acronym>, <acronym>IBM</acronym>'s <acronym>TCDL</acronym> is an <acronym>XML</acronym> vocabulary, 
+        so metadata can be tranformed in other formats for human or machine consumption.
+      </p>
+      <p>An <acronym>IBM</acronym> <acronym>TCDL</acronym> catalogue contains a list a test cases, 
+        whereas a BenToWeb <acronym>TCDL</acronym> contains metadata for an individual test case only. 
+        BenToWeb's <acronym>TCDL</acronym> is also different because each test case references at least two specifications 
+        (<acronym>WCAG</acronym> 2.0 or another ruleset, and a specification of a technology such as <acronym>XHTML</acronym> or <acronym>CSS</acronym>), 
+        and one of these (<acronym>WCAG</acronym> 2.0) cannot be tested fully automatically.
+      </p>
+      <p>Unfortunately, it is not possible to make a detailed comparison of the two languages because the <acronym>XML</acronym> Schema for <acronym>IBM</acronym>'s <acronym>TCDL</acronym> submission is not available 
+        (the link to the Schema in <a href="http://www.w3.org/QA/WG/2003/10/tcdl-20031012.html#id0704" title="Conformance section of IBM's Test Case Description Language">Section 7.4</a> does not lead to a file).
+      </p>
+    </div>
+    <div class="rddlresources" id="rddlresources">
+      <h2><acronym>RDDL</acronym> Resources</h2>
+      <ul>
+        <li><rddl:resource xmlns:rddl="http://www.rddl.org/" xlink:arcrole="schema-validation" xlink:role="http://www.w3.org/2001/XMLSchema" 
+          xlink:href="http://bentoweb.org/refs/schemas/tcdl1.1.xsd" id="tcdl1.1-xsd-schema" xlink:embed="none">
+          <a href="http://bentoweb.org/refs/schemas/tcdl1.1.xsd"><acronym>TCDL</acronym> 1.1 Schema</a></rddl:resource>;
+        </li>
+        <li><rddl:resource xmlns:rddl="http://www.rddl.org/" xlink:arcrole="non normative reference" xlink:role="http://www.rddl.org/#resource" 
+          xlink:href="http://www.springerlink.com/content/25502t5tx385186x/" id="tcdl1.1-icchp-presentation" xlink:embed="none">
+          <a href="http://www.springerlink.com/content/25502t5tx385186x/">
+          Christophe Strobbe, Sandor Herramhof, Evangelos Vlachogiannis, Carlos A. Velasco (2006). “Test Case Description Language (<acronym>TCDL</acronym>): Test Case Metadata for Conformance Evaluation” In: Miesenberger K et al (eds). Proceedings of the 10th International Conference <acronym>ICCHP</acronym> 2006 (Linz, Austria, July 2006), <acronym title="Lecture Notes in Computer Science">LNCS</acronym> 4061, pp. 164-171. Berlin-Heidelberg: Springer-Verlag.
+          </a></rddl:resource>;
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

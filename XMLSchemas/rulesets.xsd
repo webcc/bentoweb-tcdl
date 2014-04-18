@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with jEdit 4.2 (http://www.jedit.org) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<xs:schema xmlns="http://bentoweb.org/refs/rulesets" xmlns:rs="http://bentoweb.org/refs/rulesets" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml" targetNamespace="http://bentoweb.org/refs/rulesets" elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://bentoweb.org/refs/schemas/xlink.xsd"/>
+  <xs:element name="rulesets">
+    <xs:annotation>
+      <xs:documentation>
+        <!--p xmlns="http://www.w3.org/1999/xhtml">A collection of "rules" and "rulesets" regarding Web content accessibility.
+        </p-->
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ruleset" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              <!--p xmlns="http://www.w3.org/1999/xhtml">Examples of rulesets are <acronym>WCAG</acronym> 1.0, <acronym>WCAG</acronym> 2.0, Section 508 and <acronym>BITV</acronym>.
+              </p-->
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="guideline" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>
+                    <!--p xmlns="http://www.w3.org/1999/xhtml">A guideline corresponds to a <acronym>WCAG</acronym> 1.0/2.0 Guideline, Section 508 'rule', <span lang="de">
+                        <acronym>BITV</acronym> Anforderung</span>, etcera.</p-->
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="successCriterion" minOccurs="0" maxOccurs="unbounded">
+                      <xs:annotation>
+                        <xs:documentation>
+                          <!--p xmlns="http://www.w3.org/1999/xhtml">A success criterion corresponds to a <acronym>WCAG</acronym> 2.0 success criterion, a <acronym>WCAG</acronym> 1.0 checkpoint, a <span lang="de">
+                              <acronym>BITV</acronym> Bedingung</span>, etcera.</p-->
+                        </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                        <xs:attribute name="name" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <!--p xmlns="http://www.w3.org/1999/xhtml">This corresponds to a checkpoint number in <acronym>WCAG</acronym> 1.0 [x] and <acronym>BITV</acronym> [x], to a success criterion in <acronym>WCAG</acronym> 2.0 [y], and does not have a counterpart in Section 508</p-->
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="level" type="xs:string" use="optional">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <!--p xmlns="http://www.w3.org/1999/xhtml">The level of the checkpoint (<acronym>WCAG</acronym> 1.0, <acronym>BITV</acronym>) or success criterion (<acronym>WCAG</acronym> 1.0). Section 508 does not have the concept of levels.</p-->
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute ref="xlink:href" use="optional">
+                          <xs:annotation>
+                            <xs:documentation>
+                              <!--p xmlns="http://www.w3.org/1999/xhtml">
+                                <code>xlink:hef</code> is optional because not all web accessibility standards are available in <acronym>HTML</acronym> or <acronym>XML</acronym>.</p-->
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="hrefLang" type="xs:language" use="optional">
+                          <xs:annotation>
+                            <xs:documentation source="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-hreflang" xml:lang="en">
+                              <!--p xmlns="http://www.w3.org/1999/xhtml">Language of the referenced resource (see <acronym>HTML</acronym>'s <code>hreflang</code> attribute).</p-->
+                            </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:ID" use="required"/>
+                  <xs:attribute name="name" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!--p xmlns="http://www.w3.org/1999/xhtml">This corresponds to a guideline number in <acronym>WCAG</acronym> 1.0 [x], <acronym>WCAG</acronym> 2.0 [x.y] and <acronym>BITV</acronym> [x], and to a letter in Section 508.</p-->
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute ref="xlink:href" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>
+                        <!--p xmlns="http://www.w3.org/1999/xhtml">A link. Optional because not all web accessibility standards are available in <acronym>HTML</acronym> or <acronym>XML</acronym>.</p-->
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="hrefLang" type="xs:language" use="optional">
+                    <xs:annotation>
+                      <xs:documentation source="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-hreflang" xml:lang="en">
+                        <!--p xmlns="http://www.w3.org/1999/xhtml">Language of the referenced resource (see <acronym>HTML</acronym>'s <code>hreflang</code> attribute).</p-->
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute ref="xml:lang" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute ref="xlink:href" use="required"/>
+            <xs:attribute ref="xml:lang" use="optional"/>
+            <xs:attribute name="hrefLang" type="xs:language" use="optional">
+              <xs:annotation>
+                <xs:documentation source="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-hreflang" xml:lang="en">
+                  <!--p xmlns="http://www.w3.org/1999/xhtml">Language of the referenced resource (see <acronym>HTML</acronym>'s <code>hreflang</code> attribute).</p-->
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:attribute name="hrefLang" type="xs:language">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#adef-hreflang">
+        <!--p xmlns="http://www.w3.org/1999/xhtml">Language of the referenced resource (see <acronym>HTML</acronym>'s hreflang attribute).
+        It is not possible to reuse <acronym>XHTML</acronym>'s <code>hreflang</code> attribute (<code>&lt;xs:attribute ref="html:hreflang" use="optional" /&gt;</code>) because the attribute is not globally defined?</p-->
+      </xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+</xs:schema>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with jEdit 4.2 (http://www.jedit.org) by Christophe Strobbe (Katholieke Universiteit Leuven) -->
+<!-- An XML Schema for some of the elements defined by the Note "HTTP Vocabulary in RDF": http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20070301.
+  This schema may change when the note is updated.
+  @@Warning: the namespace URI will change eventually!
+-->
+<xs:schema xmlns="http://www.w3.org/2006/http#" xmlns:http="http://www.w3.org/2006/http#" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:uri="http://www.w3.org/2006/uri#" xmlns:rfc822="http://www.w3.org/2006/rfc822#" xmlns:html="http://www.w3.org/1999/xhtml" 
+  targetNamespace="http://www.w3.org/2006/http#" 
+  elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd"/>
+  <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://bentoweb.org/refs/schemas/xlink.xsd"/>
+  <xs:import namespace="http://www.w3.org/2006/uri#" schemaLocation="http://bentoweb.org/refs/schemas/uri.xsd"/>
+
+  <xs:element name="GetRequest" type="HttpRequestType">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">Representation of an <acronym>HTTP</acronym> GET request.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="PostRequest" type="HttpRequestType">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">Representation of an <acronym>HTTP</acronym> POST request.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="PutRequest" type="HttpRequestType">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">Representation of an <acronym>HTTP</acronym> PUT request.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="HeadRequest" type="HttpRequestType">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">Representation of an <acronym>>HTTP</acronym> HEAD request.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="requestURI" type="RequestURI">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">Representation of an <acronym>HTTP</acronym> request <acronym>URI</acronym>.</p>
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="RequestURI">
+    <xs:annotation>
+      <xs:documentation>
+        <p xmlns="http://www.w3.org/1999/xhtml">The <code>requestURI</code> property, which represents the request <acronym>URI</acronym> as specified in section 5.1.2 of <a href="http://www.ietf.org/rfc/rfc2616.txt"><acronym>RFC</acronym> 2616</a>.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice><!-- @@note minOccurs="0"; @xlink:href still exists in TCDL 2.0 -->
+      <xs:element name="absoluteURI" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <p xmlns="http://www.w3.org/1999/xhtml">An absolute request <acronym>URI</acronym>.</p>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="abs_path" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <p xmlns="http://www.w3.org/1999/xhtml">An absolute path used as a request <acronym>URi</acronym>.</p>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <!-- xs:element name="authority" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <p xmlns="http://www.w3.org/1999/xhtml">An authority used as a request <acronym>URI</acronym>.</p>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element--><!-- RFC 2616: "The authority form is only used by the CONNECT method". -->
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="HttpRequestType">
+    <xs:all>
+      <xs:element ref="requestURI" minOccurs="1" maxOccurs="1" />
+      <xs:element name="version">
+        <xs:annotation>
+          <xs:documentation>
+            <p xmlns="http://www.w3.org/1999/xhtml">The version of <acronym>HTTP</acronym> used for the request.</p>
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="\d\.\d" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--xs:group ref="requestHeaderGroup" minOccurs="0" /-->
+      <xs:element name="accept" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-charset" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-language" type="xs:string" minOccurs="0" />
+      <xs:element name="authorization" type="xs:string" minOccurs="0" />
+      <xs:element name="expect" type="xs:string" minOccurs="0" />
+      <xs:element name="from" type="xs:string" minOccurs="0" />
+      <xs:element name="host" type="xs:string" minOccurs="0" />
+      <xs:element name="if-match" type="xs:string" minOccurs="0" />
+      <xs:element name="if-modified-since" type="xs:string" minOccurs="0" />
+      <xs:element name="if-none-match" type="xs:string" minOccurs="0" />
+      <xs:element name="if-range" type="xs:string" minOccurs="0" />
+      <xs:element name="if-unmodified-since" type="xs:string" minOccurs="0" />
+      <xs:element name="max-forwards" type="xs:string" minOccurs="0" />
+      <xs:element name="proxy-authorization" type="xs:string" minOccurs="0" />
+      <xs:element name="range" type="xs:string" minOccurs="0" />
+      <xs:element name="referer" type="xs:string" minOccurs="0" />
+      <xs:element name="te" type="xs:string" minOccurs="0" />
+      <xs:element name="user-agent" type="xs:string" minOccurs="0" />
+      <!-- end requestHeaderGroup -->
+      <!--xs:group ref="requestOrResponseHeaderGroup" minOccurs="0" /-->
+      <xs:element name="allow" type="xs:string" minOccurs="0" />
+      <xs:element name="cache-control" type="xs:string" minOccurs="0" />
+      <xs:element name="connection" type="xs:string" minOccurs="0" />
+      <xs:element name="content-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="content-language" type="xs:string" minOccurs="0" />
+      <xs:element name="content-length" type="xs:string" minOccurs="0" />
+      <xs:element name="content-location" type="xs:string" minOccurs="0" />
+      <xs:element name="content-md5" type="xs:string" minOccurs="0" />
+      <xs:element name="content-range" type="xs:string" minOccurs="0" />
+      <xs:element name="content-type" type="xs:string" minOccurs="0" />
+      <xs:element name="date" type="xs:string" minOccurs="0" />
+      <xs:element name="expires" type="xs:string" minOccurs="0" />
+      <xs:element name="last-modified" type="xs:string" minOccurs="0" />
+      <xs:element name="mime-version" type="xs:string" minOccurs="0" />
+      <xs:element name="pragma" type="xs:string" minOccurs="0" />
+      <xs:element name="trailer" type="xs:string" minOccurs="0" />
+      <xs:element name="transfer-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="upgrade" type="xs:string" minOccurs="0" />
+      <xs:element name="via" type="xs:string" minOccurs="0" />
+      <xs:element name="warning" type="xs:string" minOccurs="0" />
+      <!-- end requestOrResponseHeaderGroup -->
+      <xs:element name="body" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20060816#def-property-body">
+            <p xmlns="http://www.w3.org/1999/xhtml">An <acronym>HTTP</acronym> entity body as defined in <acronym>RFC</acronym>2616, 
+              translated to a string of text using the Base64 encoding scheme.
+            </p>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <!--xs:group name="requestHeaderGroup">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20060816#def-property-header">
+        <p xmlns="http://www.w3.org/1999/xhtml">Headers that may appear in a request.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="accept" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-charset" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="accept-language" type="xs:string" minOccurs="0" />
+      <xs:element name="authorization" type="xs:string" minOccurs="0" />
+      <xs:element name="expect" type="xs:string" minOccurs="0" />
+      <xs:element name="from" type="xs:string" minOccurs="0" />
+      <xs:element name="host" type="xs:string" minOccurs="0" />
+      <xs:element name="if-match" type="xs:string" minOccurs="0" />
+      <xs:element name="if-modified-since" type="xs:string" minOccurs="0" />
+      <xs:element name="if-none-match" type="xs:string" minOccurs="0" />
+      <xs:element name="if-range" type="xs:string" minOccurs="0" />
+      <xs:element name="if-unmodified-since" type="xs:string" minOccurs="0" />
+      <xs:element name="max-forwards" type="xs:string" minOccurs="0" />
+      <xs:element name="proxy-authorization" type="xs:string" minOccurs="0" />
+      <xs:element name="range" type="xs:string" minOccurs="0" />
+      <xs:element name="referer" type="xs:string" minOccurs="0" />
+      <xs:element name="te" type="xs:string" minOccurs="0" />
+      <xs:element name="user-agent" type="xs:string" minOccurs="0" />
+    </xs:all>
+  </xs:group-->
+
+  <!--xs:group name="requestOrResponseHeaderGroup">
+    <xs:annotation>
+      <xs:documentation source="http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20060816#def-property-header">
+        <p xmlns="http://www.w3.org/1999/xhtml">Headers that may appear in a request or a response.</p>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="allow" type="xs:string" minOccurs="0" />
+      <xs:element name="cache-control" type="xs:string" minOccurs="0" />
+      <xs:element name="connection" type="xs:string" minOccurs="0" />
+      <xs:element name="content-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="content-language" type="xs:string" minOccurs="0" />
+      <xs:element name="content-length" type="xs:string" minOccurs="0" />
+      <xs:element name="content-location" type="xs:string" minOccurs="0" />
+      <xs:element name="content-md5" type="xs:string" minOccurs="0" />
+      <xs:element name="content-range" type="xs:string" minOccurs="0" />
+      <xs:element name="content-type" type="xs:string" minOccurs="0" />
+      <xs:element name="date" type="xs:string" minOccurs="0" />
+      <xs:element name="expires" type="xs:string" minOccurs="0" />
+      <xs:element name="last-modified" type="xs:string" minOccurs="0" />
+      <xs:element name="mime-version" type="xs:string" minOccurs="0" />
+      <xs:element name="pragma" type="xs:string" minOccurs="0" />
+      <xs:element name="trailer" type="xs:string" minOccurs="0" />
+      <xs:element name="transfer-encoding" type="xs:string" minOccurs="0" />
+      <xs:element name="upgrade" type="xs:string" minOccurs="0" />
+      <xs:element name="via" type="xs:string" minOccurs="0" />
+      <xs:element name="warning" type="xs:string" minOccurs="0" />
+    </xs:all>
+  </xs:group-->
+
+</xs:schema>

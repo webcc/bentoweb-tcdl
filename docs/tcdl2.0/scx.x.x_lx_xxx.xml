@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  WARNING! This is a template for TCDL 2.0.
+  For a detailed specification of TCDL 2.0, see http://bentoweb.org/refs/TCDL2.0.html
+  For usage notes for the Test Samples Development Task Force, see http://www.w3.org/WAI/ER/tests/usingTCDL
+-->
+<testCaseDescription id="scx.x.x_lx_xxx"
+    xml:lang="en"
+    xmlns="http://bentoweb.org/refs/TCDL2.0/"
+    xmlns:btw="http://bentoweb.org/refs/TCDL2.0/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:earl="http://www.w3.org/WAI/ER/EARL/nmg-strawman#"
+    xmlns:http="http://www.w3.org/2006/http#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xsi:schemaLocation="
+      http://bentoweb.org/refs/TCDL2.0/ http://bentoweb.org/refs/schemas/tcdl2.0.xsd
+      http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd 
+      http://www.w3.org/1999/xhtml http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd 
+      http://www.w3.org/1999/xlink http://bentoweb.org/refs/schemas/xlink.xsd
+      http://www.w3.org/2006/http# http://bentoweb.org/refs/schemas/http.xsd
+      http://www.w3.org/WAI/ER/EARL/nmg-strawman# http://bentoweb.org/refs/schemas/earlwd.xsd">
+  <formalMetadata>
+    <title>Image with file name as alt text</title><!-- Title helps as a reminder what the test case is about. Please do not just duplicate the text of the success criterion or the technique. -->
+    <dc:creator xsi:type="btw:dcHtmlInline">Developed by <html:a href="http://www.w3.org/"><html:acronym title="World Wide Web Consortium">W3C</html:acronym></html:a>/<html:a href="http://www.w3.org/WAI/"><html:acronym title="Web Accessibility Initiative">WAI</html:acronym></html:a>'s <html:a href="http://www.w3.org/WAI/ER/">Evaluation and Repair Tools Working Group</html:a> (ERT WG). We invite comments and discussion. Please address your feedback to <html:a href="mailto:public-wai-ert-tests@w3.org">public-wai-ert-tests@w3.org</html:a>, a mailing list with a <html:a href="http://lists.w3.org/Archives/Public/public-wai-ert-tsdtf/">public archive</html:a>.</dc:creator>
+    <dc:language>en</dc:language>
+    <dc:rights xsi:type="btw:dcHtmlInline"><html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</html:a> &#169; 1994-2009 <html:a href="http://www.w3.org/"><html:acronym title="World Wide Web Consortium">W3C</html:acronym></html:a><html:sup>&#174;</html:sup> (<html:a href="http://www.csail.mit.edu/"><html:acronym title="Massachusetts Institute of Technology">MIT</html:acronym></html:a>, <html:a href="http://www.ercim.org/"><html:acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</html:acronym></html:a>, <html:a href="http://www.keio.ac.jp/">Keio</html:a>), All Rights Reserved. <html:acronym title="World Wide Web Consortium">W3C</html:acronym> <html:a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</html:a>, <html:a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</html:a>, <html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</html:a> and <html:a rel="Copyright" href="http://www.w3.org/Consortium/Legal/copyright-software">software licensing</html:a> rules apply. Your interactions with this site are in accordance with our <html:a href="http://www.w3.org/Consortium/Legal/privacy-statement#Public">public</html:a> and <html:a href="http://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</html:a> privacy statements.</dc:rights>
+    <dc:date xsi:type="btw:btwDate">$Date: 2009-01-12 14:53:09 $</dc:date><!-- Initial value: &#36;Date&#36; (replace &#36; with dollar sign). CVS will then keep track of the date. -->
+    <status>unconfirmed</status><!-- All test cases start out as "unconfirmed". -->
+    <version>$Revision: 1.13 $</version><!-- Initial value: &#36;Revision&#36; (replace &#36; with dollar sign). CVS will then keep track of the version number. -->
+  </formalMetadata>
+  <technologies>
+    <technicalSpec xlink:href="http://www.w3.org/TR/xhtml1/"><!-- xlink:href is the namespace URI (if applicable) or the URL of the specifation. This attribute is optional. -->
+      <specName><html:acronym>XHTML</html:acronym>&#8482; 1.0 The Extensible HyperText Markup Language (Second Edition)</specName><!-- The tile used by the specification document. -->
+    </technicalSpec>
+  </technologies>
+  <testCase>
+    <!--
+      The description should give a good idea of what the test materials are 
+      and possibly also how they behave in certain user agents and AT (especially if this is not obvious or consistent). 
+    -->
+    <dc:description xsi:type="btw:dcHtmlInline">A page containing an image of a cat; the <html:code>img</html:code> that embeds the image has an <html:code>alt</html:code> attribute with the value "img/cat.gif".</dc:description>
+    <!--
+      The purpose states whether the test case is supposed to pass or fail, and why. 
+      Possibly state if certain aspects of the test sample are not relevant to the actual test case. 
+    -->
+    <purpose>
+      <p>This test case is intended to fail because the text alternative of the image not a real text alternative.
+        Only the text alternative is tested here, not colour contrast.
+      </p>
+    </purpose>
+    <requiredTests>
+      <testModes>
+        <testMode>automatic</testMode>
+      </testModes>
+    </requiredTests>
+    <files>
+      <file xlink:href="http://www.example.com/XHTML1_WCAG2LCWD_TestSuite/sc1.1.1_l1_001.html">
+      <!-- Note: xlink:href is actually optional; one can use http:requestURI in HTTP Vocabulary in RDF (see below). -->
+        <http:GetRequest>
+          <http:requestURI>
+            <http:absoluteURI>http://www.example.com/XHTML1_WCAG2LCWD_TestSuite/sc1.1.1_l1_001.html</http:absoluteURI>
+          </http:requestURI>
+          <http:version>1.1</http:version>
+          <http:accept>text/html;q=1.0, */*;q=0.01</http:accept>
+        </http:GetRequest>
+      </file>
+    </files>
+  </testCase>
+  <rules>
+    <!--
+      A "rule" is a success criterion. TSD TF uses only 'primary="yes"'.
+      The xlink:href attribute contains a URL with a fragment identifier, where the fragment identifier is an ID value in http://bentoweb.org/refs/rulesets.xml.
+    -->
+    <rule xlink:href="http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all">
+      <locations expectedResult="fail"><!-- The expected evaluation result (see "purpose" above): pass, fail, cannotTell, ... -->
+       <!-- A list of locations (one or more, but preferably only one to keep the test case atomic).
+         The techrefs attribute contains a space-separated list of IDs of techniques (see the techniques element below).
+       -->
+       <location techrefs="F30">
+        <!--
+          Each EARL location pointer refers to the same location in the code.
+          If more than one location needs to be identified, there is one 'location' element per location.
+          The location below says where the failure identified by the 'technique' element (below) appears.
+        -->
+        <earl:xPath>
+         <earl:expression>/h:html/h:body/h:p/h:img/@alt</earl:expression>
+        </earl:xPath>
+        <earl:lineCharLen>
+         <earl:line>7</earl:line>
+         <earl:char>6</earl:char>
+        </earl:lineCharLen>
+       </location>
+      </locations>
+      <techniques>
+        <technique id="F30" xlink:href="http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F30" />
+        <!-- For xlink:href, always uses dated URLs, not, for example, http://www.w3.org/TR/WCAG20-TECHS/Overview.html#H57.
+         For the id attribute, it is recommended to use the same IDs as in the Techniques document, to enable extra validation.
+        -->
+      </techniques>
+      <!-- The techComment element can contain additional technical information that go beyond a mere description
+        of the test sample, for example issues in certain user agents or assistive technologies.
+      -->
+      <techComment>
+        <p>(Optional technical comment.)</p>
+      </techComment>
+    </rule>
+  </rules>
+  <!-- Mappings between namespace prefixes and namespace URIs used in XPath expressions and XPointers. -->
+  <namespaceMappings>
+    <namespace nsPrefix="h" nsURI="http://www.w3.org/1999/xhtml" />
+  </namespaceMappings>
+</testCaseDescription>

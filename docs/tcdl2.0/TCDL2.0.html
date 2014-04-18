@@ -1,0 +1,3554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Test Case Description Language 2.0: Specification and Guide
+  (BenToWeb)</title>
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <!--http://www.w3.org/StyleSheets/TR/W3C-Member-SUBM.css-->
+  <link type="text/css" rel="stylesheet" href="W3C-Member-SUBM.css" />
+  <style type="text/css">
+    body { font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, /*Arial,*/ sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-weight: bold; letter-spacing: 0.05em; font-variant: normal; }
+    h2 { margin-top: 1.5em; }
+    acronym, abbr { font-variant: normal; text-transform: none; } /* prevent smallcaps in Opera9 */
+    blockquote { color: inherit; background-color: #eee; padding: .3em 1em; }
+    ul, ol { list-style-position: outside; padding-left: 2em; }
+    ul, ol, dl, blockquote, .blockcode, p.bentoweb, div.bentoweb { margin-left: .5em; margin-right: .5em; }
+    code { font-family: Futura, Frutiger, "ITC Officina", "FF Meta", Myriad, Lucida, sans-serif; }
+    code, li code { background: inherit; color: #c00;}
+    p.blockcode { border: 1px solid #ccc; padding: .6em; }
+    p.blockcode span.value, p code span.value, p code em.value { color: #333; background: inherit; }
+    p code em.value { font-style: normal; font-weight: bold; }
+    p.blockcode span.comment { color: #555; background: inherit; }
+    .rfc2119 { font-weight: bold; font-style: normal; text-transform:uppercase; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #000; padding-left: .3em; padding-right: .3em; }
+    td ol { margin-left: 0; padding-left: 1.2em; }
+    li { margin-top: .3em; }
+    ul.attlist { border: 1px dotted #000; }
+    ul.contentmodel { border: 1px dotted #000; }
+    ul.attlist, ul.contentmodel {padding-bottom: .3em;  background-color: #eee;}
+    div.bentoweb, p.bentoweb { border: 1px solid #000; padding: .5em; }
+    div.tsdtf, p.tsdtf { border: 2px solid #f00; padding: .5em; }
+    .bentoweb em, .tsdtf em { font-style: oblique; font-weight: bold; }
+    p.warning { border: 4px solid #f00; background: #ff9; color: inherit; padding: .5em; margin-top: 1em; margin-bottom: 1em;}
+    p.warning em { font-weight: bold; }
+    div.chapt { margin-top: 1em; }
+    del { color: #f60; background: inherit; }
+    ins, ins * { text-decoration: none; color: #060; background: inherit; }
+    q:before { content: ""; } q:after { content: ""; } /* two separate rules because combined rule is not supported by Opera 6 */
+    /* div.stable { border: 2px solid #0c0; color: #000; background-color: #ffe; padding: .5em; }
+     strong.stable { color: #0a0; background: inherit; }
+     a[id]:after { content: " [ID:#" attr(id) "] "; font-size: .8em; font-weight: normal; background: transparent; color: #666; }
+    */
+
+    /* Generating content and counters works in Opera 6 (and newer) but not in IE 6 (and older), Firefox 2 (or older), SeaMonkey 1.1 (or older) or Mozilla on MS Windows. */
+    /*li.chapter, li.section, li.subsection { list-style-type: none;}
+    div.chapt h2.chapter:before { content: counter(chapter); counter-increment: chapter; counter-reset: section; padding-right: 1em; color: green;}
+    li.chapter:before { content: counter(tocChapter); counter-increment: tocChapter; counter-reset: tocSection; padding-right: 1em;  color: green;}
+    div.chapt h3:before { content: counter(chapter) "." counter(section); counter-increment: section; counter-reset: subsection; padding-right: 1em; color: green;}
+    li.section:before { content: counter(tocChapter) "." counter(tocSection); counter-increment: tocSection; counter-reset: tocSubsection; padding-right: 1em; color: green;}
+    div.chapt h4:before { content: counter(chapter) "." counter(section) "." counter(subsection); counter-increment: subsection; counter-reset: h5section; padding-right: 1em; color: green;}
+    li.subsection:before { content: counter(tocChapter) "." counter(tocSection) "." counter(tocSubsection); counter-increment: tocSubsection; padding-right: 1em; color: green;}
+    div.chapt h5:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(h5section); counter-increment: h5section; counter-reset: h6section; padding-right: 1em; color: green;}*/
+    /*h6:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(subsubsection) "." counter (h6section); counter-increment: h6section; padding-right: 1em;}*/
+
+  </style>
+</head>
+
+<body>
+<h1>Test Case Description Language 2.0: Specification and Guide</h1>
+
+<p>Latest version: <a
+href="http://bentoweb.org/refs/TCDL2.0.html">http://bentoweb.org/refs/TCDL2.0.html</a> ($Date: 2009-05-04 09:50:59 $).</p>
+
+<p>Editor: Christophe Strobbe (<a href="http://www.docarch.be/">DocArch</a>,
+<span lang="nl">Katholieke Universiteit Leuven</span>).</p>
+
+<div class="preambleChapter">
+<h2 class="chapter">Abstract</h2>
+
+<p>Test Case Description Language (<acronym>TCDL</acronym>) is an
+<acronym>XML</acronym> vocabulary for describing test files and evaluation
+scenarios for such test files, intended to be included in test suites for
+user interface guidelines such as Web Content Accessibility Guidelines
+(<acronym>WCAG</acronym>) 2.0.</p>
+</div>
+
+<div class="preambleChapter">
+<h2 class="chapter"><a name="chapt-status" id="chapt-status">Status of this
+Document</a></h2>
+
+<p>This is a <strong style="color: red">draft</strong>! This document is not
+a final specification but can change based on practical experience with the
+language. It will also change to keep it synchronized with the <a
+href="#ref-httprdf"><acronym>HTTP</acronym> Vocabulary in <acronym>RDF</acronym></a>.</p>
+</div>
+
+<div class="preambleChapter">
+<h2 class="chapter"><a name="toc" id="toc">Table of Contents</a></h2>
+<ul>
+  <li><a href="#chapt-intro">Introduction</a></li>
+  <li><a href="#chapt-terms">Terms and Definitions</a></li>
+  <li><a href="#chapt-howtoread">How to Read this Specification</a></li>
+  <li><a href="#chapt-global">The Global Structure of a
+    <acronym>TCDL</acronym> File</a>: the <a
+    href="#edef-testcasedescription"><code>testCaseDescription</code> Element
+    Type</a></li>
+  <li><a href="#edef-formalmetadata">Formal Metadata: The
+    <code>formalMetadata</code> Element Type</a>
+    <ul>
+      <li><a href="#edef-title">The <code>title</code> Element Type</a></li>
+      <li><a href="#edef-dccreator">The <code>dc:creator</code> Element
+        Type</a></li>
+      <li><a href="#edef-dccontributor">The <code>dc:contributor</code>
+        Element Type</a></li>
+      <li><a href="#edef-dclanguage">The <code>dc:language</code> Element
+        Type</a></li>
+      <li><a href="#edef-dcrights">The <code>dc:rights</code> Element
+      Type</a></li>
+      <li><a href="#edef-dcdate">The <code>dc:date</code> Element
+      Type</a></li>
+      <li><a href="#edef-status">The <code>status</code> Element Type</a></li>
+      <li><a href="#edef-version">The <code>version</code> Element
+      Type</a></li>
+      <li><a href="#edef-source">The <code>source</code> Element Type</a></li>
+    </ul>
+  </li>
+  <li><a href="#edef-technologies">Technologies: The
+    <code>technologies</code> Element Type</a>
+    <ul>
+      <li><a href="#edef-technicalspec">The <code>technicalSpec</code>
+        Element Type</a>
+        <ul>
+          <li><a href="#edef-specname">The <code>specName</code> Element
+            Type</a></li>
+          <li><a href="#edef-testelements">The <code>testElements</code>
+            Element Type</a></li>
+        </ul>
+      </li>
+      <li><a href="#baselines">Describing Baselines</a></li>
+    </ul>
+  </li>
+  <li><a href="#edef-testcase">Test Case: The <code>testCase</code> Element
+    Type</a>
+    <ul>
+      <li><a href="#edef-dcdescription">The <code>dc:description</code>
+        Element Type</a></li>
+      <li><a href="#edef-purpose">The <code>purpose</code> Element
+      Type</a></li>
+      <li><a href="#edef-internalnotes">The <code>internalNotes</code> Element
+      Type</a></li>
+      <li><a href="#edef-expertguidance">The <code>expertGuidance</code>
+        Element Type</a></li>
+      <li><a href="#edef-preconditions">The <code>preconditions</code>
+        Element Type</a></li>
+      <li><a href="#edef-requiredtests">The <code>requiredTests</code>
+        Element Type</a>
+        <ul>
+          <li><a href="#edef-testmode">The <code>testMode</code> Element
+            Type</a></li>
+          <li><a href="#edef-scenario">The <code>scenario</code> Element
+            Type</a></li>
+        </ul>
+      </li>
+      <li><a href="#edef-files">The <code>files</code> Element Type</a>
+        <ul>
+          <li><a href="#edef-file">The <code>file</code> Element Type</a>
+            <ul>
+              <li><a href="#httpreqprops">Common <acronym>HTTP</acronym>
+                Request Properties</a></li>
+              <li><a href="#edef-httpgetrequest">The
+                <code>http:GetRequest</code> Element Type</a></li>
+              <li><a href="#edef-httppostrequest">The
+                <code>http:PostRequest</code> Element Type</a></li>
+              <li><a href="#edef-httpputrequest">The
+                <code>http:PutRequest</code> Element Type</a></li>
+              <li><a href="#edef-httpheadrequest">The
+                <code>http:HeadRequest</code> Element Type</a></li>
+              <li><a href="#edef-httprequest">The <code>httpRequest</code>
+                Element Type (Obsolete)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#edef-rules">Rules: The Element Types <code>rules</code> and
+    <code>rule</code></a>
+    <ul>
+      <li><a href="#edef-rule">The <code>rule</code> Element Type</a>
+        <ul>
+          <li><a href="#edef-locations">The <code>locations</code> Element
+            Type</a>
+            <ul>
+              <li><a href="#edef-location">The <code>location</code> Element
+                Type</a></li>
+            </ul>
+          </li>
+          <li><a href="#edef-techniques">The <code>techniques</code> Element
+            Type</a>
+            <ul>
+              <li><a href="#edef-technique">The <code>technique</code>
+                Element Type</a></li>
+            </ul>
+          </li>
+          <li><a href="#linking-locations-techniques">Linking Locations and
+            Techniques</a></li>
+          <li><a href="#edef-functionaloutcome">The
+            <code>functionalOutcome</code> Element Type</a></li>
+          <li><a href="#edef-techcomment">The <code>techComment</code>
+            Element Type</a></li>
+        </ul>
+      </li>
+      <li><a href="#rules-egs">Using <code>rules</code>: Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#edef-namespacemappings">Namespace Mappings: The Element Types
+    <code>namespaceMappings</code> and <code>namespace</code></a></li>
+  <li><a href="#chapt-datatypes">Other Content Models and Data Types</a>
+    <ul>
+      <li><a href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+        Markup</a></li>
+      <li><a href="#sect-paragraph"><acronym>XHTML</acronym>-Style
+        Paragraphs</a></li>
+      <li><a href="#sect-lang">The Attribute Types <code>xml:lang</code> and
+        <code>hrefLang</code></a></li>
+      <li><a href="#sect-dir">The <code>dir</code> Attribute Type</a></li>
+    </ul>
+  </li>
+  <li><a href="#chapt-extensibility">Extensibility of
+    <acronym>TCDL</acronym></a></li>
+  <li><a href="#chapt-rulesets">Rulesets</a></li>
+  <li><a href="#app-schematcdl">Appendix A: <acronym>W3C</acronym>
+    <acronym>XML</acronym> Schema for <acronym>TCDL</acronym> 2.0</a></li>
+  <li><a href="#app-tcdl-egs">Appendix B: <acronym>TCDL</acronym>
+  Examples</a></li>
+  <li><a href="#app-schemarulesets">Appendix C: <acronym>W3C</acronym>
+    <acronym>XML</acronym> Schema for Rulesets</a></li>
+  <li><a href="#app-otherw3c">Appendix D: Relation with Other
+    <acronym>W3C</acronym> Technical Documents and Submissions</a>
+    <ul>
+      <li><a href="#app-w3qatcdl">Test Case Description Language 1.0 – Submission to
+        <acronym>QA</acronym> Working Group 12 October 2003</a></li>
+      <li><a href="#app-w3qatestmetadata">Test Metadata – W3C Working Group 
+        Note 14 September 2005</a></li>
+    </ul>
+  </li>
+  <li><a href="#app-refs">Appendix E: References</a></li>
+  <li><a href="#app-acks">Appendix F: Acknowledgements</a></li>
+</ul>
+</div>
+
+<div class="chapt">
+<h2 class="chapter">1. <a name="chapt-intro"
+id="chapt-intro">Introduction</a></h2>
+
+<p>This document defines the features and syntax of Test Case Description
+Language (<acronym>TCDL</acronym>). The objective of this language is to
+define metadata for test cases. In addition to formal metadata and links to
+relevant sections in technical specifications, <acronym>TCDL</acronym> also
+supports the definition of test scenarios for the validation of test samples
+(for example by end users) against usability and accessibility guidelines.
+<acronym>TCDL</acronym> defines metadata for detailed descriptions of test
+cases, for tracking the status of test cases during the development process,
+for matching test cases with user profile metadata, etcetera.</p>
+
+<p><acronym>TCDL</acronym> can be used to support the development of suites
+of test samples for sets of accessibility guidelines such as the Web Content
+Accessibility Guidelines 2.0 (<a href="#ref-wcag20"><acronym>WCAG</acronym>
+2.0</a>).</p>
+</div>
+
+<div class="chapt">
+<h2 class="chapter">2. <a name="chapt-terms" id="chapt-terms">Terms and
+Definitions</a></h2>
+<dl>
+  <dt><a name="dfn-technology" id="dfn-technology">technology</a></dt>
+    <dd>Markup language, programming language, style sheet, data format, or
+      <acronym title="Application Programming Interface">API</acronym>.
+      (Source: <a href="#ref-wcag20"><acronym>WCAG</acronym>2.0</a>.)</dd>
+  <dt><a name="dfn-testcase" id="dfn-testcase">test case</a></dt>
+    <dd>An individual test that corresponds to a test purpose, which in turn
+      maps back to the assertion(s), and finally the spec. (Source: <a
+      href="#ref-w3cqavoc"><acronym>W3C</acronym> <acronym>QA</acronym>
+      <abbr>Voc</abbr></a>.)</dd>
+    <dd>In this context: test sample or set of tet samples that correspond to
+      a test purpose, which maps to one or more statements in one or more
+      specifications (technical specifications on the one hand, usability or
+      accessibility specifications on the other).</dd>
+  <dt><a name="dfn-testsample" id="dfn-testsample">test sample</a></dt>
+    <dd>An example or set of examples (in specific content formats) that
+      demonstrates correct or incorrect implementation of a statement in a
+      technical specifcation and/or a set of usability or accessibility
+      guidelines.</dd>
+  <dt><a name="dfn-testsuite" id="dfn-testsuite">test suite</a></dt>
+    <dd>A set of documents and tools providing tool developers with an
+      objective methodology to verify the level of conformance of an
+      implementation for a given standard. (Source: <a
+      href="#ref-w3cqavoc"><acronym>W3C</acronym> <acronym>QA</acronym>
+      <abbr>Voc</abbr></a>.)</dd>
+</dl>
+</div>
+
+<div class="chapt">
+<h2 class="chapter">3. <a name="chapt-howtoread" id="chapt-howtoread">How to
+Read this Specification</a></h2>
+
+<p>This specification reuses element and attribute types from other
+specifications. These element and attribute types can be recognized by the
+namespace prefixes that precede the names (for example, <code>html:</code>,
+<code>dc:</code>, <code>xlink:</code>). <acronym>TCDL</acronym> files need
+not use the same namespace prefixes as this specification, except where the
+namespace prefix is <code>xml:</code>, which is reserved by the
+<acronym>XML</acronym> specification (<a
+href="#ref-xml10"><acronym>XML</acronym> 1.0</a>). References to data types
+defined in <a href="#ref-xmlschemadatatypes">XML Schema Part 2: Datatypes</a>
+consistently use the <code>xs:</code> namespace prefix.</p>
+
+<p>The content models for the element types state whether a child element
+type is optional or required; child element types are not repeatable unless
+this is explicitly stated.</p>
+
+<p>This specifcation uses certain keywords as defined in <a
+href="#ref-rfc2119"><acronym>RFC</acronym> 2119</a> to indicate requirement
+levels; these keywords are emphasized like the following examples: <em
+class="rfc2119">must</em>, <em class="rfc2119">must not</em>, <em
+class="rfc2119">should</em>.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">4. <a name="chapt-global" id="chapt-global">The Global
+Structure of a <acronym>TCDL</acronym> File</a>: the
+<code>testCaseDescription</code> Element Type</h2>
+
+<p>The root element type of a <acronym>TCDL</acronym> file is <a
+id="edef-testcasedescription"
+name="edef-testcasedescription"><code>testCaseDescription</code></a>. This
+element type has the following attributes and namespace declarations:</p>
+<ul class="attlist">
+  <li><a name="adef-id" id="adef-id"><code>id</code></a>: an identifier for the test case that is unique that is
+    unambiguous and unique withing the context of the test case (the context
+    can be a test suite) (required);</li>
+  <li><a href="#adef-xmllang"><code><acronym>xml</acronym>:lang</code></a>:
+    the default language of the <acronym>TCDL</acronym> file (optional);</li>
+  <li><a href="#sect-dir"><code>dir</code></a>: the default text direction of
+    the <acronym>TCDL</acronym> file (optional);</li>
+  <li><code>xmlns="http://bentoweb.org/refs/TCDL2.0/"</code>: the default
+    namespace (required);</li>
+  <li><code>xmlns:btw="http://bentoweb.org/refs/TCDL2.0/"</code>: the default
+    namespace (required);</li>
+  <li><code>xmlns:dc="http://purl.org/dc/elements/1.1/"</code>: namespace for
+    Dublin Core Element Set (required);</li>
+  <li><code>xmlns:xlink="http://www.w3.org/1999/xlink"</code>: namespace for
+    <acronym>W3C</acronym> XLink (required);</li>
+  <li><code>xmlns:html="http://www.w3.org/1999/xhtml"</code>: namespace for
+    <acronym>XHTML</acronym> 1.x (required);</li>
+  <li><code>xmlns:earl="http://www.w3.org/WAI/ER/EARL/nmg-strawman#"</code>:
+    namespace for <acronym>EARL</acronym> 1.0 (required if
+    <acronym>EARL</acronym> pointers are used);</li>
+  <li><code>xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"</code>:
+    namespace for <acronym>RDF</acronym> (required if <acronym>EARL</acronym> pointers are
+  used);</li>
+  <li><code>xmlns:http="http://www.w3.org/2006/http#"</code>:
+    namespace for <acronym>HTTP</acronym> requests (required if
+    <acronym>HTTP</acronym> Vocabulary in <acronym>RDF</acronym> is used);</li>
+  <li><code>xmlns:xs="http://www.w3.org/2001/XMLSchema"</code>;</li>
+  <li><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code>;</li>
+  <li><code>xsi:schemaLocation</code>: for linking namespace
+    <acronym>URI</acronym>s with the <acronym>URI</acronym>s of the
+    corresponding schema documents.</li>
+</ul>
+
+<p>Note: the namespace prefixes need not be the same as those in the above
+list, except for <code>xml</code> and <code>xmlns</code>.</p>
+
+<p>Note: at the time of writing, <a href="#ref-earl"><acronym>EARL</acronym>
+1.0</a> is a working draft, and the final namespace <acronym>URI</acronym>
+may be different from the one above.</p>
+
+<p>Note: for <a href="#chapt-extensibility"
+title="Section on extensibility">extensibility</a>, the
+<code>testCaseDescription</code> element type can have any other attribute
+types in any namespace other than the target namespace
+(http://bentoweb.org/refs/TCDL2.0/); schema processors will validate
+attributes for which they can find declarations and raise errors if they are
+invalid (<code>&lt;xs:anyAttribute namespace="##other"
+processContents="lax"/&gt;</code>).</p>
+
+<p><acronym>TCDL</acronym> metadata are organised in five major sections,
+which will be explained below:</p>
+<ul class="contentmodel">
+  <li>formal metadata (the <code>formalMetadata</code> element type,
+    required),</li>
+  <li>technologies (the <code>technologies</code> element type,
+  required),</li>
+  <li>test case (the <code>testCase</code> element type, required),</li>
+  <li>rules (the <code>rules</code> element type, required),</li>
+  <li>namespace mappings (the <code>namespaceMappings</code> element type,
+    optional),</li>
+  <li>an optional extension element (<code>Extension</code>, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>),</li>
+  <li>an extensibility point (any other element types in any namespace other
+    than the target namespace, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>).</li>
+</ul>
+
+<p>In addition, there are also several extension elements and extension
+points. See &ldquo;Versioning <acronym>XML</acronym> Vocabularies&rdquo; (<a
+href="#ref-orchard2003">Orchard 2003</a>) and &ldquo;Extensibility,
+<acronym>XML</acronym> Vocabularies, and <acronym>XML</acronym> Schema&rdquo;
+(<a href="#ref-orchard2004">Orchard 2004</a>) for more background on the
+extensiblity of <acronym>XML</acronym> vocabularies.</p>
+
+<p>Below is the skeleton of a <acronym>TCDL</acronym> file.</p>
+
+<p class="blockcode"><code>&lt;?xml version="<span class="value">1.0</span>"
+encoding="<span class="value">UTF-8</span>"?&gt;<br />
+&lt;testCaseDescription id="<span class="value">wcag20060427_sc1.1.1_l1_001</span>"<br />
+  xml:lang="<span class="value">en</span>"<br />
+  xmlns="<span class="value">http://bentoweb.org/refs/TCDL2.0/</span>"<br />
+  xmlns:btw="<span class="value">http://bentoweb.org/refs/TCDL2.0/</span>"<br />
+  xmlns:xs="<span class="value">http://www.w3.org/2001/XMLSchema</span>"<br />
+  xmlns:xsi="<span class="value">http://www.w3.org/2001/XMLSchema-instance</span>"<br />
+  xmlns:dc="<span class="value">http://purl.org/dc/elements/1.1/</span>"<br />
+  xmlns:xlink="<span class="value">http://www.w3.org/1999/xlink</span>"<br />
+  xmlns:html="<span class="value">http://www.w3.org/1999/xhtml</span>"<br />
+  xmlns:earl="<span
+class="value">http://www.w3.org/WAI/ER/EARL/nmg-strawman#</span>"<br />
+  xmlns:rdf="<span
+class="value">http://www.w3.org/1999/02/22-rdf-syntax-ns#</span>"<br />
+  xmlns:http="<span
+class="value">http://www.w3.org/2006/http#</span>"<br />
+  xsi:schemaLocation="<span class="value">http://bentoweb.org/refs/TCDL2.0/
+http://bentoweb.org/refs/schemas/tcdl2.0.xsd <br />
+<!--&nbsp;&nbsp;&nbsp;&nbsp;http://bentoweb.org/refs/TCDL1
+http://bentoweb.org/refs/schemas/tcdl1.xsd <br /-->
+     http://purl.org/dc/elements/1.1/
+http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd<br />
+    http://www.w3.org/1999/xhtml
+http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd<br />
+    http://www.w3.org/1999/xlink
+http://bentoweb.org/refs/schemas/xlink.xsd<br />
+    http://www.w3.org/2006/http#
+http://bentoweb.org/refs/schemas/http.xsd<br />
+    http://www.w3.org/WAI/ER/EARL/nmg-strawman#
+http://bentoweb.org/refs/schemas/earlwd.xsd</span>"<br />
+  &gt;<br />
+  &lt;formalMetadata&gt;<br />
+    <span class="comment">&lt;!-- child elements omitted --&gt;</span><br />
+  &lt;/formalMetadata&gt;<br />
+  &lt;technologies&gt;<br />
+    <span class="comment">&lt;!-- child elements omitted --&gt;</span><br />
+  &lt;/technologies&gt;<br />
+  &lt;testCase<!--complexity="atomic"-->&gt;<br />
+    <span class="comment">&lt;!-- child elements omitted --&gt;</span><br />
+  &lt;/testCase&gt;<br />
+  &lt;rules&gt;<br />
+    <span class="comment">&lt;!-- child elements omitted --&gt;</span><br />
+  &lt;/rules&gt;<br />
+  &lt;namespaceMappings&gt;<br />
+    <span class="comment">&lt;!-- child elements omitted --&gt;</span><br />
+  &lt;/namespaceMappings&gt;<br />
+&lt;/testCaseDescription&gt;<br />
+</code></p>
+
+<p>Note: There is no normative schema for XLink; see <a
+href="http://www.w3.org/TR/2001/REC-xlink-20010627/#sample-dtd-appx"
+title="Appendix B of the XLink 1.0 specification">Appendix B</a> of the XLink
+specification (<a href="#ref-xlink10">XLink 1.0</a>). In the BenToWeb
+project, the <acronym>W3C</acronym> <acronym>XML</acronym> Schema for XLink
+1.0 (<acronym>METS</acronym> XLink Schema, v. 2, Nov. 15, 2004), from the
+Metadata Encoding and Transmission Standard (<acronym>METS</acronym>)
+Official Web Site (Library of Congress) was borrowed with permission.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">5. Formal Metadata: The <a name="edef-formalmetadata"
+id="edef-formalmetadata"><code>formalMetadata</code> Element Type</a></h2>
+
+<p>The <code>formalMetadata</code> element type contains formal or
+administative metadata.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional),</li>
+  <li>any attribute in any namespace other than the target namespace (see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>).</li>
+</ul>
+
+<p>The <code>formalMetadata</code> element type also has a number of required
+and optional child element types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>title</code> (required),</li>
+  <li><code>dc:creator</code> (required),</li>
+  <li><code>dc:contributor</code> (optional),</li>
+  <li><code>dc:language</code> (required),</li>
+  <li><code>dc:rights</code> (required),</li>
+  <li><code>dc:date</code> (required),</li>
+  <li><code>status</code> (required),</li>
+  <li><code>version</code> (required),</li>
+  <li><code>source</code> (optional),</li>
+  <li><code>Extension</code> (optional extension element, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>),</li>
+  <li>any other element types in any namespace other than the target
+    namespace (extensibility point, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>).</li>
+</ul>
+
+<h3 class="section">5.1. The <a name="edef-title"
+id="edef-title"><code>title</code> Element Type</a></h3>
+
+<p>The <code>title</code> element type contains the title of the test case.
+It does not need to be unique (for example, in the test suite containing the
+test case) and its lenght can vary depending on the complexity of the test
+materials. However, the title <em class="rfc2119">should</em> be sufficiently
+descriptive to allow a quick identification of the issue exhibited by the
+test case.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>This element type may not only contain character data but also the
+<acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<h3 class="section">5.2. The <a name="edef-dccreator"
+id="edef-dccreator"><code>dc:creator</code> Element Type</a></h3>
+
+<p>The <code>dc:creator</code> element type is borrowed from the Dublin Core
+Metadata Element Set (<a href="#ref-dcmes11"><acronym
+title="Dublin Core Metadata Element Set">DCMES</acronym> 1.1</a>) and
+identifies the person or organization primarily responsible for creating the
+test case.</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>dc:creator</code> element type has the data type xs:string and
+<em class="rfc2119">must</em> therefore contain only character data.</p>
+
+<h3 class="section">5.3. The <a name="edef-dccontributor"
+id="edef-dccontributor"><code>dc:contributor</code> Element Type</a></h3>
+
+<p>The <code>dc:contributor</code> element type identifies the person or
+organization responsible for making contributions to the content of the test
+case.</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>dc:contributor</code> element type has the data type
+xs:string.</p>
+
+<h3 class="section">5.4. The <a name="edef-dclanguage"
+id="edef-dclanguage"><code>dc:language</code> Element Type</a></h3>
+
+<p>The <code>dc:language</code> element type is borrowed from the Dublin Core
+Metadata Element Set (<a href="#ref-dcmes11"><acronym
+title="Dublin Core Metadata Element Set">DCMES</acronym> 1.1</a>) and
+identifies the language of the intellectual content of the test case.</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>dc:language</code> element type has the data type xs:string and
+<em class="rfc2119">must</em> therefore contain only character data. However,
+in <acronym>TCDL</acronym> the value of <code>dc:language</code> <em><span
+class="rfc2119">must</span></em> be one of the language tags defined by <a
+href="#ref-bcp47"><acronym title="Best Current Practice">BCP</acronym> 47</a>
+(the successor of <a href="#ref-rfc3066"><acronym
+title="Request for Comments">RFC</acronym> 3066</a>). The value <em><span
+class="rfc2119">must not</span></em> be empty or null.</p>
+
+<h3 class="section">5.5. The <a name="edef-dcrights"
+id="edef-dcrights"><code>dc:rights</code> Element Type</a></h3>
+
+<p>The <code>dc:rights</code> element type is borrowed from the Dublin Core
+Metadata Element Set (<a href="#ref-dcmes11"><acronym
+title="Dublin Core Metadata Element Set">DCMES</acronym> 1.1</a>) and
+describes rights held in and over the test case.</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>dc:rights</code> element type has the data type xs:string and
+<em class="rfc2119">must</em> therefore contain only character data.</p>
+
+<h3 class="section">5.6. The <a name="edef-dcdate"
+id="edef-dcdate"><code>dc:date</code> Element Type</a></h3>
+
+<p>The <code>dc:date</code> element type identifies the date when the test
+case was created.</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>dc:date</code> element type has the data type <a
+href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#date">xs:date</a>
+(which is inspired by <a href="#ref-iso8601">ISO 8601</a>) or uses
+the <acronym>CVS</acronym> Date command. Examples:
+<samp>2004-10-01</samp> means 1 October 2004; <samp>&#x24; Date: 2008/07/16 14:42:48 &#x24;</samp> 
+means 16 July 2008, 2.42 <abbr title="in the afternoon">am</abbr>.</p>
+
+<h3 class="section">5.7. The <a name="edef-status"
+id="edef-status"><code>status</code> Element Type</a></h3>
+
+<p>The <code>status</code> element type identifies the state of the test case
+during the development process of the test suite, by means of one of an
+enumerated list of values (for example, “draft”, “pending bugfix”,
+“accepted”, “rejected”).</p>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>status</code> element type has the data type xs:string, but the
+values should really be chosen from a limited list. Defining the list of
+legal values is outside the scope of this specification because these values
+depend on the context of the test suite. For an example, see the <a
+href="#ref-wcagctp">Conformance Test Process For <acronym>WCAG</acronym>
+2.0</a>, which contains a description of the steps that must be performed so
+that a test case may be added to a test suite for <acronym>WCAG</acronym>
+2.0.</p>
+
+<h3 class="section">5.8. The <a name="edef-version"
+id="edef-version"><code>version</code> Element Type</a></h3>
+
+<p>The <code>version</code> element type contains an identifier that allows
+one to distinguish between different revisions of a test case. Note that the
+<a href="#ref-qaframeworkprimer"><acronym>W3C</acronym> <acronym
+title="Quality Assurance">QA</acronym> Framework Primer</a> defines a new
+version of a specification as <q>a significant functional change and
+enhancement</q>. <acronym>TCDL</acronym> does not define what consitutes a
+new version of a test case because this depends on the context in which the
+language is used.</p>
+
+<p>Note: the <acronym title="Working Group">WG</acronym> Note on Test
+Metadata contains the following note about &ldquo;<a
+href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#version-def"
+title="'version' in Test Metadata">version</a>&rdquo;:</p>
+
+<blockquote>
+  <p>ISSUE: It is unclear whether it is necessary to apply version numbers to
+  individual tests. More common practice is to version the entire test suite.
+  Ideally tests will not need to be revised as the specification evolves.
+  However, this is sometimes necessary, and at a minimum each Working Group
+  should define SpecRef and possibly other metadata such as Grouping elements
+  to indicate which versions of the specification an individual test
+  supports.</p>
+</blockquote>
+
+<p>This element type has no attribute types.</p>
+
+<p>The <code>version</code> element type has the data type xs:string.</p>
+
+<h3 class="section">5.9. The <a name="edef-source"
+id="edef-source"><code>source</code> Element Type</a></h3>
+
+<p>The <code>source</code> element type is used to document the source of a
+borrowed test case and related information: the name and
+<acronym>URL</acronym> of the original test suite, the <acronym>URL</acronym>
+of the original test file, its creator, whether the file was copied literally
+or with changes, and rights held in and over the original test case.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>source</code> element type can only contain other element types
+in the following order:</p>
+<ul class="contentmodel">
+  <li><code>testSuite</code> (required),</li>
+  <li><code>sourceFile</code> (required and repeatable),</li>
+  <li><code>dc:rights</code> (optional),</li>
+  <li><code>comment</code> (optional).</li>
+</ul>
+
+<h4>5.9.1. The <a name="edef-testsuite" id="edef-testsuite"><code>testSuite</code>
+Element Type</a></h4>
+
+<p>The <code>testSuite</code> element type is used to document the test suite
+from which a test case was borrowed.</p>
+
+<p>This element type has the following attribute:</p>
+<ul class="attlist">
+  <li><code>xlink:href</code> (optional) to specify the location of the test
+    suite.</li>
+</ul>
+
+<p>The <code>testSuite</code> element type can only contain one element type
+(and no character data):</p>
+<ul class="contentmodel">
+  <li><code>name</code> (required) to specify the name of the test suite.</li>
+</ul>
+
+<p>This element type may not only contain character data but also the
+<acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<h4>5.9.2. The <a name="edef-sourcefile"
+id="edef-sourcefile"><code>sourceFile</code> Element Type</a></h4>
+
+<p>The <code>sourceFile</code> element type is used to document a file that
+was borrowed from another test suite.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>changed</code> (required) to specify whether the file was
+    borrowed with changes (“true”) or without any changes
+  (“false”),</li>
+  <li><code>xlink:href</code> (required) to specify the location of the
+    original file.</li>
+</ul>
+
+<p>The <code>sourceFile</code> element type can only contain one element type
+(and no character data):</p>
+<ul class="contentmodel">
+  <li><code>dc:creator</code> (required).</li>
+</ul>
+
+<p>The <code>dc:creator</code> element type identifies the person or
+organization primarily responsible for creating the borrowed test file. For
+attribute types and content model, see the <a
+href="#edef-dccreator"><code>dc:creator</code> element type</a> above.</p>
+
+<h4>5.9.3. The <code>dc:rights</code> Element Type</h4>
+
+<p>The <code>dc:rights</code> element type describes rights held in and over
+the borrowed test file. For attribute types and content model, see the <a
+href="#edef-dcrights"><code>dc:rights</code> element type</a> above.</p>
+
+<h4>5.9.4. The <a name="edef-comment" id="edef-comment"><code>comment</code> Element
+Type</a></h4>
+
+<p>The <code>comment</code> element type is a general-purpose container for
+comments on the borrowed materials, such as changes that were performed,
+errors that were found etcetera.</p>
+
+<p>This element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">6. Technologies: The <a name="edef-technologies"
+id="edef-technologies"><code>technologies</code> Element Type</a></h2>
+
+<p>The <code>technologies</code> element type contains the following
+information about the technologies used in a test case:</p>
+<ul>
+  <li>the formal specification or recommendation that defines the <a
+    href="#dfn-technology">technology</a> (by name and
+    <acronym>URL</acronym>; required);</li>
+  <li>the technology features (for example, which <acronym>XHTML</acronym>
+    elements and/or attribute types) that are relevant to the test case
+    (optional);</li>
+  <li>a reference (<acronym>URL</acronym>) to a section in the formal
+    specification or a quote from the formal specification that describes the
+    technology features that are relevant to the test case (optional).</li>
+</ul>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>technologies</code> element type contains one or more instances
+of the <code>technicalSpec</code> element type.</p>
+
+<h3 class="section">6.1. The <a name="edef-technicalspec"
+id="edef-technicalspec"><code>technicalSpec</code> Element Type</a></h3>
+
+<p>The <code>technicalSpec</code> element type identifies a technology
+(proprietary, <acronym>W3C</acronym> recommendation or other type of
+technical specification) used in the test case. If a test case uses
+server-side scripting to generate content on the fly,
+<code>technicalSpec</code> identifies the generated content type, not the
+server-side scripting language. Languages and formats that are embedded or
+inlined in another format, for example inline <acronym
+title="Cascading Style Sheet">CSS</acronym> or an embedded <acronym
+title="Portable Network Graphic">PNG</acronym> file in an <acronym
+title="Hypertext Markup Language">HTML</acronym> file are also considered as
+technologies in the context of this specification. There is one
+<code>technicalSpec</code> element for each file technology used by the test
+case.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xlink:href</code> (optional),</li>
+  <li><code>baseline</code> (optional),</li>
+  <li><code>handle</code> (optional),</li>
+  <li><code>mediatype</code> (optional).</li>
+</ul>
+
+<p>The <code>xlink:href</code> attribute type contains the
+<acronym>URL</acronym> of the technical specification of the file format.
+Examples:</p>
+<ul>
+  <li><samp>http://www.w3.org/TR/xhtml1/</samp> to refer to
+    <acronym>XHTML</acronym> 1.0;</li>
+  <li><samp>http://www.w3.org/TR/xhtml11/</samp> to refer to
+    <acronym>XHTML</acronym> 1.1;</li>
+  <li><samp>http://www.w3.org/TR/ruby/</samp> to refer to Ruby
+  Annotation;</li>
+  <li><samp>http://www.w3.org/TR/1998/REC-CSS2-19980512/</samp> to refer to
+    <acronym>CSS</acronym>2;</li>
+  <li><samp>http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/</samp> to
+    refer to <acronym>DOM</acronym> Level 1;</li>
+  <li><samp>http://www.ecma-international.org/publications/standards/Ecma-262.htm</samp>
+    to refer to Standard <acronym>ECMA</acronym>-262 :
+    <acronym>ECMA</acronym>Script Language Specification, 3rd edition
+    (December 1999);</li>
+  <li><samp>http://msdn.microsoft.com/library/default.asp?url=/workshop/author/dhtml/reference/dhtml_reference_entry.asp</samp>
+    to refer to Microsoft&rsquo;s <acronym>HTML</acronym> and
+    <acronym>DHTML</acronym> Reference.</li>
+</ul>
+
+<p>According to the <a href="#ref-xlink10">XLink 1.0</a> specification,</p>
+
+<blockquote
+cite="http://www.w3.org/TR/2001/REC-xlink-20010627/#link-locators">
+  <p>[t]he value of the <code>href</code> attribute <em
+  class="rfc2119">must</em> be a <acronym>URI</acronym> reference as defined
+  in <a href="#ref-rfc2396"><acronym>RFC</acronym> 2396</a>, or must result
+  in a <acronym>URI</acronym> reference (…).</p>
+</blockquote>
+
+<p>The <a name="adef-baseline" id="adef-baseline"><code>baseline</code>
+attribute type</a> specifies whether a technology
+(<code>technicalSpec</code>) or a feature (<code>testElement</code>) is
+inside or outside the baseline assumed by the test case. The value
+“included” means that something is inside the baseline; the value
+“excluded” means outside the baseline. (For information about baselines
+in <acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 2.0,
+see &ldquo;Technology assumptions and the "baseline"&rdquo; in <em
+class="specTitle">Web Content Accessibility Guidelines 2.0 (<a
+href="#ref-wcag20"><acronym>WCAG</acronym> 2.0</a> - <acronym
+title="World Wide Web Consortium">W3C</acronym> Working Draft 27 April
+2006</em>) and <a href="#ref-baselines">About Baselines and <acronym
+title="Web Content Accessibility Guidelines">WCAG</acronym> 2.0</a>.) See the
+section <a href="#baselines">Describing Baselines</a> (below) for a fuller
+explanation and examples.</p>
+
+<p>Note: at the time of writing [@@date], it is not entirely clear whether
+<acronym>WCAG</acronym> baselines will only contain complete technologies or
+also mention specific features. The issue was discussed in March 2007, with <a
+href="http://lists.w3.org/Archives/Public/w3c-wai-gl/2006JanMar/0585.html">some
+arguments in favour of very granular baseline information</a>.
+<acronym>WCAG</acronym> conformance claims don&rsquo;t need to specify what
+technologies were used outside the baseline, but it seems desirable that test
+case metadata are more precise in this area.<br />
+The May 2007 Working Draft of <acronym>WCAG</acronym> 2.0 replaced the 
+baseline concept with &ldquo;accessibility-supported technology&rdquo;.</p>
+
+<p>The <a name="adef-handle" id="adef-handle"><code>handle</code>
+attribute type</a> supports the use of a short string that uniquely 
+identifies the technology. This attribute can be used when technologies
+need to be identified by means of string comparison, especially when comparing
+<acronym title="Uniform Resource Identifiers">URIs</acronym> is too cumbersome
+or inappropriate. If the handle is also diplayed in a user interface, it is
+advisable to use strings that can be easily recognised by users.
+</p>
+
+<p>The <a name="adef-mediatype" id="adef-mediatype"><code>mediatype</code>
+attribute type</a> specifies the 
+<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym> media type
+of the format identified by the <code>technicalSpec</code> element,
+if a <acronym>MIME</acronym> type is available.
+Some <acronym>MIME</acronym> types have been registered by
+<acronym title="Internet Assigned Numbers Authority">IANA</acronym> 
+(<a href="#ref-iana"><acronym>IANA</acronym></a>).
+For other <acronym>MIME</acronym> types it may be necessary to 
+consult vendor documentation or 
+<a href="http://en.wikipedia.org/wiki/Internet_media_type">Wikipedia</a>.
+</p>
+
+
+<p>Note: the requirement that there is a formal specification or
+recommendation for each technology works for many technologies
+(<acronym>HTML</acronym>, <acronym>CSS</acronym>,
+<acronym>ECMA</acronym>Script, Flash, <acronym
+title="Portable Document Format">PDF</acronym>, <acronym>PNG</acronym>,
+<acronym>JPEG</acronym>) but may be more problematic for others
+(vendor-specific <acronym>HTML</acronym> extensions, the currently
+non-standerdized <code>XMLHttpRequest</code> object, …).</p>
+
+<p>The <code>technicalSpec</code> element type can contain two other element
+types:</p>
+<ul class="attlist">
+  <li><code>specName</code> (required),</li>
+  <li><code>testElements</code> (optional).</li>
+</ul>
+
+<p>For example, to refer to <acronym>XHTML</acronym> 1.0, one could write:</p>
+
+<p class="blockcode"><code>&lt;technicalSpec xlink:href="<span
+class="value">http://www.w3.org/TR/xhtml1/</span>"&gt;<br /><!--@@add mediatype="text/html"?-->
+&lt;specName&gt;&lt;html:acronym&gt;<span
+class="value">XHTML</span>&lt;/html:acronym&gt;<span
+class="value">&amp;#8482; 1.0: The Extensible HyperText Markup Language
+(Second Edition)</span>&lt;/specName&gt;<br />
+&lt;/technicalSpec&gt;</code></p>
+
+<h4>6.1.1. The <a name="edef-specname" id="edef-specname"><code>specName</code>
+Element Type</a></h4>
+
+<p>The <code>specName</code> element type contains the name of the
+technology, more specifically the title of the technical specification that
+defines the technology. This element type may not only contain character data
+but also the <acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<h4>6.1.2. The <a name="edef-testelements"
+id="edef-testelements"><code>testElements</code> Element Type</a></h4>
+
+<p>The <code>testElements</code> element type contains a description of the
+elements or features used by the test case. This element can be omitted for
+binary formats (<acronym title="Portable Document Format">PDF</acronym>,
+Flash, …).</p>
+
+<p class="tsdtf"><em>Note</em>: this element type allows developers to check
+how well a test suite covers certain features, especially accessibility
+features, of a technology.</p>
+
+<p>The <code>testElements</code> element type has no attribute types. It
+contains at least one instance of the <code>testElement</code> element
+type.</p>
+
+<h5>6.1.2.1 The <a name="edef-testelement"
+id="edef-testelement"><code>testElement</code> Element Type</a></h5>
+
+<p>The <code>testElement</code> element type contains a description of a
+specific element or feature. There is one <code>testElement</code> for each
+feature used by the test case. For <acronym
+title="Cascading Style Sheets">CSS</acronym>, the name of the rule, selector,
+property, property value, … can be provided. For proprietary element and
+attribute types (Microsoft&rsquo;s <code>bgsound</code>, Netscape&rsquo;s
+<code>embed</code>, etcetera), a link to the company&rsquo;s documentation can be
+provided.</p>
+
+<p>The <code>testElement</code> element type has an optional <a
+href="#adef-baseline"><code>baseline</code> attribute</a>. It also contains
+one instance of the <code>elementName</code> element type, followed by one
+instance of either the <code>specReference</code> element type or the
+<code>specQuote</code> element type.</p>
+
+<p>The <a name="edef-elementname"
+id="edef-elementname"><code>elementName</code> element type</a> identifies
+the name of the element or feature. This element type has the following
+attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional),</li>
+  <li><code>localname</code> (required),</li>
+  <li><code>namespace</code> (optional).</li>
+</ul>
+
+<p>The <a name="adef-localname" id="adef-localname"><code>localname</code>
+attribute type</a> identifies the name of the feature. If the feature is an
+element or attribute from an <acronym>XML</acronym> vocabulary,
+<code>localname</code> contains the unqualified name.</p>
+
+<p>The <a name="adef-namespace" id="adef-namespace"><code>namespace</code>
+attribute type</a> identifies the namespace <acronym>URI</acronym> of the
+feature, if relevant. This attribute type <em class="rfc2119">must not</em>
+be used if the technology defining the feature is not an
+<acronym>XML</acronym> vocabulary.</p>
+
+<p><code>elementName</code> is an empty element type; it does not contain
+child elements or characer data.</p>
+
+<p>The <a name="edef-specreference"
+id="edef-specreference"><code>specReference</code> element type</a> contains
+the title of the relevant section in the specification. Use the title
+provided by the specification wherever possible; otherwise provide a succinct
+and meaningful title for the relevant section in the specification.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional),</li>
+  <li><code>xlink:href</code> (optional).</li>
+</ul>
+
+<p>The <a name="adef-xlinkhref" id="adef-xlinkhref"><code>xlink:href</code>
+attribute type</a> contains the <acronym>URL</acronym> of the relevant
+section in the technical specification.</p>
+
+<p>Examples of <code>xlink:href</code> in <code>specReference</code>:</p>
+<ul>
+  <li><samp>http://www.w3.org/TR/1999/REC-html401-19991224/struct/objects.html#adef-alt</samp>
+    to refer to the section &ldquo;How to specify alternate text&rdquo; in
+    the <acronym>HTML</acronym> 4.01 specification;</li>
+  <li><samp>http://www.w3.org/TR/1999/REC-html401-19991224/interact/scripts.html#adef-onfocus</samp>
+    to refer to the description of the &ldquo;onfocus&rdquo; event in the
+    <acronym>HTML</acronym> 4.01 specification;</li>
+  <li><samp>http://www.w3.org/TR/1999/REC-html401-19991224/types.html#type-links</samp>
+    to refer to the section on &ldquo;Link types&rdquo; in the
+    <acronym>HTML</acronym> 4.01 specification;</li>
+  <li><samp>http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/BGSOUND.asp</samp>
+    to refer to &ldquo;BGSOUND Element | bgSound Object&rdquo; in Microsoft&rsquo;s
+    <acronym>HTML</acronym> and <acronym>DHTML</acronym> Reference.</li>
+</ul>
+
+<p>The <code>specReference</code> element type may not only contain character
+data but also the <acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<p>The <a name="edef-specquote" id="edef-specquote"><code>specQuote</code>
+element type</a> contains a quote from the relevant section of the
+specification. <code>specQuote</code> can be used if it is not possible to
+provide an exact pointer to the relevant section in the specification (with
+<code>specReference</code>).</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>specQuote</code> element type may not only contain character
+data but also the <acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<h3>6.2. <a name="baselines" id="baselines">Describing Baselines</a></h3>
+
+<p>The Web Content Accessibility Guidelines 2.0 (<a
+href="#ref-wcag20"><acronym>WCAG</acronym> 2.0</a>, Working Draft 27 April
+2006) defines a baseline as the</p>
+
+<blockquote
+cite="http://www.w3.org/TR/2006/WD-WCAG20-20060427/appendixA.html#baselinedef">
+  <p>set of technologies assumed to be supported by, and enabled in, user
+  agents.</p>
+</blockquote>
+
+<p>The concept of baseline is intended to allow the use of newer technologies
+with accessibility features, instead of implicitly defining a baseline of
+<acronym>HTML</acronym> 4/<acronym>XHTML</acronym> 1.0 and
+<acronym>CSS</acronym> 1.0 (without JavaScript, Flash, <acronym>PDF</acronym>
+etcetera) as <acronym>WCAG</acronym> 1.0 did. A conformance claim for
+<acronym>WCAG</acronym> 2.0 must include a description of the baseline. To
+enable the description of a baseline for a test case, <acronym>TCDL</acronym>
+has the <code>baseline</code> attribute type on the
+<code>technicalSpec</code> element type. However, support for a technology is
+rarely, if ever, complete. For example, in <acronym>HTML</acronym> 4 the
+element types <code>object</code> and <code>link</code> and the attribute
+type <code>longdesc</code> were not widely supported for a long time (or at
+least not in the browser that dominates the market). For this reason,
+<acronym>TCDL</acronym> also enables the exclusion of certain element or
+attribute types from a technology that is in the baseline, by means of the
+baseline attribute type on the <code>testElement</code> element type.</p>
+
+<p>For example, <a href="#ref-wcag20-techs">Techniques for
+<acronym>WCAG</acronym> 2.0</a> contains technique H60: Using the
+<code>link</code> element to link to a glossary. If the test case author
+assumes that <code>link</code> is well supported, the technologies section
+can simply look as follows:</p>
+
+<p class="blockcode"><code>&lt;technologies&gt;<br />
+  &lt;technicalSpec xlink:href="<span
+class="value">http://www.w3.org/TR/xhtml1/</span>" baseline="<em
+class="value">included</em>" mediatype="<em class="value">text/html</em>"&gt;<br /><!--added mediatype="text/html"?-->
+    &lt;specName&gt;<br />
+      &lt;html:acronym&gt;<span
+class="value">XHTML</span>&lt;/html:acronym&gt;<span
+class="value">&amp;#8482; 1.0: The Extensible HyperText Markup Language
+(Second Edition)</span><br />
+    &lt;/specName&gt;<br />
+  &lt;/technicalSpec&gt;<br />
+&lt;/technologies&gt;</code></p>
+
+<p>However, if the test case author assumes that <code>link</code> is not
+sufficiently supported, it is possible to exclude this element type in the
+following manner:</p>
+
+<p class="blockcode"><code>&lt;technologies&gt;<br />
+  &lt;technicalSpec xlink:href="<span
+class="value">http://www.w3.org/TR/xhtml1/</span>" baseline="<em
+class="value">included</em>" mediatype="<em class="value">text/html</em>"&gt;<br /><!--added mediatype="text/html"?-->
+    &lt;specName&gt;<br />
+      &lt;html:acronym&gt;<span
+class="value">XHTML</span>&lt;/html:acronym&gt;<span
+class="value">&amp;#8482; 1.0: The Extensible HyperText Markup Language
+(Second Edition)</span><br />
+    &lt;/specName&gt;<br />
+    &lt;testElements&gt;<br />
+      &lt;testElement baseline="<em class="value">excluded</em>"&gt;<br
+/>
+        &lt;elementName localname="<span class="value">link</span>"
+namespace="<span class="value">http://www.w3.org/1999/xhtml</span>"/&gt;<br />
+        &lt;specReference xlink:href"<span
+class="value">http://www.w3.org/TR/1999/REC-html401-19991224/struct/links.html#edef-LINK</span>"&gt;<br
+/>
+          <span class="value">Document relationships: the</span>
+&lt;html:code&gt;<span class="value">link</span>&lt;/html:code&gt; <span
+class="value">element</span><br />
+        &lt;/specReference&gt;<br />
+      &lt;/testElement&gt;<br />
+    &lt;/testElements&gt;<br />
+  &lt;/technicalSpec&gt;<br />
+&lt;/technologies&gt;</code></p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">7. Test Case: The <a name="edef-testcase"
+id="edef-testcase"><code>testCase</code> Element Type</a></h2>
+
+<p>The <code>testCase</code> element type describes what is necessary for the
+evaluation of the test case.</p>
+
+<p>This element type has only one attribute type, <code>complexity</code>,
+with the values “atomic” or “complex”. A test case is atomic if it
+applies to only one “accessibility rule” (for example, a
+<acronym>WCAG</acronym> 1.0 checkpoint, a <acronym>WCAG</acronym> 2.0 success
+criterion or a Section 508 rule), or complex if it applies to multiple
+“accessibility rules” from the same set (<acronym>i.e.</acronym> the same
+guidelines document or the same set of legal requirements).
+The <code>complexity</code> attribute type is optional and its default value
+is “atomic”; in other words, a <code>testCase</code> element without
+a <code>complexity</code> attribute contains an atomic test case.</p>
+
+<p>The <code>testCase</code> element type can contain six other element
+types:</p>
+<ul class="contentmodel">
+  <li><code>dc:description</code> (required),</li>
+  <li><code>purpose</code> (required),</li>
+  <li><code>internalNotes</code> (optional),</li>
+  <li><code>expertGuidance</code> (optional),</li>
+  <li><code>preconditions</code> (optional),</li>
+  <li><code>requiredTests</code> (optional),</li>
+  <li><code>files</code> (required).</li>
+</ul>
+
+<h3 class="section">7.1. The <a name="edef-dcdescription"
+id="edef-dcdescription"><code>dc:description</code> Element Type</a></h3>
+
+<p>The <code>dc:description</code> element type contains a summary of the
+test materials and how they are to be used in the test case. The description
+indicates to the accessibility expert/scenario author what to expect and what
+will happen when a user interacts with the test materials. The description of
+the behaviour is especially important for test materials with interactive
+components such as forms.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>dc:description</code> element type may not only contain
+character data but also the <acronym>XHTML</acronym> element types specified
+in <a href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<p>Note: Strictly speaking, Dublin Core elements can only contain strings.
+The <a href="http://dublincore.org/schemas/xmls/qdc/2006/01/06/notes/">Notes
+on the <acronym>W3C</acronym> <acronym>XML</acronym> Schemas for Qualified
+Dublin Core</a> state that &ldquo;<q>According to the schema, the values of
+<acronym>XML</acronym> elements representing Dublin Core elements and element
+refinements may only have simple "string" values (which may be further
+restricted in the manner described below), defined by the type
+<code>dc:SimpleLiteral</code> in the schema. (&hellip;) Complex or structured
+values - i.e., the use of additional <acronym>XML</acronym> elements nested
+within the <acronym>XML</acronym> elements representing Dublin Core elements
+and element refinements - are not valid. By exploiting features of the
+<acronym>XML</acronym> schema specification, the proposed schema are designed
+so that it is possible to import the schema into an extension schema that
+does allow additional nested elements as values for the Dublin Core elements.
+Such extensions will not be valid according to the container schema listed
+here and, therefore, not interoperable except by translation methods (not yet
+defined here or by the <acronym>DCMI</acronym>).</q>&rdquo;</p>
+
+<h3 class="section">7.2. The <a name="edef-purpose"
+id="edef-purpose"><code>purpose</code> Element Type</a></h3>
+
+<p>The <code>purpose</code> element type contains a description of the
+intention of the test materials. The purpose contains an explanation of the
+expected evaluation result in regard to the relevant rules, checkpoints or
+success criteria. It does not need to repeat the “rule” or success
+criterion for which the test case is developed. (Strictly speaking, this goes
+beyond the <a
+href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#purpose-def">Purpose
+in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.)</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>This element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<h3 class="section">7.3. The <a name="edef-internalnotes"
+id="edef-internalnotes"><code>internalNotes</code> Element Type</a></h3>
+
+<p>The <code>internalNotes</code> element type contains any notes for internal use.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>internalNotes</code> element type contains one or more occurrences
+of the <code>internalNote</code> element type.</p>
+
+<h4>7.3.1. The <a name="edef-internalnote" id="edef-internalnote"><code>internalNote</code>
+Element Type</a></h4>
+
+<p>The <code>internalNote</code> element type contains information for internal use.
+It has attributes that allow filtering and retrieval (<code>id</code> and <code>class</code>). 
+This element type may not only contain character data but also the <acronym>XHTML</acronym> 
+element types specified in <a href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline Markup</a>.
+</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>id</code> (optional),</li>
+  <li><code>class</code> (optional).</li>
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<h3 class="section">7.4. The <a name="edef-expertguidance"
+id="edef-expertguidance"><code>expertGuidance</code> Element Type</a></h3>
+
+<p>The <code>expertGuidance</code> element type contains guidance to
+reviewers (for example, accessibility experts if <acronym>TCDL</acronym> is used for a
+<acronym>WCAG</acronym> test suite) for evaluating the test case.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>This element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<h3 class="section">7.5. The <a name="edef-preconditions"
+id="edef-preconditions"><code>preconditions</code> Element Type</a></h3>
+
+<p>The <code>preconditions</code> element type contains conditions that must
+be met before this test is executed. See <a
+href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/#preconditions-def">Preconditions
+in <acronym>W3C</acronym> Working Group Note on Test Metadata</a>.</p>
+
+<p>This element type is provided for extensibility; it can contain any
+elements in any namespace other than the target namespace
+(<code>##other</code>).</p>
+
+<h3 class="section">7.6. The <a name="edef-requiredtests"
+id="edef-requiredtests"><code>requiredTests</code> Element Type</a></h3>
+
+<p>The <code>requiredTests</code> element type describes</p>
+<ul>
+  <li>the test mode or modes (required): the ways in which the test case
+    should be evaluated to advance the test case from “draft” status to
+    “accepted”;</li>
+  <li>one or more test scenarios for end user evalution (strictly optional,
+    but required if the test mode is “end user”): a scenario consists of
+    <ul>
+      <li>user guidance (for example, advice on features of a user agent that
+        should be supported by and enabled in a browser),</li>
+      <li>questions that the user is expected to answer (yes/no question,
+        open question, Likert scale, multiple choice, or a combination of
+        yes/no and open question),</li>
+      <li>the experience that the user should have with certain user agents
+        or assistive technologies to evaluate the test, and</li>
+      <li>optionally, disabilities to which the test is relevant.</li>
+    </ul>
+  </li>
+</ul>
+
+<p class="bentoweb"><em>Note</em>: in Bentoweb, each scenario has a mandatory
+identifier that is unique within the test case description. This identifier
+is necessary to map end user feedback to the scenarios.</p>
+
+<p>The <acronym>TCDL</acronym> specification does not define any attribute
+types for the <code>requiredTests</code> element type but allows the use of
+any attribute types in any namespace other than the target namespace for
+extensibility.</p>
+
+<p>The <code>requiredTests</code> element type can contain the following
+element types in the following order:</p>
+<ul class="contentmodel">
+  <li><code>testMode</code> (required),</li>
+  <li><code>scenario</code> (optional and repeatable),</li>
+  <li><code>Extension</code> (optional extension element, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>),</li>
+  <li>any other element types in any namespace other than the target
+    namespace (extensibility point, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>).</li>
+</ul>
+
+<h4>7.6.1. The <a name="edef-testmode" id="edef-testmode"><code>testMode</code>
+Element Type</a></h4>
+
+<p>The <code>testMode</code> element type specifies the type of evaluation
+that is required to get the test case “accepted”.</p>
+
+<p>This element type has no attribute types and allows only string values
+(xs:string).</p>
+
+<div class="bentoweb">
+<p><em>Note</em>: BenToWeb uses the following test modes:</p>
+<ul>
+  <li>“enduser” (for manual evaluation by end users - the only test mode
+    that requires the definition of scenarios);</li>
+  <li>“oneExpert” (for test cases that are straightforward enough to be
+    evaluated by just one accessibility expert);</li>
+  <li>“experts” (for evaluation by three or more experts);</li>
+  <li>&ldquo;semi-automatic&rdquo; (for evaluation with an automated tool
+    where the tool can only provide a hint or a warning and human judgement
+    is necessary to confirm the issue);</li>
+  <li>“automatic” (for evaluation with an accessibility evaluation tool
+    or other type of software).</li>
+</ul>
+</div>
+
+<h4>7.6.2. The <a name="edef-scenario" id="edef-scenario"><code>scenario</code>
+Element Type</a></h4>
+
+<p>The <code>scenario</code> element type specifies a scenario that can
+generate data for validating the test case. In <acronym>TCDL</acronym>, this
+element type is geared towards end-user evaluation of test samples. For this
+purpose, it is possible to define several types of questions (see below).</p>
+
+<p>This element type has the following attribute:</p>
+<ul class="attlist">
+  <li><code>id</code> (required) for an identifier that is unique within the
+    <acronym>TCDL</acronym> file.</li>
+</ul>
+
+<p>The <code>scenario</code> element type can contain the following element
+types in the following order:</p>
+<ul class="contentmodel">
+  <li><code>dc:creator</code> (optional),</li>
+  <li><code>dc:date</code> (optional),</li>
+  <li><code>status</code> (optional),</li>
+  <li><code>scenarioNotes</code> (optional),</li>
+  <li><code>userGuidance</code> (optional and repeatable, <a
+    href="#multilingual">one per language</a>),</li>
+  <li><code>questions</code> (required),</li>
+  <li><code>experience</code> (required),</li>
+  <li><code>disabilities</code> (optional).</li>
+</ul>
+
+<p>For <code>dc:creator</code>, <code>dc:date</code> and <code>status</code>,
+see above: the <a href="#edef-dccreator"><code>dc:creator</code> element
+type</a>, the <a href="#edef-dcdate"><code>dc:date</code> element type</a>,
+and the <a href="#edef-status"><code>status</code> element type</a>.</p>
+
+<h5>7.6.2.1. The <a name="edef-scenarionotes"
+id="edef-scenarionotes"><code>scenarioNotes</code> Element Type</a></h5>
+
+<p>The <code>scenarioNotes</code> element type is a container for any kind of
+notes on the scenario, for example, its purpose.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>scenarioNotes</code> element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<h5>7.6.2.2. The <a name="edef-userguidance"
+id="edef-userguidance"><code>userGuidance</code> Element Type</a></h5>
+
+<p>The <code>userGuidance</code> element type contains additional guidance to
+the end user who evaluates the test case, especially with regard to the
+configuration of their user agent and/or assistive technology. The
+<code>xml:lang</code> attribute is required.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (<strong>required</strong>),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p><strong>Note:</strong> the languages <strong class="rfc2119">must</strong>
+match those used for the questions defined in the <code>questions</code>
+element. This means that for each language version of a question, there
+<strong class="rfc2119">must</strong> be a corresponding language version of
+<code>userGuidance</code>, and vice versa, unless the scenario does not need
+user guidance (in which case there is no <code>userGuidance</code> element
+for any of the languages in which the questions are available).</p>
+
+<p>This element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<h5>7.6.2.3. The <a name="edef-questions" id="edef-questions"><code>questions</code>
+Element Type</a></h5>
+
+<p>The <code>questions</code> element type contains one or more question that
+can be presented to a human evaluator (an end user) to evaluate a test case.
+In this context, end-user evaluation is a method for getting feedback on a
+technique or a specific aspect of a technique&rsquo;s implementation, for example,
+the use of certain elements and/or attributes to meet a
+<acronym>WCAG</acronym> 2.0 success criterion or a specific contrast ratio in
+a web page.</p>
+
+<p><a name="multilingual" id="multilingual">If the evaluation panel (a group
+of end-users not involved in the development of the test cases) is
+multilingual</a>, it may be necessary to provide the questions in different
+languages. In that case, there should be one question or set of questions per
+language that needs to be supported. The use of different language versions
+for questions, user guidance and labels <em class="rfc2119">must</em> be
+consistent: when any of these items is translated, each of the other elements
+(assuming that they are used) must also be translated.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (<strong>required</strong>),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>questions</code> element type can contain only one of the
+following five element types, which are mutually exclusive:</p>
+<ul class="contentmodel">
+  <li><code>openQuestion</code>, or</li>
+  <li><code>yesNoQuestion</code>, or</li>
+  <li><code>yesNoOpenQuestion</code>, or</li>
+  <li><code>likertScale</code>, or</li>
+  <li><code>multipleChoice</code>, or</li>
+  <li><code>Extension</code> (optional extension element, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>),</li>
+  <li>any other element types in any namespace other than the target
+    namespace (extensibility point, see <a
+    href="#chapt-extensibility">Extensibility of
+  <acronym>TCDL</acronym></a>).</li>
+</ul>
+
+<h6>7.6.2.3.1. The <a name="edef-openquestion"
+id="edef-openquestion"><code>openQuestion</code> Element Type</a></h6>
+
+<p>The <code>openQuestion</code> element type contains an open question with
+a textarea, which can be presented to a user.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>openQuestion</code> element type contains the following element
+types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>questionText</code> (required and repeatable, <a
+    href="#multilingual">one per language</a>), which contains the actual
+    question, and</li>
+  <li><code>space</code> (required) which specifies the size of the text area
+    in which the user can enter a response.</li>
+</ul>
+
+<p>The <a name="edef-questiontext"
+id="edef-questiontext"><code>questionText</code> element type</a> has a
+required <code>xml:lang</code> attribute and an optional <code>dir</code>
+attribute. There is one <code>questionText</code> element per language in
+which the scenario needs to be available. As noted, above, the language
+versions of <code>questionText</code> must match those of
+<code>userGuidance</code>, if any user guidance is provided. The
+<code>questionText</code> element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<p>The <a name="edef-space" id="edef-space"><code>space</code> element
+type</a> has two required attribute types: <code>rows</code>, which specifies
+the number of visible text lines, and <code>columns</code>, which specifies
+the visible width in average character widths. The values of the
+<code>rows</code> and <code>columns</code> attributes <strong
+class="rfc2119">must</strong> be positive integers. The resulting text area
+<strong class="rfc2119">must</strong> allow the user to enter more lines than
+specified by the <code>rows</code> attribute and longer lines specified by
+the <code>columns</code> attribute.</p>
+
+<h6>7.6.2.3.2. The <a name="edef-yesnoquestion"
+id="edef-yesnoquestion"><code>yesNoQuestion</code> Element Type</a></h6>
+
+<p>The <code>yesNoQuestion</code> element type contains a yes-no-question,
+with a third option (for options such as &ldquo;Don't know&rdquo;, &ldquo;Not
+applicable&rdquo;, etcetera).</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>yesNoQuestion</code> element type contains the following element
+types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>questionText</code> (required and repeatable, <a
+    href="#multilingual">one per language</a>), which contains the actual
+    question, and</li>
+  <li><code>optionYes</code> (required),</li>
+  <li><code>optionNo</code> (required),</li>
+  <li><code>optionOther</code> (optional).</li>
+</ul>
+
+<p>The <a href="#edef-questiontext"><code>questionText</code> element
+type</a> is defined above.</p>
+
+<p>The <a name="edef-yesnooption" id="edef-yesnooption">element types
+<code>optionYes</code> and <code>optionNo</code></a> are empty element types
+with the following attribute types:</p>
+<ul class="attlist">
+  <li><code>value</code> (required) for the value that will be sent to the
+    server if the user selects this option,</li>
+  <li><code>expected</code> (optional) to specify if this option is what the
+    question author would expect from the user (indicated with the values
+    &ldquo;yes&rdquo; or &ldquo;no&rdquo;),</li>
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The element types <code>optionYes</code> and <code>optionNo</code> are
+empty because it is not necessary for <acronym>TCDL</acronym> to contain the
+strings &ldquo;yes&rdquo; or &ldquo;no&rdquo; (or any translations of these):
+the process that transforms the scenarios into a user interface can fill in
+these strings.</p>
+
+<p>The <a name="edef-optionother"
+id="edef-optionother"><code>optionOther</code> element type</a> specifies an
+alternative for “yes” or “no”, for example “I don&rsquo;t know” or
+“Other”. There <strong class="rfc2119">must</strong> be one “other
+option” for each language in which the questions are available. Unlike the
+element types <code>optionYes</code> and <code>optionNo</code>,
+<code>optionOther</code> has child elements: it can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<p>The <code>optionOther</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>expected</code> (optional) to specify if this option is what the
+    question author would expect from the user (indicated with the values
+    “yes” or “no”),</li>
+  <li><code>xml:lang</code> (<strong>required</strong>),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<h6>7.6.2.3.3. The <a name="edef-yesnoopenquestion"
+id="edef-yesnoopenquestion"><code>yesNoOpenQuestion</code> Element
+Type</a></h6>
+
+<p>The <code>yesNoOpenQuestion</code> element type contains a
+yes-no-question, with a third option (for options such as “Don&rsquo;t know”,
+“Not applicable”, etcetera) and an open question with a text area. It is
+a combination of the <code>yesNoQuestion</code> and <code>openQuestion</code>
+element types defined above.</p>
+
+<p>The <code>yesNoOpenQuestion</code> element type contains the following
+element types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>questionText</code> (required and repeatable, <a
+    href="#multilingual">one per language</a>), which contains the question
+    for the yes-no part and possibly also for the open part,</li>
+  <li><code>optionYes</code> (required),</li>
+  <li><code>optionNo</code> (required),</li>
+  <li><code>optionOther</code> (optional),</li>
+  <li><code>questionText</code> (optional and repeatable, <a
+    href="#multilingual">one per language</a>), which contains the question
+    for the open part if this is not already contained in the first
+    <code>questionText</code>(s),</li>
+  <li><code>space</code> (required), which specifies the size of the text
+    area in which the user can enter a response.</li>
+</ul>
+
+<p>The element types <a
+href="#edef-questiontext"><code>questionText</code></a>, <a
+href="#edef-yesnooption"><code>optionYes</code>, <code>optionNo</code></a>,
+<a href="#edef-optionother"><code>optionOther</code></a> and <a
+href="#edef-space"><code>space</code></a> are defined above.</p>
+
+<h6>7.6.2.3.3. The <a name="edef-likertscale"
+id="edef-likertscale"><code>likertScale</code> Element Type</a></h6>
+
+<p>The <code>likertScale</code> element type specifies a Likert scale.</p>
+
+<p>The <a href="#ref-usabilityglossary">Usability First™ Usability
+Glossary</a> defines <dfn>Likert scale</dfn> as follows:</p>
+
+<blockquote
+cite="http://www.usabilityfirst.com/glossary/main.cgi?function=display_term&amp;term_id=968">
+  <p>a type of survey question where respondents are asked to rate the level
+  at which they agree or disagree with a given statement. For example:</p>
+
+  <blockquote>
+    <p>I find this software easy to use.</p>
+
+    <p>strongly disagree 1 2 3 4 5 6 7 strongly agree</p>
+  </blockquote>
+
+  <p>A Likert scale is used to measure attitudes, preferences, and subjective
+  reactions. In software evaluation, we can often objectively measure
+  efficiency and effectiveness with performance metrics such as time taken or
+  errors made. Likert scales and other attitudinal scales help get at the
+  emotional and preferential responses people have to the design. Is it
+  attractive, fun, professional, easy?</p>
+</blockquote>
+
+<p>This element type has the following attribute type:</p>
+<ul class="attlist">
+  <li><a name="adef-display" id="adef-display"><code>display</code></a>
+    (required), which defines how a list of choices is displayed: vertically,
+    horizontally or as a drop-down list (with the values
+    &ldquo;vertical&rdquo;, &ldquo;horizontal&rdquo; and
+    &ldquo;dropdown&rdquo;, respectively).</li>
+</ul>
+
+<p>The default for <code>display</code> is vertical (for greater
+accessibility to screen readers). Dropdowns are not recommended if more than
+one choice needs to be selected.</p>
+
+<p>The <code>likertScale</code> element type contains the following element
+types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><a href="#edef-questiontext"><code>questionText</code></a> (required
+    and repeatable, <a href="#multilingual">one per language</a>), which
+    contains the actual question, and</li>
+  <li><code>likertLevel</code> (required, exactly five times).</li>
+</ul>
+
+<p>The <code>likertLevel</code> element type defines a level in the Likert
+scale.</p>
+
+<p>The element has the following attribute types:</p>
+<ul class="attlist">
+  <li><a name="adef-number" id="adef-number"><code>number</code></a>
+    (required) for the number of the level (1-5, consecutively),</li>
+  <li><a name="adef-expected" id="adef-expected"><code>expected</code></a>
+    (optional) to specify if this option is what the question author would
+    expect from the user (indicated with the values “yes” or
+  “no”).</li>
+</ul>
+
+<p>The <a name="edef-likertlevel"
+id="edef-likertlevel"><code>likertLevel</code> element type</a> contains the
+following elements, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>label</code> (required and repeatable, <a
+    href="#multilingual">one per language</a>), for the value displayed to
+    the user,</li>
+  <li><code>value</code> (required), for the value to be submitted to the
+    server.</li>
+</ul>
+
+<p>The <a name="edef-label" id="edef-label"><code>label</code> element
+type</a> specifies the label associated with the choice. There is one
+<code>label</code> element per language in which the scenario needs to be
+available.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (required),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>label</code> element type may not only contain character data
+but also the <acronym>XHTML</acronym> element types specified in <a
+href="#sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline
+Markup</a>.</p>
+
+<p>The <a name="edef-value" id="edef-value"><code>value</code> element
+type</a> specifies the value to be submitted by the user. There is only one
+<code>value</code> element in every <code>likertLevel</code>, so that the
+same value is sent to the server, regardless the number of languages the
+<code>label</code> is available.</p>
+
+<p>This element type has no attribute types. Its data type is xs:string.</p>
+
+<h6>7.6.2.3.4. The <a name="edef-multiplechoice"
+id="edef-multiplechoice"><code>multipleChoice</code> Element Type</a></h6>
+
+<p>The <code>multipleChoice</code> element type contains a multiple choice
+question. It is possible to limit the number of responses to one (for radio
+buttons) or to allow multiple reponses (for check boxes). This element type
+is strictly a generalisation of <code>likertScale</code>, which can be seen
+as a short-hand notation of a specific usage of
+<code>multipleChoice</code>.</p>
+
+<p>The <code>multipleChoice</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>select</code> (required), with the values “one” or
+    “multiple”,</li>
+  <li><a href="#adef-display"><code>display</code></a> (required).</li>
+</ul>
+
+<p>The <code>select</code> attribute type defines whether the user can select
+one or multiple choices (<acronym>i.e.</acronym> one radio button versus
+multiple check boxes): if a <code>multipleChoice</code> element has a
+<code>select</code> attribute with the value “one”, the
+<acronym>HTML</acronym> equivalent is rendered as a set of radio buttons; if
+the <code>select</code> attribute has the value “multiple”, the
+<acronym>HTML</acronym> equivalent is rendered as a set of check boxes.</p>
+
+<p>The <code>multipleChoice</code> element type contains the following
+element types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><a href="#edef-questiontext"><code>questionText</code></a> (required
+    and repeatable, <a href="#multilingual">one per language</a>), which
+    contains the actual question, and</li>
+  <li><code>choice</code> (required, at least two instances), for each of the
+    options presented to the user.</li>
+</ul>
+
+<p>The <code>choice</code> element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><a href="#adef-number"><code>number</code></a> (optional),</li>
+  <li><a href="#adef-display"><code>display</code></a> (optional),</li>
+  <li><a href="#adef-expected"><code>expected</code></a> (optional).</li>
+</ul>
+
+<p>The <code>choice</code> element type contains the following element types,
+which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><a href="#edef-label"><code>label</code></a> (required and repeatable,
+    <a href="#multilingual">one per language</a>), for the value displayed to
+    the user,</li>
+  <li><a href="#edef-value"><code>value</code></a> (required), for the value
+    to be submitted to the server.</li>
+</ul>
+
+<h5>7.6.2.3.2. The <a name="edef-experience"
+id="edef-experience"><code>experience</code> Element Type</a></h5>
+
+<p>The <code>experience</code> element type specifies a user&rsquo;s level of
+experience with the specified types of software. There are three categories
+of software: assistive technologies, user agents and devices. User agent also
+covers browser plugins.</p>
+
+<p>The <code>experience</code> element type has no attribute types. It
+contains the following element types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>AssistiveTechnology</code> (optional and repeatable),</li>
+  <li><code>UserAgent</code> (required and repeatable),</li>
+  <li><code>Device</code> (optional, not repeatable).</li>
+</ul>
+
+<p><code>AssistiveTechnology</code>, <code>UserAgent</code> and
+<code>Device</code> are empty element types. <code>AssistiveTechnology</code>
+lists assistive technologies such as screen readers, screen magnifiers, voice
+recognition software, alternative keyboards and alternative pointing devices.
+<code>UserAgent</code> here refers to any software that retrieves and renders
+Web content for users. This may include Web browsers, media players,
+plug-ins, and other programs — including assistive technologies — that
+help in retrieving and rendering Web content. <code>Device</code> refers to
+the hardware on which user agents and/or assistive technologies run: personal
+computers, personal digital assistants, mobile phones, 
+<acronym title="augmentative and alterative communication">AAC</acronym> devices, etcetera.</p>
+
+<p class="bentoweb"><em>Note</em>: in BenToWeb, assistive technologies are
+not user agents but are a category of their own.</p>
+
+<p>The element types <code>AssistiveTechnology</code>, <code>UserAgent</code>
+and <code>Device</code> have the following attribute types:</p>
+<ul class="attlist">
+  <li><code>minimumLevel</code> (required),</li>
+  <li><code>type</code> (required),</li>
+  <li><code>product</code> (optional),</li>
+  <li><code>version</code> (optional).</li>
+</ul>
+
+<p>The attribute type <code>minimumLevel</code> specifies a user&rsquo;s required
+level of experience with a certain software or device on a scale from 1
+(low/novice) to 5 (high/expert). How these levels are established is outside
+the scope of this specification but depends on the context where
+<acronym>TCDL</acronym> is used. This attribute type contains integers from 1
+up to and including 5.</p>
+
+<p>The attribute type <code>type</code> specifies the type of software or
+device. This attribute type contains only character data (data type
+xs:string).</p>
+
+<div class="bentoweb">
+<p><em>Note</em>: BenToWeb uses the following values for
+<code>type</code>:</p>
+<ul>
+  <li>in <code>AssistiveTechnology</code>: “screenreader”,
+    “screenreader with magnification”, “magnification software”,
+    “speech and hearing support software”, “Braille display”,
+    “speech recognition software”, “<acronym>CCTV</acronym>”,
+    “alternative input devices”;</li>
+  <li>in <code>UserAgent</code>: “browser”, “talking browser”,
+    “plugin”;</li>
+  <li>in <code>Device</code>: “<acronym>PC</acronym>”,
+    “<acronym>PDA</acronym>”, “MobilePhone”, “Television”.</li>
+</ul>
+</div>
+
+<p>The attribute type <code>product</code> specifies a product in the
+category specfied in <code>type</code>.</p>
+
+<p>The attribute type <code>version</code> specifies a version of the product
+specified in <code>product</code>. If the <code>version</code> attribute type
+is used, the <code>product</code> attribute type <em
+class="rfc2119">must</em> also be used. The data type of <code>version</code>
+is xs:decimal.</p>
+
+<h6>7.6.2.3.2.1. <a name="matchingexperience" id="matchingexperience">Matching <code>experience</code> and User Profiles</a></h6>
+
+<p>The experience information in a <acronym>TCDL</acronym> file can be used
+to filter specific scenarios for users with a specific profile, so that it is
+possible to gather information on how a test case is used by someone with a
+specific browser, a specific screen reader, etcetera. For this to work, the
+system that matches scenarios to user profiles would need a matching
+algorithm like the following:</p>
+<ul>
+  <li>the three classes of experience (<code>AssistiveTechnology</code>,
+    <code>UserAgent</code> and <code>Device</code>) have an AND relationship:
+    a user&rsquo;s profile only matches if there is a match between each of the
+    classes in experience and the corresponding part of the user profile;</li>
+  <li>the absence of any of the <code>AssistiveTechnology</code> class in a
+    scenarios means “no assistive technology”;</li>
+  <li>the absence of any of the <code>Device</code> class means “any type, 
+    product or version” in that class matches;</li>
+  <li>assistive technologies with a different <code>type</code> value have an
+    AND relationship: a user&rsquo;s profile only matches if each of these types is
+    listed in his/her profile;</li>
+  <li>assistive technologies with the same <code>type</code> value have an OR
+    relationship: a user&rsquo;s profile results in a match if any product of this
+    type is in his profile, unless <code>experience</code> also lists
+    specific products;</li>
+  <li>user agents with a different <code>type</code> value have an AND
+    relationship: a user&rsquo;s profile only matches if each of these types is
+    listed in his/her profile;</li>
+  <li>user agents with the same <code>type</code> value have an OR
+    relationship: a user&rsquo;s profile results in a match if any product of this
+    type is in his profile, unless <code>experience</code> also lists
+    specific products;</li>
+  <li>devices with the same <code>type</code> value have an OR relationship:
+    a user&rsquo;s profile results in a match if any product of this type is in his
+    profile, unless <code>experience</code> also lists specific products;</li>
+  <li>in each of the three classes of experience
+    (<code>AssistiveTechnology</code>, <code>UserAgent</code> and
+    <code>Device</code>), values of <code>product</code> and
+    <code>version</code> need an exact match in the user profile.</li>
+</ul>
+
+<h6>7.6.2.3.2.2. <a name="usingexperience_eg" id="usingexperience_eg">Using <code>experience</code>: Examples</a></h6>
+
+<p>A few examples of how to match scenarios to user profiles with the above
+algorithm are discussed below. For the sake of simplicity, we will disregard
+to <code>minimumLevel</code> attribute values.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 1
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" minimumLevel="<span
+class="value">1</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with a certain screenreader AND a certain
+browser.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 2
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;AssistiveTechnology type="<span class="value">alternative input
+devices</span>" minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" minimumLevel="<span
+class="value">1</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with a certain screenreader AND an
+alternative input device AND a certain browser.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 3
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">4</span>" minimumLevel="<span class="value">1</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">5</span>" minimumLevel="<span class="value">1</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">6</span>" minimumLevel="<span
+class="value">1</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with a certain screenreader AND any of the
+specified versions of Microsoft Internet Explorer (4, 5 or 6, but not
+5.5).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 4
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;AssistiveTechnology type="<span class="value">magnification
+software</span>" minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">4</span>" minimumLevel="<span class="value">1</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">5</span>" minimumLevel="<span
+class="value">1</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with any screenreader AND any magnification
+software AND any of the specified versions of Microsoft Internet Explorer (4
+or 5 but not 5.5).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 5
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+product="<span class="value">JAWS</span>" minimumLevel="<span
+class="value">3</span>"/&gt;<br />
+&lt;AssistiveTechnology type="<span
+class="value">screenreader</span>"product="<span
+class="value">Window-Eyes</span>" minimumLevel="<span
+class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">4</span>" minimumLevel="<span class="value">1</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" product="<span
+class="value">Microsoft Internet Explorer</span>" version="<span
+class="value">5</span>" minimumLevel="<span
+class="value">1</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with any version of JAWS or Window-Eyes AND
+any of the specified versions of Microsoft Internet Explorer (4 or 5 but not
+5.5).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 6
+--&gt;</span><br />
+&lt;AssistiveTechnology type="<span class="value">screenreader</span>"
+product="<span class="value">JAWS</span>" minimumLevel="<span
+class="value">3</span>"/&gt;<br />
+&lt;AssistiveTechnology type="<span class="value">Braille display</span>"
+minimumLevel="<span class="value">3</span>"/&gt;<br />
+&lt;UserAgent type="<span class="value">browser</span>" minimumLevel="<span
+class="value">1</span>"/&gt;<br />
+&lt;Device type="<span class="value">PC</span>" minimumLevel="<span
+class="value">2</span>"/&gt;</code></p>
+
+<p>This matches all user profiles with any version of JAWS AND any Braille
+display AND any browser AND a <acronym>PC</acronym>.</p>
+
+<h5>7.6.2.3.3. The <a name="edef-disabilities"
+id="edef-disabilities"><code>disabilities</code> Element Type</a></h5>
+
+<p>The <code>disabilities</code> element type specifies one or more
+disabilities to which the test case is relevant. This enables matching test
+cases with user profiles and prevents that end users get test cases that are
+irrelevant to them (for example, a test case on colour contrast should not be
+matched with a blind user).</p>
+
+<p>The <code>disabilities</code> element type has no attribute types. It can
+only contain one element type:</p>
+<ul class="contentmodel">
+  <li><code>disability</code> (required and repeatable).</li>
+</ul>
+
+<p>The <code>disability</code> element type can only contain character data
+(data type: xs:string). Defining a list of disabilities is beyond the scope
+of this specification.</p>
+
+<div class="bentoweb">
+<p><em>Note</em>: BenToWeb uses a list of disabilities that contains the
+following values (non-exhaustive):</p>
+<ul>
+  <li>blindness,</li>
+  <li>colour vision deficiency,</li>
+  <li>low vision,</li>
+  <li>deafness,</li>
+  <li>hard of hearing,</li>
+  <li>deaf-blindness,</li>
+  <li>dyslexia,</li>
+  <li>dyscalculus,</li>
+  <li>intellectual disability,</li>
+  <li>dexterity impairment,</li>
+  <li>motor impairment,</li>
+  <li>learning disability,</li>
+  <li>functional illiteracy,</li>
+  <li>ADHD,</li>
+  <li>aphasia,</li>
+  <li>speech impairment,</li>
+  <li>no disability (this value is useful for scenarios for people who do not
+    consider themselves as having a disability).</li>
+</ul>
+
+<p>The values above are not based on the <acronym>WHO</acronym>&rsquo;s
+International Classification of Functioning, Disability and Health (<a
+href="#ref-icf"><acronym>ICF</acronym></a>). One must also take into account
+that many of these terms may be found objectionable by persons they are
+supposed to describe. For some of these terms it is hard to find equivalents
+in other languages; literal translations may have a different meaning than in
+English.</p>
+</div>
+
+<h3 class="section">7.6.3. The <a name="edef-files"
+id="edef-files"><code>files</code> Element Type</a></h3>
+
+<p>The <code>files</code> element type contains information about each of the
+test files that make up the test case.In a <acronym>XHTML</acronym> test
+suite for <acronym>WCAG</acronym> 1.0 or 2.0, for example, there is usually
+only one <acronym>XHTML</acronym> test file per test case (not counting
+supporting files such as external stylesheets , images, etcetera), but some
+checkpoints or success criteria, for example, those on consistent navigation,
+consistent style etcetera, require a set of files.</p>
+
+<p>The <code>files</code> element type has only one attribute type:</p>
+<ul class="attlist">
+  <li><code>sequential</code> (optional), with the value “true” or
+    “false” (the default).</li>
+</ul>
+
+<p>The <code>sequential</code> attribute type specifies whether the order of
+the files (if there are several) matters for the evaluation of the test case:
+“true” means that the files should be processed in the order in which
+they occur in the test case description; “false” means that the files can
+be processed in random order. The default value is “false”.</p>
+
+<p>The <code>files</code> element type can only contain one element type:</p>
+<ul class="contentmodel">
+  <li><code>file</code> (required and repeatable).</li>
+</ul>
+
+<h4>7.6.3.1. The <a name="edef-file" id="edef-file"><code>file</code> Element
+Type</a></h4>
+
+<p>The <code>file</code> element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xlink:href</code> (optional),</li>
+  <li><code>hrefLang</code> (optional).</li>
+</ul>
+
+<p>The <code>xlink:href</code> attribute type specifies the
+<acronym>URL</acronym> of the test file or test sample. Supporting files such
+as included images, external style sheets and dummy pages to which forms are
+submitted (if only the form is relevant to the test) etcetera, need not be
+documented. (Only what the April 2006 Last Call Working Draft of <acronym>WCAG</acronym>
+2.0 calls &ldquo;Web units&rdquo; and what more recent working drafts call 
+&ldquo;Web pages&rdquo; needs to be listed.)</p>
+
+<p>If test cases are organised so that <acronym>TCDL</acronym> data are in a
+directory &ldquo;metadata&rdquo; and sample files are in a directory called
+&ldquo;testfiles&rdquo; and these directories are both subdirectories of
+&ldquo;xhtmltestsuite&rdquo;, <code>xlink:href</code> can contain a relative
+<acronym>URL</acronym>, for example:
+<samp>../testfiles/sc1.1.1_l1_001.html</samp>.</p>
+
+<p>The <code>hrefLang</code> attribute type specifies the language of the
+file or sample identified by <code>xlink:href</code> (if the attribute is
+present) or <code>httpRequest</code> (explained below).</p>
+
+<p>The <code>file</code> element type can contain one and only one of the
+following element types defined in <a
+href="#ref-httprdf"><acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym></a>:</p>
+<ul class="contentmodel">
+  <li><code>http:GetRequest</code> (optional),</li>
+  <li><code>http:PostRequest</code> (optional),</li>
+  <li><code>http:PutRequest</code> (optional),</li>
+  <li><code>http:HeadRequest</code> (optional).</li>
+</ul>
+
+<div class="tsdtf">
+<p><em>Note</em>: the old <code>httpRequest</code> element type has been
+replaced with <a href="#ref-httprdf"><acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym></a>.</p>
+
+<p>Note that <acronym>HTTP</acronym> Vocabulary in <acronym>RDF</acronym>
+currently only has a temporary namespace <acronym>URI</acronym>
+(<code>http://www.w3.org/2006/http#</code>) which is very likely to change
+when the document is published as a <acronym>W3C</acronym> Working Group
+Note.</p>
+</div>
+
+<h5>7.6.3.1.1. <a id="httpreqprops" name="httpreqprops">Common <acronym>HTTP</acronym>
+Request Properties</a></h5>
+
+<p>The elements from <acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym> described below can all have the following child
+elements:</p>
+<ul class="contentmodel">
+  <li><code>http:requestURI</code>, for the <acronym>URI</acronym> — as defined in 
+    section 5.1.2 of <a href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a> — where 
+    the request is submitted,</li>
+  <li><code>http:version</code>, representing the version of
+    <acronym>HTTP</acronym>,</li>
+  <li><code>http:header</code>, representing <acronym>HTTP</acronym>
+  headers,</li>
+  <li><code>http:body</code>, representing the message body.</li>
+</ul>
+
+<p>The <a name="edef-httprequesturi" id="edef-httprequesturi"><code>http:requestURI</code> 
+element type</a> represents an <acronym>HTTP</acronym> request <acronym>URI</acronym> 
+as defined in section 5.1.2 of <a href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a>.
+The <code>http:requestURI</code> element type can contain one and only one 
+of the following element types defined in <a
+href="#ref-httprdf"><acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym></a>:</p>
+
+<ul class="contentmodel">
+  <li><code>http:absoluteURI</code>, for an absolute request 
+    <acronym>URI</acronym> (optional),</li>
+  <li><code>http:abs_path</code>, for an absolute path (optional).</li>
+</ul>
+
+
+<p>Note that <code>http:requestURI</code> duplicates <code>xlink:href</code> on <a
+href="#edef-file"><code>file</code></a>.</p>
+
+<p>@@todo add more details from <acronym>HTTP</acronym> Vocabulary in
+<acronym>RDF</acronym>.</p>
+
+<h5>7.6.3.1.2. The <a name="edef-httpgetrequest"
+id="edef-httpgetrequest"><code>http:GetRequest</code> Element Type</a></h5>
+
+<p>The <code>http:GetRequest</code> element type represents an
+<acronym>HTTP</acronym> GET request as defined in <a
+href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a>.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 1
+--&gt;</span><br />
+&lt;http:GetRequest&gt;<br />
+  &lt;http:requestURI&gt;<br />
+    &lt;http:absoluteURI&gt;<span
+class="value">http://www.bentoweb.org/</span>&lt;/http:absoluteURI&gt;<br />
+  &lt;/http:requestURI&gt;<br />
+
+  &lt;http:version&gt;<span
+class="value">1.1</span>&lt;/http:version&gt;<br />
+  &lt;http:accept&gt;<span class="value">text/html;q=1.0,
+*/*;q=0.01</span>&lt;/http:accept&gt;<br />
+  &lt;http:accept-language&gt;<span class="value">de-DE;q=1.0, de;q=0.75,
+en-GB;q=0.5, en;q=0.25, *;q=0.01</span>&lt;/http:accept-language&gt;<br />
+&lt;/http:GetRequest&gt;</code></p>
+
+<h5>7.6.3.1.3. The <a name="edef-httppostrequest"
+id="edef-httppostrequest"><code>http:PostRequest</code> Element Type</a></h5>
+
+<p>The <code>http:PostRequest</code> element type represents an
+<acronym>HTTP</acronym> POST request as defined in <a
+href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a>.</p>
+
+<h5>7.6.3.4. The <a name="edef-httpputrequest"
+id="edef-httpputrequest"><code>http:PutRequest</code> Element Type</a></h5>
+
+<p>The <code>http:PutRequest</code> element type represents an
+<acronym>HTTP</acronym> PUT request as defined in <a
+href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a>.</p>
+
+<h5>7.6.3.5. The <a name="edef-httpheadrequest"
+id="edef-httpheadrequest"><code>http:HeadRequest</code> Element Type</a></h5>
+
+<p>The <code>http:HeadRequest</code> element type represents an
+<acronym>HTTP</acronym> HEAD request as defined in <a
+href="#ref-rfc2616"><acronym>RFC</acronym> 2616</a>.</p>
+
+<h5>7.6.3.6. The <a name="edef-httprequest"
+id="edef-httprequest"><code>httpRequest</code> Element Type</a>
+(Obsolete)</h5>
+
+<p>The <code>httpRequest</code> element type specifies data for creating a
+<acronym>HTTP</acronym> request, such as media type, encoding,
+<acronym>HTTP</acronym> headers and <acronym>HTTP</acronym> body. The request
+<acronym>URI</acronym> for the <acronym>HTTP</acronym> request is the
+<acronym>URI</acronym> in <code>xlink:href</code> of the <code>file</code>
+element type.</p>
+
+<p>The <code>httpRequest</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>method</code> (required).</li>
+</ul>
+
+<p>The <code>method</code> attribute type specifies the
+<acronym>HTTP</acronym> method; only the values “GET”, “POST”,
+“PUT” and “HEAD” are allowed. (Methods are case sensitive;
+“TRACE”, “OPTIONS”, “DELETE” and “CONNECT” are not useful in
+this context.)</p>
+
+<p>The <code>httpRequest</code> element type contains the following element
+types, which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>httpHeaders</code> (optional),</li>
+  <li><code>httpBody</code> (optional).</li>
+</ul>
+
+<p>The <code>httpHeaders</code> element type specifies headers for an
+<acronym>HTTP</acronym> request to a server. This element type has no
+attribute types and can contain only one element type:</p>
+<ul class="contentmodel">
+  <li><code>header</code> (required and repeatable).</li>
+</ul>
+
+<p>The <code>httpBody</code> element type specifies content for the
+“body” or “payload” of an <acronym>HTTP</acronym> POST request.This
+element type has no attribute types and can contain only one element type:</p>
+<ul class="contentmodel">
+  <li><code>variable</code> (optional and repeatable).</li>
+</ul>
+
+<p>The element types <code>header</code> and <code>variable</code> are empty
+element types with the following attribute types:</p>
+<ul class="attlist">
+  <li><code>name</code> (required),</li>
+  <li><code>value</code> (required).</li>
+</ul>
+
+<p>The <code>name</code> and <code>value</code> attribute types of both the
+<code>header</code> and <code>body</code> element types allow any character
+data (data type: xs:string).</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">8. Rules: The <a name="edef-rules" id="edef-rules">Element
+Types <code>rules</code></a> and <code>rule</code></h2>
+
+<p>The <code>rules</code> element type contains the “rules” that are
+tested by a test case. “Rule” is here used as a generic term for
+accessibility requirements such as</p>
+<ul>
+  <li><acronym>WCAG</acronym> 2.0 success criteria,</li>
+  <li><acronym>WCAG</acronym> 1.0 checkpoints,</li>
+  <li>Section 508 provisions,</li>
+  <li><acronym>BITV</acronym> provisions.</li>
+</ul>
+
+<p>The <code>rules</code> element type has no attribute types. It can only
+contain one element type:</p>
+<ul class="contentmodel">
+  <li><code>rule</code> (required, repeatable).</li>
+</ul>
+
+<p>The accessibility requirements identified by each of the <code>rule</code>
+elements have an <strong>AND relationship</strong>. This enables the creation
+of complex test cases where the impact of combinations of failures or
+techniques can be demonstrated.</p>
+
+<h3>8.1. The <a name="edef-rule" id="edef-rule"><code>rule</code> Element
+Type</a></h3>
+
+<p>There is one <code>rule</code> element per “rule” that is documented
+in the test case.</p>
+
+<p>The <code>rule</code> element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xlink:href</code> (required), for the <acronym>URI</acronym> of
+    the rule,</li>
+  <li><code>primary</code> (optional), to specify if the rule is
+    “primary” (value “yes”) or not (value “no”).</li>
+</ul>
+
+<p>The <a name="adef-xlinkhref-rule" id="adef-xlinkhref-rule"><code>xlink:href</code> attribute type</a> specifies the
+<acronym>URI</acronym> of the rule (data type xs:any<acronym>URI</acronym>).
+The <code>xlink:href</code> attribute type does not provide a direct
+reference to the relevant online source because it may not always be possible
+to reference “rules” directly (for example, because they are not
+available in <acronym>HTML</acronym>). The <code>xlink:href</code> attribute
+type contains a URL with a fragment identifier: the <acronym>URL</acronym>
+part locates a “<a href="#chapt-rulesets">Rulesets
+<acronym>XML</acronym></a>” file, the fragment identifier refers to a rule
+<abbr>ID</abbr> which in turn references the relevant rule in an online
+source.</p>
+
+<p>The <code>primary</code> attribute type specifies whether a rule is
+“primary” or not: primary rules are those against which the test case is
+supposed to be evaluated; other rules are informational.
+The default value of the <code>primary</code> attribute type is “yes”;
+in other words, all <code>rule</code> elements where the <code>primary</code> 
+attribute is not explicitly set are treated as primary rules.</p>
+
+<p>The <code>rule</code> element type contains the following element types,
+which occur in the following order:</p>
+<ul class="contentmodel">
+  <li><code>locations</code> (required),</li>
+  <li><code>techniques</code> (optional),</li>
+  <li><code>functionalOutcome</code> (optional),</li>
+  <li><code>techComment</code> (optional).</li>
+</ul>
+
+<h4>8.1.1. The <a name="edef-locations" id="edef-locations"><code>locations</code>
+Element Type</a></h4>
+
+<p>The <code>locations</code> element type specifies the location or
+locations where relevant (especially faulty) code occurs, more specifically
+code that exhibits an issue (especially an error) relevant to the specified
+“rule”.</p>
+
+<p>This element type has the following attribute type:</p>
+<ul class="attlist">
+  <li><code>expectedResult</code> (required).</li>
+</ul>
+
+<p>The <a id="adef-expectedresult" name="adef-expectedresult"><code>expectedResult</code> attribute type</a> 
+specifies the expected result of an evaluation of the code against the specified “rule”
+or a test procedure defined in a <a href="#edef-technique">technique or failure</a>. 
+The following values are allowed: “pass”, “fail”, “cannotTell” and
+“notApplicable”. The value “cannotTell” is used if there is ambiguity
+or unclarity (for example, dependence on the implementation or version of a
+user agent or assistive technology, ambiguity in the accessibilty rules or in
+the specification of the file format). The value “notApplicable” can be
+used to point out explicitly that a specific location in the code is not
+relevant.</p>
+
+<p>The <code>locations</code> element type can only contain one element type
+(and no character data):</p>
+<ul class="contentmodel">
+  <li><code>location</code> (optional and repeatable).</li>
+</ul>
+
+<p>The <a id="edef-location" name="edef-location"><code>location</code>
+element type</a> specifies a location in the code. Sometimes a combination of
+features (markup, rules, etcetera) constitute an error when taken together
+(even if these features are not errors when considered separately). In that
+case, there should be one <code>location</code> element per feature/error. At
+least XPath or a combination of line and column number <em
+class="rfc2119">must</em> be used.</p>
+
+<p class="tsdtf">Note: the current location pointers (<code>line</code>,
+<code>column</code>, <code>xpath</code>) in the <code>location</code> element
+type may eventually be replaced with the <a
+href="http://www.w3.org/TR/2006/WD-EARL10-Schema-20060927/#instancelocation">location
+pointers from <acronym>EARL</acronym></a>. (See also <a
+href="http://lists.w3.org/Archives/Public/public-wai-ert-tsdtf/2006Oct/0007.html"
+title="EARL Pointers, by Shadi Abou-Zahra, 10 October 2006"><acronym>EARL</acronym>
+Pointers</a> in the mailing list archive of the <acronym title="Test Samples Development">TSD</acronym>
+<acronym title="Task Force">TF</acronym>.) When <acronym>EARL</acronym> reaches
+<acronym>W3C</acronym> recommendation status, the current location pointers
+may be <strong>deprecated</strong> in favour of <acronym>EARL</acronym>
+Pointers.</p>
+
+<p>The <code>location</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>techrefs</code> (optional),</li>
+  <li><code>xlink:href</code> (optional),</li>
+  <li><code>line</code> (optional),</li>
+  <li><code>column</code> (optional),</li>
+  <li><code>xpath</code> (optional).</li>
+  <!--li>any attribute in the <acronym>EARL</acronym> namespace
+     (http://www.w3.org/WAI/ER/EARL/nmg-strawman#).</li-->
+</ul>
+
+<p>The <a name="adef-techrefs" id="adef-techrefs"><code>techrefs</code>
+attribute type</a> specifies the techniques that are used at the location
+specified by the location attributes or the <acronym>EARL</acronym> location
+pointers. The list of (one or more) techniques is specified by means of a
+space-separated list if identifiers that match the <a href="#adef-id-location"><code>id</code> attributes
+of <code>technique</code> elements</a> in the <acronym>TCDL</acronym> instance.
+This enables the specification of relationships between techniques and
+locations, in other words: what techniques or failures are exhibited at a
+specific location. For further details and an example, see the section <a
+href="#linking-locations-techniques">Linking Locations and Techniques</a>.</p>
+
+<p>The <code>xlink:href</code> attribute type specifies the file in which the
+issue occurs. This attribute type <em class="rfc2119">must</em> be used when
+the <code>files</code> element specifies more than one file; otherwise it can
+be omitted: if the <code>files</code> element contains only one
+<code>file</code> element, the file specified there is assumed to contain the
+issue.</p>
+
+<p>The <code>line</code> and <code>column</code> attribute type specify the
+line and column, respectively, where the relevant code is located. These
+attribute types <em class="rfc2119">must</em> always be used together. The
+value “1” denotes the first position.</p>
+
+<p>The <code>xpath</code> attribute type specifies the location of an issue
+by means of an XPath expression as defined in <a href="#ref-xpath20">XPath
+2.0</a>.</p>
+
+<p><del datetime="2006-10-10T17:47:00Z">For extensibility, the
+<code>location</code> element type can contain any attribute and element
+types from in the <a href="#ref-earl"><acronym>EARL</acronym></a>
+namespace.</del></p>
+
+<p><ins datetime="2006-10-10T17:47:00Z">The location element type can contain
+any combination of the following element types from the <a
+href="#ref-earl"><acronym>EARL</acronym></a> namespace:</ins></p>
+<ul class="contentmodel">
+  <li><ins
+  datetime="2006-10-10T17:47:00Z"><code>earl:xPointer</code>,</ins></li>
+  <li><ins
+    datetime="2006-10-10T17:47:00Z"><code>earl:htmlPointer</code>,</ins></li>
+  <li><ins datetime="2006-10-10T17:47:00Z"><code>earl:xPath</code>,</ins></li>
+  <li><ins
+    datetime="2006-10-10T17:47:00Z"><code>earl:lineCharLen</code>,</ins></li>
+  <li><ins
+    datetime="2006-10-10T17:47:00Z"><code>earl:charSnippet</code>,</ins></li>
+  <li><ins
+    datetime="2006-10-10T17:47:00Z"><code>earl:byteSnippet</code>.</ins></li>
+</ul>
+
+<h4>8.1.2. The <a name="edef-techniques"
+id="edef-techniques"><code>techniques</code> Element Type</a></h4>
+
+<p>The <code>techniques</code> element type specifies a list of techniques
+and/or failures demonstrated in the test case, especially
+<acronym>WCAG</acronym> 2.0 techniques and failures. The
+<code>techniques</code> element type contains the following element types:</p>
+<ul class="contentmodel">
+  <li><code>technique</code> (required and repeatable).</li>
+</ul>
+
+<p>The <code>techniques</code> element type is optional to allow the creation
+of test cases for which a technique or failure does not yet exist (in online
+documents).</p>
+
+<p>Note. In the context of <acronym>WCAG</acronym> 2.0, a test sample should be a 
+minimal piece of code that demonstrates a
+success criterion can be met or failed. Usually, this means that a test case
+maps to one and only one technique or failure. However, some
+<acronym>WCAG</acronym> 2.0 success criteria require a combination of
+techniques that collectively meet a success criterion, so it is sometimes
+necessary to point to a list of techniques by using more than one
+<code>technique</code> element.</p>
+
+<h5>8.1.2.1. The <a name="edef-technique" id="edef-technique"><code>technique</code>
+Element Type</a></h5>
+
+<p>The <code>technique</code> element type specifies a technique or a failure
+demonstrated in the test case, especially a <acronym>WCAG</acronym> 2.0
+technique or failure.</p>
+<ul class="attlist">
+  <li><code>xlink:href</code> (required),</li>
+  <li><code>id</code> (optional).</li>
+</ul>
+
+<p>The <code>xlink:href</code> attribute type points to a
+(<acronym>WCAG</acronym> 2.0) technique or failure. Since the
+<acronym>WCAG</acronym> 2.0 techniques will change in the future, dated
+<acronym>URL</acronym>s <em class="rfc2119">must</em> be used. For example,
+to refer to failure F14 (Failure of <acronym>SC</acronym> 1.3.5 due to
+identifying content only by its shape or location) in the 27 April Working
+Draft of <a href="#ref-wcag20-techs">Techniques for <acronym>WCAG</acronym>
+2.0</a>, one must use the URL <a
+href="http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/#F14">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/#F14</a>
+(or <a
+href="http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F14">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F14</a>),
+not <a
+href="http://www.w3.org/TR/WCAG20-TECHS/#F14">http://www.w3.org/TR/WCAG20-TECHS/#F14</a>.</p>
+
+<p>The <a name="adef-id-location" id="adef-id-location"><code>id</code>
+attribute type</a> provides an indentifier for the technique. This enables
+the specification of relationships between locations (specified by
+<code>location</code> elements) and techniques: a <code>location</code>
+element can have a <a href="#adef-techrefs"><code>techrefs</code>
+attribute</a> pointing to techniques or failures listed in the
+<code>techniques</code> element. An example of this is provided below.</p>
+
+<p><strong>Note</strong>: for consistency, it is recommended to use the same
+identifier for the same technique throughout a test suite. For
+<acronym>WCAG</acronym> 2.0 techniques, it is possible to use the same
+identifiers as in <a href="#ref-wcag20-techs">Techniques for
+<acronym>WCAG</acronym> 2.0</a>, so that automated scripts can check whether
+the identifiers match real techniques.</p>
+
+<h4>8.1.3. <a name="linking-locations-techniques"
+id="linking-locations-techniques">Linking Locations and Techniques</a></h4>
+
+<p>In <acronym>TCDL</acronym>, the specification of locations is required,
+but specifying techniques is optional. However, to express how a specific
+error location relates to a technique or failure listed in the
+<code>techniques</code> element, one can use ID-IDREFS references between
+<code>location</code> elements and <code>technique</code> elements. This is
+especially useful if a test cases uses several techniques in different
+locations.</p>
+
+<p>Note: in the examples in this section, the namespace for <acronym>XHTML</acronym>
+(<code>http://www.w3.org/1999/xhtml</code>) is bound to the prefix 'h'.</p>
+
+<p>Below is an example where the same technique is incorrectly implemented in
+two locations.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 1 --&gt;</span><br />
+<span class="comment">&lt;!-- This example is about a file with language
+changes and in which several instances of the lang attribute contain an
+illegal value (for example, "french" instead of "fr"). --&gt;</span><br />
+&lt;rule primary="<span class="value">yes</span>" xlink:href="<span
+class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-other-lang-id</span>"&gt;<br />
+  &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+    &lt;location techrefs="<span class="value">H58</span>"&gt;<br />
+      &lt;earl:xPath&gt;<br />
+        &lt;earl:expression&gt;<span class="value">/h:html/h:body/h:blockquote/h:p[4]/h:span[2]/h:span/@lang</span>&lt;/earl:expression&gt;<br />
+      &lt;/earl:xPath&gt;<br />
+      &lt;earl:lineCharLen&gt;<br />
+        &lt;earl:line&gt;<span class="value">43</span>&lt;/earl:line&gt;<br />
+        &lt;earl:char&gt;<span class="value">15</span>&lt;/earl:char&gt;<br />
+      &lt;/earl:lineCharLen&gt;<br />
+    &lt;/location&gt;<br />
+    &lt;location techrefs="<span class="value">H58</span>"&gt;<br />
+      &lt;earl:xPath&gt;<br />
+        &lt;earl:expression&gt;<span class="value">/h:html/h:body/h:blockquote/h:p[6]/h:span[2]/h:span/@lang</span>&lt;/earl:expression&gt;<br />
+      &lt;/earl:xPath&gt;<br />
+      &lt;earl:lineCharLen&gt;<br />
+        &lt;earl:line&gt;<span class="value">54</span>&lt;/earl:line&gt;<br />
+        &lt;earl:char&gt;<span class="value">26</span>&lt;/earl:char&gt;<br />
+      &lt;/earl:lineCharLen&gt;<br />
+    &lt;/location&gt;<br />
+  &lt;/locations&gt;<br />
+  &lt;techniques&gt;<br />
+    &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#H58</span>"id="<span class="value">H58</span>"/&gt;<br />
+  &lt;/techniques&gt;<br />
+  &lt;techComment&gt;<br />
+    &lt;p&gt;<span class="value">The test case is actually a failure (!) of the technique, because the language tag is not correct.</span>&lt;/p&gt;<br />
+  &lt;/techComment&gt;<br />
+&lt;/rule&gt;<br />
+</code></p>
+
+<p>Below is an example where a single location fails in two different ways.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 2 --&gt;</span><br />
+<span class="comment">&lt;!-- This example is about a file where an input
+field in a form launches a new window when the user enters text into it and
+where the context changes when the user removes focus from the input field.
+--&gt;</span><br />
+&lt;rule primary="<span class="value">yes</span>" xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.2_consistent-behavior-no-extreme-changes-context</span>"&gt;<br />
+  &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+    &lt;location techrefs="<span class="value">F60 F9</span>"&gt;<br />
+      &lt;earl:xPath&gt;<br />
+        &lt;earl:expression&gt;<span class="value">/h:html/h:body/h:form/h:p[2]/h:input[1]</span>&lt;/earl:expression&gt;<br />
+      &lt;/earl:xPath&gt;<br />
+      &lt;earl:lineCharLen&gt;<br />
+        &lt;earl:line&gt;<span class="value">23</span>&lt;/earl:line&gt;<br />
+        &lt;earl:char&gt;<span class="value">6</span>&lt;/earl:char&gt;<br />
+      &lt;/earl:lineCharLen&gt;<br />
+    &lt;/location&gt;<br />
+  &lt;/locations&gt;<br />
+  &lt;techniques&gt;<br />
+    &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F60</span>"id="<span class="value">F60</span>"/&gt;<br />
+    &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#F9</span>"id="<span class="value">F9</span>"/&gt;<br />
+  &lt;/techniques&gt;<br />
+&lt;/rule&gt;<br />
+</code></p>
+
+<p>Below is an example where locations in multiple files
+are identified.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 3 --&gt;</span><br />
+<span class="comment">&lt;!-- This example is about the use of skiplinks
+to bypass a navigation menu that is repeated on multiple web pages.
+--&gt;</span><br />
+&lt;rule primary="<span class="value">yes</span>" xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_2.4_navigation-mechanisms-title</span>"&gt;<br />
+  &lt;locations expectedResult="<span class="value">pass</span>"&gt;<br />
+    &lt;location xlink:href="<span class="value">../testfiles/sc2.4.1_l1_001.html</span> techrefs="<span class="value">G1</span>"&gt;<br />
+      &lt;earl:xPath&gt;<br />
+        &lt;earl:expression&gt;<span class="value">/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']</span>&lt;/earl:expression&gt;<br />
+      &lt;/earl:xPath&gt;<br />
+      &lt;earl:lineCharLen&gt;<br />
+        &lt;earl:line&gt;<span class="value">19</span>&lt;/earl:line&gt;<br />
+        &lt;earl:char&gt;<span class="value">1</span>&lt;/earl:char&gt;<br />
+      &lt;/earl:lineCharLen&gt;<br />
+    &lt;/location&gt;<br />
+    &lt;location xlink:href="<span class="value">../testfiles/sc2.4.1_l1_001_arts.html</span> techrefs="<span class="value">G1</span>"&gt;<br />
+      &lt;earl:xPath&gt;<br />
+        &lt;earl:expression&gt;<span class="value">/h:html/h:body/h:div[@id='top']/h:a[@id='skipimg']</span>&lt;/earl:expression&gt;<br />
+      &lt;/earl:xPath&gt;<br />
+      &lt;earl:lineCharLen&gt;<br />
+        &lt;earl:line&gt;<span class="value">19</span>&lt;/earl:line&gt;<br />
+        &lt;earl:char&gt;<span class="value">1</span>&lt;/earl:char&gt;<br />
+      &lt;/earl:lineCharLen&gt;<br />
+    &lt;/location&gt;<br />
+    <span class="comment">&lt;!-- and so on for every other web page in the test case --&gt;</span><br />
+  &lt;/locations&gt;<br />
+  &lt;techniques&gt;<br />
+    &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/Overview.html#G1</span>"id="<span class="value">G1</span>"/&gt;<br />
+  &lt;/techniques&gt;<br />
+&lt;/rule&gt;<br />
+</code></p>
+
+
+
+<h4>8.1.4. The <a name="edef-functionaloutcome"
+id="edef-functionaloutcome"><code>functionalOutcome</code> Element
+Type</a></h4>
+
+<p>The <code>functionalOutcome</code> element type specifies the functional
+outcome of the test: a description of why the test case passes or fails, in
+terms that relate to a user&rsquo;s experience (as opposed to technical comments
+about source code).</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>functionalOutcome</code> element type can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<h4>8.1.5. The <a name="edef-techcomment"
+id="edef-techcomment"><code>techComment</code> Element Type</a></h4>
+
+<p>The <code>techComment</code> element type specifies a technical comment on
+the test: a technical description of why the test case passes or fails, and
+other technical information (for example, issues in certain browsers or
+assistive technologies) that go beyond a mere description of the test
+case.</p>
+
+<p>This element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>xml:lang</code> (optional),</li>
+  <li><code>dir</code> (optional).</li>
+</ul>
+
+<p>The <code>techComment</code> element can only contain <a
+href="#sect-paragraph"><acronym>XHTML</acronym>-style paragraphs</a>.</p>
+
+<p>Below is an example of <code>techComment</code> from a BenToWeb test case
+that contains an <code>object</code> element with an image map (the
+<code>object</code> element contains another <code>object</code> element).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 1
+--&gt;</span><br />
+&lt;techComment&gt;<br />
+  &lt;p&gt;<span class="value">The</span>&lt;html:code&gt;<span
+class="value">img</span>&lt;/html:code&gt;<span class="value">element has
+an</span>&lt;html:code&gt;<span
+class="value">alt</span>&lt;/html:code&gt;<span
+class="value">attribute.</span>&lt;/p&gt;<br />
+  &lt;p&gt;<span class="value">In Mozilla 1.7.3 and Firefox 1.0, the map
+does not work if the</span> &lt;html:code&gt;<span
+class="value">map</span>&lt;/html:code&gt; <span class="value">element has
+only an</span> &lt;html:code&gt;<span
+class="value">id</span>&lt;/html:code&gt; <span class="value">and no</span>
+&lt;html:code&gt;<span class="value">name</span>&lt;/html:code&gt; <span
+class="value">attribute.</span>&lt;/p&gt;<br />
+  &lt;p&gt;<span class="value">Internet Explorer does not support</span>
+&lt;html:code&gt;<span class="value">object</span>&lt;/html:code&gt; <span
+class="value"></span><span class="value">and does not display the fallback
+image if it is inside a nested object.</span>&lt;/p&gt;<br />
+&lt;/techComment&gt;</code></p>
+
+<h3>8.2. <a name="rules-egs" id="rules-egs">Using <code>rules</code>:
+Examples</a></h3>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 1
+--&gt;</span><br />
+&lt;rules&gt;<br />
+  &lt;rule primary="<span class="value">yes</span>"<br />
+      xlink:href="<span
+class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-doc-lang-id</span>"&gt;<br
+/>
+    &lt;locations expectedResult="<span
+class="value">fail</span>"/&gt;<br />
+    <span class="comment">&lt;!-- other child elements omitted
+--&gt;</span><br />
+  &lt;/rule&gt;<br />
+&lt;/rules&gt;</code></p>
+
+<p>This rule means that the test case fails success criterion 3.1.1 (in the
+27 April Working Draft of <acronym>WCAG</acronym> 2.0).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 2 --&gt;</span><br />
+&lt;rules&gt;<br />
+  &lt;rule primary="<span class="value">yes</span>"<br />
+      xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.1_text-equiv-all</span>"&gt;<br />
+    &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+      &lt;location xpath="<span class="value">/h:html/h:body/h:p[2]/h:img/@alt</span>"&gt;<br />
+    &lt;/locations&gt;<br />
+    <span class="comment">&lt;!-- other child elements omitted --&gt;</span><br />
+  &lt;/rule&gt;<br />
+  &lt;rule primary="<span class="value">yes</span>"<br />
+      xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_1.4_visual-audio-contrast-contrast</span>"&gt;<br />
+    &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+      &lt;location xpath="<span class="value">/h:html/h:body/h:p[2]/h:img</span>"&gt;<br />
+    &lt;/locations&gt;<br />
+    <span class="comment">&lt;!-- other child elements omitted --&gt;</span><br />
+  &lt;/rule&gt;<br />
+&lt;/rules&gt;</code></p>
+
+<p>Assuming that the image identified by the XPath statement
+<code>/h:html/h:body/h:p[2]/h:img</code> is a diagram with low contrast, this
+combination of rules means that the test case passes success criterion 1.1.1
+(in the 27 April Working Draft of <acronym>WCAG</acronym> 2.0) because there
+is a text alternative that conveys the same information, but fails success
+criterion 1.4.1 because the luminosity contrast ratio between the diagram and
+its background is lower than 1:5. The XPath statements in the two rules
+clarify that both rules refer to the same image (assuming that there is more
+than one image in the sample file).</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 3 --&gt;</span><br />
+&lt;rules&gt;<br />
+  &lt;rule primary="<span class="value">yes</span>"<br />
+      xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_4.1_ensure-compat-parses</span>"&gt;<br />
+    &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+      &lt;location xpath="<span class="value">/h:html/h:body/h:h2[1][@id='toc']</span>"/&gt;<br />
+      &lt;location xpath="<span class="value">/h:html/h:body/h:h2[2][@id='toc']</span>"/&gt;<br />
+    &lt;/locations&gt;<br />
+    &lt;techniques&gt;<br />
+      &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/#F62</span>"/&gt;<br />
+      <span class="comment">&lt;-- Failure of SC 4.1.1 due to insufficient information in <acronym>DOM</acronym> to determine specific relationships in <acronym>XML</acronym> --&gt;</span><br />
+    &lt;/techniques&gt;<br />
+  &lt;/rule&gt;<br />
+&lt;/rules&gt;</code></p>
+
+<p>Assuming that the code above comes from a description of an
+<acronym>XHTML</acronym> 1.1 file served as
+<code>application/xhtml+xml</code>, the above rule indicates that the file
+has an ambiguity in its Document Object Model (<acronym>DOM</acronym>)
+because there is a duplicate <abbr>ID</abbr> value.</p>
+
+<p class="blockcode"><code><span class="comment">&lt;!-- example 4
+--&gt;</span><br />
+&lt;rules&gt;<br />
+  &lt;rule primary="<span class="value">yes</span>"<br />
+      xlink:href="<span class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_4.1_ensure-compat-parses</span>"&gt;<br />
+    &lt;locations expectedResult="<span class="value">fail</span>"&gt;<br />
+      &lt;location&gt;<br />
+        &lt;earl:xPath&gt;<br />
+          &lt;earl:expression rdf:datatype="<span class="value">http://www.w3.org/2001/XMLSchema#string</span>"&gt;<span class="value">/h:html/h:body/h:h2[1][@id='toc']</span>&lt;/earl:expression&gt;<br />
+        &lt;/earl:xPath&gt;<br />
+      &lt;/location&gt;<br />
+      &lt;location&gt;<br />
+        &lt;earl:xPath&gt;<br />
+          &lt;earl:expression rdf:datatype="<span class="value">http://www.w3.org/2001/XMLSchema#string</span>"&gt;<span class="value">/h:html/h:body/h:h2[2][@id='toc']</span>&lt;/earl:expression&gt;<br />
+        &lt;/earl:xPath&gt;<br />
+      &lt;/location&gt;<br />
+    &lt;/locations&gt;<br />
+    &lt;techniques&gt;<br />
+      &lt;technique xlink:href="<span class="value">http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/#F62</span>"/&gt;<br />
+      <span class="comment">&lt;-- Failure of SC 4.1.1 due to insufficient information in <acronym>DOM</acronym> to determine specific relationships in <acronym>XML</acronym> --&gt;</span><br />
+    &lt;/techniques&gt;<br />
+  &lt;/rule&gt;<br />
+&lt;/rules&gt;</code></p>
+
+<p>The example above is the same as the previous example, but with
+<acronym>EARL</acronym> pointers instead of attributes on the
+<code>location</code> element.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">9. Namespace Mappings: The <a name="edef-namespacemappings"
+id="edef-namespacemappings">Element Types <code>namespaceMappings</code></a>
+and <code>namespace</code></h2>
+
+<p>This optional section is important for test cases based on test files that
+use <acronym>XML</acronym>-based technologies. The technology features (see
+the section on Technologies above) used in a test case exist in an
+<acronym>XML</acronym> namespace and should be referenceable with XPath. The
+normal mechanism for mapping namespaces to <acronym>URI</acronym>s by
+declaring them with <code>xmlns:prefix= "namespaceURI"</code> cannot be used
+for this, because it is necessary to be able to define empty prefixes and to
+extract the namespace mappings with a common <acronym>XML</acronym>
+<acronym>API</acronym>.</p>
+
+<p>The <code>namespaceMappings</code> element type contains the following 
+element types:</p>
+<ul class="contentmodel">
+  <li><code>namespace</code> (required and repeatable).</li>
+</ul>
+
+<p>The <a name="edef-namespace" id="edef-namespace"><code>namespace</code></a> 
+element type has the following attribute types:</p>
+<ul class="attlist">
+  <li><code>nsPrefix</code> (required),</li>
+  <li><code>nsURI</code> (required).</li>
+</ul>
+
+<p>The <a id="adef-nsprefix" name="adef-nsprefix"><code>nsPrefix</code></a> attribute type 
+specifies a namespace prefix; 
+the <a id="adef-nsuri" name="adef-nsuri"><code>nsURI</code></a> attribute type specifies 
+the corresponding namespace <acronym>URI</acronym>.</p>
+</div>
+
+<div class="chapt stable">
+<h2>10. <a name="chapt-datatypes" id="chapt-datatypes">Other Content Models and
+Data Types</a></h2>
+
+<p>This section describes content models and data types that are used by
+several element types in <acronym>TCDL</acronym>.</p>
+
+<h3 class="section">10.1. <a name="sect-inlinemarkup"
+id="sect-inlinemarkup"><acronym>XHTML</acronym>-Style Inline Markup</a></h3>
+
+<p>This content model is a mixture of character data and the following XHTML
+elements:</p>
+<ul>
+  <li><code>em</code> (emphasis);</li>
+  <li><code>strong</code> (strong emphasis);</li>
+  <li><code>dfn</code> (defining instance of a term or phrase);</li>
+  <li><code>code</code> (program code);</li>
+  <li><code>q</code> (inlined quote);</li>
+  <li><code>samp</code> (sample);</li>
+  <li><code>kbd</code> (keyboard input, something a user would input);</li>
+  <li><code>var</code> (variable);</li>
+  <li><code>cite</code> (citation);</li>
+  <li><code>abbr</code> (abbreviation);</li>
+  <li><code>acronym</code>;</li>
+  <li><code>sub</code> (subscript);</li>
+  <li><code>sup</code> (superscript);</li>
+  <li><code>br</code> (forced line break);</li>
+  <li><code>span</code> (generic container);</li>
+  <li><code>bdo</code> (<acronym title="internationalization">I18N</acronym>
+    bidirectionality override).</li>
+</ul>
+
+<p>The <acronym>XHTML</acronym> 1.0 specification allows that the above
+element types contain other element types. However, in
+<acronym>TCDL</acronym> the above element types <em class="rfc2119">must
+not</em> contain element types other than those in the above list and the
+<code>a</code> element type (for links). Note that the <a
+href="#app-schema">schema for <acronym>TCDL</acronym></a> does not enforce
+this constraint.</p>
+
+<h3 class="section">10.2. <a name="sect-paragraph"
+id="sect-paragraph"><acronym>XHTML</acronym>-Style Paragraphs</a></h3>
+
+<p>This content model is a sequence of one or more <code>p</code> elements.
+The content model of these <code>p</code> elements is the
+<acronym>XHTML</acronym>-style inline markup described above.</p>
+
+<h3 class="section">10.3. <a name="sect-lang" id="sect-lang">The Attribute Types
+<code>xml:lang</code> and <code>hrefLang</code></a></h3>
+
+<p>The <a name="adef-xmllang" id="adef-xmllang"><code>xml:lang</code>
+attribute type</a> specifies the base language of an element&rsquo;s attribute
+values and text content. The default value of this attribute is unknown. This
+attribute type is imported from the <acronym>XML</acronym> schema for
+<acronym>XML</acronym> 1.0, which is available at <a
+href="http://www.w3.org/2001/xml.xsd">http://www.w3.org/2001/xml.xsd</a>. The
+value of <code>xml:lang</code> is inherited; the data type is xs:language.</p>
+
+<p>The <a name="adef-hreflang" id="adef-hreflang"><code>hrefLang</code>
+attribute type</a> specifies the base language of the resource designated by
+the <code>xlink:href</code> attibute on the same element; its data type is
+xs:language.</p>
+
+<h3 class="section">10.4. <a name="sect-dir" id="sect-dir">The <code>dir</code>
+Attribute Type</a></h3>
+
+<p>The only values allowed for this attribute type are <code>ltr</code> (for
+left-to-right text) and <code>rtl</code> (for right-to-left text). When the
+attribute is not used, the text direction is left to right, unless another
+text direction is inherited from an ancestor element.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">11. <a name="chapt-extensibility"
+id="chapt-extensibility">Extensibility of <acronym>TCDL</acronym></a></h2>
+
+<p>Languages often evolve: certain features need to be refined, added or even
+removed because of new needs or to simplify the language. In a metadata
+format such as <acronym>TCDL</acronym> it is often useful to be able to add
+new elements and to be able to tell parsers that they can ignore elements and
+attributes they don&rsquo;t know. Instead of allowing unknown elements anywhere in
+a <acronym>TCDL</acronym> file, the <acronym>TCDL</acronym> schema limits the
+addition of new elements to specific locations — the <code>Extension</code>
+element type and the extensibility points — so that new elements can only
+be added in a controlled way. This enables extensibility without descending
+into chaos.</p>
+
+<p>The <code>Extension</code> element type can have any attribute types in
+any namespace; schema processors will attempt to find a schema document
+associated with the namespace and validate the attributes. If a schema
+processor cannot find the schema document or an attribute is invalid, it will
+raise errors (<code>&lt;xs:anyAttribute/&gt;</code>; with default attributes
+added, this results in <code>&lt;xs:anyAttribute namespace="<span
+class="value">##any</span>" processContents="<span
+class="value">strict</span>"/&gt;</code>).</p>
+
+<p>The <code>Extension</code> element type contains at least one element type
+in the target namespace (http://bentoweb.org/refs/TCDL2.0/); schema
+processors will attempt to validate the elements for which they can find
+declarations (namely in the schema document associated with the namespace:
+the <acronym>W3C</acronym> <acronym>XML</acronym> schema for
+<acronym>TCDL</acronym> 2.0) and raise errors if they are invalid. Schema
+processors will not raise errors on elements for which they cannot find
+declarations (<code>&lt;xs:any namespace="<span
+class="value">##targetNamespace</span>" processContents="<span
+class="value">lax</span>" maxOccurs="<span
+class="value">unbounded</span>"/&gt;</code>).</p>
+
+<p>After the <code>Extension</code> element type, the <acronym>W3C</acronym>
+<acronym>XML</acronym> schema for <acronym>TCDL</acronym> 2.0 contains an
+extensibility point identified as <code>&lt;xs:any namespace="<span
+class="value">##other</span>" processContents="<span
+class="value">lax</span>" minOccurs="<span class="value">0</span>"
+maxOccurs="<span class="value">unbounded</span>"/&gt;</code>. This code
+specifies that only elements from namespaces other than the target namespace
+can be added after an <code>Extension</code> element, and that these elements
+must be in a namespace. Schema processors will attempt to validate the
+elements for which they can find declarations and raise errors if they are
+invalid. Schema processors will not raise errors on elements for which they
+cannot find declarations.</p>
+</div>
+
+<div class="chapt stable">
+<h2 class="chapter">12. <a name="chapt-rulesets"
+id="chapt-rulesets">Rulesets</a></h2>
+
+<h3>12.1. Introduction</h3>
+
+<p>The <code>rules</code> section of <acronym>TCDL</acronym> refers to
+accessibility requirements by means of <acronym>URL</acronym>s that end with
+a fragment identifier that corresponds to the ID of a “rule” in a
+“rulesets file”. A “rulesets file” is an <acronym>XML</acronym> file
+conforming to Rulesets <acronym>XML</acronym> 1.0.</p>
+
+<p>Rulesets <acronym>XML</acronym> is an <acronym
+title="Extensible Markup Language">XML</acronym> vocabulary for identifying
+and referencing accessibility checkpoints, success criteria or rules. A
+Rulesets <acronym>XML</acronym> serves as a global map of rulesets such as
+<acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 1.0,
+<acronym>WCAG</acronym> 2.0, Section 508 and <acronym>BITV</acronym> and as a
+bridge between test case metadata (for example in <acronym>TCDL</acronym>
+2.0) and those rulesets. An example ruleset, used in the BenToWeb project, is
+available at <a
+href="http://bentoweb.org/refs/rulesets.xml">http://bentoweb.org/refs/rulesets.xml</a>.
+Rulesets <acronym>XML</acronym> uses the namespace
+<code>http://bentoweb.org/refs/rulesets</code>; a <acronym>W3C</acronym>
+<acronym>XML</acronym> Schema is available at <a
+href="http://bentoweb.org/refs/schemas/rulesets.xsd">http://bentoweb.org/refs/schemas/rulesets.xsd</a>.</p>
+
+<h3>12.2. Structure of Rulesets <acronym>XML</acronym></h3>
+
+<p>The parts of a rulesets file are named after the constituent parts of WCAG
+2.0 but should be sufficiently generic to be used for other rulesets.</p>
+
+<p>Below is the skeleton of a Rulesets <acronym>XML</acronym> file.</p>
+
+<p class="blockcode"><code>&lt;?xml version="<span class="value">1.0</span>"
+encoding="<span class="value">UTF-8</span>"?&gt;<br />
+&lt;rulesets xmlns="<span
+class="value">http://bentoweb.org/refs/rulesets</span>" <br />
+  xmlns:xlink="<span class="value">http://www.w3.org/1999/xlink</span>" <br
+/>
+  xmlns:html="<span
+class="value">http://www.w3.org/1999/xhtml</span>"&gt;<br />
+  xmlns:xsi="<span
+class="value">http://www.w3.org/2001/XMLSchema-instance</span>"&gt;<br />
+  xsi:schemaLocation="<span class="value">http://www.w3.org/1999/xhtml
+http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd<br />
+    http://www.w3.org/1999/xlink
+http://bentoweb.org/refs/schemas/xlink.xsd<br />
+    http://bentoweb.org/refs/rulesets
+http://bentoweb.org/refs/schemas/rulesets.xsd</span>"&gt;<br />
+  <span class="comment">&lt;!-- ruleset elements go here --&gt;</span><br />
+&lt;/rulesets&gt;</code></p>
+
+<p>The root element type of a Rulesets <acronym>XML</acronym> file is
+<code>rulesets</code>. This element type has no attribute types and contains
+at least one instance of the <code>ruleset</code> element type.</p>
+
+<h4>12.2.1. The <code>ruleset</code> Element Type</h4>
+
+<p>A Rulesets <acronym>XML</acronym> document contains one or more rule sets
+(instances of the <code>ruleset</code> element type). Examples of rule sets
+are <acronym>WCAG</acronym> 1.0, <acronym>WCAG</acronym> 2.0, Section 508 and
+<acronym>BITV</acronym>. Working drafts of rulesets can also count as rule
+sets; for example, it is possible to treat the <a
+href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/">30 June 2005 Working
+Draft of <acronym>WCAG</acronym> 2.0</a> as a different ruleset than the <a
+href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/">23 November 2005 Working
+Draft of <acronym>WCAG</acronym> 2.0</a>. All that is necessary is that each
+rulesets has a different and stable <acronym
+title="Uniform Resource Locators">URL</acronym>.</p>
+
+<p>The <code>ruleset</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>id</code> (required), for a unique identifier, for example
+    <samp>WCAG2_20051123</samp>;</li>
+  <li><code>xlink:href</code> (required) for the<acronym>URL</acronym> of the
+    rule set;</li>
+  <li><code>hrefLang</code> (optional) for the natural language of the
+    document referenced by <code>xlink:href</code>;</li>
+  <li><code>xml:lang</code> (optional).</li>
+</ul>
+
+<p>The <code>ruleset</code> element type contains the following element
+types:</p>
+<ul class="contentmodel">
+  <li><code>guideline</code> (required and repeatable).</li>
+</ul>
+
+<h4>12.2.2. The <code>guideline</code> Element Type</h4>
+
+<p>A ruleset consists of one or more subdivisions or “guidelines”: each
+<code>ruleset</code> element contains one or more <code>guideline</code>
+elements.</p>
+
+<p>The <code>guideline</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>name</code> (required), which contains a name, for example the
+    guideline number in <acronym>WCAG</acronym> 2.0: <samp>1.1</samp>,
+  …;</li>
+  <li><code>id</code> (required), which contains a unique identifier, for
+    example <samp>WCAG20-20051123_1.1</samp>;</li>
+  <li><code>xlink:href</code> (optional) for the <acronym>URL</acronym> of
+    the guideline;</li>
+  <li><code>hrefLang</code> (optional) for the natural language of the
+    document referenced by <code>xlink:href</code>;</li>
+  <li><code>xml:lang</code> (optional).</li>
+</ul>
+
+<p>The <code>guideline</code> element type contains the following element
+types:</p>
+<ul class="contentmodel">
+  <li><code>successCriterion</code> (optional and repeatable).</li>
+</ul>
+
+<p>Some “guidelines” have no further subdivisions (for example in Section
+508), so <code>successCriterion</code> is not required.</p>
+
+<h4>12.2.3. The <code>successCriterion</code> Element Type</h4>
+
+<p>A “guideline” may consist of one or more subdivisions or “success
+criteria”: each <code>guideline</code> element can contain one or more
+<code>successCriterion</code> elements.</p>
+
+<p>The <code>successCriterion</code> element type has the following attribute
+types:</p>
+<ul class="attlist">
+  <li><code>name</code> (required), which contains a name, for example the
+    success criterion number in <acronym>WCAG</acronym> 2.0:
+  <samp>1</samp>;</li>
+  <li><code>level</code> (optional), which contains the level of the
+    “success criterion”, for example the level in <acronym>WCAG</acronym>
+    or <acronym>BITV</acronym>: <samp>1</samp>;</li>
+  <li><code>id</code> (required), which contains a unique identifier, for
+    example <samp>WCAG2_20051123_1.1_text-equiv-informative</samp>;</li>
+  <li><code>xlink:href</code> (optional) for the <acronym>URL</acronym> of
+    the “success criterion”;</li>
+  <li><code>hrefLang</code> (optional) for the natural language of the
+    document referenced by <code>xlink:href</code>.</li>
+</ul>
+
+<p>Success criteria have no further subdivisions, so
+<code>successCriterion</code> is an empty element type.</p>
+
+<h3>12.3. Example: BenToWeb&rsquo;s <samp>rulesets.xml</samp></h3>
+
+<p>In BenToWeb&rsquo;s <a
+href="http://bentoweb.org/refs/rulesets.xml"><samp>rulesets.xml</samp></a>, a
+ruleset consists of guidelines, and a guideline may consist of success
+criteria. Depending on the ruleset, guidelines and success criteria refer
+to:</p>
+<ul>
+  <li>guidelines and success criteria (<a
+    href="http://www.w3.org/TR/WCAG20/"><acronym>WCAG</acronym> 2.0</a>);
+    principles are not referenced;</li>
+  <li>guidelines and checkpoints (<a
+    href="http://www.w3.org/TR/WCAG10/"><acronym>WCAG</acronym> 1.0</a>);</li>
+  <li><span xml:lang="de" lang="de">Anforderungen</span> and <span
+    xml:lang="de" lang="de">Bedingungen</span> (<a
+    href="http://www.bmi.bund.de/Annex/de_22681/Barrierefreie_Informationstechnik-Verordnung_BITV_als_PDF-Download.pdf"><acronym
+    xml:lang="de" lang="de"
+    title="Barrierefreie Informationstechnik-Verordnung">BITV</acronym></a>);</li>
+  <li>rules (<a
+    href="http://www.section508.gov/index.cfm?FuseAction=Content&amp;ID=12#Web">Section
+    508</a> only knows rules).</li>
+</ul>
+
+<p>The value of the <code>name</code> attribute of a <code>guideline</code>
+element corresponds to</p>
+<ul>
+  <li>the guideline number in <acronym>WCAG</acronym> 1.0 [x] &amp;
+    <acronym>WCAG</acronym> 2.0 [x.y],</li>
+  <li>the number of an <span xml:lang="de" lang="de">Anforderung</span> in
+    <acronym>BITV</acronym> [x],</li>
+  <li>the letter identifying a rule in Section 508.</li>
+</ul>
+
+<p>The <code>id</code> attribute type of the <code>guideline</code> element
+type is required; the <code>name</code> attribyte type cannot serve this
+purpose because <abbr>ID</abbr>s must not start with a number.</p>
+
+<p>For each guideline, all success criteria or checkpoints are listed as
+<code>successCriterion</code> elements. The value of the <code>name</code>
+attribute of a <code>successCriterion</code> element corresponds to</p>
+<ul>
+  <li>checkpoint number in <acronym>WCAG</acronym> 1.0 [x.y],</li>
+  <li>a success criterion number in <acronym>WCAG</acronym> 2.0 [y] — the
+    <code>level</code> attribute is required,</li>
+  <li>the number of a <span xml:lang="de" lang="de">Bedingung</span> in
+    <acronym>BITV</acronym> [x.y],</li>
+  <li>nothing in Section 508 because the rules have no subdivisions.</li>
+</ul>
+
+<p>The <code>level</code> attribute type is optional except for
+<acronym>WCAG</acronym> 2.0.</p>
+</div>
+
+<div class="appendixChapter">
+<h2 class="chapter"><a name="app-schematcdl" id="app-schematcdl">Appendix A:
+<acronym>W3C</acronym> <acronym>XML</acronym> Schema for
+<acronym>TCDL</acronym> 2.0</a></h2>
+
+<p>@@todo add <acronym>XML</acronym> Schema.</p>
+
+<p>The schema is available at <a
+href="http://bentoweb.org/refs/schemas/tcdl2.0.xsd">http://bentoweb.org/refs/schemas/tcdl2.0.xsd</a>.</p>
+</div>
+
+<div class="appendixChapter">
+<h2 class="chapter"><a name="app-tcdl-egs" id="app-tcdl-egs">Appendix B:
+<acronym>TCDL</acronym> Examples</a></h2>
+
+<h3>A Minimal <acronym>TCDL</acronym> File</h3>
+
+<p>The example below uses only required element and attribute types, except
+the optional <code>xlink:href</code> attribute on the <code>file</code>
+element.</p>
+
+<p class="blockcode"><code>&lt;?xml version="<span class="value">1.0</span>"
+encoding="<span class="value">UTF-8</span>"?&gt;<br />
+&lt;testCaseDescription id="<span
+class="value">wcag20060427_sc3.1.1_l1_001</span>"<br />
+  xml:lang="<span class="value">en</span>"<br />
+  xmlns="<span class="value">http://bentoweb.org/refs/TCDL2.0/</span>"<br />
+  xmlns:btw="<span
+class="value">http://bentoweb.org/refs/TCDL2.0/</span>"<br />
+  xmlns:xs="<span class="value">http://www.w3.org/2001/XMLSchema</span>"<br />
+  xmlns:xsi="<span class="value">http://www.w3.org/2001/XMLSchema-instance</span>"<br />
+  xmlns:dc="<span class="value">http://purl.org/dc/elements/1.1/</span>"<br />
+  xmlns:xlink="<span class="value">http://www.w3.org/1999/xlink</span>"<br />
+  xmlns:html="<span class="value">http://www.w3.org/1999/xhtml</span>"<br />
+  xmlns:earl="<span class="value">http://www.w3.org/WAI/ER/EARL/nmg-strawman#</span>"<br />
+xsi:schemaLocation="<span class="value">http://bentoweb.org/refs/TCDL2.0/
+http://bentoweb.org/refs/schemas/tcdl2.0.xsd <br />
+    http://purl.org/dc/elements/1.1/
+http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd <br />
+    http://www.w3.org/1999/xhtml
+http://www.w3.org/2004/07/xhtml/xhtml1-strict.xsd <br />
+    http://www.w3.org/1999/xlink
+http://bentoweb.org/refs/schemas/xlink.xsd<br />
+    http://www.w3.org/2006/http#
+http://bentoweb.org/refs/schemas/http.xsd<br />
+    http://www.w3.org/WAI/ER/EARL/nmg-strawman#
+http://bentoweb.org/refs/schemas/earlwd.xsd</span>"<br />
+  &gt;<br />
+  &lt;formalMetadata&gt;<br />
+    &lt;title&gt;<span class="value">German text with English language identification</span>&lt;/title&gt;<br />
+    &lt;dc:creator&gt;<span class="value">John.Doe@example.com</span>&lt;/dc:creator&gt;<br />
+    &lt;dc:language&gt;<span class="value">en</span>&lt;/dc:language&gt;<br />
+    &lt;dc:rights&gt;<span class="value">Copyright Example.com</span>&lt;/dc:rights&gt;<br />
+    &lt;dc:date xsi:type="<span class="value">btw:btwDate</span>"&gt;<span class="value">2006-08-31</span>&lt;/dc:date&gt;<br />
+    &lt;status&gt;<span class="value">new</span>&lt;/status&gt;<br />
+    &lt;version&gt;<span class="value">&#36;<span>Revision</span>&#36;</span>&lt;/version&gt;<br />
+  &lt;/formalMetadata&gt;<br />
+  &lt;technologies&gt;<br />
+    &lt;technicalSpec&gt;<span class="comment">&lt;!-- xlink:href is optional --&gt;</span><br /><!--@@add mediatype="text/html"?-->
+      &lt;specName&gt;<br />
+         &lt;html:acronym&gt;<span class="value">XHTML</span>&lt;/html:acronym&gt;<span class="value">&amp;#8482; 1.0: The Extensible HyperText Markup Language (Second Edition)</span><br />
+      &lt;/specName&gt;<br />
+    &lt;/technicalSpec&gt;<br />
+  &lt;/technologies&gt;<br />
+  &lt;testCase<!--complexity="<span class="value">atomic</span>"-->&gt;<br />
+    &lt;dc:description xsi:type="<span 
+class="value">btw:dcHtmlInline</span>"&gt;<span class="value">Web page with
+an excerpt of Peter Handke's play</span>&lt;html:span lang="<span
+class="value">de</span>"&gt;<span
+class="value">Publikumsbeschimpfung</span>&lt;/html:span&gt;<span
+class="value">(in German); the</span>&lt;html:code&gt;<span
+class="value">html</span>&lt;/html:code&gt;<span class="value">element has
+a</span>&lt;html:code&gt;<span
+class="value">lang</span>&lt;/html:code&gt;<span class="value">attribute with
+the value "en" (for English) instead of "de" (for German).</span><br />
+    &lt;/dc:description&gt;<br />
+    &lt;purpose&gt;&lt;p&gt;<span class="value">This test case is
+intended to fail because the language of the page is not correctly
+identified.</span>&lt;/p&gt;<br />
+    &lt;/purpose&gt;<br />
+    &lt;requiredTests&gt;<br />
+      &lt;testModes&gt;<br />
+        &lt;testMode&gt;<span class="value">oneExpert</span>&lt;/testMode&gt;<br />
+      &lt;/testModes&gt;<br />
+    &lt;/requiredTests&gt;<br />
+    &lt;files&gt;<br />
+    &lt;file xlink:href="<span
+class="value">wcag20060427_sc3.1.1_l1_001.html</span>"/&gt;<br />
+    <span class="comment">&lt;!-- Note: xlink:href is actually optional
+--&gt;</span><br class="comment" />
+    &lt;/files&gt;<br />
+  &lt;/testCase&gt;<br />
+  &lt;rules&gt;<br />
+    &lt;rule primary="<span class="value">yes</span>"<br />
+        xlink:href="<span
+class="value">http://bentoweb.org/refs/rulesets.xml#WCAG2_20060427_3.1_meaning-doc-lang-id</span>"&gt;<br />
+      &lt;locations expectedResult="<span
+class="value">fail</span>"/&gt;<br />
+    &lt;/rule&gt;<br />
+  &lt;/rules&gt;<br />
+&lt;/testCaseDescription&gt;<br />
+</code></p>
+
+<h3><acronym>TCDL</acronym> File with <acronym>EARL</acronym> Location
+Pointers and <acronym>HTTP</acronym> in <acronym>RDF</acronym></h3>
+
+<p>See <a
+href="http://bentoweb.org/refs/TCDL2.0/sc3.1.1_l1_001.xml">http://bentoweb.org/refs/TCDL2.0/sc3.1.1_l1_001.xml</a>.</p>
+
+<h3>A <acronym>TCDL</acronym> Template</h3>
+
+<p>See <a
+href="http://bentoweb.org/refs/TCDL2.0/scx.x.x_lx_xxx.xml">http://bentoweb.org/refs/TCDL2.0/scx.x.x_lx_xxx.xml</a>.</p>
+</div>
+
+<div class="appendixChapter">
+<h2 class="chapter"><a name="app-schemarulesets"
+id="app-schemarulesets">Appendix C: <acronym>W3C</acronym>
+<acronym>XML</acronym> Schema for Rulesets</a></h2>
+
+<!--p>@@todo add <acronym>XML</acronym> Schema.</p-->
+
+<p>The schema is available at <a
+href="http://bentoweb.org/refs/schemas/rulesets.xsd">http://bentoweb.org/refs/schemas/rulesets.xsd</a>.</p>
+</div>
+
+<div class="chapt">
+<h2 class="chapter"><a name="app-otherw3c" id="app-otherw3c">Appendix D:
+Relation with Other <acronym>W3C</acronym> Technical Documents and
+Submissions</a></h2>
+
+<h3><a id="app-w3qatcdl" name="app-w3qatcdl">Test Case Description Language 1.0 – Submission to
+<acronym>QA</acronym> Working Group 12 October 2003</a></h3>
+
+<p>On 12 October 2003, the Quality Assurance Working Group
+(<acronym>QA</acronym> <acronym>WG</acronym>) published the submission <a
+href="http://www.w3.org/QA/WG/2003/10/tcdl-20031012.html">Test Case
+Description Language 1.0</a>. Many sections of this document are unfinished;
+according to a message of <a
+href="http://lists.w3.org/Archives/Public/www-qa-wg/2003Oct/0030.html">Lofton
+Henderson to the <acronym>QA</acronym> <acronym>WG</acronym> mailing
+list</a>, this version was going to be superseded.</p>
+
+<p>@@todo describe differences between the two <acronym>TCDL</acronym>s.</p>
+
+<h3><a id="app-w3qatestmetadata" name="app-w3qatestmetadata">Test Metadata – W3C Working Group 
+Note 14 September 2005</a></h3>
+
+<p>On 14 September 2005, the Quality Assurance Working Group
+(<acronym>QA</acronym> <acronym>WG</acronym>) published a <a
+href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/">Working Group
+Note on Test Metadata</a>. (See also <a
+href="http://www.w3.org/QA/2005/08/test-case-metadata.html">Testcase
+Metadata</a>, draft, 9 September 2005.)</p>
+
+<p>The <a
+href="http://www.w3.org/TR/2005/NOTE-test-metadata-20050914/"><acronym>W3C</acronym>
+Working Group Note “Test Metadata”</a> (14 September 2005) suggests
+fourteen metadata elements for test suites. The table below shows how these
+metadata elements map to <acronym>TCDL</acronym> elements. (In this table,
+<acronym>TCDL</acronym> elements are identified by means of XPath expressions
+without a namespace prefix and with the root element —
+<code>testCaseDescription</code> — omitted, except for the attributes of
+that element.)</p>
+
+
+
+<table id="mappingw3cmetadata-table">
+  <caption>Mapping of <acronym>W3C</acronym> Test Metadata to
+  <acronym>TCDL</acronym></caption>
+  <!-- RDDL does not allow thead and tbody inside tables ??? -->
+  <thead>
+    <tr>
+      <th id="colW3CTSM" scope="col"><acronym>W3C</acronym> Metadata</th>
+      <th id="colTCDL" scope="col"><acronym>TCDL</acronym></th>
+      <th id="colComment" scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td headers="colW3CTSM">Identifier</td>
+      <td headers="colTCDL"><a href="#adef-id"><code>testCaseDescription/@id</code></a></td>
+      <td headers="colComment"></td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Title</td>
+      <td headers="colTCDL"><a href="#edef-title"><code>formalMetadata/title</code></a></td>
+      <td headers="colComment">In <acronym>TCDL</acronym>, titles are not
+        necessarily unique; they don&rsquo;t duplicate the identifier.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Purpose</td>
+      <td headers="colTCDL"><a href="#edef-purpose"><code>testCase/purpose</code></a></td>
+      <td headers="colComment"></td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Description</td>
+      <td headers="colTCDL"><a href="#edef-dcdescription"><code>testCase/dc:description</code></a></td>
+      <td headers="colComment">In <acronym>TCDL</acronym>, the description
+        should help the reviewer understand how the test materials are
+        constructed and the behaviour when a user interacts with it.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Status</td>
+      <td headers="colTCDL"><a href="#edef-status"><code>formalMetadata/status</code></a></td>
+      <td headers="colComment"></td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">SpecRef</td>
+      <td headers="colTCDL"><a href="#adef-xlinkhref-rule"><code>rules/rule/@xlink:href</code></a>,<br />
+        <a href="#edef-technique"><code>rules/rule/techniques/technique</code></a><br />
+        and<br />
+        <a href="#edef-technicalspec"><code>technology/technicalSpec</code></a></td>
+      <td headers="colComment">In <acronym>TCDL</acronym>, two types of
+        specifications need to be referenced: the accessibility guidelines
+        (“rules”)&mdash;optionally supplemented with techniques&mdash;and 
+        the specifications of the technologies in the test.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Preconditions</td>
+      <td headers="colTCDL"><a href="#edef-preconditions"><code>testCase/preconditions</code></a></td>
+      <td headers="colComment">Not used in BenToWeb, because test cases map
+        directly to <acronym>WCAG</acronym> success criteria instead of
+      tests.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Inputs</td>
+      <td headers="colTCDL"><a href="#edef-httpgetrequest"><code>testCase/files/file/http:GetRequest</code></a>,
+        <a href="#edef-httppostrequest"><code>testCase/files/file/http:PostRequest</code></a>,
+        <a href="#edef-httpputrequest"><code>testCase/files/file/http:PutRequest</code></a>,
+        <a href="#edef-httpheadrequest"><code>testCase/files/file/http:HeadRequest</code></a></td>
+      <td headers="colComment">Only for the special case where it is
+        necessary to (re)create a specific <acronym>HTTP</acronym>
+      request.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">ExpectedResults</td>
+      <td
+        headers="colTCDL"><a href="#adef-expectedresult"><code>rules/rule/locations/@expectedResult</code></a><br
+        />
+        and<br />
+        <a href="#edef-functionaloutcome"><code>rules/rule/functionalOutcome</code></a></td>
+      <td headers="colComment"></td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Version</td>
+      <td headers="colTCDL"><a href="#edef-version"><code>formalMetadata/version</code></a></td>
+      <td headers="colComment">It may be possible to rely on a version
+        control system instead. If version information is maintained in
+        <acronym>TCDL</acronym> it is possible to update it manually or to
+        rely on the <acronym>CVS</acronym> keyword
+      <code>&#36;Revision&#36;</code>.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Contributor</td>
+      <td headers="colTCDL"><a href="#edef-dccontributor"><code>formalMetadata/dc:contributor</code></a></td>
+      <td headers="colComment"></td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Rights</td>
+      <td headers="colTCDL"><a href="#edef-dcrights"><code>formalMetadata/dc:rights</code></a><br />
+        and<br />
+        <code>formalMetadata/source/dc:rights</code></td>
+      <td headers="colComment"><acronym>TCDL</acronym> can document rights
+        related to a test case and rights related to borrowed materials.</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">Grouping</td>
+      <td headers="colTCDL">-</td>
+      <td headers="colComment">(Because <acronym>TCDL</acronym> describes
+        only single test cases, grouping should happen at a higher
+      level.)</td>
+    </tr>
+    <tr>
+      <td headers="colW3CTSM">SeeAlso</td>
+      <td headers="colTCDL"><a href="#edef-technicalspec"><code>technology/technicalSpec</code></a><br />
+        (and<br />
+        <a href="#edef-techcomment"><code>rules/rule/techComment</code></a>)</td>
+      <td headers="colComment"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="appendixChapter">
+<h2 class="chapter"><a name="app-refs" id="app-refs">Appendix E:
+References</a></h2>
+<dl>
+  <dt><a name="ref-baselines" id="ref-baselines">About Baselines and
+  <acronym>WCAG</acronym> 2.0</a></dt>
+    <dd>David MacDonald, John Slatin, Gregg Vanderheiden, <abbr title="editors">eds</abbr>.
+      <a href="http://www.w3.org/WAI/WCAG20/baseline/">About Baselines and
+      <acronym>WCAG</acronym> 2.0</a>. Version 1.0.</dd>
+  <dt><a name="ref-bcp47" id="ref-bcp47"><acronym>BCP</acronym> 47</a></dt>
+    <dd>H. Alvestrand, <abbr title="editor">ed.</abbr> <a
+      href="http://www.ietf.org/rfc/rfc3066.txt">Tags for the Identification
+      of Languages</a>. <acronym
+      title="Internet Engineering Task Force">IETF</acronym>. Best Current
+      Practice (<acronym>BCP</acronym>) 47. January 2001.</dd>
+  <dt><a name="ref-wcagctp" id="ref-wcagctp">Conformance Test Process For
+  <acronym>WCAG</acronym> 2.0</a></dt>
+    <dd>Chris Ridpath, Jenae Andershonis, <abbr>eds.</abbr> <a
+      href="http://www.w3.org/WAI/GL/WCAG20/tests/ctprocess.html">Conformance
+      Test Process For <acronym>WCAG</acronym> 2.0</a>.
+      <acronym>W3C</acronym> Working Draft 2005-02-23.</dd>
+  <dt><a name="ref-dcmes11" id="ref-dcmes11"><acronym>DCMES</acronym> 
+   1.1</a></dt>
+    <dd><a href="http://dublincore.org/documents/2004/12/20/dces/">Dublin
+      Core Metadata Element Set, Version 1.1: Reference Description</a>.
+      <acronym title="Dublin Core Metadata Initiative">DCMI</acronym>
+      Recommendation 20 December 2004.</dd>
+  <dt><a name="ref-earl" id="ref-earl"><acronym>EARL</acronym></a></dt>
+    <dd>Charles McCathieNevile, Shadi Abou-Zahra, <abbr
+      title="editors">eds</abbr>. <a
+      href="http://www.w3.org/TR/EARL10-Schema/">Evaluation and Report
+      Language (<acronym>EARL</acronym>) 1.0 Schema</a>.
+      <acronym>W3C</acronym> Working Draft 27 September 2005.</dd>
+  <dt><a name="ref-httprdf2006" id="ref-httprdf2006"><acronym>HTTP</acronym>
+  Vocabulary in <acronym>RDF</acronym> (2006)</a></dt>
+    <dd>Johannes Koch, Carlos A Velasco, Shadi Abou-Zahra, <abbr title="editors">eds</abbr>. <a
+      href="http://www.w3.org/TR/2006/WD-HTTP-in-RDF-20061220/"><acronym>HTTP</acronym>
+      Vocabulary in <acronym>RDF</acronym></a>. <acronym>W3C</acronym> Working Draft
+      20 December 2006.</dd>
+  <!--@@remove after checking changes in WD-->
+  <dt><a name="ref-httprdf200703ed" id="ref-httprdf200703ed"><acronym>HTTP</acronym>
+  Vocabulary in <acronym>RDF</acronym></a></dt>
+    <dd>Johannes Koch, Carlos A Velasco, Shadi Abou-Zahra, <abbr title="editors">eds</abbr>. <a
+      href="http://www.w3.org/WAI/ER/HTTP/WD-HTTP-in-RDF-20070301"><acronym>HTTP</acronym>
+      Vocabulary in <acronym>RDF</acronym></a>. <acronym>W3C</acronym> Editor&rsquo;s Draft
+      01 March 2007.</dd>
+  <dt><a name="ref-httprdf" id="ref-httprdf"><acronym>HTTP</acronym>
+  Vocabulary in <acronym>RDF</acronym></a></dt>
+    <dd>Johannes Koch, Carlos A Velasco, Shadi Abou-Zahra, <abbr title="editors">eds</abbr>. <a
+      href="http://www.w3.org/TR/2007/WD-HTTP-in-RDF-20070323/"><acronym>HTTP</acronym>
+      Vocabulary in <acronym>RDF</acronym></a>. <acronym>W3C</acronym> Working Draft
+      23 March 2007.</dd>
+  <dt><a name="ref-iana" id="ref-iana"><acronym>IANA</acronym></a></dt>
+    <dd>Internet Assigned Numbers Authority (<acronym>IANA</acronym>). <a
+      href="http://www.iana.org/assignments/media-types/"><acronym>MIME</acronym>
+      Media Types</a>.</dd>
+  <dt><a name="ref-icf" id="ref-icf"><acronym>ICF</acronym></a></dt>
+    <dd>World Health Organization (<acronym>WHO</acronym>). <a
+      href="http://www3.who.int/icf/icftemplate.cfm">International
+      Classification of Functioning, Disability and Health</a>.</dd>
+  <dt><a name="ref-iso8601" id="ref-iso8601">ISO 8601</a></dt>
+    <dd>ISO (International Organization for Standardization). Representations
+      of dates and times, 1988-06-15.</dd>
+  <dt><a name="ref-orchard2003" id="ref-orchard2003">Orchard 2003</a></dt>
+    <dd>David Orchard. <a
+      href="http://www.xml.com/pub/a/2003/12/03/versioning.html">Versioning
+      <acronym>XML</acronym> Vocabularies</a>. <acronym>XML</acronym>.com, 3
+      December 2003.</dd>
+  <dt><a name="ref-orchard2004" id="ref-orchard2004">Orchard 2004</a></dt>
+    <dd>David Orchard. <a
+      href="http://www.xml.com/pub/a/2004/10/27/extend.html">Extensibility,
+      <acronym>XML</acronym> Vocabularies, and <acronym>XML</acronym>
+      Schema</a>. <acronym>XML</acronym>.com, 27 October 2004.</dd>
+  <dt><a name="ref-rfc2119" id="ref-rfc2119"><acronym
+  title="Request for Comments">RFC</acronym> 2119</a></dt>
+    <dd>S. Bradner. <a href="http://www.ietf.org/rfc/rfc2119.txt">Key words
+      for use in <acronym>RFC</acronym>s to Indicate Requirement Levels</a>.
+      <acronym title="Internet Engineering Task Force">IETF</acronym>.
+      Request for Comments 2119. <acronym
+      title="Best Current Practice">BCP</acronym> 14 March 1997.</dd>
+  <dt><a name="ref-rfc2396" id="ref-rfc2396"><acronym>RFC</acronym>
+  2396</a></dt>
+    <dd>T. Berners-Lee, R. Fielding, L. Masinter. <a
+      href="http://www.ietf.org/rfc/rfc2396.txt">Uniform Resource Identifiers
+      (<acronym>URI</acronym>): Generic Syntax</a>. <acronym
+      title="Internet Engineering Task Force">IETF</acronym>. Request for
+      Comments 2396. August 1998.</dd>
+  <dt><a name="ref-rfc2616" id="ref-rfc2616"><acronym>RFC</acronym>
+  2616</a></dt>
+    <dd>R. Fielding, J. Gettys, J. Mogul, H. Frystyk Nielsen, L. Masinter, P.
+      Leach and T. Berners-Lee. <a
+      href="http://www.ietf.org/rfc/rfc2616.txt">Hypertext Transfer Protocol
+      -- <acronym>HTTP</acronym>/1.1</a>. <acronym
+      title="Internet Engineering Task Force">IETF</acronym>. Request for
+      Comments 2616. June 1999.</dd>
+  <dt><a name="ref-rfc3066" id="ref-rfc3066"><acronym>RFC</acronym>
+  3066</a></dt>
+    <dd>H. Alvestrand, <abbr>ed.</abbr> <a
+      href="http://www.ietf.org/rfc/rfc3066.txt">Tags for the Identification
+      of Languages</a>. <acronym
+      title="Internet Engineering Task Force">IETF</acronym>. Request for
+      Comments 3066. 1995.</dd>
+  <dt><a name="ref-rfc3986" id="ref-rfc3986"><acronym>RFC</acronym>
+  3986</a></dt>
+    <dd>T. Berners-Lee, R. Fielding, L. Masinter. <a
+      href="http://www.ietf.org/rfc/rfc3648.txt">Uniform Resource Identifier
+      (<acronym>URI</acronym>): Generic Syntax</a>. <acronym
+      title="Internet Engineering Task Force">IETF</acronym>. Request for
+      Comments 3986. January 2005.</dd>
+  <dt><a name="ref-wcag20-techs" id="ref-wcag20-techs">Techniques for
+  <acronym>WCAG</acronym> 2.0</a></dt>
+    <dd>Ben Caldwell, Wendy Chisholm, John Slatin, and Gregg Vanderheiden,
+      <abbr>eds.</abbr> <a
+      href="http://www.w3.org/TR/2006/WD-WCAG20-TECHS-20060427/">Techniques
+      for <acronym>WCAG</acronym> 2.0</a>. W3C Working Draft 27 April
+    2006.</dd>
+  <dt><a name="ref-usabilityglossary" id="ref-usabilityglossary">Usability
+  First™ Usability Glossary</a></dt>
+    <dd><a href="http://www.usabilityfirst.com/glossary/">Usability
+      Glossary</a>. Usability First.</dd>
+  <dt><a name="ref-qaframeworkprimer"
+  id="ref-qaframeworkprimer"><acronym>W3C</acronym> <acronym>QA</acronym>
+  Framework Primer</a></dt>
+    <dd>Lofton Henderson, Lynne Rosenthal, Mark Skall. <a
+      href="http://www.w3.org/QA/WG/qaframe-primer"><acronym>QA</acronym>
+      Framework Primer</a>. <acronym>W3C</acronym> Quality Assurance
+      Activity. Last modified 24 August 2005.</dd>
+  <dt><a name="ref-w3cqavoc" id="ref-w3cqavoc"><acronym>W3C</acronym>
+  <acronym>QA</acronym> <abbr>Voc</abbr></a></dt>
+    <dd><a href="http://www.w3.org/QA/glossary">Quality Assurance
+      glossary</a>. <acronym>W3C</acronym> Quality Assurance Activity.</dd>
+  <dt><a name="ref-wcag20" id="ref-wcag20"><acronym>WCAG</acronym>
+  2.0</a></dt>
+    <dd>Ben Caldwell, Wendy Chisholm, John Slatin, and Gregg Vanderheiden,
+      <abbr>eds.</abbr> <a
+      href="http://www.w3.org/TR/2006/WD-WCAG20-20060427/">Web Content
+      Accessibility Guidelines 2.0</a>. <acronym>W3C</acronym> Last Call
+      Working Draft 27 April 2006.</dd>
+  <dt><a name="ref-xlink10" id="ref-xlink10">XLink 1.0</a></dt>
+    <dd>Steve DeRose, Eve Maler, David Orchard, <abbr>eds.</abbr> <a
+      href="http://www.w3.org/TR/2001/REC-xlink-20010627/"><acronym>XML</acronym>
+      Linking Language (XLink) Version 1.0</a>. <acronym>W3C</acronym>
+      Recommendation 27 June 2001.</dd>
+  <dt><a name="ref-xml10" id="ref-xml10"><acronym>XML</acronym> 1.0</a></dt>
+    <dd>Tim Bray, Jean Paoli, C. M. Sperber-McQueen, Eve Maler, François
+      Yergeau, <abbr>eds.</abbr> <a
+      href="http://www.w3.org/TR/2004/REC-xml-20040204/">Extensible Markup
+      Language (<acronym>XML</acronym>) 1.0 (Third Edition)</a>.
+      <acronym>W3C</acronym> Recommendation 04 February 2004.</dd>
+  <dt><a name="ref-xmlschemadatatypes"
+  id="ref-xmlschemadatatypes"><acronym>XML</acronym> Schema Part 2:
+  Datatypes</a></dt>
+    <dd>Paul V. Biron, Ashok Malhotra, <abbr>eds.</abbr> <a
+      href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/"><acronym>XML</acronym>
+      Schema Part 2: Datatypes Second Edition</a>. <acronym>W3C</acronym>
+      Recommendation 28 October 2004.</dd>
+  <dt><a name="ref-xpath10" id="ref-xpath10">XPath 1.0</a></dt>
+    <dd>James Clark, Steve DeRose, <abbr>eds</abbr>. <a
+      href="http://www.w3.org/TR/1999/REC-xpath-19991116">XML Path Language
+      (XPath) Version 1.0</a>. <acronym>W3C</acronym> Recommendation 16
+      November 1999.</dd>
+  <dt><a name="ref-xpath20" id="ref-xpath20">XPath 2.0</a></dt>
+    <dd>Anders Berglund, Scott Boag, Don Chamberlin, Mary F. Fern&aacute;ndez, Michael
+      Kay, Jonathan Roby, J&eacute;r&ocirc;me Sim&eacute;on, <abbr>eds</abbr>. <a
+      href="http://www.w3.org/TR/xpath20/">XML Path Language
+      (XPath) Version 2.0</a>. <acronym>W3C</acronym> Recommendation 23
+      January 2007.</dd>
+</dl>
+</div>
+
+<div class="appendixChapter">
+<h2 class="chapter"><a name="app-acks" id="app-acks">Appendix F:
+Acknowledgements</a></h2>
+
+<p>This work has been undertaken in the framework of the project <a
+href="http://www.bentoweb.org/">BenToWeb</a> —
+<acronym>IST</acronym>-2-004275-<acronym>STP</acronym> — funded by the
+<acronym>IST</acronym> Programme of the European Commission.</p>
+</div>
+</body>
+</html>

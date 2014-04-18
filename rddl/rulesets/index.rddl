@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "http://www.rddl.org/rddl-xhtml.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rddl="http://www.rddl.org/" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BenToWeb Rulesets XML 1.0</title>
+    <link media="screen,projection" href="http://www.bentoweb.org/css/html.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link media="screen,projection" href="http://www.bentoweb.org/css/default.css" type="text/css" rel="stylesheet" title="Default stylesheet" />
+    <link href="http://www.bentoweb.org/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <meta name="DC.Title" content="BenToWeb Rulesets XML 1.0" />
+    <meta name="DC.Description" content="BenToWeb Rulesets XML 1.0, an XML vocabulary for identifying and referencing accessibility guidelines: Resource Description (RDDL)" />
+    <meta name="DC.Type" scheme="DCMIType" content="Text" />
+    <meta name="DC.Creator" content="Christophe Strobbe" />
+    <meta name="DC.Publisher" content="BenToWeb Consortium (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights" content="Copyright BenToWeb Consortium 2006 (http://www.bentoweb.org/)" />
+    <meta name="DC.Rights.accessRights" content="public" />
+    <meta name="DC.Date" content="2008-03-21" />
+    <meta name="DC.Identifier" content="http://bentoweb.org/refs/rulesets/index.rddl" />
+    <meta name="DC.Language" scheme="ISO 639-1" content="en" />
+    <meta name="robots" content="all" />
+    <meta name="generator" content="création artisanale à la main" xml:lang="fr" />
+  </head>
+  <body>
+    <h1>BenToWeb Rulesets <acronym>XML</acronym> 1.0</h1>
+    <p>Resource Directory (<a href="http://www.rddl.org/"><acronym>RDDL</acronym></a> document) for BenToWeb Rulesets <acronym>XML</acronym> 1.0.</p>
+    <div class="head">
+      <p>This Version: <a href="http://bentoweb.org/refs/rulesets">11 January 2006</a>.</p>
+      <p>Latest Version: <a href="http://bentoweb.org/refs/rulesets">http://bentoweb.org/refs/rulesets</a>.</p>
+      <p>Previous Version: none.</p>
+      <p>Editors:</p>
+      <ul> 
+        <li><a href="&#x4d;ail&#x54;o&#x3a;christophe&#x2e;strobbe&#x40;esat&#x2e;kuleuven&#x2e;be">Christophe Strobbe</a> 
+          (<a href="http://www.docarch.be/"><acronym title="Research Group on Document Architectures">DocArch</acronym>, <span xml:lang="nl">Katholieke Universiteit Leuven</span></a>)
+        </li>
+      </ul>
+    </div>
+    <h2>Purpose and General Description</h2>
+    <p>Rulesets <acronym>XML</acronym> is an <acronym title="Extensible Markup Language">XML</acronym> vocabulary for identifying and referencing
+      accessibility checkpoints, success criteria or rules. A Rulesets <acronym>XML</acronym> serves as a global map of 
+      rulesets such as <acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 1.0, <acronym>WCAG</acronym> 2.0, Section 508 and <acronym>BITV</acronym> and 
+      as a bridge between test case metadata (possibly described using <a href="http://bentoweb.org/refs/TCDL1.1"><acronym>TCDL</acronym></a>) and those rulesets.
+      An example ruleset, used in the BenToWeb project, is available at <a href="http://bentoweb.org/refs/rulesets.xml">http://bentoweb.org/refs/rulesets.xml</a>.
+      Rulesets <acronym>XML</acronym> uses the namespace <code>http://bentoweb.org/refs/rulesets</code>; 
+      a <acronym>W3C</acronym> <acronym>XML</acronym> Schema is available at <a href="http://bentoweb.org/refs/schemas/rulesets.xsd">http://bentoweb.org/refs/schemas/rulesets.xsd</a>.
+    </p>
+    <h2>Structure of Rulesets <acronym>XML</acronym></h2>
+    <p>The parts of a rulesets file are named after the constituent parts of <acronym>WCAG</acronym> 2.0 but should be
+      sufficiently generic to be used for other rulesets.
+    </p>
+    <h3>Ruleset</h3>
+    <p>A Rulesets <acronym>XML</acronym> document contains one or more rulesets (<code>ruleset</code> elements).
+      Examples of rulesets are <acronym>WCAG</acronym> 1.0, <acronym>WCAG</acronym> 2.0, Section 508 and <acronym>BITV</acronym>.
+      Working drafts of rulesets can also count as rulesets; for example, it is possible to treat the <a href="http://www.w3.org/TR/2005/WD-WCAG20-20050630/">30 June 2005 Working Draft of <acronym>WCAG</acronym> 2.0</a>
+      as a different ruleset than the <a href="http://www.w3.org/TR/2005/WD-WCAG20-20051123/">23 November 2005 Working Draft of <acronym>WCAG</acronym> 2.0</a>. 
+      All that is necessary is that each rulesets has a different and stable <acronym title="Uniform Resource Locators">URL</acronym>.
+    </p>
+    <p>Each ruleset has:</p>
+    <ul>
+      <li>a unique identifier, for example <samp>WCAG2_20051123</samp> (<code>id</code> attribute, required);</li>
+      <li>a <acronym>URL</acronym> (<code>xlink:href</code> attribute, required);</li>
+      <li>a natural language (<code>hrefLang</code> attribute, required).</li>
+    </ul>
+    <h3>Guideline</h3>
+    <p>A ruleset consists of one or more subdivisions or &#8220;guidelines&#8221;: 
+      each <code>ruleset</code> element contains one or more <code>guideline</code> elements.
+    </p>
+    <p>Each guidelines has:</p>
+    <ul>
+      <li>a name, for example the guideline number in <acronym>WCAG</acronym> 2.0: <samp>1.1</samp>, &#8230; (<code>name</code> attribute, required);</li>
+      <li>a unique identifier, for example <samp>WCAG20-20051123_1.1</samp> (<code>id</code> attribute, required);</li>
+      <li>a <acronym>URL</acronym> (<code>xlink:href</code> attribute, optional);</li>
+      <li>a natural language (<code>hrefLang</code> attribute, required).</li>
+    </ul>
+    <h3>Success Criterion</h3>
+    <p>A &#8220;guideline&#8221; may consist of one or more subdivisions or &#8220;success criteria&#8221;:
+      each <code>guideline</code> element can contain one or more <code>successCriterion</code> elements.
+    </p>
+    <p>Each success criterion has:</p>
+    <ul>
+      <li>a name, for example the success criterion number in <acronym>WCAG</acronym> 2.0: <samp>1</samp> (<code>name</code> attribute, required);</li>
+      <li>a level, for example the level in <acronym>WCAG</acronym> or <acronym>BITV</acronym>: <samp>1</samp> (<code>level</code> attribute, optional);</li>
+      <li>a unique identifier, for example <samp>WCAG2_20051123_1.1_text-equiv-informative</samp> (<code>id</code> attribute, required);</li>
+      <li>a natural language (<code>hrefLang</code> attribute, required).</li>
+    </ul>
+    <p>Success criteria have no further subdivisions.</p>
+    <h2>Example: BenToWeb's <samp>rulesets.xml</samp></h2>
+    <p>In BenToWeb's <a href="http://bentoweb.org/refs/rulesets.xml"><samp>rulesets.xml</samp></a>, 
+      a ruleset consists of guidelines and a guideline may consist of success criteria. 
+      Depending on the ruleset, guidelines and success criteria refer to:
+    </p>
+    <ul>
+      <li>guidelines and success criteria (<a href="http://www.w3.org/TR/WCAG20/"><acronym>WCAG</acronym> 2.0</a>); principles are not referenced;</li>
+      <li>guidelines and checkpoints (<a href="http://www.w3.org/TR/WCAG10/"><acronym>WCAG</acronym> 1.0</a>);</li>
+      <li><span xml:lang="de">Anforderungen</span> and <span xml:lang="de">Bedingungen</span> (<a href="http://www.bmi.bund.de/Annex/de_22681/Barrierefreie_Informationstechnik-Verordnung_BITV_als_PDF-Download.pdf"><acronym xml:lang="de" title="Barrierefreie Informationstechnik-Verordnung">BITV</acronym></a>);</li>
+      <li>rules (<a href="http://www.section508.gov/index.cfm?FuseAction=Content&amp;ID=12#Web">Section 508</a> only knows rules).</li>
+    </ul>
+   <p>The value of the <code>name</code> attribute of a <code>guideline</code> element corresponds to</p>
+   <ul>
+    <li>the guideline number in <acronym>WCAG</acronym> 1.0 [x] &amp; <acronym>WCAG</acronym> 2.0 [x.y],</li>
+    <li>the number of an <span xml:lang="de">Anforderung</span> in <acronym>BITV</acronym> [x],</li>
+    <li>the letter identifying a rule in Section 508.</li>
+  </ul>
+  <p>The <code>id</code> attribute of the <code>guideline</code> element is required; <code>name</code> cannot serve this purpose because <abbr>ID</abbr>s must not start with a number.</p>
+  <p>For each guideline, all success criteria or checkpoints are listed as <code>successCriterion</code> elements. 
+    The value of the <code>name</code> attribute of a <code>successCriterion</code> element corresponds to
+  </p>
+  <ul>
+    <li>checkpoint number in <acronym>WCAG</acronym> 1.0 [x.y],</li>
+    <li>a success criterion number in <acronym>WCAG</acronym> 2.0 [y] &#8212; the <code>level</code> attribute is required, </li>
+    <li>the number of a <span xml:lang="de">Bedingung</span> in <acronym>BITV</acronym> [x.y], </li>
+    <li>nothing in Section 508 because the rules have no subdivisions.</li>
+  </ul>
+  <p>The <code>level</code> attribute is optional except for <acronym>WCAG</acronym> 2.0.</p>
+    <div class="rddlresources">
+      <h2><acronym>RDDL</acronym> Resources</h2>
+      <ul>
+        <li>
+          <rddl:resource xmlns:rddl="http://www.rddl.org/" xlink:arcrole="http://www.rddl.org/purposes#schema-validation" xlink:role="http://www.w3.org/2001/XMLSchema" 
+            xlink:href="http://bentoweb.org/refs/schemas/rulesets.xsd" xlink:embed="none">
+            <a href="http://bentoweb.org/refs/schemas/rulesets.xsd">Rulesets <acronym>XML</acronym> 1.0 Schema</a>
+          </rddl:resource>
+        </li>
+        <li>
+          <rddl:resource xmlns:rddl="http://www.rddl.org/" xlink:role="http://www.isi.edu/in-notes/iana/assignments/media-types/text/html" xlink:arcrole="http://www.rddl.org/purposes#alternate" 
+            xlink:href="http://bentoweb.org/refs/rulesets.html" xlink:embed="none">
+            <a href="http://bentoweb.org/refs/rulesets.html"><acronym>HTML</acronym> view of Rulesets <acronym>XML</acronym></a>
+          </rddl:resource>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

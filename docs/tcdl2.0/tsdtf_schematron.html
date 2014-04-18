@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Validating TCDL 2.0 with ISO Schematron</title>
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  <meta name="DC.Subject" content="validate, ISO Schematron, Test Case Description Language 2.0, TCDL 2.0, Test Samples Development Task Force, TSDTF, XSLT, Saxon" />
+  <meta name="DC.Description" content="How to Validate Test Sample Metadata (TCDL 2.0) with ISO Schematron and Saxon." />
+  <meta name="DC.Type" scheme="DCMIType" content="Text" />
+  <meta name="DC.Creator" content="Christophe Strobbe" />
+  <meta name="DC.Publisher" content="BenToWeb Consortium" />
+  <meta name="DC.Rights" content="Copyright BenToWeb Consortium 2004-2007" />
+  <meta name="DC.Format" content="text/html" />
+  <meta name="DC.Identifier" content="http://www.bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html" />
+  <meta name="DC.Language" content="en" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <!--link rel="stylesheet" type="text/css" href="styles.css" /-->
+<!-- CSS copied from http://bentoweb.org/refs/TCDL2.0.html and modified-->
+<style type="text/css">
+body { font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, /*Arial,*/ sans-serif; margin-left: 50px; margin-right: 50px; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; letter-spacing: 0.05em; font-variant: normal; }
+h1 { margin-left: -36px;}
+h2 { margin-top: 1.5em; margin-left: -34px;}
+h3 { margin-left: -26px;}
+acronym, abbr { font-variant: normal; text-transform: none; } /* prevent smallcaps in Opera9 */
+blockquote { color: inherit; background-color: #eee; padding: .3em 1em; }
+ul, ol { list-style-position: outside; padding-left: 2em; }
+ul, ol, dl, blockquote, .blockcode, p.bentoweb, div.bentoweb { margin-left: .5em; margin-right: .5em; }
+code, samp { font-family: Futura, Frutiger, "ITC Officina", "FF Meta", Myriad, Lucida, sans-serif; }
+samp, kbd.cli { background-color: #000; color: #fff; font-weight: bold; }
+kbd.cli { padding: .2em .4em; }
+samp { display: block; margin: .5em; padding: .2em; }
+code, li code, kbd { background: inherit; color: #c00;}
+p.blockcode { border: 1px solid #ccc; padding: .6em; }
+p.blockcode span.value, p code span.value, p code em.value { color: #333; background: inherit; }
+p code em.value { font-style: normal; font-weight: bold; }
+p.blockcode span.comment { color: #555; background: inherit; }
+.rfc2119 { font-weight: bold; font-style: normal; text-transform:uppercase; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #000; padding-left: .3em; padding-right: .3em; }
+td ol { margin-left: 0; padding-left: 1.2em; }
+li { margin-top: .3em; }
+ul.attlist { border: 1px dotted #000; }
+ul.contentmodel { border: 1px dotted #000; }
+ul.attlist, ul.contentmodel {padding-bottom: .3em;  background-color: #eee;}
+div.bentoweb, p.bentoweb { border: 1px solid #000; padding: .5em; }
+div.tsdtf, p.tsdtf { border: 2px solid #f00; padding: .5em; }
+.bentoweb em, .tsdtf em { font-style: oblique; font-weight: bold; }
+p.warning { border: 4px solid #f00; background: #ff9; color: inherit; padding: .5em; margin-top: 1em; margin-bottom: 1em;}
+p.warning em { font-weight: bold; }
+div.chapt { margin-top: 1em;  }
+del { color: #f60; background: inherit; }
+ins, ins * { text-decoration: none; color: #060; background: inherit; }
+ins a { text-decoration: underline; color: #00f;}
+address { font-style: normal; margin-top: 2.5em; padding-top: .5em; border-top: 2px solid #ccc;}
+span.menuchoice, span.uioption { font-weight: bold;}
+q:before { content: ""; } q:after { content: ""; } /* two separate rules because combined rule is not supported by Opera 6 */
+/* div.stable { border: 2px solid #0c0; color: #000; background-color: #ffe; padding: .5em; }
+ strong.stable { color: #0a0; background: inherit; }
+ a[id]:after { content: " [ID:#" attr(id) "] "; font-size: .8em; font-weight: normal; background: transparent; color: #666; }
+*/
+
+/* generating content and counters work in Opera6 but not in IE or Mozilla ...*/
+/*li.chapter, li.section, li.subsection { list-style-type: none;}
+h2.chapter:before { content: counter(chapter); counter-increment: chapter; counter-reset: section; padding-right: 1em; }
+li.chapter:before { content: counter(tocChapter); counter-increment: tocChapter; counter-reset: tocSection; padding-right: 1em; }
+h3:before { content: counter(chapter) "." counter(section); counter-increment: section; counter-reset: subsection; padding-right: 1em;}
+li.section:before { content: counter(tocChapter) "." counter(tocSection); counter-increment: tocSection; counter-reset: tocSubsection; padding-right: 1em;}
+h4:before { content: counter(chapter) "." counter(section) "." counter(subsection); counter-increment: subsection; counter-reset: h5section; padding-right: 1em;}
+li.subsection:before { content: counter(tocChapter) "." counter(tocSection) "." counter(tocSubsection); counter-increment: tocSubsection; padding-right: 1em;}
+h5:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(h5section); counter-increment: h5section; counter-reset: h6section; padding-right: 1em;}*/
+/*h6:before { content: counter(chapter) "." counter(section) "." counter(subsection) "." counter(subsubsection) "." counter (h6section); counter-increment: h6section; padding-right: 1em;}*/
+
+</style>
+</head>
+
+<body>
+<h1>How to Validate Test Sample Metadata (<acronym title="Test Case Description Language">TCDL</acronym> 2.0) with ISO Schematron</h1>
+
+<p>Editor: Christophe Strobbe (<a href="http://www.docarch.be/">DocArch</a>,
+<span lang="nl">Katholieke Universiteit Leuven</span>).</p>
+<p>Latest version: <a
+href="http://bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html">http://bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html</a> ($Date: 2009-01-12 14:55:41 $).</p>
+
+
+<h2>Introduction</h2>
+<p>The <a href="http://www.w3.org/WAI/ER/tests/Overview">Test Samples Development Task Force (<acronym>TSDTF</acronym>)</a> uses a subset of <acronym>TCDL</acronym> 2.0 as metadata format.
+In addition to the constraints defined by the 
+<a href="http://bentoweb.org/refs/TCDL2.0.html"><acronym>TCDL</acronym> 2.0 Specification and Guide</a> and
+<a href="http://bentoweb.org/refs/schemas/tcdl2.0.xsd"><acronym title="World Wide Web Consortium">W3C</acronym> Schema for <acronym>TCDL</acronym> 2.0</a>, 
+the task force also uses a number of additional constraints, which are set out in 
+<a href="http://www.w3.org/WAI/ER/tests/usingTCDL"><acronym title="Web Content Accessibility Guidelines">WCAG</acronym> 2.0 Test Samples Metadata</a>
+and in <a href="http://www.w3.org/WAI/ER/tests/process#structure">Checklist for Structure Review</a>. 
+The ISO Schematron for the Test Sample Metadata is intended to check most of the constraints that are specific to the task force.
+The following paragraphs describe how to install the necessary files and how to run the validation process for the ISO Schematron files.
+</p>
+
+
+<h2><a id="saxonxslt" name="saxonxslt">Validating with Saxon and the <acronym title="Extensible Stylesheet Language Transformations">XSLT</acronym> Implementation of ISO Schematron</a></h2>
+
+<h3>Getting and Installing Java</h3>
+<p>This how-to guide assumes that you use Java to run Saxon. There is also a Saxon version for the .NET platform, but that is out of scope for this guide.</p>
+
+<p>The <a href="http://www.saxonica.com/documentation/index/installationjava/prerequisites.html">Prerequisites</a>
+for Saxon state that you need at least a Java <acronym>VM</acronym> (also known as <acronym title="Java Runtime Environment">JRE</acronym>)
+to run Saxon. You can also use a Java Development Kit (<acronym>JDK</acronym>). You need at least version 1.4.</p>
+
+<p>If you don't know if a <acronym>JRE</acronym> or <acronym>JDK</acronym> is available on your computer, you can open a command-line environment and type
+<kbd class="cli">java -version</kbd>. The output will tell you if you have Java Runtime Environment and which version you have installed. 
+For example, for Java 6, you may get:<br />
+<samp>java version "1.6.0_01"<br />
+Java(TM) SE Runtime Environment (build 1.6.0_01-b06)<br />
+Java HotSpot(TM) Client VM (build 1.6.0_01-b06, mixed mode, sharing)
+</samp>
+</p>
+
+<p>To get Java, go to 
+<a href="http://java.sun.com/javase/downloads/index.jsp">Java <acronym title="second edition">SE</acronym> downloads</a> 
+and download the  <acronym>JRE</acronym> or <acronym>JDK</acronym> that you prefer (you don't need NetBeans to run ISO Schematron).
+On the same page, you will also find links to installation instructions. Basically, you run the installer and (on Windows) update the PATH variable.
+The installation instructions explain you how to do this.
+When you're ready, you should be able to check your Java version at the command line as explained above.
+</p>
+
+
+<h3>Getting and Installing <acronym title="Java API for XML Processing">JAXP</acronym></h3>
+
+<p>If you use Java 1.4, you also need to install the Java <acronym title="application programming interface">API</acronym> for <acronym title="Extensible Markup Language">XML</acronym> Processing (<acronym>JAXP</acronym>).
+If you use Java 1.5 or 1.6 (also known as Java 5 and Java 6, respectively), you can skip this step.</p>
+
+<p>You can downnload the <acronym>JAXP</acronym> reference implementation from the 
+<a href="https://jaxp.dev.java.net/">Project GlassFish website</a>.
+After downloading the class file, you open a command-line window, navigate to the folder where you downloaded the class file,
+and run <kbd class="cli">java -cp . JAXP_RI_20060217</kbd> (the last part corresponds to the name of the class file without the extension).
+This should unpack <acronym>JAXP</acronym>. 
+After that, you need to put the files <code>jaxp-api.jar</code> and <code>dom.jar</code> on the classpath.</p>
+<p>To check that the jar files are available, open a command-line window, enter
+<kbd class="cli">echo %classpath%</kbd> and check that the jar files are available in the list that is displayed.</p>
+
+
+<h3>Getting and Installing Saxon</h3>
+
+<p>To use the <acronym>XSLT</acronym> implementation of ISO Schematron, you need an <acronym>XSLT</acronym> processor.
+Saxon-B is an open-source <acronym>XSLT</acronym> processor. (In addition to <acronym>XSLT</acronym> 2.0 it also supports 
+XPath 2.0 and XQuery 1.0.)
+The free version&mdash;Saxon-B&mdash;is available at <a href="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</a>.
+(There is also a commercial version&mdash;Saxon-SA&mdash;with support for <acronym>XML</acronym> Schema.)</p>
+
+<p>To install Saxon, you download a zip file from the address above and unpack it into a suitable folder.
+After that, you need to put <code>saxon8.jar</code> or <code>saxon9.jar</code> (depending on your version) on the classpath.
+(More details are available on the <a href="http://www.saxonica.com/documentation/index/installationjava/installingjava.html">Saxonica website</a>.)</p>
+
+
+<h3>Getting and &ldquo;Installing&rdquo; the <acronym>XSLT</acronym> Implementation of ISO Schematron</h3>
+
+<p>The <acronym>XSLT</acronym> of ISO Schematron consists of a skeleton file and a choice of customization files.
+These files can all be downloaded from 
+<a href="http://www.schematron.com/validators.html">ISO Schematron Validators built on the &ldquo;Skeleton&rdquo;</a>.
+The skeleton file is still in beta. There are currently two versions: one from 8 February 2007
+(direct link: <a href="http://www.schematron.com/validators/iso_schematron_skeleton.xsl">iso_schematron_skeleton.xsl</a>)
+and another from 19 July 2007
+(direct link: <a href="http://www.schematron.com/validators/new_schematron_skeleton.xsl">new_schematron_skeleton.xsl</a>).
+</p>
+
+<p>In addition to the skeleton file, you also need a <acronym>XSLT</acronym> that customizes the skeleton. 
+Two customization files are currently available:</p>
+<ul>
+  <li><a href="http://www.schematron.com/validators/iso_svrl.xsl"><acronym>XSLT</acronym> that outputs Schematron Validation Report Language (<acronym>SVRL</acronym>)</a>,</li>
+  <li><a href="http://www.schematron.com/validators/iso_schematron_text.xsl"><acronym>XSLT</acronym> that outputs plain text</a>.</li>
+</ul>
+
+
+<p>Put <code>iso_schematron_skeleton.xsl</code> (or <code>new_schematron_skeleton.xsl</code>) and the customization file
+(<code>iso_svrl.xsl</code> or <code>iso_schematron_text.xsl</code>) in the same folder.</p>
+
+<p><strong>Note</strong>: if you use <code>new_schematron_skeleton.xsl</code> instead of <code>iso_schematron_skeleton.xsl</code>, you need to edit
+the customization file you are using. If you use the <acronym>SVRL</acronym> customization, you need to open <code>iso_svrl.xsl</code> and 
+<strong>replace <code>&lt;xsl:import href="iso_schematron_skeleton.xsl"/&gt;</code> with 
+<code>&lt;xsl:import href="new_schematron_skeleton.xsl"/&gt;</code></strong>.</p>
+
+
+<h3>Getting and Using the ISO Schematron for the Test Sample Metadata</h3>
+
+<p>The ISO Schematron for the Test Sample Metadata is 
+<ins>available from the <a href="http://www.bentoweb.org/refs/TCDL2.0/tcdl2.0.tsdtf.sch">BenToWeb website (tcdl2.0.tsdtf.sch)</a></ins>
+<del>currently only available 
+<a href="http://lists.w3.org/Archives/Public/public-wai-ert-tsdtf/2007Aug/att-0024/tcdl2.0.tsdtf.20070828.sch">in the mailing list archive (28 August 2007)</a></del>.
+Download and install this file into an appropriate directory.
+</p>
+
+<p>Using this ISO Schematron file is a two-step process: first, transforming the ISO Schematron file into an <acronym>XSLT</acronym> file, 
+then, processing the <acronym>TCDL</acronym> file with the generated <acronym>XSLT</acronym> file. All of this is done at the command line.
+</p>
+
+<p>To transform ISO Schematron file into an <acronym>XSLT</acronym> file that generates <acronym>SVRL</acronym> reports, type<br />
+<kbd class="cli">java net.sf.saxon.Transform -o tcdl2.0.tsdtf.sch.tmp.xsl -s tcdl2.0.tsdtf.sch iso_svrl.xsl</kbd>.<br />
+This creates the file <code>tcdl2.0.tsdtf.sch.tmp.xsl</code> in the same folder.
+</p>
+
+<p>To validate a <acronym>TCDL</acronym> file (here scx.x.x_lx_xxx.xml) with the generated <acronym>XSLT</acronym> file, type<br />
+<kbd class="cli">java net.sf.saxon.Transform -o scx.x.x_lx_xxx.xml.report.xml -s scx.x.x_lx_xxx.xml tcdl2.0.tsdtf.sch.tmp.xsl</kbd>.<br />
+This creates an <acronym>SVRL</acronym> file called <code>scx.x.x_lx_xxx.xml.report.xml</code>.
+</p>
+
+<p>To get reports in plain text, the commands would be:<br />
+<kbd class="cli">java net.sf.saxon.Transform -o tcdl2.0.tsdtf.sch.tmp.xsl -s tcdl2.0.tsdtf.sch iso_schematron_text.xsl</kbd><br />
+<kbd class="cli">java net.sf.saxon.Transform -o scx.x.x_lx_xxx.xml.report.txt -s scx.x.x_lx_xxx.xml tcdl2.0.tsdtf.sch.tmp.xsl</kbd>
+</p>
+
+<p>To save some typing, the two steps can be combined in a single batch file:</p>
+<p class="blockcode">
+<code>@echo off<br />
+cls<br />
+echo Usage: schematron %%1 = iso schematron file, with its extension.<br /> 
+echo  %%2 is the input xml file, with the extension.<br />
+echo E.g. schematron input.sch input.xml will produce input.report.xml as output<br />
+<br />
+del %1.tmp.xsl<br />
+echo Generate the stylesheet from %1<br />
+<br />
+java net.sf.saxon.Transform -o %1.tmp.xsl -s %1 iso_svrl.xsl<br />
+<br />
+echo Now run the input file %2 against the generated stylesheet %1.tmp.xsl to produce %2.report.xml<br />
+<br />
+java net.sf.saxon.Transform -o %2.report.xml -s %2 %1.tmp.xsl<br />
+</code>
+</p>
+
+<p>If you save the above code as <code>schematron.bat</code>, you can run it with the following instruction on the command line:
+<kbd>C:\schematron tcdl2.0.tsdtf.sch scx.x.x_lx_xxx.xml</kbd>. 
+<br />Note: you need to adapt the file and the command-line instruction to make them reflect the location of your 
+<acronym>TCDL</acronym>, <acronym>XSLT</acronym> and ISO Schematron files.</p>
+
+<h3>Interpreting the Validation Reports</h3>
+
+<p>If you use the customization file for plain text, you get a text file with one line per error or warning. 
+A valid file will generate an empty text file.
+</p>
+
+<p>If you use the customization file for <acronym>SVRL</acronym>, you get an <acronym>XML</acronym> file with several types of elements:</p>
+<ul>
+  <li><code>svrl:active-pattern</code> and <code>svr:fired-rule</code> just refer to patterns and rules in the ISO Schematron file
+    that were relevant to the validation;
+  </li>
+  <li><code>svrl:failed-assert</code> is the most important element and denotes errors;
+    the <code>location</code> attribute points to the location of the error 
+    (but the <code>namespace-uri()='http://bentoweb.org/refs/TCDL2.0/'</code> notation makes the XPath hard to read).
+  </li>
+</ul>
+
+
+<h2><a id="oxygen" name="oxygen">Validating in &lt;oXygen/&gt; <acronym>XML</acronym> Editor</a></h2>
+
+<p>&lt;oXygen/&gt; is a commercial <acronym>XML</acronym> editor in Java 
+that can be used as a stand-alone program or as a plug-in for Eclipse.</p>
+<p>&lt;oXygen/&gt; supports 
+<a href="http://www.oxygenxml.com/validation.html">validation and well-formedness checking</a>
+with <acronym>W3C</acronym> <acronym>XML</acronym> Schemas, <acronym>DTD</acronym>s and ISO Schematron
+(ISO Schematron only since version 8.2).
+</p>
+
+<p>To validate a <acronym>TCDL</acronym> 2.0 file against the ISO Schematron (<code>tcdl2.0.tsdtf.sch</code>),
+follow the steps below:
+</p>
+
+<ol>
+  <li>
+    Go through the menus <span class="menuchoice">Document</span> &gt; <span class="menuchoice">Validate</span>
+    &gt; <span class="menuchoice">External Validation</span> to open the <span class="uioption">Validate with</span> dialogue box.
+  </li>
+  <li>
+    Choose the tab <span class="uioption">Schematron Schema</span>, browse to the file <code>tcdl2.0.tsdtf.sch</code>,
+    and press the <span class="uioption">OK</span> button.
+  </li>
+  <li>
+    In the <span class="uioption">Schematron Phase Chooser</span> select #ALL.
+  </li>
+  <li>
+    In the <span class="uioption">Errors</span> pane below, you get a list of errors and warnings.
+    You can click these to go to the location of the issues in the validated file.
+  </li>
+</ol>
+
+<p>You can also associate the ISO Schematron with the <acronym>TCDL</acronym> file, but this adds
+a processing instruction (<code>&lt;?oxygen SCHSchema="tcdl2.0.tsdtf.sch"?&gt;</code>) to the file,
+just above the document element.
+To do this, follow the steps below:
+</p>
+
+<ol>
+  <li>
+    Go through the menus <span class="menuchoice">Document</span> &gt; <span class="menuchoice"><acronym>XML</acronym> Document</span>
+    &gt; <span class="menuchoice">Associate Schema</span> to open the <span class="uioption">Associate Schema</span> dialogue box.
+  </li>
+  <li>
+    Choose the tab <span class="uioption">Schematron Schema</span>, browse to the file <code>tcdl2.0.tsdtf.sch</code>,
+    and press the <span class="uioption">OK</span> button.
+  </li>
+</ol>
+
+<p>This enables validation each time you save the <acronym>TCDL</acronym> file.</p>
+
+
+<h2><a id="casteldesigns" name="casteldesigns">Validating in Eclipse with the Castle Designs Schematron Plugin</a></h2>
+
+<p>The <a href="http://castledesigns.co.uk/schematron-ep.html">Schematron Eclipse Plugin</a>
+from Castle Designs enables ISO Schematron validation in 
+<a href="http://www.eclipse.org/">Eclipse</a> (a free and open-source development platform).
+</p>
+
+<p>The plug-in requires Java 1.4 (or higher) and Eclipse 3.2 (or higher) with the
+<a href="http://download.eclipse.org/webtools/downloads/">Web Tools Platform (<acronym>WTP</acronym>)</a> 1.5.4.
+Installation instructions for the plug-in are available on the 
+<a href="http://castledesigns.co.uk/schematron-ep.html">Castle Designs website</a>.
+</p>
+
+<p>ISO Schematron validation only works with a processing instruction like the following in the <acronym>TCDL</acronym> files:<br />
+<code>&lt;?schematron-schema href="..\TCDL\schematron\tcdl2.0.tsdtf.sch"?&gt;</code>.</p>
+<p>Note that the <code>href</code> attribute contains a relative path;
+fetching the ISO Schematron with <code>href="http://www.bentoweb.org/refs/TCDL2.0/tcdl2.0.tsdtf.sch"</code> does not appear to work at the moment.</p>
+
+
+<address><acronym>URL</acronym>: <a href="http://www.bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html">http://www.bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html</a>.</address>
+</body>
+</html>
