@@ -44,3 +44,7 @@ is being migrated. The main references are:
 + ISO Schematron for initial review of TSD TF.
 + How to Validate Test Sample Metadata (TCDL 2.0) with ISO Schematron.
 + XSLT for HTML view of TCDL metadata.
+
+## Related resources
+
+* [[DRAFT] WCAG 2.0 Test Samples: Overview](http://www.w3.org/WAI/ER/tests/)
