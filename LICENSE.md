@@ -1,4 +1,4 @@
-# BenToWeb Public License, Version 1.0 - BenToWeb Consortium
+# BenToWeb Public License
 
 Copyright © 2004-2007 BenToWeb Consortium:
 
