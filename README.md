@@ -39,11 +39,11 @@ interface guidelines such as the Web Content Accessibility Guidelines
 is being migrated. The main references are:
 
 + [RDDL file of the TCDL 2.0 namespace](http://bentoweb.org/refs/TCDL2.0).
-+ TCDL 2.0 Schema.
-+ TCDL 2.0 Specification and Guide.
-+ ISO Schematron for initial review of TSD TF.
-+ How to Validate Test Sample Metadata (TCDL 2.0) with ISO Schematron.
-+ XSLT for HTML view of TCDL metadata.
++ [TCDL 2.0 Schema](http://bentoweb.org/refs/schemas/tcdl2.0.xsd).
++ [TCDL 2.0 Specification and Guide](http://bentoweb.org/refs/TCDL2.0.html).
++ [ISO Schematron for initial review of TSD TF](http://bentoweb.org/refs/TCDL2.0/tcdl2.0.tsdtf.html).
++ [How to Validate Test Sample Metadata (TCDL 2.0) with ISO Schematron](http://bentoweb.org/refs/TCDL2.0/tsdtf_schematron.html).
++ [XSLT for HTML view of TCDL metadata](http://bentoweb.org/refs/TCDL2.0/tcdl2.0tsdtf_to_xhtml.xslt).
 
 ## Related resources
 
