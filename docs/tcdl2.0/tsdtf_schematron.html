@@ -19,7 +19,7 @@
   <!--link rel="stylesheet" type="text/css" href="styles.css" /-->
 <!-- CSS copied from http://bentoweb.org/refs/TCDL2.0.html and modified-->
 <style type="text/css">
-body { font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, /*Arial,*/ sans-serif; margin-left: 50px; margin-right: 50px; }
+body { font-family: 'Trebuchet MS', Helvetica, Geneva, Verdana, sans-serif; margin-left: 50px; margin-right: 50px; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; letter-spacing: 0.05em; font-variant: normal; }
 h1 { margin-left: -36px;}
 h2 { margin-top: 1.5em; margin-left: -34px;}
@@ -109,17 +109,17 @@ to run Saxon. You can also use a Java Development Kit (<acronym>JDK</acronym>). 
 
 <p>If you don't know if a <acronym>JRE</acronym> or <acronym>JDK</acronym> is available on your computer, you can open a command-line environment and type
 <kbd class="cli">java -version</kbd>. The output will tell you if you have Java Runtime Environment and which version you have installed. 
-For example, for Java 6, you may get:<br />
-<samp>java version "1.6.0_01"<br />
-Java(TM) SE Runtime Environment (build 1.6.0_01-b06)<br />
-Java HotSpot(TM) Client VM (build 1.6.0_01-b06, mixed mode, sharing)
+For example, for Java 7, you may get:<br />
+<samp>java version "1.7.0_04"<br />
+Java(TM) SE Runtime Environment (build 1.7.0_04-b22)<br />
+Java HotSpot(TM) Client VM (build 23.0-b21, mixed mode, sharing)
 </samp>
 </p>
 
 <p>To get Java, go to 
-<a href="http://java.sun.com/javase/downloads/index.jsp">Java <acronym title="second edition">SE</acronym> downloads</a> 
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java <acronym title="second edition">SE</acronym> downloads</a> 
 and download the  <acronym>JRE</acronym> or <acronym>JDK</acronym> that you prefer (you don't need NetBeans to run ISO Schematron).
-On the same page, you will also find links to installation instructions. Basically, you run the installer and (on Windows) update the PATH variable.
+On the same page, you will also find links to installation instructions. Basically, you run the installer and (on Windows) update the <code>PATH</code> variable.
 The installation instructions explain you how to do this.
 When you're ready, you should be able to check your Java version at the command line as explained above.
 </p>
@@ -128,10 +128,10 @@ When you're ready, you should be able to check your Java version at the command 
 <h3>Getting and Installing <acronym title="Java API for XML Processing">JAXP</acronym></h3>
 
 <p>If you use Java 1.4, you also need to install the Java <acronym title="application programming interface">API</acronym> for <acronym title="Extensible Markup Language">XML</acronym> Processing (<acronym>JAXP</acronym>).
-If you use Java 1.5 or 1.6 (also known as Java 5 and Java 6, respectively), you can skip this step.</p>
+If you use Java 1.5 (also known as Java 5) or a more recent version, you can skip this step.</p>
 
 <p>You can downnload the <acronym>JAXP</acronym> reference implementation from the 
-<a href="https://jaxp.dev.java.net/">Project GlassFish website</a>.
+<a href="https://jaxp.java.net/">Project GlassFish website</a>.
 After downloading the class file, you open a command-line window, navigate to the folder where you downloaded the class file,
 and run <kbd class="cli">java -cp . JAXP_RI_20060217</kbd> (the last part corresponds to the name of the class file without the extension).
 This should unpack <acronym>JAXP</acronym>. 
@@ -143,32 +143,42 @@ After that, you need to put the files <code>jaxp-api.jar</code> and <code>dom.ja
 <h3>Getting and Installing Saxon</h3>
 
 <p>To use the <acronym>XSLT</acronym> implementation of ISO Schematron, you need an <acronym>XSLT</acronym> processor.
-Saxon-B is an open-source <acronym>XSLT</acronym> processor. (In addition to <acronym>XSLT</acronym> 2.0 it also supports 
-XPath 2.0 and XQuery 1.0.)
-The free version&mdash;Saxon-B&mdash;is available at <a href="http://saxon.sourceforge.net/">http://saxon.sourceforge.net/</a>.
-(There is also a commercial version&mdash;Saxon-SA&mdash;with support for <acronym>XML</acronym> Schema.)</p>
+<strong>Saxon-<abbr>HE</abbr></strong> (&ldquo;home edition&rdquo;) is an open-source <acronym>XSLT</acronym> processor. 
+(In addition to <acronym>XSLT</acronym> 2.0 it also supports XPath 3.0 and XQuery 3.0.
+If you need or want schema aware processing, you need to get the enterprise edition of Saxon.)
+<br />
+If you are still using Java 1.4 or Java 5, you will need to get the older 
+Saxon-B. (Saxon-B supports <acronym>XSLT</acronym> 2.0, XPath 2.0 and XQuery 1.0.)
+<br />
+The free versions of Saxon are available at 
+<strong><a href="http://sourceforge.net/projects/saxon/">http://sourceforge.net/projects/saxon/</a></strong>.
+</p>
 
 <p>To install Saxon, you download a zip file from the address above and unpack it into a suitable folder.
-After that, you need to put <code>saxon8.jar</code> or <code>saxon9.jar</code> (depending on your version) on the classpath.
-(More details are available on the <a href="http://www.saxonica.com/documentation/index/installationjava/installingjava.html">Saxonica website</a>.)</p>
+After that, you need to put <code>saxon8.jar</code> or <code>saxon9he.jar</code> (depending on your version) on the classpath.
+(More details are available on the <a href="http://www.saxonica.com/html/documentation/about/installationjava/installingjava.html">Saxonica website</a>.)</p>
 
 
 <h3>Getting and &ldquo;Installing&rdquo; the <acronym>XSLT</acronym> Implementation of ISO Schematron</h3>
 
-<p>The <acronym>XSLT</acronym> of ISO Schematron consists of a skeleton file and a choice of customization files.
+<p>The <acronym>XSLT</acronym> of ISO Schematron consists of a skeleton file and a choice of customisation files.
+<!-- 
 These files can all be downloaded from 
 <a href="http://www.schematron.com/validators.html">ISO Schematron Validators built on the &ldquo;Skeleton&rdquo;</a>.
 The skeleton file is still in beta. There are currently two versions: one from 8 February 2007
 (direct link: <a href="http://www.schematron.com/validators/iso_schematron_skeleton.xsl">iso_schematron_skeleton.xsl</a>)
 and another from 19 July 2007
 (direct link: <a href="http://www.schematron.com/validators/new_schematron_skeleton.xsl">new_schematron_skeleton.xsl</a>).
+-->
+You can find the skeleton file on 
+<a href="https://github.com/webcc/bentoweb-tcdl/blob/master/schematron/iso/iso_schematron_skeleton.xsl">GitHub (iso_schematron_skeleton.xsl)</a>.
 </p>
 
 <p>In addition to the skeleton file, you also need a <acronym>XSLT</acronym> that customizes the skeleton. 
 Two customization files are currently available:</p>
 <ul>
-  <li><a href="http://www.schematron.com/validators/iso_svrl.xsl"><acronym>XSLT</acronym> that outputs Schematron Validation Report Language (<acronym>SVRL</acronym>)</a>,</li>
-  <li><a href="http://www.schematron.com/validators/iso_schematron_text.xsl"><acronym>XSLT</acronym> that outputs plain text</a>.</li>
+  <li><a href="https://github.com/webcc/bentoweb-tcdl/blob/master/schematron/iso/iso_svrl.xsl"><acronym>XSLT</acronym> that outputs Schematron Validation Report Language (<acronym>SVRL</acronym>)</a>,</li>
+  <li><a href="http://www.schematron.com/validators/iso_schematron_text.xsl"><acronym>XSLT</acronym> that outputs plain text</a> (currently unavailable).</li>
 </ul>
 
 
@@ -184,9 +194,13 @@ the customization file you are using. If you use the <acronym>SVRL</acronym> cus
 <h3>Getting and Using the ISO Schematron for the Test Sample Metadata</h3>
 
 <p>The ISO Schematron for the Test Sample Metadata is 
+available on 
+<a href="https://github.com/webcc/bentoweb-tcdl/blob/master/schematron/tcdl2.0.tsdtf.sch">GitHub (tcdl2.0.tsdtf.sch)</a>.
+<!-- 
 <ins>available from the <a href="http://www.bentoweb.org/refs/TCDL2.0/tcdl2.0.tsdtf.sch">BenToWeb website (tcdl2.0.tsdtf.sch)</a></ins>
 <del>currently only available 
 <a href="http://lists.w3.org/Archives/Public/public-wai-ert-tsdtf/2007Aug/att-0024/tcdl2.0.tsdtf.20070828.sch">in the mailing list archive (28 August 2007)</a></del>.
+-->
 Download and install this file into an appropriate directory.
 </p>
 
