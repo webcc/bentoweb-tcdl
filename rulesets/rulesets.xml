@@ -105,6 +105,113 @@
     </guideline>
   </ruleset>
 
+  <ruleset xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/" id="WCAG21_20180605" hrefLang="en">
+    <guideline id="WCAG21_20180605_1.1" name="1.1" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#text-alternatives">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_1.1_non-text-content" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#non-text-content" />
+    </guideline>
+    <guideline id="WCAG21_20180605_1.2" name="1.2" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#time-based-media">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_1.2_audio-only-and-video-only-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#audio-only-and-video-only-prerecorded" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_1.2_captions-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#captions-prerecorded" />
+      <successCriterion level="1" name="3" id="WCAG21_20180605_1.2_audio-description-or-media-alternative-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#audio-description-or-media-alternative-prerecorded" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_1.2_captions-live" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#captions-live" />
+      <successCriterion level="2" name="5" id="WCAG21_20180605_1.2_audio-description-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#audio-description-prerecorded" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_1.2_sign-language-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#sign-language-prerecorded" />
+      <successCriterion level="3" name="7" id="WCAG21_20180605_1.2_extended-audio-description-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#extended-audio-description-prerecorded" />
+      <successCriterion level="3" name="8" id="WCAG21_20180605_1.2_media-alternative-prerecorded" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#media-alternative-prerecorded" />
+      <successCriterion level="3" name="9" id="WCAG21_20180605_1.2_audio-only-live" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#audio-only-live" />
+    </guideline>
+    <guideline id="WCAG21_20180605_1.3" name="1.3" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#adaptable">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_1.3_info-and-relationships" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#info-and-relationships" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_1.3_meaningful-sequence" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#meaningful-sequence" />
+      <successCriterion level="1" name="3" id="WCAG21_20180605_1.3_sensory-characteristics" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#sensory-characteristics" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_1.3_orientation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#orientation" />
+      <successCriterion level="2" name="5" id="WCAG21_20180605_1.3_identify-input-purpose" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#identify-input-purpose" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_1.3_identify-purpose" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#identify-purpose" />
+    </guideline>
+    <guideline id="WCAG21_20180605_1.4" name="1.4" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#distinguishable">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_1.4_use-of-color" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#use-of-color" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_1.4_audio-control" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#audio-control" />
+      <successCriterion level="2" name="3" id="WCAG21_20180605_1.4_contrast-minimum" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#contrast-minimum" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_1.4_resize-text" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#resize-text" />
+      <successCriterion level="2" name="5" id="WCAG21_20180605_1.4_images-of-text" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#images-of-text" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_1.4_contrast-enhanced" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#contrast-enhanced" />
+      <successCriterion level="3" name="7" id="WCAG21_20180605_1.4_low-or-no-background-audio" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#low-or-no-background-audio" />
+      <successCriterion level="3" name="8" id="WCAG21_20180605_1.4_visual-presentation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#visual-presentation" />
+      <successCriterion level="3" name="9" id="WCAG21_20180605_1.4_images-of-text-no-exception" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#images-of-text-no-exception" />
+      <successCriterion level="2" name="10" id="WCAG21_20180605_1.4_reflow" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#reflow" />
+      <successCriterion level="2" name="11" id="WCAG21_20180605_1.4_non-text-contrast" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#non-text-contrast" />
+      <successCriterion level="2" name="12" id="WCAG21_20180605_1.4_text-spacing" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#text-spacing" />
+      <successCriterion level="2" name="13" id="WCAG21_20180605_1.4_content-on-hover-or-focus" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#content-on-hover-or-focus" />
+    </guideline>
+    <guideline id="WCAG21_20180605_2.1" name="2.1" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#keyboard-accessible">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_2.1_keyboard" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#keyboard" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_2.1_no-keyboard-trap" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#no-keyboard-trap" />
+      <successCriterion level="3" name="3" id="WCAG21_20180605_2.1_keyboard-no-exception" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#keyboard-no-exception" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_2.1_character-key-shortcuts" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#character-key-shortcuts" />
+    </guideline>
+    <guideline id="WCAG21_20180605_2.2" name="2.2" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#enough-time">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_2.2_timing-adjustable" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#timing-adjustable" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_2.2_pause-stop-hide" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#pause-stop-hide" />
+      <successCriterion level="3" name="3" id="WCAG21_20180605_2.2_no-timing" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#no-timing" />
+      <successCriterion level="3" name="4" id="WCAG21_20180605_2.2_interruptions" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#interruptions" />
+      <successCriterion level="3" name="5" id="WCAG21_20180605_2.2_re-authenticating" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#re-authenticating" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_2.2_timeouts" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#timeouts" />
+    </guideline>
+    <guideline id="WCAG21_20180605_2.3" name="2.3" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#seizures-and-physical-reactions">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_2.3_three-flashes-or-below-threshold" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#three-flashes-or-below-threshold" />
+      <successCriterion level="3" name="2" id="WCAG21_20180605_2.3_three-flashes" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#three-flashes" />
+      <successCriterion level="3" name="3" id="WCAG21_20180605_2.3_animation-from-interactions" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#animation-from-interactions" />
+    </guideline>
+    <guideline id="WCAG21_20180605_2.4" name="2.4" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#navigable">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_2.4_bypass-blocks" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#bypass-blocks" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_2.4_page-titled" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#page-titled" />
+      <successCriterion level="1" name="3" id="WCAG21_20180605_2.4_focus-order" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#focus-order" />
+      <successCriterion level="1" name="4" id="WCAG21_20180605_2.4_link-purpose-in-context" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#link-purpose-in-context" />
+      <successCriterion level="2" name="5" id="WCAG21_20180605_2.4_multiple-ways" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#multiple-ways" />
+      <successCriterion level="2" name="6" id="WCAG21_20180605_2.4_headings-and-labels" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#headings-and-labels" />
+      <successCriterion level="2" name="7" id="WCAG21_20180605_2.4_focus-visible" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#focus-visible" />
+      <successCriterion level="3" name="8" id="WCAG21_20180605_2.4_location" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#location" />
+      <successCriterion level="3" name="9" id="WCAG21_20180605_2.4_link-purpose-link-only" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#link-purpose-link-only" />
+      <successCriterion level="3" name="10" id="WCAG21_20180605_2.4_section-headings" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#section-headings" />
+    </guideline>
+    <guideline id="WCAG21_20180605_2.5" name="2.5" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#input-modalities">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_2.5_pointer-gestures" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#pointer-gestures" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_2.5_pointer-cancellation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#pointer-cancellation" />
+      <successCriterion level="1" name="3" id="WCAG21_20180605_2.5_label-in-name" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#label-in-name" />
+      <successCriterion level="1" name="4" id="WCAG21_20180605_2.5_motion-actuation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#motion-actuation" />
+      <successCriterion level="3" name="5" id="WCAG21_20180605_2.5_target-size" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#target-size" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_2.5_concurrent-input-mechanisms" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#concurrent-input-mechanisms" />
+    </guideline>
+    <guideline id="WCAG21_20180605_3.1" name="3.1" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#readable">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_3.1_language-of-page" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#language-of-page" />
+      <successCriterion level="2" name="2" id="WCAG21_20180605_3.1_language-of-parts" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#language-of-parts" />
+      <successCriterion level="3" name="3" id="WCAG21_20180605_3.1_unusual-words" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#unusual-words" />
+      <successCriterion level="3" name="4" id="WCAG21_20180605_3.1_abbreviations" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#abbreviations" />
+      <successCriterion level="3" name="5" id="WCAG21_20180605_3.1_reading-level" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#reading-level" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_3.1_pronunciation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#pronunciation" />
+    </guideline>
+    <guideline id="WCAG21_20180605_3.2" name="3.2" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#predictable">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_3.2_on-focus" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#on-focus" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_3.2_on-input" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#on-input" />
+      <successCriterion level="2" name="3" id="WCAG21_20180605_3.2_consistent-navigation" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#consistent-navigation" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_3.2_consistent-identification" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#consistent-identification" />
+      <successCriterion level="3" name="5" id="WCAG21_20180605_3.2_change-on-request" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#change-on-request" />
+    </guideline>
+    <guideline id="WCAG21_20180605_3.3" name="3.3" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#input-assistance">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_3.3_error-identification" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#error-identification" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_3.3_labels-or-instructions" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#labels-or-instructions" />
+      <successCriterion level="2" name="3" id="WCAG21_20180605_3.3_error-suggestion" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#error-suggestion" />
+      <successCriterion level="2" name="4" id="WCAG21_20180605_3.3_error-prevention-legal-financial-data" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#error-prevention-legal-financial-data" />
+      <successCriterion level="3" name="5" id="WCAG21_20180605_3.3_help" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#help" />
+      <successCriterion level="3" name="6" id="WCAG21_20180605_3.3_error-prevention-all" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#error-prevention-all" />
+    </guideline>
+    <guideline id="WCAG21_20180605_4.1" name="4.1" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#compatible">
+      <successCriterion level="1" name="1" id="WCAG21_20180605_4.1_parsing" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#parsing" />
+      <successCriterion level="1" name="2" id="WCAG21_20180605_4.1_name-role-value" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#name-role-value" />
+      <successCriterion level="2" name="3" id="WCAG21_20180605_4.1_status-messages" xlink:href="https://www.w3.org/TR/2018/REC-WCAG21-20180605/#status-messages" />
+    </guideline>
+  </ruleset>
+
   <ruleset xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/" id="WCAG2_20081211" hrefLang="en">
     <guideline id="WCAG2_20081211_1.1" name="1.1" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv">
       <successCriterion level="1" name="1" id="WCAG2_20081211_1.1_text-equiv-all" xlink:href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all" />
